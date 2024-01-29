@@ -89,4 +89,11 @@ should also reload the region processor through
 depends on the data structure definition.
 
 ### Perform validation
-We are planning to add functions to this package that you can use to perform the validation required for IAM COMPACT and to get lists of invalid names, variable/unit combinations and non-matching aggregate sums, without having to navigate the API of the `nomenclature` package. Until then, see the [nomenclature package documentation](https://nomenclature-iamc.readthedocs.io/) for how to perform validation with the definitions and region mappings provided in this repository.
+We are planning to add functions to this package that you can use to perform the
+validation required for IAM COMPACT and to get lists of invalid names,
+variable/unit combinations and non-matching aggregate sums. The purpose is to be
+able to perform these tasks without having to navigate the `nomenclature` API,
+which can at times be challenging. Until then, if you want to try, check out the
+[nomenclature package documentation](https://nomenclature-iamc.readthedocs.io/)
+for how to perform validation with the definitions and region mappings provided
+in this repository.
