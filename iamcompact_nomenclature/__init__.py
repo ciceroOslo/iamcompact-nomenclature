@@ -1,5 +1,7 @@
 """Package to read and use definitions and mappings for IAM COMPACT."""
 from pathlib import Path
+from collections.abc import Sequence
+from typing import Final, Optional
 
 import nomenclature
 
@@ -8,11 +10,22 @@ _data_root: Path = Path(__file__).parent / 'data'
 
 defintions_path: Path = _data_root / 'definitions'
 mappings_path: Path = _data_root / 'mappings'
+dimensions: Final[tuple[str, ...]] = (
+    'model',
+    'scenario',
+    'region',
+    'variable',
+)
 
 
-def _load_definitions() -> nomenclature.DataStructureDefinition:
+def _load_definitions(
+        dimensions: Sequence[str] = dimensions
+) -> nomenclature.DataStructureDefinition:
     """Load and return DataStructureDefinition from definitions_path."""
-    return nomenclature.DataStructureDefinition(defintions_path)
+    return nomenclature.DataStructureDefinition(
+        defintions_path,
+        dimensions=dimensions
+    )
 ###END def _load_definitions
 
 def _load_region_processor() -> nomenclature.RegionProcessor:
@@ -27,7 +40,10 @@ _dsd: nomenclature.DataStructureDefinition | None = None
 _region_processor: nomenclature.RegionProcessor | None = None
 
 
-def get_dsd(force_reload: bool = False) -> nomenclature.DataStructureDefinition:
+def get_dsd(
+        force_reload: bool = False,
+        dimensions: Optional[Sequence[str]] = None
+) -> nomenclature.DataStructureDefinition:
     """Return the definitions as a `nomenclature.DataStructureDefinition`.
 
     After the first call, the `DataStructureDefinition` object is cached and
@@ -40,10 +56,15 @@ def get_dsd(force_reload: bool = False) -> nomenclature.DataStructureDefinition:
     force_reload : bool, optional
         Whether to reload the definitions even if they have already been loaded
         before. Defaults to `False`.
+    dimensions : sequence of str, optional
+        The dimensions to be read. Defaults to `dimensions` from this module.
     """
     global _dsd
     if _dsd is None or force_reload:
-        _dsd = _load_definitions()
+        if dimensions is None:
+            _dsd = _load_definitions()
+        else:
+            _dsd = _load_definitions(dimensions=dimensions)
     if force_reload:
         _region_processor = None
     return _dsd
