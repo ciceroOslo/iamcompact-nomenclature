@@ -10,7 +10,7 @@ defintions_path: Path = _data_root / 'definitions'
 mappings_path: Path = _data_root / 'mappings'
 
 
-def _load_definitions() -> nomenclature.Definitions:
+def _load_definitions() -> nomenclature.DataStructureDefinition:
     """Load and return DataStructureDefinition from definitions_path."""
     return nomenclature.DataStructureDefinition(defintions_path)
 ###END def _load_definitions
