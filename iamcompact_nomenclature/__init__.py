@@ -27,7 +27,7 @@ _dsd: nomenclature.DataStructureDefinition | None = None
 _region_processor: nomenclature.RegionProcessor | None = None
 
 
-def get_dsd(force_reload: bool = False) -> nomenclature.Definitions:
+def get_dsd(force_reload: bool = False) -> nomenclature.DataStructureDefinition:
     """Return the definitions as a `nomenclature.DataStructureDefinition`.
 
     After the first call, the `DataStructureDefinition` object is cached and
