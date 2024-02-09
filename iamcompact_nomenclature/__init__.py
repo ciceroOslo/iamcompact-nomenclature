@@ -5,6 +5,8 @@ from typing import Final, Optional
 
 import nomenclature
 
+from . import validation
+
 
 _data_root: Path = Path(__file__).parent / 'data'
 
