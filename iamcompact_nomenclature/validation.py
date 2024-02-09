@@ -1,6 +1,6 @@
 """Functions for validating names and variable/unit combinations."""
-from collections.abc import Sequence, Dict, List
-from typing import Optional
+from collections.abc import Sequence
+from typing import Optional, Dict, List
 
 import pyam
 from nomenclature import DataStructureDefinition, CodeList
