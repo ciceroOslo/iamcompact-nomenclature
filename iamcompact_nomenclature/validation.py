@@ -4,6 +4,7 @@ from typing import Optional
 
 import pyam
 from nomenclature import DataStructureDefinition, CodeList
+from nomenclature.code import VariableCode
 import pandas as pd
 
 from . import get_dsd
@@ -104,7 +105,7 @@ def get_invalid_variable_units(
     unit_mappings: Dict[str, str] = iamdf.unit_mapping
     check_units: List[str] = [unit_mappings[_var] for _var in check_vars]
     unit_validations: List[str | List[str] | None] = [
-        validate_unit(codelist[_var], _unit)
+        _validate_unit(codelist[_var], _unit)
         for _var, _unit in zip(check_vars, check_units)
     ]
     validation_df: pd.DataFrame = pd.DataFrame(
@@ -119,3 +120,43 @@ def get_invalid_variable_units(
         codelist[_var].unit for _var in validation_df.index
     ]
     return validation_df
+
+
+def _validate_unit(
+        code: VariableCode,
+        unit: str | List[str]
+) -> str | List[str] | None:
+    """Checks whether `unit` is a valid unit or list of units for `code`.
+
+    `code` needs to represent a variable, i.e., be a
+    `nomenclature.code.VariableCode` instance. The function will return `unit`
+    if it is a string and not a valid unit for `code`, or a list of invalid
+    units if `code` is a list of unit names.
+    
+    Parameters
+    ----------
+    code : Code
+        The variable code instance to validate against.
+    unit : str or list of str
+        The unit or units to validate.
+
+    Returns
+    -------
+    str or list of str or None
+        The invalid unit or list of invalid units, or None if `unit` is valid.
+        If `unit` is a list of units and there is just one invalid unit, the
+        function will return a list of one element. If `unit` is a string and
+        not a valid unit, the function will return the string.
+    """
+    expected_unit: str | List[str] = code.unit
+    # Fast-pass checks
+    if unit == expected_unit:
+        return None
+    if isinstance(unit, str):
+        if isinstance(expected_unit, str):
+            return unit if unit != expected_unit else None
+        else:
+            return unit if unit not in expected_unit else None
+    expected_unit = pyam.utils.to_list(expected_unit)
+    invalid_units: List[str] = [u for u in unit if u not in expected_unit]
+    return invalid_units if len(invalid_units) > 0 else None
