@@ -1,0 +1,5 @@
+# Ignore temporary Python files and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
