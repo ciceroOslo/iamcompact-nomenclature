@@ -75,61 +75,69 @@ def check_var_aggregates(
         values are lists of the component variables that were included in the
         sum.
     """
-    # Get the variables to check
     if variables is None:
-        variables = iamdf.filter(variable=variable_dimname).data[variable_dimname].unique()
-    else:
-        variables = list(variables)
-    
-    # Get the components for each variable
-    components = {}
-    for variable in variables:
-        components[variable] = iamdf.filter(variable=variable).data[variable_dimname].unique()
-    
-    # Check the components
+        variables = iamdf.filter(variable=variable_dimname).variables()
+
     failed_checks = pd.DataFrame()
-    for variable, component_vars in components.items():
-        # Get the data for the aggregated variable
-        agg_data = iamdf.filter(variable=variable)
-        # Get the data for the components
-        comp_data = iamdf.filter(variable=component_vars)
-        # Sum the components
-        comp_sum = comp_data.timeseries().sum(axis=1)
-        # Check the sum
+    aggregation_map = {}
+    for _var in variables:
+        _components = iamdf.filter(variable=_var, _apply_filters=False).variables()
+        if not _components:
+            continue
+        _sublevels = None if num_sublevels is None else num_sublevels - 1
+        _sum = iamdf.filter(variable=_components, _apply_filters=False).timeseries().sum()
         if require_complete:
-            failed = agg_data.timeseries() - comp_sum
-            failed = failed[failed.abs() > tolerance]
-        else:
-            failed = agg_data.timeseries() - comp_sum
-            failed = failed[failed < -tolerance]
-        if not failed.empty:
+            _sum = _sum.dropna()
+        _sum = _sum.sum(axis=1)
+        _diff = _sum - iamdf.filter(variable=_var).timeseries().sum(axis=1)
+        _diff = _diff.abs()
+        _failed = _diff[_diff > tolerance]
+        if not _failed.empty:
             failed_checks = failed_checks.append(
-                pd.DataFrame(
-                    {
-                        "aggregate": agg_data.timeseries().values,
-                        "components": comp_sum.values,
-                        "component_vars": comp_sum.columns,
-                    },
-                    index=failed.index,
-                )
+                pd.DataFrame({
+                    'aggregate': iamdf.filter(variable=_var).timeseries().sum(axis=1),
+                    'components': _sum
+                }),
+                sort=False
             )
-        # Add the "Other" variable if necessary
-        if add_other:
-            other = agg_data.timeseries() - comp_sum
-            other = other[other.abs() > tolerance]
-            if not other.empty:
-                other = other.rename(columns={variable: other_label})
-                if process_inplace:
-                    iamdf.append(other, variable_dimname=variable_dimname)
-                else:
-                    if return_added_only:
-                        return other
-                    else:
-                        iamdf = iamdf.append(other, variable_dimname=variable_dimname)
+            aggregation_map[_var] = _components
+    if failed_checks.empty:
+        failed_checks = None
+    return failed_checks, aggregation_map
+
+
+def find_missing_aggregate_vars(
+        iamdf: pyam.IamDataFrame,
+        variable_dimname: str = 'variable',
+) -> dict[str, list[str]]:
+    """Find missing aggregated variables in an `IamDataFrame`.
     
-    # Return the processed dataframe and the failed checks
-    if return_added_only:
-        return None, failed_checks
-    else:
-        return iamdf, failed_checks
+    The function will find all non-top-level variables in `iamdf` for whic there
+    is no corresponding parent variable in `iamdf`. I.e., any variable of the
+    form `"A|B|C" for which there is no variable `"A|B"` in `iamdf`.
+
+    All variables in `iamdf` are included in the check. If you want to restrict
+    what variables to check, you need to filter `iamdf` before calling this
+    function. To do this, you can use the `pyam.IamDataFrame.filter()` method,
+    passing variable patterns to the `variable` argument, and restricting what
+    levels to include in the check by using the `level` argument (e.g., passing
+    `level="n+"` to include only variables that are `n` or more levels below the
+    top level, or `level="n-"` to include levels that are `n` or fewer levels
+    below the top level; setting `level` to an exact number does not make
+    sense for use with this function).
+
+    Parameters
+    ----------
+    iamdf : pyam.IamDataFrame
+        The `IamDataFrame` to check or process.
+    variable_dimname : str, optional
+        The name of the variable dimension in the `IamDataFrame`. Defaults to
+        "variable".
+
+    Returns
+    -------
+    dict
+        A dict with the missing aggregated variables as keys, and the component
+        variables that are present in `iamdf` as values.
+    """
     
