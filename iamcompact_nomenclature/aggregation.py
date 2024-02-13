@@ -90,5 +90,61 @@ def check_var_aggregates(
         The index is equal to the index for each datapoint of the aggregated
         variable that failed the check.
     """
-
+    # Get the variables to check
+    if variables is None:
+        variables = iamdf.filter(variable=variable_dimname).data[variable_dimname].unique()
+    else:
+        variables = list(variables)
+    
+    # Get the components for each variable
+    components = {}
+    for variable in variables:
+        components[variable] = iamdf.filter(variable=variable).data[variable_dimname].unique()
+    
+    # Check the components
+    failed_checks = pd.DataFrame()
+    for variable, component_vars in components.items():
+        # Get the data for the aggregated variable
+        agg_data = iamdf.filter(variable=variable)
+        # Get the data for the components
+        comp_data = iamdf.filter(variable=component_vars)
+        # Sum the components
+        comp_sum = comp_data.timeseries().sum(axis=1)
+        # Check the sum
+        if require_complete:
+            failed = agg_data.timeseries() - comp_sum
+            failed = failed[failed.abs() > tolerance]
+        else:
+            failed = agg_data.timeseries() - comp_sum
+            failed = failed[failed < -tolerance]
+        if not failed.empty:
+            failed_checks = failed_checks.append(
+                pd.DataFrame(
+                    {
+                        "aggregate": agg_data.timeseries().values,
+                        "components": comp_sum.values,
+                        "component_vars": comp_sum.columns,
+                    },
+                    index=failed.index,
+                )
+            )
+        # Add the "Other" variable if necessary
+        if add_other:
+            other = agg_data.timeseries() - comp_sum
+            other = other[other.abs() > tolerance]
+            if not other.empty:
+                other = other.rename(columns={variable: other_label})
+                if process_inplace:
+                    iamdf.append(other, variable_dimname=variable_dimname)
+                else:
+                    if return_added_only:
+                        return other
+                    else:
+                        iamdf = iamdf.append(other, variable_dimname=variable_dimname)
+    
+    # Return the processed dataframe and the failed checks
+    if return_added_only:
+        return None, failed_checks
+    else:
+        return iamdf, failed_checks
     
