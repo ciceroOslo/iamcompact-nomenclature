@@ -5,6 +5,8 @@ from collections.abc import Sequence
 import pandas as pd
 import pyam
 
+from . import var_utils
+
 
 
 def check_var_aggregates(
@@ -76,34 +78,13 @@ def check_var_aggregates(
         sum.
     """
     if variables is None:
-        variables = iamdf.filter(variable=variable_dimname).variables()
-
-    failed_checks = pd.DataFrame()
-    aggregation_map = {}
-    for _var in variables:
-        _components = iamdf.filter(variable=_var, _apply_filters=False).variables()
-        if not _components:
-            continue
-        _sublevels = None if num_sublevels is None else num_sublevels - 1
-        _sum = iamdf.filter(variable=_components, _apply_filters=False).timeseries().sum()
-        if require_complete:
-            _sum = _sum.dropna()
-        _sum = _sum.sum(axis=1)
-        _diff = _sum - iamdf.filter(variable=_var).timeseries().sum(axis=1)
-        _diff = _diff.abs()
-        _failed = _diff[_diff > tolerance]
-        if not _failed.empty:
-            failed_checks = failed_checks.append(
-                pd.DataFrame({
-                    'aggregate': iamdf.filter(variable=_var).timeseries().sum(axis=1),
-                    'components': _sum
-                }),
-                sort=False
-            )
-            aggregation_map[_var] = _components
-    if failed_checks.empty:
-        failed_checks = None
-    return failed_checks, aggregation_map
+        variables = [
+            _var for _var in iamdf.variable if var_utils.get_aggregate_variable(
+                varname=_var,
+                iamdf=iamdf,
+                check_all_levels=False,
+            ) is None
+        ]
 
 
 def find_missing_aggregate_vars(
@@ -140,4 +121,3 @@ def find_missing_aggregate_vars(
         A dict with the missing aggregated variables as keys, and the component
         variables that are present in `iamdf` as values.
     """
-    
