@@ -7,7 +7,7 @@ import pyam
 
 def get_aggregate_var(
         varname: str,
-        iamdf: pyam.IamDataFrame = None,
+        iamdf: pyam.IamDataFrame|None = None,
         check_all_levels: bool = False,
         sep: str = '|',
         variable_dimname: str = 'variable',
@@ -58,15 +58,16 @@ def get_aggregate_var(
         return None
     if iamdf is None:
         return sep.join(varname.split(sep)[:-1])
+    idf_vars: list[str] = getattr(iamdf, variable_dimname)
     varname_components = varname.split(sep)
     if check_all_levels:
         for i in range(len(varname_components)-1, 0, -1):
             candidate = sep.join(varname_components[:i])
-            if candidate in getattr(iamdf, variable_dimname):
+            if candidate in idf_vars:
                 return candidate
     else:
         candidate = sep.join(varname_components[:-1])
-        if candidate in getattr(iamdf, variable_dimname):
+        if candidate in idf_vars:
             return candidate
     return None
 
