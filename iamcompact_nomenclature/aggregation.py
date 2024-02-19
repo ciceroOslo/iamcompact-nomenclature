@@ -41,7 +41,11 @@ def check_var_aggregates(
         The aggregated variables to check. If not provided, the function will
         check all top-level variables (i.e., variables that don't have a parent
         variable), and all aggregated variables down to the level specified by
-        `num_sublevels`. Defaults to `None`.
+        `num_sublevels`. "Top-level" variables here may include variables that
+        are components of other variables, but where there is no direct parent
+        variable, e.g., because there is a gap of more than one level between
+        the variable and the closest variable above it in the hierarchyl.
+        Defaults to `None`.
     num_sublevels : int, optional
         How deep to recurse to aggregated subvariables. Set to 0 to check only
         the variables in `variables` against the sum of components one level
@@ -104,8 +108,9 @@ def check_var_aggregates(
                 check_all_levels=False,
             ) is None
         ]
+    vars_to_check: list[str] = list(variables)
     if num_sublevels != 0:
-        vars_to_check: Sequence[str] = list(itertools.chain.from_iterable([
+        vars_to_check += list(itertools.chain.from_iterable([
             var_utils.get_component_vars(
                 varname=_var,
                 iamdf=iamdf,
@@ -113,8 +118,10 @@ def check_var_aggregates(
                 variable_dimname=variable_dimname,
             ) for _var in variables
         ]))
-    else:
-        vars_to_check: Sequence[str] = variables
+    # The procedure above may add some variables more than once, so keep only
+    # the unique values of `vars_to_check`. We want to preserve the original
+    # order of the variables in `vars_to_check`, so we can't use a set here.
+    vars_to_check = list(dict.fromkeys(vars_to_check))
     failed_checks_df_list: list[pd.DataFrame] = list()
     aggregation_map: dict[str, list[str]] = dict()
     for _var in vars_to_check:
