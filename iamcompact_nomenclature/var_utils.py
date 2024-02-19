@@ -74,7 +74,7 @@ def get_aggregate_var(
 def get_component_vars(
         varname: str,
         iamdf: pyam.IamDataFrame,
-        num_sublevels: int|None = 1,
+        num_sublevels: int|None = None,
         sep: str = '|',
         variable_dimname: str = 'variable',
 ) -> list[str]:
@@ -92,7 +92,7 @@ def get_component_vars(
         The `IamDataFrame` to use for finding the component variables
     num_sublevels : int, optional
         How many sublevels below `varname` to get component variables for.
-        Optional, defaults to 1. Set to None to get all sublevels.
+        Set to None to get all sublevels. Optional, defaults to None.
     sep : str, optional
         The separator used in the variable names. Defaults to "|".
     variable_dimname : str, optional
