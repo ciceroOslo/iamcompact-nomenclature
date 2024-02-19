@@ -91,8 +91,8 @@ def get_component_vars(
     iamdf : pyam.IamDataFrame
         The `IamDataFrame` to use for finding the component variables
     num_sublevels : int, optional
-        How many sublevels below `varname` to get component variables for.
-        Set to None to get all sublevels. Optional, defaults to None.
+        How many sublevels below `varname` to get component variables for. Set
+        to None to get all sublevels. Optional, defaults to None.
     sep : str, optional
         The separator used in the variable names. Defaults to "|".
     variable_dimname : str, optional
