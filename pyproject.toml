@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
-nomenclature-iamc = ">=0.14.0"
+nomenclature-iamc = ">=0.16.0"
 pyam-iamc = ">=2.0"
 
 [tool.poetry.group.dev.dependencies]
