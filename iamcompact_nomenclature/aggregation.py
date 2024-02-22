@@ -6,6 +6,9 @@ import dataclasses
 
 import pandas as pd
 import pyam
+import nomenclature
+from nomenclature import DataStructureDefinition
+from nomenclature.code import VariableCode
 
 from . import var_utils
 
@@ -24,7 +27,7 @@ class AggregationCheckResult:
         the aggregated variable that failed the check. This DataFrame is the
         same as that returned by `DataStructureDefinition.check_aggregate` and
         `IamDataFrame.check_aggregate`. Only variables for which the attribute
-        `check_aggregate` is set in `dsd` will be checked, and only the
+        `check-aggregate` is set in `dsd` will be checked, and only the
         components listed in the `components` attribute of each variable for
         which it exists (see the `nomenclature-iamc` documentation,
         https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/variable.html).
@@ -38,7 +41,7 @@ class AggregationCheckResult:
         A list of the variables that were not checked. This will usually be
         equal to the variables that exist in both in the `iamdf` and `dsd`
         argument passed to `check_var_aggregates`, but for which the attribute
-        `check_aggregate` is False or not set in `dsd`.
+        `check-aggregate` is False or not set in `dsd`.
     unknown : list[str]
         A list of the variables in the `iamdf` argument to
         `check_var_aggregates` that are not present in the `dsd` argument. If
@@ -53,15 +56,119 @@ class AggregationCheckResult:
         `nomenclature.IamdDataFrame.check_aggregate` will have been used.
     """
     failed_checks: pd.DataFrame|None
-    aggregation_map: dict[str, list[str]]
-    aggregation_map: dict[str, list[str]]
+    aggregation_map: dict[str, list[str] | list[dict[str, list[str]]] | None]
     not_checked: list[str]
+    unkonwn: list[str]
     rtol: Optional[float] = None
     atol: Optional[float] = None
 
 
 
 def check_var_aggregates(
+        iamdf: pyam.IamDataFrame,
+        dsd: nomenclature.DataStructureDefinition,
+        atol: Optional[float] = None,
+        rtol: Optional[float] = None,
+) -> AggregationCheckResult:
+    """Check aggregated variables based on aggregate specs in a DSD.
+    
+    The function mainly performs the same task as
+    `nomenclature.DataStructureDefinition.check_aggregate`: It checks whether
+    aggregated variables with the attribute `check-aggregate` set to True in the
+    DSD are equal to the sum (or other aggregation method) of their component
+    variables. If the attribute `components` is set for an aggregated variable,
+    only the component variables listed in the `components` attribute will be
+    included in the sum, or the aggregate will be checked against multiple
+    hierarchies of components if they are present in the `components` attribute.
+
+    The function additionally provides information on which aggregate variables
+    have been checked against which components, which variables were not
+    checked, and which variables are not present in the data structure
+    definition. This information is returned in an `AggregationCheckResult`
+    object.
+
+    Parameters
+    ----------
+    iamdf : pyam.IamDataFrame
+        The `IamDataFrame` to check.
+    dsd : nomenclature.DataStructureDefinition
+        The `DataStructureDefinition` to use for the check. This object should
+        have been created with the `nomenclature` package, and should have been
+        set up with the `check-aggregate` attribute for the variables that are
+        to be checked, and optionally the `components` attribute for aggregate
+        variables for which not all components should be included, or for which
+        there are separate hierarchies of components (such as "Final Energy"
+        being disaggregated both by sector and by energy carrier).
+    rtol : float, optional
+        Relative tolerance for the check. Passed to `numpy.isclose`, see the
+        documentation of that function for details. At the time of writing, the
+        default value is `1e-5`. Note that the relative and absolute tolerances
+        are added together to produce the actual tolerance threshold.
+    atol : float, optional
+        Absolute tolerance for the check. Passed to `numpy.isclose`, see the
+        documentation of that function for details. At the time of writing, the
+        default value is `1e-8`. Note that the relative and absolute tolerances
+        are added together to produce the actual tolerance threshold.
+
+    Returns
+    -------
+    AggregationCheckResult
+        Results of the check. See the docstring for `AggregationCheckResult` for
+        definition of the attributes.
+    """
+    # Find the variables in `iamdf` that are not present in `dsd.variable`,
+    # since these must be filtered out before passing to `dsd.check_aggregate`.
+    unknown_vars: list[str] = [
+        _var for _var in iamdf.variable if _var not in dsd.variable  # type: ignore
+    ]
+    # Make a temporary list of all variables present in both `iamdf` and `dsd`
+    common_vars: dict[str, VariableCode] = {
+        _varname: _var 
+        for _varname in iamdf.variable
+        if (_var := dsd.variable.get(_varname)) is not None  # type: ignore[attr-defined]
+    }
+    # Then get the ones that have `check-aggregate` set to True in `dsd`
+    vars_to_check: dict[str, VariableCode] = {
+        _varname: _var for _varname, _var in common_vars.items()
+        if dsd.variable[_var].check_aggregate  # type: ignore[attr-defined]
+    }
+    # Make the initial component mapping
+    component_map: dict[str, list[str] | list[dict[str, list[str]]] | None] = {
+        _varname: _var.components for _varname, _var in vars_to_check.items()
+    }
+    # For the variables that have component attribute equal to None at this
+    # point, set it equal to all the direct components
+    for _varname, _components in component_map.items():
+        if _components is None:
+            component_map[_varname] = var_utils.get_component_vars(
+                varname=_varname,
+                iamdf=iamdf,
+                num_sublevels=1,
+            )
+    unchecked_vars: list[str] = [
+        _varname for _varname in common_vars if _varname not in vars_to_check
+    ]
+    # Check the aggregate variable for all variables in `vars_to_check`
+    check_kwargs: dict[str, float] = dict()
+    if rtol is not None:
+        check_kwargs['rtol'] = rtol
+    if atol is not None:
+        check_kwargs['atol'] = atol
+    errors: pd.DataFrame|None = dsd.check_aggregate(
+        df=iamdf,
+        **check_kwargs,
+    )
+    return AggregationCheckResult(
+        failed_checks=errors,
+        aggregation_map=component_map,
+        not_checked=unchecked_vars,
+        unkonwn=unknown_vars,
+        rtol=rtol,
+        atol=atol,
+    )
+
+
+def check_var_aggregates_manual(
         iamdf: pyam.IamDataFrame,
         variables: Optional[Sequence[str]] = None,
         num_sublevels: Optional[int] = None,
@@ -70,7 +177,8 @@ def check_var_aggregates(
         method: str = 'sum',
         **kwargs,
 ) -> tuple[pd.DataFrame|None, dict[str, list[str]]]:
-    """Check aggregated variables in an `IamDataFrame`.
+    """Check aggregated variables in an `IamDataFrame` without using a
+    `nomenclature.DataStructureDefinition`.
     
     The function will check whether aggregated variables are sums of their
     component variables, or optionally just whether the component variables sum
@@ -232,3 +340,5 @@ def find_missing_aggregate_vars(
         A dict with the missing aggregated variables as keys, and the component
         variables that are present in `iamdf` as values.
     """
+    raise NotImplementedError('This function has not been implemented yet '
+                              '(and may never be).')
