@@ -2,11 +2,62 @@
 from typing import Optional
 from collections.abc import Sequence
 import itertools
+import dataclasses
 
 import pandas as pd
 import pyam
 
 from . import var_utils
+
+
+
+@dataclasses.dataclass(kw_only=True, slots=True)
+class AggregationCheckResult:
+    """Result of a check for aggregated variables.
+    
+    Attributes
+    ----------
+    errors : pd.DataFrame|None
+        A dataframe with the items that failed the checks. The columns are: -
+        "variable": The value of the aggregated variable - "components": The sum
+        of the components. The index is equal to the index for each datapoint of
+        the aggregated variable that failed the check. This DataFrame is the
+        same as that returned by `DataStructureDefinition.check_aggregate` and
+        `IamDataFrame.check_aggregate`. Only variables for which the attribute
+        `check_aggregate` is set in `dsd` will be checked, and only the
+        components listed in the `components` attribute of each variable for
+        which it exists (see the `nomenclature-iamc` documentation,
+        https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/variable.html).
+        If all checks pass, this will be `None`.
+    aggregation_map : dict[str, list[str]
+        A dictionary of the component variables that were summed and compared to
+        each aggregate variable. The keys are the aggregated variables, and the
+        values are lists of the component variables that were included in the
+        sum.
+    not_checked : list[str]
+        A list of the variables that were not checked. This will usually be
+        equal to the variables that exist in both in the `iamdf` and `dsd`
+        argument passed to `check_var_aggregates`, but for which the attribute
+        `check_aggregate` is False or not set in `dsd`.
+    unknown : list[str]
+        A list of the variables in the `iamdf` argument to
+        `check_var_aggregates` that are not present in the `dsd` argument. If
+        `iamdf` has been through proper validation of variable names, this list
+        should be empty.
+    rtol, atol : float, optional
+        Relative and absolute tolerances that were specified for the check
+        (usually passed to `numpy.isclose`). Will be `None` if no tolerance
+        arguments were passed to `check_var_aggregates`, in which the case the
+        default tolerances for either `numpy.isclose` itself or for
+        `nomenclature.DataStructureDefinition.check_aggregate` or
+        `nomenclature.IamdDataFrame.check_aggregate` will have been used.
+    """
+    failed_checks: pd.DataFrame|None
+    aggregation_map: dict[str, list[str]]
+    aggregation_map: dict[str, list[str]]
+    not_checked: list[str]
+    rtol: Optional[float] = None
+    atol: Optional[float] = None
 
 
 
