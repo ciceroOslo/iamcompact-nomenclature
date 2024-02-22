@@ -123,14 +123,13 @@ def check_var_aggregates(
     ]
     # Make a temporary list of all variables present in both `iamdf` and `dsd`
     common_vars: dict[str, VariableCode] = {
-        _varname: _var 
-        for _varname in iamdf.variable
-        if (_var := dsd.variable.get(_varname)) is not None  # type: ignore[attr-defined]
+        _varname: dsd.variable[_varname]  # type: ignore[attr-defined]
+        for _varname in iamdf.variable if _varname in dsd.variable  # type: ignore
     }
     # Then get the ones that have `check-aggregate` set to True in `dsd`
     vars_to_check: dict[str, VariableCode] = {
         _varname: _var for _varname, _var in common_vars.items()
-        if dsd.variable[_var].check_aggregate  # type: ignore[attr-defined]
+        if _var.check_aggregate  # type: ignore[attr-defined]
     }
     # Make the initial component mapping
     component_map: dict[str, list[str] | list[dict[str, list[str]]] | None] = {
@@ -155,7 +154,7 @@ def check_var_aggregates(
     if atol is not None:
         check_kwargs['atol'] = atol
     errors: pd.DataFrame|None = dsd.check_aggregate(
-        df=iamdf,
+        df=iamdf.filter(variable=list(vars_to_check.keys())),  # type: ignore[arg-type]
         **check_kwargs,
     )
     return AggregationCheckResult(
