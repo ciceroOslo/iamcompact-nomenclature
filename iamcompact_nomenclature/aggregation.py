@@ -98,7 +98,13 @@ def check_var_aggregates(
         to be checked, and optionally the `components` attribute for aggregate
         variables for which not all components should be included, or for which
         there are separate hierarchies of components (such as "Final Energy"
-        being disaggregated both by sector and by energy carrier).
+        being disaggregated both by sector and by energy carrier). If the
+        function is called from the top-level as
+        `iamcompact_nomenclature.check_var_aggregates`, `dsd` is an optional
+        keyword argument, and will be set equal to the return value of
+        `iamcompact_nomenclature.get_dsd()` by default. If it is called as
+        `iamcompact_nomenclature.aggregation.check_var_aggregates`, `dsd` is a
+        required argument.
     rtol : float, optional
         Relative tolerance for the check. Passed to `numpy.isclose`, see the
         documentation of that function for details. At the time of writing, the
