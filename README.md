@@ -88,7 +88,7 @@ should also reload the region processor through
 `get_region_mapping(force_reload=True)`, since the region mapping ususally
 depends on the data structure definition.
 
-### Perform validation
+## Perform validation
 You can validate names (models, scenarios, variables, regions, ...) and
 variable/unit combinations using the functions `get_invalid_items()` and
 `get_invalid_variable_units()` in the `iamcompact_nomenclature.validation`
@@ -133,5 +133,80 @@ match exactly the dimension names used in `iamdf`, including case). By default,
 it uses all dimensions that are present in both `iamdf` and in `dsd` (and
 silently ignores any dimensions that are present in `iamdf` but not in `dsd`).
 
-A function to check variable and region aggregation sums is in the works, but
-not yet complete.
+
+## Check aggregations
+
+The package can be used to check whether the values of aggregate variables are
+equal to the sum of their component variables, and whether the values of
+extensive variables for aggregate regions are equal to the sum of the values for
+each constituent country or subregion.
+
+Both require the data structure
+definition used (stored in `iamcompact_nomenclature/data/definitions` or
+supplied as an external `nomenclature.DataStructureDefinition` object) to
+contain tags that specify which variables are aggregate variables that should
+be checked and/or extensive variables that can be summed across regions.
+Checking regional aggregations also require a `nomenclature.RegionProcessor`
+instance that contains the region mappings, either obtained from
+`iamcompact_nomenclature/data/mappings` through the `get_region_processor()`
+function or by supplying an externally constructed instance.
+
+### Aggregate variables check
+
+To check all aggregate variables in an `IamDataFrame` named `iamdf`, use the
+following call:
+
+```
+import iamcompact_nomenclature as icnom
+
+results = icnom.check_var_aggregates(iamdf)
+```
+
+This call will by default use the data structure definition supplied by
+`icnom.get_dsd()`. You can override this by passing a custom
+`nomenclature.DataStructureDefinition` object to `check_var_aggregates` through
+the `dsd` keyword argument. See the function docstring for more details about
+other optional arguments, which let you specify tolerance margins.
+
+`results` is returned as an `AggregationCheckResults` object with the following
+attributes:
+* `errors` (`pandas.DataFrame` or `None`): A DataFrame with the checks that did
+  not pass. The value of the aggregate variable is in the column `variable`, the
+  sum of the components in `components`. Will be `None` if all checks passed.
+* `aggregation_map` (`dict`): A dictionary with the aggregated variables that
+  were checked as keys, and the corresponding components used in the sum as
+  values. The latter will either be a list of component variable names in the
+  case of an aggregate with a single set of components, or a list of dicts if
+  the aggregate variables has multiple component hierarchies (such as final
+  energy being disaggregated both by energy type and by sector). In the latter
+  case, the key of each dict will be the name assigned to that hierarchy in the
+  definition of the aggregate variable in the datastructure definition, and the
+  value will be a list of component variable names for that hierarchy. See the
+  [section on variable
+  codelists](https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/variable.html#consistency-across-the-variable-hierarchy)
+  in the nomenclature-iamc documentation for more details about how variable
+  aggregations are specified in nomenclature.
+* `not_checked` (`list` of `str`): A list of variable names that were not
+  checked as aggregate variables. This list will include component variables
+  that were considered only components and not checked as aggregate variables
+  with their own subcomponents.
+* `unknown` (`list` of `str`): List of variables in the checked `IamDataFrame`
+  that were not found in the datastructure definition. This list *should* be
+  empty if the variable names have been validated.
+* `rtol`, `atol` (`float` or `None`): Relative and absolute tolerances used in
+  the check. They will be `None` if they weren't explicitly specified, in which
+  case the defaults values in `numpy.isclose` will have been used.
+
+Even if `.errors` is None, you should check through `.not_checked` to make
+sure that it does not include any variables that should have been checked, and
+also that `.unknown` is empty.
+
+`check_var_aggregates` will only check variables for which the `components`
+attribute in the datastructure definition has been specified. See the [section
+on variable
+codelists](https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/variable.html#consistency-across-the-variable-hierarchy)
+in the nomenclature-iamc documentation for more details. If you don't supply
+your own `dsd`, this should normally have been done already, but still check
+`results.not_checked` and `results.aggregation_map` to make sure that the
+function used the aggregates that you expected and didn't leave out any
+aggregate variables that should have been included.
