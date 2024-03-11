@@ -168,7 +168,7 @@ This call will by default use the data structure definition supplied by
 the `dsd` keyword argument. See the function docstring for more details about
 other optional arguments, which let you specify tolerance margins.
 
-`results` is returned as an `AggregationCheckResults` object with the following
+`results` is returned as a `VarAggregationCheckResults` object with the following
 attributes:
 * `errors` (`pandas.DataFrame` or `None`): A DataFrame with the checks that did
   not pass. The value of the aggregate variable is in the column `variable`, the
@@ -201,12 +201,12 @@ Even if `.errors` is None, you should check through `.not_checked` to make
 sure that it does not include any variables that should have been checked, and
 also that `.unknown` is empty.
 
-`check_var_aggregates` will only check variables for which the `components`
-attribute in the datastructure definition has been specified. See the [section
-on variable
+**NB!** `check_var_aggregates` will **only** check variables for which the
+`check-aggregate` attribute in the datastructure definition has been specified.
+See the [section on variable
 codelists](https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/variable.html#consistency-across-the-variable-hierarchy)
 in the nomenclature-iamc documentation for more details. If you don't supply
-your own `dsd`, this should normally have been done already, but still check
-`results.not_checked` and `results.aggregation_map` to make sure that the
-function used the aggregates that you expected and didn't leave out any
-aggregate variables that should have been included.
+your own `dsd`, `check-aggregate` and `components` should usually have been set
+for the appropriate variables, but still check `results.not_checked` and
+`results.aggregation_map` to make sure that the function used the aggregates
+that you expected and didn't leave out anything that should have been included.
