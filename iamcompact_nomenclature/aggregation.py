@@ -15,7 +15,7 @@ from . import var_utils
 
 
 @dataclasses.dataclass(kw_only=True, slots=True)
-class AggregationCheckResult:
+class VarAggregationCheckResult:
     """Result of a check for aggregated variables.
     
     Attributes
@@ -69,7 +69,7 @@ def check_var_aggregates(
         dsd: nomenclature.DataStructureDefinition,
         atol: Optional[float] = None,
         rtol: Optional[float] = None,
-) -> AggregationCheckResult:
+) -> VarAggregationCheckResult:
     """Check aggregated variables based on aggregate specs in a DSD.
     
     The function mainly performs the same task as
@@ -84,7 +84,7 @@ def check_var_aggregates(
     The function additionally provides information on which aggregate variables
     have been checked against which components, which variables were not
     checked, and which variables are not present in the data structure
-    definition. This information is returned in an `AggregationCheckResult`
+    definition. This information is returned in a `VarAggregationCheckResult`
     object.
 
     Parameters
@@ -118,9 +118,9 @@ def check_var_aggregates(
 
     Returns
     -------
-    AggregationCheckResult
-        Results of the check. See the docstring for `AggregationCheckResult` for
-        definition of the attributes.
+    VarAggregationCheckResult
+        Results of the check. See the docstring for `VarAggregationCheckResult`
+        for definition of the attributes.
     """
     # Find the variables in `iamdf` that are not present in `dsd.variable`,
     # since these must be filtered out before passing to `dsd.check_aggregate`.
@@ -163,7 +163,7 @@ def check_var_aggregates(
         df=iamdf.filter(variable=list(vars_to_check.keys())),  # type: ignore[arg-type]
         **check_kwargs,
     )
-    return AggregationCheckResult(
+    return VarAggregationCheckResult(
         failed_checks=errors,
         aggregation_map=component_map,
         not_checked=unchecked_vars,
