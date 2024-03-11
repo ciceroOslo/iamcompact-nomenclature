@@ -7,7 +7,7 @@ import dataclasses
 import pandas as pd
 import pyam
 import nomenclature
-from nomenclature import DataStructureDefinition
+from nomenclature import DataStructureDefinition, RegionProcessor
 from nomenclature.code import VariableCode
 
 from . import var_utils
@@ -20,12 +20,13 @@ class VarAggregationCheckResult:
     
     Attributes
     ----------
-    errors : pd.DataFrame|None
-        A dataframe with the items that failed the checks. The columns are: -
-        "variable": The value of the aggregated variable - "components": The sum
-        of the components. The index is equal to the index for each datapoint of
-        the aggregated variable that failed the check. This DataFrame is the
-        same as that returned by `DataStructureDefinition.check_aggregate` and
+    failed_checks : pd.DataFrame|None
+        A dataframe with the items that failed the checks. The columns are:
+          * "variable": The value of the aggregated variable
+          * "components": The sum of the components.
+        The index is equal to the index for each datapoint of the aggregated
+        variable that failed the check. This DataFrame is the same as that
+        returned by `DataStructureDefinition.check_aggregate` and
         `IamDataFrame.check_aggregate`. Only variables for which the attribute
         `check-aggregate` is set in `dsd` will be checked, and only the
         components listed in the `components` attribute of each variable for
@@ -47,6 +48,8 @@ class VarAggregationCheckResult:
         `check_var_aggregates` that are not present in the `dsd` argument. If
         `iamdf` has been through proper validation of variable names, this list
         should be empty.
+    dsd : nomenclature.DataStructureDefinition
+        The `DataStructureDefinition` object that was used for the check.
     rtol, atol : float, optional
         Relative and absolute tolerances that were specified for the check
         (usually passed to `numpy.isclose`). Will be `None` if no tolerance
@@ -59,8 +62,91 @@ class VarAggregationCheckResult:
     aggregation_map: dict[str, list[str] | list[dict[str, list[str]]] | None]
     not_checked: list[str]
     unkonwn: list[str]
+    dsd: Optional[DataStructureDefinition] = None
     rtol: Optional[float] = None
     atol: Optional[float] = None
+
+
+@dataclasses.dataclass(kw_only=True, slots=True)
+class RegionAggregationCheckResult:
+    """Result of comparison between aggregate and sum of component regions.
+
+    The function contains results from checks performed with the function
+    `check_region_aggregates`, including a processed IamDataFrame with regions
+    that are mapped and or renamed from model-native regions to the common
+    regions defined in the `RegionProcessor` object passed to that function.
+    
+    Attributes
+    ----------
+    failed_checks : pd.DataFrame|None
+        A dataframe with the items that failed the checks. The columns are:
+          * "original": The value for the original aggregated native region
+          * "aggregated": The sum of the constituent regions
+          * "difference (%)" : The percentage difference between the original
+            and the sum of the constituent regions.
+        The index is equal to the index for each datapoint of the aggregated
+        region that failed the check. This DataFrame is the same as that
+        returned by `DataStructureDefinition.check_aggregate` and
+        `IamDataFrame.check_aggregate`. Only regions for which the attribute
+        `check-aggregate` is set in `dsd` will be checked, and only the
+        components listed in the `components` attribute of each region for which
+        it exists (see the `nomenclature-iamc` documentation,
+        https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/region.html).
+        If all checks pass, this will be `None`.
+    aggregation_map : dict[str, list[str]
+        A dictionary of the constituent regions that were summed and compared to
+        each aggregated native region. The keys are the aggregated native
+        regions, and the values are lists of the component regions that were
+        included in the sum.
+    regions_not_checked : list[str]
+        A list of the regions that were not checked. This will usually be equal
+        to the regions that exist in both in the `iamdf` and `dsd` argument
+        passed to `check_region_aggregates`, but which were not recognized as
+        aggregated regions. It will *not* include regions that are listed as
+        constituent regions of an aggregated region in `processor` but are not
+        aggregated regions themselves.
+    vars_not_checked : list[str]
+        A list of variables that were not checked in the region sums. This will
+        usually be equal to variables present in both the `iamdf` and `dsd`
+        arguments to `check_region_aggregates` for which the attribute
+        `skip-region-aggregation` is set to `true` in `dsd`.
+    unknown_regions : list[str]
+        A list of the regions in the `iamdf` argument to
+        `check_region_aggregates` that are not present in the `dsd` argument. If
+        `iamdf` has been through proper validation of region names, this list
+        should be empty.
+    unknown_vars : list[str]
+        A list of the variables in the `iamdf` argument to
+        `check_region_aggregates` that are not present in the `dsd` argument. If
+        `iamdf` has been through proper validation of region names, this list
+        should be empty.
+    dsd : nomenclature.DataStructureDefinition
+        The `DataStructureDefinition` object that was used for the check.
+    processor : nomenclature.RegionProcessor
+        The `RegionProcessor` object that was used for the check.
+    rtol, atol : float, optional
+        Relative and absolute tolerances that were specified for the check
+        (usually passed to `numpy.isclose`). Will be `None` if no tolerance
+        arguments were passed to `check_region_aggregates`, in which the case
+        the default tolerances for either `numpy.isclose` itself or for
+        `nomenclature.DataStructureDefinition.check_aggregate` or
+        `nomenclature.Iamd
+    processed_data : pyam.IamDataFrame
+        The processed data returned by the region processing. An `IamDataFrame`
+        with model-native regions renamed and aggregated into the common regions
+        defined by `processor`.
+    """
+    failed_checks: pd.DataFrame|None
+    aggregation_map: dict[str, list[str] | list[dict[str, list[str]]] | None]
+    regions_not_checked: list[str]
+    vars_not_checked: list[str]
+    unkonwn_regions: list[str]
+    unkonwn_vars: list[str]
+    dsd: Optional[DataStructureDefinition] = None
+    processor: Optional[RegionProcessor]
+    rtol: Optional[float] = None
+    atol: Optional[float] = None
+    processed_data: Optional[pyam.IamDataFrame]
 
 
 
@@ -170,6 +256,7 @@ def check_var_aggregates(
         unkonwn=unknown_vars,
         rtol=rtol,
         atol=atol,
+        dsd=dsd,
     )
 
 
