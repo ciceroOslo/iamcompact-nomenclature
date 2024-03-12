@@ -170,7 +170,7 @@ other optional arguments, which let you specify tolerance margins.
 
 `results` is returned as a `VarAggregationCheckResults` object with the following
 attributes:
-* `errors` (`pandas.DataFrame` or `None`): A DataFrame with the checks that did
+* `failed_checks` (`pandas.DataFrame` or `None`): A DataFrame with the checks that did
   not pass. The value of the aggregate variable is in the column `variable`, the
   sum of the components in `components`. Will be `None` if all checks passed.
 * `aggregation_map` (`dict`): A dictionary with the aggregated variables that
@@ -210,3 +210,53 @@ your own `dsd`, `check-aggregate` and `components` should usually have been set
 for the appropriate variables, but still check `results.not_checked` and
 `results.aggregation_map` to make sure that the function used the aggregates
 that you expected and didn't leave out anything that should have been included.
+
+### Region aggregation check
+
+To check that variables set for aggregate regions match the sum of the same
+variable in constituent regions and countries, use the following call:
+
+```
+import iamcompact_nomenclature as icnom
+
+results = icnom.check_region_aggregates(iamdf)
+```
+
+By default this will use the datastructure definition fom `icnom.get_dsd()` and
+the `RegionProcessor` object returned by `icnom.get_region_processor()`. To
+override, use the `dsd` or `processor` keyword arguments to
+`check_region_aggregates`.
+
+Results are returned as a `RegionAggregationCheckResults` object with the
+following attributes (see also the docstring of
+`iamcompact_nomenclature.aggregation.RegionAggregationCheckResults`):
+  * `failed_checks` (`pandas.DataFrame` or `None`): A dataframe with the items
+    that failed the checks. It contains three columns:
+    * `original`: The value of the variable for the aggregate, model-native
+      region.
+    * `agregated`: The aggregate of the values for the variable in the
+      constituent regions or countries.
+    * `difference (%)`: The difference between the two values, in percent
+      relative to `original`.
+  * `aggregation_map` (`dict`): A dictionary of dictionaries of the aggregated
+    regions (keys of the inner dict) and constituent regions (values of the
+    inner dict) that were used in the checks for each model. The keys of the
+    outer dict are the model names, which will be just one if you are only
+    checking output from a single model.
+  * `regions_not_checked` (`dict`): A dictionary of lists of regions that were
+    not checked for each model. The keys are the model names, and the values are
+    lists of region names.
+  * `vars_not_checked` (`list`): A list of variable names that were not checked
+    for any model.
+  * `unknown_regions` (`dict`): A dictionary of lists of regions that were not
+    found in the region mappings. The keys are the model names, and the values
+    are lists of region names. Should be empty if the region names in `iamdf`
+    have been properly validated.
+  * `unknown_vars` (`list`): A list of variable names that were not found in the
+    datastructure definition. Should be empty if the variable names in `iamdf`
+    have been properly validated.
+  * `dsd` (`nomenclature.DataStructureDefinition`): The data structure
+    definition used in the checks.
+  * `processor` (`nomenclature.RegionProcessor`): The region processor used in
+    the checks.
+  * `rtol` (`float`): The relative tolerance used in the checks.

@@ -86,25 +86,21 @@ class RegionAggregationCheckResult:
             and the sum of the constituent regions.
         The index is equal to the index for each datapoint of the aggregated
         region that failed the check. This DataFrame is the same as that
-        returned by `DataStructureDefinition.check_aggregate` and
-        `IamDataFrame.check_aggregate`. Only regions for which the attribute
-        `check-aggregate` is set in `dsd` will be checked, and only the
-        components listed in the `components` attribute of each region for which
-        it exists (see the `nomenclature-iamc` documentation,
-        https://nomenclature-iamc.readthedocs.io/en/stable/user_guide/region.html).
-        If all checks pass, this will be `None`.
-    aggregation_map : dict[str, list[str]
-        A dictionary of the constituent regions that were summed and compared to
-        each aggregated native region. The keys are the aggregated native
-        regions, and the values are lists of the component regions that were
-        included in the sum.
-    regions_not_checked : list[str]
-        A list of the regions that were not checked. This will usually be equal
-        to the regions that exist in both in the `iamdf` and `dsd` argument
-        passed to `check_region_aggregates`, but which were not recognized as
-        aggregated regions. It will *not* include regions that are listed as
-        constituent regions of an aggregated region in `processor` but are not
-        aggregated regions themselves.
+        returned by `nomenclature.RegionProcessor.check_region_aggregation`. If
+        all checks pass, this will be `None`.
+    aggregation_map : dict[str, dict[str, list[str]]
+        A dictionary dictionaries of the constituent regions that were summed
+        and compared to each aggregated native region for each model. The keys
+        of the outer dict are the model names. The keys of the inner dict are
+        the aggregated native regions for each model, and the values are lists
+        of the component regions that were included in the sum.
+    regions_not_checked : dict[str, list[str]]
+        Dict of lists of the regions that were not checked for each model. This
+        will usually be equal to the regions that exist in both in the `iamdf`
+        and `processor` argument passed to `check_region_aggregates`, but which
+        were not recognized as aggregated regions. It will *not* include regions
+        that are listed as constituent regions of an aggregated region in
+        `processor` but are not aggregated regions themselves.
     vars_not_checked : list[str]
         A list of variables that were not checked in the region sums. This will
         usually be equal to variables present in both the `iamdf` and `dsd`
@@ -124,29 +120,29 @@ class RegionAggregationCheckResult:
         The `DataStructureDefinition` object that was used for the check.
     processor : nomenclature.RegionProcessor
         The `RegionProcessor` object that was used for the check.
-    rtol, atol : float, optional
-        Relative and absolute tolerances that were specified for the check
-        (usually passed to `numpy.isclose`). Will be `None` if no tolerance
-        arguments were passed to `check_region_aggregates`, in which the case
-        the default tolerances for either `numpy.isclose` itself or for
-        `nomenclature.DataStructureDefinition.check_aggregate` or
-        `nomenclature.Iamd
+    rtol : float, optional
+        Relative tolerance that was specified for the check (usually passed to
+        `numpy.isclose`). Will be `None` if no tolerance argument was passed to
+        `check_region_aggregates`, in which the case the default set in
+        `nomenclature.RegionProcessor.check_region_aggregation` will be used
+        (`0.01`, i.e., 1%, at the time of writing).
     processed_data : pyam.IamDataFrame
         The processed data returned by the region processing. An `IamDataFrame`
         with model-native regions renamed and aggregated into the common regions
-        defined by `processor`.
+        defined by `processor`, and aggregated variables renamed according to
+        the `region-aggregation` attribute of each variable in `dsd`, if
+        applicable.
     """
     failed_checks: pd.DataFrame|None
-    aggregation_map: dict[str, list[str] | list[dict[str, list[str]]] | None]
-    regions_not_checked: list[str]
+    aggregation_map: dict[str, dict[str, list[str]]]
+    regions_not_checked: dict[str, list[str]]
     vars_not_checked: list[str]
     unkonwn_regions: list[str]
     unkonwn_vars: list[str]
     dsd: Optional[DataStructureDefinition] = None
     processor: Optional[RegionProcessor]
     rtol: Optional[float] = None
-    atol: Optional[float] = None
-    processed_data: Optional[pyam.IamDataFrame]
+    processed_data: Optional[pyam.IamDataFrame] = None
 
 
 
@@ -434,3 +430,65 @@ def find_missing_aggregate_vars(
     """
     raise NotImplementedError('This function has not been implemented yet '
                               '(and may never be).')
+
+
+
+def check_region_aggregates(
+        iamdf: pyam.IamDataFrame,
+        dsd: nomenclature.DataStructureDefinition,
+        processor: nomenclature.RegionProcessor,
+        rtol_difference: Optional[float] = None,
+) -> RegionAggregationCheckResult:
+    """Check aggregated regions based on region mappings and DSD.
+    
+    The function mainly performs the same task as
+    `nomenclature.RegionProcessor.check_region_aggregation`: It checks whether
+    common, aggregated regions in the region mapping in `processor` are equal to
+    the sum (or other aggregation method defined in `dsd`) of their constituent
+    regions. The `region-aggregation` and `skip-region-aggregation` attributes
+    of each variable in `dsd.variable` are used to determine what method and
+    weights to use for aggregation (by default sum with equal weights) and what
+    variables to skip.
+
+    The function additionally provides information on which aggregate regions
+    have been checked against which components, which regions were not checked,
+    and which regions are not present in the data structure definition, as well
+    as what variables were not aggregated and checked. This information is
+    returned in a `RegionAggregationCheckResult` object.
+
+    Parameters
+    ----------
+    iamdf : pyam.IamDataFrame
+        The `IamDataFrame` to check.
+    dsd : nomenclature.DataStructureDefinition
+        The `DataStructureDefinition` to use for the check. This object should
+        have been created with the `nomenclature` package. If the function is
+        called from the top-level as
+        `iamcompact_nomenclature.check_region_aggregates`, `dsd` is an optional
+        keyword argument, and will be set equal to the return value of
+        `iamcompact_nomenclature.get_dsd()` by default. If it is called as
+        `iamcompact_nomenclature.aggregation.check_region_aggregates`, `dsd` is
+        a required argument.
+    processor : nomenclature.RegionProcessor
+        The `RegionProcessor` to use for the check. This object should have been
+        created with the `nomenclature` package. If the function is called from
+        the top-level as `iamcompact_nomenclature.check_region_aggregates`,
+        `processor` is an optional keyword argument, and will be set equal to
+        the return value of `iamcompact_nomenclature.get_region_processor()` by
+        default. If it is called as
+        `iamcompact_nomenclature.aggregation.check_region_aggregates`,
+        `processor` is a required argument.
+    rtol_difference : float, optional
+        Relative tolerance for the check of the difference between the original
+        and the aggregate of the constituent regions. Passed to
+        `nomenclature.RegionProcessor.check_region_aggregation`. Optional,
+        defaults to `None`. If `None`, the default relative tolerance for
+        `nomenclature.RegionProcessor.check_region_aggregation` will be used
+        (0.01, i.e., 1% at the time of writing).
+
+    Returns
+    -------
+    RegionAggregationCheckResult
+        Results of the check. See the docstring for `RegionAggregationCheckResult`
+        for definition of the attributes.
+    """
