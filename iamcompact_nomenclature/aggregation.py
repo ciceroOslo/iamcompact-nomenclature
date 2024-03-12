@@ -106,9 +106,13 @@ class RegionAggregationCheckResult:
         usually be equal to variables present in both the `iamdf` and `dsd`
         arguments to `check_region_aggregates` for which the attribute
         `skip-region-aggregation` is set to `true` in `dsd`.
-    unknown_regions : list[str]
-        A list of the regions in the `iamdf` argument to
-        `check_region_aggregates` that are not present in the `dsd` argument. If
+    unknown_models : list[str]
+        A list of models in the `iamdf` argument to `check_region_aggregates`
+        that are not present in the `processor` argument.
+    unknown_regions : dict[str, list[str]]
+        A dict of lists of the regions for each model in the `iamdf` argument to
+        `check_region_aggregates` that are not present in the `dsd` or in the
+        `processor` argument. The keys of the dict are the model names. If
         `iamdf` has been through proper validation of region names, this list
         should be empty.
     unknown_vars : list[str]
@@ -137,7 +141,8 @@ class RegionAggregationCheckResult:
     aggregation_map: dict[str, dict[str, list[str]]]
     regions_not_checked: dict[str, list[str]]
     vars_not_checked: list[str]
-    unkonwn_regions: list[str]
+    unknown_models: list[str]
+    unkonwn_regions: dict[str, list[str]]
     unkonwn_vars: list[str]
     dsd: Optional[DataStructureDefinition] = None
     processor: Optional[RegionProcessor]
@@ -492,3 +497,60 @@ def check_region_aggregates(
         Results of the check. See the docstring for `RegionAggregationCheckResult`
         for definition of the attributes.
     """
+    # Check that `dsd` and `processor` contain the same variable and region
+    # codelists
+    if dsd.variable != processor.variable_codelist \
+            or dsd.region != processor.region_codelist:  # pyright: ignore[reportAttributeAccessIssue]
+        raise ValueError(
+            'The variable and region codelists in `dsd` and `processor` do not '
+            'match.'
+        )
+    models_to_check: list[str] = [
+        _model for _model in iamdf.model if _model in processor.mappings.keys()
+    ]
+    unknown_models: list[str] = [
+        _model for _model in iamdf.model if _model not in models_to_check
+    ]
+    unknown_regions: dict[str, list[str]] = {
+        _model: [
+            _region for _region in iamdf.filter(model=_model).region if  # pyright: ignore[reportOptionalMemberAccess]
+                _region not in processor.mappings[_model].model_native_region_names
+        ]
+        for _model in models_to_check
+    }
+    # Remove the models that have no unknown regions
+    unkown_regions = {
+        _model: _regions for _model, _regions in unknown_regions.items()
+        if len(_regions) > 0
+    }
+    common_vars: list[str] = [
+        _var for _var in iamdf.variable if _var in dsd.variable.keys()  # pyright: ignore[reportAttributeAccessIssue]
+    ]
+    unknown_vars: list[str] = [
+        _var for _var in iamdf.variable if _var not in common_vars
+    ]
+    vars_not_checked: list[str] = [
+        _var for _var in common_vars
+        if dsd.variable[_var].skip_region_aggregation  # pyright: ignore[reportAttributeAccessIssue]
+    ]
+    processed_data: pyam.IamDataFrame
+    failed_checks: pd.DataFrame|None
+    processed_data, failed_checks = processor.check_region_aggregation(
+        df=iamdf,
+        rtol_difference=rtol_difference
+    ) if rtol_difference is not None else processor.check_region_aggregation(
+        df=iamdf
+    )
+    results: RegionAggregationCheckResult = RegionAggregationCheckResult(
+        failed_checks=failed_checks,
+        aggregation_map=processor.aggregation_map,
+        regions_not_checked=processor.regions_not_checked,
+        vars_not_checked=vars_not_checked,
+        unkonwn_regions=unknown_regions,
+        unkonwn_vars=unknown_vars,
+        unknown_models=unknown_models,
+        dsd=dsd,
+        processor=processor,
+        rtol=rtol_difference,
+        processed_data=processed_data,
+    )
