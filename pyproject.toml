@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "iamcompact-nomenclature"
-version = "0.2.2"
+version = "0.3.0"
 description = "Data structure definition for validation of model outputs in the HORIZON EUROPE project IAM COMPACT, using nomenclature-iamc"
 authors = ["Jan Ivar Korsbakken <janko@cicero.oslo.no>"]
 readme = "README.md"
