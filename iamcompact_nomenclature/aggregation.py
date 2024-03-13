@@ -573,12 +573,23 @@ def check_region_aggregates(
     ]
     processed_data: pyam.IamDataFrame
     failed_checks: pd.DataFrame|None
-    processed_data, failed_checks = processor.check_region_aggregation(
-        df=iamdf,
-        rtol_difference=rtol_difference
-    ) if rtol_difference is not None else processor.check_region_aggregation(
-        df=iamdf
-    )
+    # Do the region check/processing, but catch ValueError in case there was
+    # nothing to process, and pyam conplains that it didn't receive any rows
+    # to concatenate
+    try:
+        processed_data, failed_checks = processor.check_region_aggregation(
+            df=iamdf,
+            rtol_difference=rtol_difference
+        ) if rtol_difference is not None else processor.check_region_aggregation(
+            df=iamdf
+        )
+    except ValueError as _ve:
+        if _ve.args != ('No objects to concatenate',):
+            raise
+        else:
+            # Return empty results
+            processed_data = iamdf.filter(model=iamdf.model, keep=False)  # pyright: ignore[reportAssignmentType]
+            failed_checks = None
     results: RegionAggregationCheckResult = RegionAggregationCheckResult(
         failed_checks=failed_checks,
         aggregation_map=aggregation_map,
