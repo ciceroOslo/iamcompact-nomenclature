@@ -1,5 +1,5 @@
 """Module for computing and checking aggregations of variables."""
-from typing import Optional
+from typing import Optional, TypeVar
 from collections.abc import Sequence
 import itertools
 import dataclasses
@@ -89,18 +89,25 @@ class RegionAggregationCheckResult:
         returned by `nomenclature.RegionProcessor.check_region_aggregation`. If
         all checks pass, this will be `None`.
     aggregation_map : dict[str, dict[str, list[str]]
-        A dictionary dictionaries of the constituent regions that were summed
-        and compared to each aggregated native region for each model. The keys
+        The region mapping in `processor` that was used for the check. The keys
         of the outer dict are the model names. The keys of the inner dict are
-        the aggregated native regions for each model, and the values are lists
-        of the component regions that were included in the sum.
-    regions_not_checked : dict[str, list[str]]
-        Dict of lists of the regions that were not checked for each model. This
-        will usually be equal to the regions that exist in both in the `iamdf`
-        and `processor` argument passed to `check_region_aggregates`, but which
-        were not recognized as aggregated regions. It will *not* include regions
-        that are listed as constituent regions of an aggregated region in
-        `processor` but are not aggregated regions themselves.
+        the aggregated common regions, and the values are lists of the native
+        constituent regions of the model for that common region.
+    common_aggregated_regions : dict[str, list[str]]
+        Dictionary of common, aggregated regions that were actually present in
+        each model in the `iamdf` argument to `check_region_aggregates`. The
+        keys are model names, and the values are lists with common aggregated
+        region names (from `processor`) that were present in the model data. If
+        the list for a given model is empty, it means that no aggregated
+        variable values were actually checked for that model, since no common
+        aggregated region names were found in the data for that model.
+    regions_not_processed : dict[str, list[str]]
+        Dict of lists of the native regions that were not processed for each
+        model. This will usually be equal to the regions that exist in both in
+        the `iamdf` and `dsd` argument passed to `check_region_aggregates`, but
+        which were not present as either an aggregated common region or a native
+        constituent region in `processor.mappings` for each model. It does *not*
+        contain regions that are present in `unknown_regions` for a given model.
     vars_not_checked : list[str]
         A list of variables that were not checked in the region sums. This will
         usually be equal to variables present in both the `iamdf` and `dsd`
@@ -139,6 +146,7 @@ class RegionAggregationCheckResult:
     """
     failed_checks: pd.DataFrame|None
     aggregation_map: dict[str, dict[str, list[str]]]
+    common_aggregated_regions: dict[str, list[str]]
     regions_not_checked: dict[str, list[str]]
     vars_not_checked: list[str]
     unknown_models: list[str]
@@ -437,6 +445,8 @@ def find_missing_aggregate_vars(
                               '(and may never be).')
 
 
+def _empty_list_if_none(_obj: list|None) -> list:
+    return _obj if _obj is not None else list()
 
 def check_region_aggregates(
         iamdf: pyam.IamDataFrame,
@@ -519,10 +529,38 @@ def check_region_aggregates(
         for _model in models_to_check
     }
     # Remove the models that have no unknown regions
-    unkown_regions = {
+    unknown_regions = {
         _model: _regions for _model, _regions in unknown_regions.items()
         if len(_regions) > 0
     }
+    aggregation_map: dict[str, dict[str, list[str]]] = {
+        _model: {
+            _common_region.name: _common_region.constituent_regions
+            for _common_region
+            in _empty_list_if_none(processor.mappings[_model].common_regions)
+        }
+        for _model in models_to_check
+    }
+    common_aggregated_regions: dict[str, list[str]] = {
+        _model: [
+            _region_name 
+            for _region_name in iamdf.filter(model=_model).region  # pyright: ignore[reportOptionalMemberAccess]
+            if _region_name in aggregation_map[_model].keys()
+        ] for _model in models_to_check
+    }
+    aggregate_and_constituent_regions: dict[str, list[str]] = {
+        _model: list(aggregation_map[_model].keys())
+            + list(itertools.chain(aggregation_map[_model].values()))
+        for _model in models_to_check
+    }
+    regions_not_checked: dict[str, list[str]] = {
+        _model: [
+            _region_name for _region_name in 
+            iamdf.filter(model=_model).filter(region=unknown_regions[_model], keep=False).region  # pyright: ignore[reportOptionalMemberAccess]
+            if _region_name not in aggregate_and_constituent_regions[_model]
+        ] for _model in models_to_check
+    }
+
     common_vars: list[str] = [
         _var for _var in iamdf.variable if _var in dsd.variable.keys()  # pyright: ignore[reportAttributeAccessIssue]
     ]
@@ -543,8 +581,9 @@ def check_region_aggregates(
     )
     results: RegionAggregationCheckResult = RegionAggregationCheckResult(
         failed_checks=failed_checks,
-        aggregation_map=processor.aggregation_map,
-        regions_not_checked=processor.regions_not_checked,
+        aggregation_map=aggregation_map,
+        common_aggregated_regions=common_aggregated_regions,
+        regions_not_checked=regions_not_checked,
         vars_not_checked=vars_not_checked,
         unkonwn_regions=unknown_regions,
         unkonwn_vars=unknown_vars,
@@ -554,3 +593,4 @@ def check_region_aggregates(
         rtol=rtol_difference,
         processed_data=processed_data,
     )
+    return results
