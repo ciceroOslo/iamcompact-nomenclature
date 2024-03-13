@@ -238,16 +238,24 @@ following attributes (see also the docstring of
       constituent regions or countries.
     * `difference (%)`: The difference between the two values, in percent
       relative to `original`.
-  * `aggregation_map` (`dict`): A dictionary of dictionaries of the aggregated
-    regions (keys of the inner dict) and constituent regions (values of the
-    inner dict) that were used in the checks for each model. The keys of the
-    outer dict are the model names, which will be just one if you are only
-    checking output from a single model.
-  * `regions_not_checked` (`dict`): A dictionary of lists of regions that were
-    not checked for each model. The keys are the model names, and the values are
-    lists of region names.
+  * `aggregation_map` (`dict`): A dictionary of dictionaries of the common
+    aggregated regions (keys of the inner dict) and native constituent regions
+    (values of the inner dict) that were used in the checks for each model. The
+    keys of the outer dict are the model names, which will be just one if you
+    are only checking output from a single model.
+  * `common_aggregated_regions` (`dict`): Dictionary of regions that are
+    actually present in the data for each model and which are also aggreagted
+    common regions in the `RegionProcessor` object used.
+  * `regions_not_processed` (`dict`): A dictionary of lists of regions that were
+    not processed for each model. The keys are the model names, and the values
+    are lists of region names. The regions for each model will be the regions
+    that were present in the data for that model, but which are neither common
+    aggregated regions nor constituent regions given in the `RegionProcessor`
+    object.
   * `vars_not_checked` (`list`): A list of variable names that were not checked
     for any model.
+  * `unknown_models` (`list`): A list of models that are present in the data,
+    but which are not found among the `RegionProcessor` region mappings.
   * `unknown_regions` (`dict`): A dictionary of lists of regions that were not
     found in the region mappings. The keys are the model names, and the values
     are lists of region names. Should be empty if the region names in `iamdf`
@@ -260,3 +268,18 @@ following attributes (see also the docstring of
   * `processor` (`nomenclature.RegionProcessor`): The region processor used in
     the checks.
   * `rtol` (`float`): The relative tolerance used in the checks.
+  * `processed_data` (`pyam.IamDataFrame`): Data after processing by the
+    `RegionProcessor` object, with native regions renamed and aggregated into
+    common regions according to the rules contained for each model in the
+    `RegionProcessor` object. The same argument as returned by
+    `RegionProcess.apply()`, or the first argument returned by
+    `RegionProcessor.check_region_aggregation()`.
+
+If no models contain aggregated regions with the same names and definitions as
+the common aggregated regions defined in the `RegionProcessor` object and in the
+`DataStructureDefinition` object, this function will not be of much use for
+checking aggregate region values against the aggregate values of their
+constituent regions. But it can still be useful for processing the regions, and
+renaming them and aggregating them into common regions for use in a multi-model
+dataset. The result of that processing is given by
+`RegionAggregationCheckResults.processed_data`.
