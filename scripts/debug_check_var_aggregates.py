@@ -3,22 +3,74 @@
 # %%
 # Imports
 from pathlib import Path
+import typing as tp
 
 import pyam
 import pandas as pd
 import nomenclature
+import openpyxl
 
 import iamcompact_nomenclature as icnom
 from iamcompact_nomenclature.aggregation import check_var_aggregates
 from iamcompact_nomenclature import var_utils
 
+
 # %%
-# Get data file
-data_file: Path = Path.home() / 'src' / 'repos' / 'pyam_analyses' / 'data' \
-    / 'IAM_COMPACT' / 'studies' / 'S01_NECPs' \
-        / 'Report_IAM_COMPACT_PROMETHEUS_regions_nolinksv2.xlsx'
-        # / 'iam_compact_st1__GCAM_iamc_report.xlsx'
-idf: pyam.IamDataFrame = pyam.IamDataFrame(data_file)
+# Create a helper function that takes a function as an argument, and returns
+# a modified function which will return the return value of the original
+# function if it returns, but catch any exceptions and return them. The function
+# should be properly type-annotated, with ParamSpecs to ensure that the
+# modified function has the same signature and return type as the original
+# function, except that it can return an exception as well as the original
+# return type.
+PS = tp.ParamSpec('PS')  # Parameter specifiction
+RT = tp.TypeVar('RT')  # Return type
+def return_exceptions(
+    func: tp.Callable[PS, RT]
+) -> tp.Callable[PS, RT|Exception]:
+    def wrapper(*args: PS.args, **kwargs: PS.kwargs) -> RT|Exception:
+        try:
+            return func(*args, **kwargs)
+        except Exception as e:
+            return e
+    return wrapper
+# def return_exceptions(
+#     func: tp.Callable[..., tp.Any]
+# ) -> tp.Callable[..., tp.Union[tp.Any, Exception]]:
+#     def wrapper(*args, **kwargs) -> tp.Union[tp.Any, Exception]:
+#         try:
+#             return func(*args, **kwargs)
+#         except Exception as e:
+#             return e
+#     return wrapper
+
+# %%
+# Define a function to open IAMC excel files with multiple sheets
+def open_multisheet_iamc(path: Path|str) -> \
+        pyam.IamDataFrame|Exception|dict[str, pyam.IamDataFrame|Exception]:
+    sheetnames: list[str] = openpyxl.open(path).sheetnames
+    if len(sheetnames) == 1:
+        return return_exceptions(pyam.IamDataFrame)(path)
+    else:
+        return {
+            sheetname: return_exceptions(pyam.IamDataFrame) \
+                (path, sheet_name=sheetname)
+            for sheetname in sheetnames
+        }
+
+# %%
+# Get data files, and create a nested dict of IamDataFrames
+data_root: Path = Path.home() / 'src' / 'repos' / 'pyam_analyses' / 'data' \
+    / 'IAM_COMPACT' / 'studies'
+data_files_flat: dict[Path, pyam.IamDataFrame|Exception|dict[str, pyam.IamDataFrame|Exception]] = {
+    p: open_multisheet_iamc(p)
+    for p in data_root.glob('**/*.xlsx')
+}
+# data_file: Path = Path.home() / 'src' / 'repos' / 'pyam_analyses' / 'data' \
+#     / 'IAM_COMPACT' / 'studies' / 'S01_NECPs' \
+#         / 'iam_compact_st1__GCAM_iamc_report.xlsx'
+#         # / 'Report_IAM_COMPACT_PROMETHEUS_regions_nolinksv2.xlsx'
+# idf: pyam.IamDataFrame = pyam.IamDataFrame(data_file)
 
 # %%
 # Get a dsd and region processor
