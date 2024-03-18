@@ -1,0 +1,6 @@
+# Valid scenario names for the IAM COMPACT project
+
+# Scenarios specific to study 1 of the first modelling cycle
+
+# Cost-optimal scenario (only run by PROMETHEUS?)
+- NDC_LTT_EU-CostOptimal
