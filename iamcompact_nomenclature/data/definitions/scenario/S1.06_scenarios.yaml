@@ -1,0 +1,9 @@
+# Valid scenario names for the IAM COMPACT project
+
+# Scenarios specific to study 6 of the first modelling cycle
+- IAMCOM_RES_FF_High_Risk
+- IAMCOM_RES_Low_Risk
+- IAMCOM_RES_WACC_Fragmented
+- IAMCOM_Survey
+- IAMCOM_Windfall_allocation
+- NDC_baselineWACC

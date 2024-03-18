@@ -51,8 +51,7 @@ def open_multisheet_iamc(path: Path|str) -> \
 
 # %%
 # Get data files, and create a nested dict of IamDataFrames
-data_root: Path = Path.home() / 'src' / 'repos' / 'pyam_analyses' / 'data' \
-    / 'IAM_COMPACT' / 'studies'
+data_root: Path = Path.cwd() / 'study_results'
 data_dict: dict[str, pyam.IamDataFrame | Exception |
                       dict[str, pyam.IamDataFrame | Exception]] = dict()
 _p: Path
