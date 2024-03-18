@@ -53,9 +53,34 @@ def open_multisheet_iamc(path: Path|str) -> \
 # Get data files, and create a nested dict of IamDataFrames
 data_root: Path = Path.home() / 'src' / 'repos' / 'pyam_analyses' / 'data' \
     / 'IAM_COMPACT' / 'studies'
-data_files_flat: dict[Path, pyam.IamDataFrame|Exception|dict[str, pyam.IamDataFrame|Exception]] = {
-    p: open_multisheet_iamc(p)
-    for p in data_root.glob('**/*.xlsx')
+data_dict: dict[str, pyam.IamDataFrame | Exception |
+                      dict[str, pyam.IamDataFrame | Exception]] = dict()
+_p: Path
+_idf: pyam.IamDataFrame | Exception | dict[str, pyam.IamDataFrame | Exception]
+relpaths: dict[Path, Path] = {
+    _p: _p.relative_to(data_root)
+    for _p in data_root.glob('**/*.xlsx')
+}
+for _abspath, _relpath in relpaths.items():
+    _idf = open_multisheet_iamc(_abspath)
+    data_dict[str(_relpath)] = _idf
+
+# %%
+# Flatten the dict by inserting an @ sign in front of tab names for files that
+# have multiple tabs
+flat_data_dict: dict[str, pyam.IamDataFrame | Exception] = dict()
+for _relpath, _idf in data_dict.items():
+    if isinstance(_idf, dict):
+        for _tabname, _idf_tab in _idf.items():
+            flat_data_dict[f'{_relpath}@{_tabname}'] = _idf_tab
+    else:
+        flat_data_dict[_relpath] = _idf
+
+# %%
+# Find all the scenarios in the data files
+file_scenarios: dict[str, list[str]] = {
+    _datafile: _idf.scenario for _datafile, _idf in flat_data_dict.items()
+    if isinstance(_idf, pyam.IamDataFrame)
 }
 
 # %%
