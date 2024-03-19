@@ -15,7 +15,7 @@ def get_invalid_names(
         iamdf: pyam.IamDataFrame,
         dsd: Optional[DataStructureDefinition] = None,
         dimensions: Optional[Sequence[str]] = None
-) -> Dict[str, str]:
+) -> Dict[str, list[str]]:
     """Returns a dictionary of invalid names in a given `IamDataFrame`.
     
     Parameters
@@ -42,7 +42,7 @@ def get_invalid_names(
                       if _dim in iamdf.dimensions]
     # For each dimension, get the corresponding CodeList from `dsd` and validate
     # the names in `iamdf` against it
-    invalid_names: Dict[str, str] = {
+    invalid_names: Dict[str, list[str]] = {
         _dim: getattr(dsd, _dim).validate_items(getattr(iamdf, _dim))
         for _dim in dimensions
     }
