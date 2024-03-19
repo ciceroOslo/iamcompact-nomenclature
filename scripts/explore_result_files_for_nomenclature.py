@@ -83,6 +83,13 @@ file_scenarios: dict[str, list[str]] = {
 }
 
 # %%
+# Find all the variables in the data files
+file_variables: dict[str, list[str]] = {
+    _datafile: _idf.variable for _datafile, _idf in flat_data_dict.items()
+    if isinstance(_idf, pyam.IamDataFrame)
+}
+
+# %%
 # Get a dsd and region processor
 dsd: nomenclature.DataStructureDefinition = icnom.get_dsd()
 regproc: nomenclature.RegionProcessor = icnom.get_region_processor()
