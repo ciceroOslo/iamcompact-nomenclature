@@ -4,6 +4,9 @@
 # Imports
 from pathlib import Path
 import typing as tp
+import pickle
+import hashlib
+import itertools
 
 import pyam
 import pandas as pd
@@ -51,20 +54,72 @@ def open_multisheet_iamc(path: Path|str) -> \
 
 # %%
 # Get data files, and create a nested dict of IamDataFrames
+# If a cached pickle file exists, load it. Otherwise, load the data files and
+# save the dict as a pickle file.
 data_root: Path = Path.cwd() / 'study_results'
-data_dict: dict[str, pyam.IamDataFrame | Exception |
-                      dict[str, pyam.IamDataFrame | Exception]] = dict()
-_p: Path
-_idf: pyam.IamDataFrame | Exception | dict[str, pyam.IamDataFrame | Exception]
-relpaths: dict[Path, Path] = {
-    _p: _p.relative_to(data_root)
-    for _p in data_root.glob('**/*.xlsx')
-}
-_relpath: Path
-_abspath: Path
-for _abspath, _relpath in relpaths.items():
-    _idf = open_multisheet_iamc(_abspath)
-    data_dict[str(_relpath)] = _idf
+cache_file: Path = data_root / 'data_dict.pkl'
+FORCE_RELOAD: bool = False
+pickle_hash: str = 'e59a823d322e5b9fadf03fde3e014fa4'
+write_cache: bool = True
+
+if cache_file.exists() and not FORCE_RELOAD:
+    # First check that the md5sum hash of the pickle file matches `pickle_hash`.
+    # Raise an error if not.
+    print(f'Reading cache file {cache_file}, expecting MD5 hash {pickle_hash}')
+    with open(cache_file, 'rb') as f:
+        cache_file_content: bytes = f.read()
+        cache_file_hash = hashlib.md5(cache_file_content).hexdigest()
+        if cache_file_hash != pickle_hash:
+            raise ValueError(
+                f'Hash of pickle file {cache_file} does not match expected hash'
+            )
+    # Load the pickle file using the content that was already read
+    data_dict: dict[str, pyam.IamDataFrame | Exception |
+                    dict[str, pyam.IamDataFrame | Exception]] = pickle.loads(
+        cache_file_content
+    )
+    print('Successfully loaded cache file.')
+else:
+    if not cache_file.exists():
+        print(f'Cache file {cache_file} does not exist. Loading data files.')
+    elif FORCE_RELOAD:
+        print(f'FORCE_RELOAD is set to True. Loading data files.')
+    else:
+        raise RuntimeError(
+            'Cache file exists, but FORCE_RELOAD is not set to True. It should '
+            'not be possible to reach this point in the code in this case, '
+            'please check for errors in the code.'
+        )
+    data_dict: dict[str, pyam.IamDataFrame | Exception |
+                        dict[str, pyam.IamDataFrame | Exception]] = dict()
+    _p: Path
+    _idf: pyam.IamDataFrame | Exception | dict[str, pyam.IamDataFrame | Exception]
+    relpaths: dict[Path, Path] = {
+        _p: _p.relative_to(data_root)
+        for _p in data_root.glob('**/*.xlsx')
+    }
+    _relpath: Path
+    _abspath: Path
+    for _abspath, _relpath in relpaths.items():
+        _idf = open_multisheet_iamc(_abspath)
+        data_dict[str(_relpath)] = _idf
+    if write_cache:
+        if cache_file.exists():
+            raise FileExistsError(
+                f'Cache file {cache_file} already exists. Please delete it '
+                'before writing a new cache file, or set a different name/path '
+                'in the code.'
+            )
+        with open(cache_file, 'wb') as f:
+            pickle.dump(data_dict, f)
+        # Calculate the hash of the pickle file and print it.
+        with open(cache_file, 'rb') as f:
+            cache_file_content = f.read()
+            cache_file_hash = hashlib.md5(cache_file_content).hexdigest()
+            print(
+                f'Cache file written to {str(cache_file)} with MD5 hash '
+                f'{cache_file_hash}'
+            )
 
 # %%
 # Flatten the dict by inserting an @ sign in front of tab names for files that
