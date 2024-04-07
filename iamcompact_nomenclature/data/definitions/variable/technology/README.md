@@ -21,9 +21,38 @@ See [technologies.yaml](technologies.yaml) for the full codelist.
 Variables for the installed capacity of (energy) production/generation
 or transmission should follow the structure below.
 
-- `Capacity|{Fuel}`
-- `Capacity|{Fuel}|{Specification}`
-- `Capacity|{Fuel}|{Specification}|{Identifier Of A Specific Power Plant}`
+- `Capacity|{Production type}|{Fuel}`
+- `Capacity|{Production type}|{Fuel}|{Specification}`
+- `Capacity|{Production type}|{Fuel}|{Specification}|{Identifier Of A Specific Power Plant}`
+
+where `{Production type}` is one of the following:
+- `Electricity`
+- `Heat`
+- `Hydrogen`
+- `Liquids`
+- `Gases`
+
+There are also special cases that deviate from the format above, such as
+specifying sectors or technology subtypes, for example
+`Capacity|Heat|Residential and Commercial|{Fuel}` for heating capacity using a
+given fuel type in residential and commercial buildings. See the .yaml files for
+details.
+
+Note added for IAM COMPACT: This category is used for the total capacity (the
+installed base) in a given year, not for the capacity added in a given year.
+
+# Added Capacity
+
+Variables for the capacity added in a given year should follow the structure
+below.
+
+- `Capacity Addtions|{Production type}|{Fuel}`
+- `Capacity Addtions|{Production type}|{Fuel}|{Specification}`
+- `Capacity Addtions|{Production type}|{Fuel}|{Specification}|{Identifier Of A Specific Power Plant}`
+
+Note for IAM COMPACT: These variables are not present in the original variable
+list from openENTRANCE, but are included in the variable list for IPCC AR6, and
+used in several models in IAM COMPACT.
 
 ## Capital Cost
 

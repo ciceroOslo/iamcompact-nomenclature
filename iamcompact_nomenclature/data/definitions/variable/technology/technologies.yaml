@@ -7,22 +7,26 @@
 - Capacity|Electricity|{Storage Type}:
     description: Total installed electricity generation capacity from {Storage Type}
     unit: GW
-- Capacity|Electricity|Storage|Power:
-    description: Total installed capacity of operating electricity storage (e.g. pumped hydro, batteries, compressed air storage)
-          in terms of electricity output capacity
-    unit: GW
-- Capacity|Electricity|Storage|Power|{Storage Type}:
-    description: Total installed capacity of operating electricity storage from {Storage Type}
-          in terms of electricity output capacity
-    unit: GW
-- Capacity|Electricity|Storage|Reservoir:
-    description: Reservoir size of electricity storage technologies (e.g. pumped hydro, batteries, compressed air storage) 
-          in terms of stored electric energy
-    unit: GWh
-- Capacity|Electricity|Storage|Reservoir|{Storage Type}:
-    description: Reservoir size of electricity storage technologies from {Storage Type}
-          in terms of stored electric energy
-    unit: GWh
+
+# The following variable names pertaining to electric storage were removed in 
+# IAM COMPACT, in favor of the convention used in IPCC AR6, even though the
+# latter has a more potentially confusing naming convention.
+# - Capacity|Electricity|Storage|Power:
+#     description: Total installed capacity of operating electricity storage (e.g. pumped hydro, batteries, compressed air storage)
+#           in terms of electricity output capacity
+#     unit: GW
+# - Capacity|Electricity|Storage|Power|{Storage Type}:
+#     description: Total installed capacity of operating electricity storage from {Storage Type}
+#           in terms of electricity output capacity
+#     unit: GW
+# - Capacity|Electricity|Storage|Reservoir:
+#     description: Reservoir size of electricity storage technologies (e.g. pumped hydro, batteries, compressed air storage) 
+#           in terms of stored electric energy
+#     unit: GWh
+# - Capacity|Electricity|Storage|Reservoir|{Storage Type}:
+#     description: Reservoir size of electricity storage technologies from {Storage Type}
+#           in terms of stored electric energy
+#     unit: GWh
 - Capacity|Gases:
     description: Total installed (available) capacity of gas plants
     unit: GW
@@ -430,3 +434,23 @@
     description: Levelized cost of storage for {Storage Type}
     unit: [MEUR_2020/MWh, MUSD_2010/MWh, MEUR_2020/PJ, MUSD_2010/PJ]
     skip-region-aggregation: true
+
+# Additions for IAM COMPACT, in line with variables used in IPCC AR6
+- Capacity|Electricity|Storage:
+    description: Total installed (available) capacity of operating electricity
+          storage. This variable was added in IAM COMPACT from AR6. It should be
+          synonymous with `Capacity|Electricity|Storage|Power` from openENTRANCE.
+    unit: GW
+- Capacity|Electricity|Storage|{Storage Type}:
+    description: Total installed capacity of operating electricity storage from {Storage Type}
+    unit: GW
+- Capacity|Electricity|Storage Capacity:
+    description: Total installed storage capacity of operating electricity
+          storage. This variable was added in IAM COMPACT from AR6. It should be
+          synonymous with `Capacity|Electricity|Storage|Reservoir` from
+          openENTRANCE.
+    unit: GWh
+- Capacity|Electricity|Storage Capacity:
+    description: Total installed storage capacity of operating electricity
+          storage in {Storage Type}
+    unit: GWh
