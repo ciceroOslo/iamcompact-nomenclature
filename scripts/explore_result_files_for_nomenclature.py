@@ -58,7 +58,7 @@ def open_multisheet_iamc(path: Path|str) -> \
 # save the dict as a pickle file.
 data_root: Path = Path.cwd() / 'study_results'
 cache_file: Path = data_root / 'data_dict.pkl'
-FORCE_RELOAD: bool = False
+FORCE_RELOAD: bool = True
 pickle_hash: str = 'e59a823d322e5b9fadf03fde3e014fa4'
 write_cache: bool = True
 
@@ -129,7 +129,7 @@ _pathkey: str
 for _pathkey, _idf in data_dict.items():
     if isinstance(_idf, dict):
         for _tabname, _idf_tab in _idf.items():
-            flat_data_dict[f'{_relpath}@{_tabname}'] = _idf_tab
+            flat_data_dict[f'{_pathkey}@{_tabname}'] = _idf_tab
     else:
         flat_data_dict[_pathkey] = _idf
 
