@@ -59,6 +59,7 @@
     description: total carbon dioxide emissions captured from bioenergy use in other energy supply
      (part of IPCC category 1A), should be reported as positive numbers
     unit: Mt CO2/yr
+- Carbon Capture|Biomass|Energy|Demand|Industry:
     description: total carbon dioxide emissions captured from fossil fuel use in industry 
      (IPCC category 1A2), should be reported as positive numbers
     unit: Mt CO2/yr
@@ -986,3 +987,15 @@
 - Emissions|PM2.5|Energy|Supply|Electricity:
     description: Particulate matter 2.5 emissions originating from electricity generation.
     unit: Mt PM2.5
+
+# Variables added in IAM COMPACT, that are also used in IPCC AR6
+- Emissions|C2F6:
+    description: Total emissions of C2F6 (hexafluoroethane, carbon hexafluoride)
+          Note that this overlaps with `Emissions|F-gases`, if used.
+    unit: kt C2F6/yr
+
+- Emissions|CF4:
+    description: Total emissions of CF4 (tetrafluoromethane, carbon
+          tetrafluoride). Note that this overlaps with `Emissions|F-gases`, if
+          used.
+    unit: kt CF4/yr
