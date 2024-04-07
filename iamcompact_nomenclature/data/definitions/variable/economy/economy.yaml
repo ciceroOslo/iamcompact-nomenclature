@@ -256,6 +256,10 @@
 # Added variables for IAM COMPACT, when possible taken from the documentation of
 # the IIASA IPCC AR6 scenario explorer (https://data.ece.iiasa.ac.at/ar6/#/docs)
 
+- Agricultural Production:
+    description: Total production of agricultural products
+    unit: million t DM/yr
+
 - Agricultural Demand:
     description: Total demand for food, non-food and feed products (crops and livestock) and bioenergy crops (1st & 2nd generation)
     unit: million t DM/yr
