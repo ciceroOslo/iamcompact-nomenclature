@@ -58,7 +58,7 @@ def open_multisheet_iamc(path: Path|str) -> \
 # save the dict as a pickle file.
 data_root: Path = Path.cwd() / 'study_results'
 cache_file: Path = data_root / 'data_dict.pkl'
-FORCE_RELOAD: bool = True
+FORCE_RELOAD: bool = False
 pickle_hash: str = 'e59a823d322e5b9fadf03fde3e014fa4'
 write_cache: bool = True
 
