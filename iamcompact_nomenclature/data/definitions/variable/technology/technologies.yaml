@@ -450,7 +450,7 @@
           synonymous with `Capacity|Electricity|Storage|Reservoir` from
           openENTRANCE.
     unit: GWh
-- Capacity|Electricity|Storage Capacity:
+- Capacity|Electricity|Storage Capacity{Storage Type}:
     description: Total installed storage capacity of operating electricity
           storage in {Storage Type}
     unit: GWh
