@@ -202,3 +202,46 @@ var_files = {
     ]
     for _varname in sorted(list(set().union(*file_allvars.values())))
 }
+
+# %%
+# Write the results to files
+# First, define functions to pretty-print the results
+def pretty_print_dict(d: dict[str, list[str]]) -> str:
+    return '\n'.join(
+        f'{k}: {v}' for k, v in d.items()
+    )
+def pretty_print_list(l: list[str]) -> str:
+    return '\n'.join(l)
+
+# Then define a function that simply writes a string to a file
+def write_string_to_file(s: str, file_path: Path, clobber: bool = False):
+    if file_path.exists() and not clobber:
+        raise FileExistsError(
+            f'File {file_path} already exists. Set clobber=True to overwrite.'
+        )
+    with open(file_path, 'w') as f:
+        f.write(s)
+
+# %%
+# Then define a dict of file names and the corresponding data to write
+output_folder: Path = cache_file.parent
+
+output_files: dict[str, str] = {
+    'invalid_vars.txt': pretty_print_list(
+        sorted(list(invalid_var_files.keys()))
+    ),
+    'invalid_var_files.txt': pretty_print_dict(invalid_var_files),
+    'all_vars.txt': pretty_print_list(
+        sorted(list(var_files.keys()))
+    ),
+    'all_var_files.txt': pretty_print_dict(var_files)
+}
+
+# %%
+# Finally, write the files
+for _file, _data in output_files.items():
+    write_string_to_file(
+        _data,
+        output_folder / _file,
+        clobber=False
+    )
