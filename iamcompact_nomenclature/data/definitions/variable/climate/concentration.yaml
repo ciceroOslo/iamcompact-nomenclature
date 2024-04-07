@@ -1,0 +1,14 @@
+# Concentration variables that come from models themselves, not the cilmate
+# assessment pipeline
+
+- Concentration|CO2:
+    description: Atmospheric concentration of CO2
+    unit: ppm
+
+- Concentration|CH4:
+    description: Atmospheric concentration of CH4
+    unit: [ppb, ppm]
+
+- Concentration|N2O:
+    description: Atmospheric concentration of N2O
+    unit: [ppb, ppm]
