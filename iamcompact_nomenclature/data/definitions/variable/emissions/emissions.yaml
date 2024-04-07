@@ -325,7 +325,7 @@
      excluding emissions related to feedstocks
     unit: Mt CO2/yr
 - Emissions|CO2|Energy|Demand|Industry|{Industry sectors}:
-    description: CO2 emissions from fuel combustion in industry {Industry sectors},
+    description: CO2 emissions from fuel combustion in the {Industry sectors},
      net of negative emissions from Bioenergy with CCS (BECCS),
      excluding emissions related to feedstocks
     unit: Mt CO2/yr
@@ -422,7 +422,7 @@
       E)
     unit: Mt CO2/yr
 - Emissions|CO2|Industrial Processes|{Industry sectors}:
-    description: CO2 emissions from industrial processes in {Industry sectors}
+    description: CO2 emissions from industrial processes in the {Industry sectors}
     unit: Mt CO2/yr
 - Emissions|CO2|Other Removal:
     description: CO2 emissions from carbon removal not reported in the other categories 

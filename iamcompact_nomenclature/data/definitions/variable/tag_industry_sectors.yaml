@@ -1,21 +1,37 @@
 # This list of fuels will replace any occurrence of `{Industry sectors}`
-# in a variable-definition yaml file
+# in a variable-definition yaml file.
+# Some subindustries here were added in IAM COMPACT (present in IPCC AR6, but
+# not in openENTRANCE). In addition several of the description tags were
+# expanded with IPCC category codes (as in the AR6 documentation in IIASA's
+# online scenario exporer), and some spellings were changed to conform to AR6.
+# The names used in the openENTRANCE original don't appear to actually have been
+# used in result files in the openENTRANCE scenario database.
 
 - Industry sectors:
   - Chemicals:
-      description: chemicals sector, excluding feedstocks
+      description: Chemicals industry sector, excluding feedstocks (IPCC
+          category 1A2)
 
-  - Iron and Steel:
-      description: iron and steel sector
+  # Added in IAM COMPACT
+  - Chemicals|Ammonia:
+        description: Chemicals|Ammonia industry sector (IPCC category 1A2)
 
-  - Non-Ferrous Metals:
-      description: non-ferrous metals sector
+  # Changed from `Iron and Steel` to just `Steel` in IAM COMPACT, to conform
+  # with IPCC AR6
+  - Steel:
+      description: steel industry sector (IPCC category 1A2)
 
-  - Non-Metallic Minerals:
+  # Decapitalized the "f" in `Non-ferrous Metals` (spelled `Non-Ferrous Metals`
+  # in the openENTRANCE original) in IAM COMPACT, to conform with IPCC AR6.
+  - Non-ferrous Metals:
+      description: non-ferrous metals industry sector (IPCC category 1A2)
+
+  # Decapitalized the "m" in "metallic" in IAM COMPACT
+  - Non-metallic Minerals:
       description: non-metallic minerals sector
 
   - Pulp and Paper:
-      description: pulp and paper sector
+      description: pulp and paper industry sector (IPCC category 1A2)
 
   - Other Sector:
       description: other industry sectors
