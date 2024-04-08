@@ -57,3 +57,12 @@
 
   - Domestic Shipping|Freight:
       description: Domestic Shipping freight transportation
+
+  # General `Freight` and `Passenger` modes added in IAM COMPACT, to conform to
+  # IPCC AR6 and variables used in some IAM COMPACT models.
+
+  - Freight:
+      description: freight transport (all modes)
+
+  - Passenger:
+      description: passenger transport (all modes)
