@@ -52,18 +52,14 @@ Carbon Sequestration|Direct Air Capture
 Emissions|CO2 (w/o bunkers)
 Emissions|CO2|Energy & Industrial Processes
 Emissions|CO2|Energy|Demand|Commercial
-Emissions|CO2|Energy|Demand|Industry|Cement
 Emissions|CO2|Energy|Demand|Industry|Non-ferrous metals
 Emissions|CO2|Energy|Demand|Industry|Other
 Emissions|CO2|Energy|Demand|Industry|Steel
 Emissions|CO2|Energy|Demand|Residential
 Emissions|CO2|Energy|Demand|Residential&Commercial
 Emissions|CO2|Energy|Demand|Transport
-Emissions|CO2|Energy|Demand|Transportation (w/ bunkers)
-Emissions|CO2|Energy|Demand|Transportation|Freight
 Emissions|CO2|Energy|Demand|Transportation|Gases
 Emissions|CO2|Energy|Demand|Transportation|Liquids
-Emissions|CO2|Energy|Demand|Transportation|Passenger
 Emissions|CO2|Energy|Supply|Other Sector
 Emissions|CO2|Industry and Industrial Processes
 Emissions|CO2|Other|DACCS
@@ -122,13 +118,7 @@ Final Energy|Non-Energy Use|Coal
 Final Energy|Non-Energy Use|Gas
 Final Energy|Non-Energy Use|Oil
 Final Energy|Residential and Commercial|Commercial|Cooling
-Final Energy|Residential and Commercial|Commercial|Electricity
-Final Energy|Residential and Commercial|Commercial|Gases
-Final Energy|Residential and Commercial|Commercial|Heat
 Final Energy|Residential and Commercial|Commercial|Heating|Space
-Final Energy|Residential and Commercial|Commercial|Hydrogen
-Final Energy|Residential and Commercial|Commercial|Liquids
-Final Energy|Residential and Commercial|Commercial|Solids
 Final Energy|Residential and Commercial|Commercial|Solids|Biomass
 Final Energy|Residential and Commercial|Commercial|Solids|Coal
 Final Energy|Residential and Commercial|Cooling
@@ -138,12 +128,7 @@ Final Energy|Residential and Commercial|Heating|Space
 Final Energy|Residential and Commercial|Liquids|Biomass
 Final Energy|Residential and Commercial|Liquids|Fossil
 Final Energy|Residential and Commercial|Residential|Cooling
-Final Energy|Residential and Commercial|Residential|Electricity
-Final Energy|Residential and Commercial|Residential|Gases
-Final Energy|Residential and Commercial|Residential|Heat
 Final Energy|Residential and Commercial|Residential|Heating|Space
-Final Energy|Residential and Commercial|Residential|Hydrogen
-Final Energy|Residential and Commercial|Residential|Liquids
 Final Energy|Residential and Commercial|Solids|Biomass
 Final Energy|Residential and Commercial|Solids|Biomass|Traditional
 Final Energy|Residential and Commercial|Solids|Coal

@@ -128,18 +128,20 @@
     unit: EJ/yr
 
 # additional variable for international aviation and shipping ("Bunkers")
-- Final Energy|Bunkers|{Bunker Sector}:
-    description: Final energy consumption for {Bunker Sector}
-    unit: EJ/yr
-- Final Energy|Bunkers|{Transportation Sector}:
-    description: Final energy consumption for {Transportation Sector}
-      in international aviation and shipping
-    unit: EJ/yr
-- Final Energy|Bunkers|{Bunker Sector}|{Transportation Sector}:
-    description: Final energy consumption for {Transportation Sector} in {Bunker Sector}
-    unit: EJ/yr
-    engage: Final Energy|Bunkers|{Transportation Sector}|{Bunker Sector}
-    navigate: Final Energy|Bunkers|{Transportation Sector}|{Bunker Sector}
+# Commented out in IAM COMPACT, included in Sectors tag list
+# (tag_all_sectors.yaml)
+# - Final Energy|Bunkers|{Bunker Sector}:
+#     description: Final energy consumption for {Bunker Sector}
+#     unit: EJ/yr
+# - Final Energy|Bunkers|{Transportation Sector}:
+#     description: Final energy consumption for {Transportation Sector}
+#       in international aviation and shipping
+#     unit: EJ/yr
+# - Final Energy|Bunkers|{Bunker Sector}|{Transportation Sector}:
+#     description: Final energy consumption for {Transportation Sector} in {Bunker Sector}
+#     unit: EJ/yr
+#     engage: Final Energy|Bunkers|{Transportation Sector}|{Bunker Sector}
+#     navigate: Final Energy|Bunkers|{Transportation Sector}|{Bunker Sector}
 
 # additional variables for the water sector
 - Final Energy|Commercial|Water|Desalination:
