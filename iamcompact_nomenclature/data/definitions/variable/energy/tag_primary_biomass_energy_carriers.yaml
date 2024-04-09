@@ -2,7 +2,7 @@
 # Not currently used, since only `Primary Energy|*` appears to differentiate
 # these types of biomass, but should be used if the same are implemented in
 # other variable hierarchies later.
-Primary Biomass:
+- Primary Biomass:
     - Biomass:
         description: purpose-grown bioenergy crops, crop and forestry residue,
             municipal solid waste bioenergy and traditional biomass

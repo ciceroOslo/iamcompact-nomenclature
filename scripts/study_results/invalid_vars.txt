@@ -1,13 +1,3 @@
-Agricultural Demand
-Agricultural Demand|Crops
-Agricultural Demand|Crops|Energy
-Agricultural Demand|Crops|Feed
-Agricultural Demand|Crops|Food
-Agricultural Demand|Crops|Other
-Agricultural Demand|Livestock
-Agricultural Demand|Livestock|Food
-Agricultural Demand|Livestock|Other
-Agricultural Production
 Capacity Additions|Electricity
 Capacity Additions|Electricity|Biomass
 Capacity Additions|Electricity|Biomass|w/ CCS
@@ -34,48 +24,12 @@ Capacity Additions|Electricity|Wind|Offshore
 Capacity Additions|Electricity|Wind|Onshore
 Capacity Additions|Electricty|Biomass|w/ CCS
 Capacity Additions|Electricty|Coal|CCS
-Capacity|Electricity
-Capacity|Electricity|Biomass
-Capacity|Electricity|Biomass|w/ CCS
-Capacity|Electricity|Biomass|w/o CCS
-Capacity|Electricity|Coal
-Capacity|Electricity|Coal|w/ CCS
-Capacity|Electricity|Coal|w/o CCS
-Capacity|Electricity|Gas
 Capacity|Electricity|Gas|CCS
-Capacity|Electricity|Gas|w/ CCS
-Capacity|Electricity|Gas|w/o CCS
-Capacity|Electricity|Geothermal
-Capacity|Electricity|Hydro
-Capacity|Electricity|Nuclear
-Capacity|Electricity|Ocean
-Capacity|Electricity|Oil
-Capacity|Electricity|Oil|w/ CCS
-Capacity|Electricity|Oil|w/o CCS
-Capacity|Electricity|Solar
-Capacity|Electricity|Solar|CSP
-Capacity|Electricity|Solar|PV
 Capacity|Electricity|Storage
 Capacity|Electricity|Storage Capacity
-Capacity|Electricity|Wind
-Capacity|Electricity|Wind|Offshore
-Capacity|Electricity|Wind|Onshore
 Capacity|Electricty|Biomass|w/ CCS
 Capacity|Electricty|Coal|CCS
 Capacity|Hydrogen|Electricity
-Capital Cost|Electricity|Biomass|w/ CCS
-Capital Cost|Electricity|Biomass|w/o CCS
-Capital Cost|Electricity|Coal|w/ CCS
-Capital Cost|Electricity|Coal|w/o CCS
-Capital Cost|Electricity|Gas|w/ CCS
-Capital Cost|Electricity|Gas|w/o CCS
-Capital Cost|Electricity|Geothermal
-Capital Cost|Electricity|Hydro
-Capital Cost|Electricity|Nuclear
-Capital Cost|Electricity|Solar|CSP
-Capital Cost|Electricity|Solar|PV
-Capital Cost|Electricity|Wind|Offshore
-Capital Cost|Electricity|Wind|Onshore
 Carbon Capture
 Carbon Capture|Biomass
 Carbon Capture|Fossil
