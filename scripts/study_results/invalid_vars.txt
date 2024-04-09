@@ -57,8 +57,6 @@ Emissions|CO2|Energy|Demand|Industry|Non-ferrous metals
 Emissions|CO2|Energy|Demand|Industry|Other
 Emissions|CO2|Energy|Demand|Industry|Steel
 Emissions|CO2|Energy|Demand|Residential
-Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial
-Emissions|CO2|Energy|Demand|Residential and Commercial|Residential
 Emissions|CO2|Energy|Demand|Residential&Commercial
 Emissions|CO2|Energy|Demand|Transport
 Emissions|CO2|Energy|Demand|Transportation (w/ bunkers)
