@@ -49,8 +49,6 @@ Carbon Sequestration|CCS|Fossil|Energy|Supply|Liquids
 Carbon Sequestration|CCS|Fossil|Supply|Liquids
 Carbon Sequestration|CCS|Industrial Processes
 Carbon Sequestration|Direct Air Capture
-Concentration|CO2
-Consumption|Steel
 Emissions|CO2 (w/o bunkers)
 Emissions|CO2|Energy & Industrial Processes
 Emissions|CO2|Energy|Demand|Commercial
