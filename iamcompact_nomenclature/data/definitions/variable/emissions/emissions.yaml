@@ -135,9 +135,9 @@
 - Emissions|CO2|Energy|Demand|Industry|{Non-Energy Sector}:
     description: Emissions of carbon dioxide (CO2) from energy demand in the {Non-Energy Sector}
     unit: Mt CO2/yr
-- Emissions|{Level-2 Species}|Energy|Demand|Residential and Commercial:
-    description: Emissions of {Level-2 Species} from fuel combustion in residential,
-      commercial and institutional sectors (IPCC category 1A4a and 1A4b)
+- Emissions|{Level-2 Species}|Energy|Demand|{Residential/Commercial}:
+    description: Emissions of {Level-2 Species} from fuel combustion in
+      {Residential/Commercial}
     unit: "{Level-2 Species}"
 - Emissions|{Level-2 Species}|Energy|Demand|Transportation:
     description: Emissions of {Level-2 Species} from fuel combustion in transportation (IPCC category 1A3),
