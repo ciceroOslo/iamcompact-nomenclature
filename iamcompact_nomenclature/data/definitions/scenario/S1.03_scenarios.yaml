@@ -1,0 +1,11 @@
+# Valid scenario names for the IAM COMPACT project
+
+# Scenarios specific to study 3 of the first modelling cycle
+- NDC_LTT_LimBio
+- NDC_LTT_LimCCS
+- NDC_LTT_LimRES
+- NDC_LTT_NoRusImp
+- NDC_LTT_EU_CostOptimal
+
+- CP_EI_GR
+- NDC_LTT_GR

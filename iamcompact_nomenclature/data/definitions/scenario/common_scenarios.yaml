@@ -1,0 +1,12 @@
+# Valid scenario names for the IAM COMPACT project
+
+# Common scenarios for the first modelling cycle
+
+# Current policies baseline
+- CP_EI
+
+# NDC baseline
+- NDC_EI
+
+# NDC long-term targets scenario
+- NDC_LTT
