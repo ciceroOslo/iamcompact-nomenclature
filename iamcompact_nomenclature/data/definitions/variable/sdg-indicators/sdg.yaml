@@ -258,7 +258,7 @@
 - Intensity|Final Energy:
     description: Final Energy intensity
     sdg: 7
-    unit: EJ/billion USD_2010
+    unit: EJ/billion USD_2017
     weight: GDP|PPP
 - GDP|PPP [Growth Rate per capita]:
     description: Annual growth rate of GDP-per-capita (PPP)
@@ -466,13 +466,13 @@
     description: GDP loss without international transfers in a policy scenario compared
       to the corresponding baseline (losses should be reported as positive numbers)
     sdg: 17
-    unit: billion USD_2010/yr
+    unit: billion USD_2017/yr
     shape: Policy Cost|GDP Loss|w/o transfers
 - Policy Cost|Transfers:
     description: Net international climate finance transfers (positive for inflow,
       negative for payment)
     sdg: 17
-    unit: billion USD_2010/yr
+    unit: billion USD_2017/yr
 - Unemployment:
     definition: Number of unemployed inhabitants (based on ILO classification)
     unit: million
