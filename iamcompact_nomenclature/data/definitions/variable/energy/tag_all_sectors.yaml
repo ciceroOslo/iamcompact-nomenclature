@@ -45,6 +45,52 @@
         description: residential sector (IPCC category 1A4b for emissions)
     - Residential and Commercial|Commercial:
         description: commercial sector (IPCC category 1A4a for emissions)
+    - Residential and Commercial|Heating:
+        description: heating in buildings in the residential and commercial sector
+            (all heating, including space and water heating and cooking)
+    - Residential and Commercial|Heating|Cooking:
+        description: heat for cooking in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Space:
+        description: space heating in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Water:
+        description: water heating in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Electric Boilers:
+        description: electric boilers in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Heat Pumps:
+        description: heat pumps in buildings in the residential and commercial sector
+    - Residential and Commercial|Cooling:
+        description: cooling in buildings in the residential and commercial sector
+    - Residential and Commercial|Commercial|Heating:
+        description: heating in buildings in the commercial sector
+            (all heating, including space and water heating and cooking)
+    - Residential and Commercial|Commercial|Heating|Cooking:
+        description: heat for cooking in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Space:
+        description: space heating in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Water:
+        description: water heating in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Electric Boilers:
+        description: electric boilers in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Heat Pumps:
+        description: heat pumps in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Cooling:
+        description: cooling in buildings in the commercial sector
+
+    - Residential and Commercial|Residential|Heating:
+        description: heating in buildings in the residential sector
+            (all heating, including space and water heating and cooking)
+    - Residential and Commercial|Residential|Heating|Cooking:
+        description: heat for cooking in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Space:
+        description: space heating in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Water:
+        description: water heating in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Electric Boilers:
+        description: electric boilers in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Heat Pumps:
+        description: heat pumps in buildings in the residential sector
+    - Residential and Commercial|Residential|Cooling:
+        description: cooling in buildings in the residential sector
     - Transportation:
         description: transportation sector excluding international aviation and shipping
           (see "Bunkers") (IPCC category 1A3 for emissions, excluding 1A3ai,

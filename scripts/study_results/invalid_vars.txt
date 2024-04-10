@@ -105,13 +105,7 @@ Final Energy|Non-Energy Use|Biomass
 Final Energy|Non-Energy Use|Coal
 Final Energy|Non-Energy Use|Gas
 Final Energy|Non-Energy Use|Oil
-Final Energy|Residential and Commercial|Commercial|Cooling
-Final Energy|Residential and Commercial|Commercial|Heating|Space
 Final Energy|Residential and Commercial|Commercial|Solids|Coal
-Final Energy|Residential and Commercial|Cooling
-Final Energy|Residential and Commercial|Heating|Space
-Final Energy|Residential and Commercial|Residential|Cooling
-Final Energy|Residential and Commercial|Residential|Heating|Space
 Final Energy|Residential and Commercial|Solids|Coal
 Final Energy|Solids|Coal
 Final Energy|Transportation|Aviation
