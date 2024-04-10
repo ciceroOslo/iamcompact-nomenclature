@@ -82,30 +82,30 @@
       transport and storage (IPCC category 1C), not accounting for negative emissions
       from bioenergy with CCS (BECCS) in these sectors
     unit: Mt CO2/yr
-- Emissions|CO2|Energy|Supply|Electricity:
-    description: Emissions of carbon dioxide (CO2) for electricity generation
-    unit: Mt CO2/yr
+- Emissions|{Level-3 Species}|Energy|Supply|Electricity:
+    description: Emissions of {Level-3 Species} for electricity generation
+    unit: "{Level-3 Species}"
 - Gross Emissions|CO2|Energy|Supply|Electricity:
     description: Gross emissions of carbon dioxide (CO2) for electricity generation,
       not accounting for negative emissions from bioenergy with CCS (BECCS) in this sector
     unit: Mt CO2/yr
-- Emissions|CO2|Energy|Supply|{Secondary Fuel}:
-    description: Emissions of carbon dioxide (CO2) for production of {Secondary Fuel}
-    unit: Mt CO2/yr
+- Emissions|{Level-3 Species}|Energy|Supply|{Secondary Fuel}:
+    description: Emissions of {Level-3 Species} for production of {Secondary Fuel}
+    unit: "{Level-3 Species}"
 - Gross Emissions|CO2|Energy|Supply|{Secondary Fuel}:
     description: Gross emissions of carbon dioxide (CO2) for production of {Secondary Fuel},
       not accounting for negative emissions from bioenergy with CCS (BECCS) in this sector
     unit: Mt CO2/yr
-- Emissions|CO2|Energy|Supply|Autoproduction:
-    description: Emissions of carbon dioxide (CO2) for own-use energy supply
-    unit: Mt CO2/yr
+- Emissions|{Level-3 Species}|Energy|Supply|Autoproduction:
+    description: Emissions of {Level-3 Species} for own-use energy supply
+    unit: "{Level-3 Species}"
 - Gross Emissions|CO2|Energy|Supply|Autoproduction:
     description: Gross emissions of carbon dioxide (CO2) for own-use energy supply,
       not accounting for negative emissions from bioenergy with CCS (BECCS) in this sector
     unit: Mt CO2/yr
-- Emissions|CO2|Energy|Supply|Other:
-    description: Emissions of carbon dioxide (CO2) for other categories of energy supply
-    unit: Mt CO2/yr
+- Emissions|{Level-3 Species}|Energy|Supply|Other:
+    description: Emissions of {Level-3 Species} for other categories of energy supply
+    unit: "{Level-3 Species}"
 - Gross Emissions|CO2|Energy|Supply|Other:
     description: Gross emissions of carbon dioxide (CO2) for other categories of energy supply,
       not accounting for negative emissions from bioenergy with CCS (BECCS) in these sectors
