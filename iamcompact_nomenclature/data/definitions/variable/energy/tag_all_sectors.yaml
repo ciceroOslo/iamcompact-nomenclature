@@ -75,7 +75,6 @@
         description: heat pumps in buildings in the commercial sector
     - Residential and Commercial|Commercial|Cooling:
         description: cooling in buildings in the commercial sector
-
     - Residential and Commercial|Residential|Heating:
         description: heating in buildings in the residential sector
             (all heating, including space and water heating and cooking)
@@ -91,6 +90,16 @@
         description: heat pumps in buildings in the residential sector
     - Residential and Commercial|Residential|Cooling:
         description: cooling in buildings in the residential sector
+    - Water:
+        description: total water supply
+    - Water|Desalination:
+        description:: water desalination
+    - Water|Industry:
+        description: processing and delivering water to Industry
+    - Water|Irrigation:
+        description:: processing and delivering water for Irrigation
+    - Water|Municipal:
+        description: processing and delivering water to municipal water supply
     - Transportation:
         description: transportation sector excluding international aviation and shipping
           (see "Bunkers") (IPCC category 1A3 for emissions, excluding 1A3ai,
