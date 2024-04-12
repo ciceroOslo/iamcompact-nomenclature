@@ -1,3 +1,11 @@
+# Sources of electricity generation. This should be kept in sync with the
+# variables under "Capacity|" and related variables, "Investment|", "Capital
+# Cost|", and any other categories that might contain subcategories related to
+# electricity generation. Files to sync with (at the time of writing) include
+# energy/capacity-electricity.yaml,
+# techno-economic/capital-cost-electricity.yaml, and
+# techno-economic/investment-electricity.yaml
+
 - Secondary Energy|Electricity:
     definition: Total net electricity generation
     unit: EJ/yr
