@@ -9,6 +9,10 @@
 # (secondary-energy-electricity.yaml) and "Capacity|Electricity"
 # (capacity-electricity.yaml)
 
+- Investment|Energy Supply|Electricity:
+    description: Total investment in electricity supply
+    unit: [billion USD_2017/yr, billion EUR_2017/yr]
+
 # The following are entries with corresponding entries under
 # "Secondary Energy|Electricity" (i.e., for the most part electricity
 # generation technologies).

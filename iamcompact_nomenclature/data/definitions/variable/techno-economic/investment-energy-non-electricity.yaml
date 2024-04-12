@@ -19,3 +19,7 @@
 - Investment|Energy Supply|Hydrogen|{Primary Fossil Fuel}:
     description: Investment in hydrogen production from {Primary Fossil Fuel}
     unit: [billion USD_2017/yr, billion EUR_2017/yr]
+
+- Investment|Energy Supply|CO2 Transport and Storage:
+    description: Investment in CO2 transport and storage
+    unit: [billion USD_2017/yr, billion EUR_2017/yr]
