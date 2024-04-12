@@ -144,15 +144,16 @@
 #     navigate: Final Energy|Bunkers|{Transportation Sector}|{Bunker Sector}
 
 # additional variables for the water sector
-- Final Energy|Commercial|Water|Desalination:
-    description: Energy consumption for water desalination
-    unit: EJ/yr
-- Final Energy|Commercial|Water|Groundwater Extraction:
-    description: Energy consumption for groundwater extraction
-    unit: EJ/yr
-- Final Energy|Commercial|Water|Surface Water Extraction:
-    description: Energy consumption for surface water extraction
-    unit: EJ/yr
-- Final Energy|Commercial|Water|Transfer:
-    description: Energy consumption for water transfers
-    unit: EJ/yr
+# Commented out in IAM COMPACT (as of 2024-04-12), using categories under 
+# - Final Energy|Commercial|Water|Desalination:
+#     description: Energy consumption for water desalination
+#     unit: EJ/yr
+# - Final Energy|Commercial|Water|Groundwater Extraction:
+#     description: Energy consumption for groundwater extraction
+#     unit: EJ/yr
+# - Final Energy|Commercial|Water|Surface Water Extraction:
+#     description: Energy consumption for surface water extraction
+#     unit: EJ/yr
+# - Final Energy|Commercial|Water|Transfer:
+#     description: Energy consumption for water transfers
+#     unit: EJ/yr

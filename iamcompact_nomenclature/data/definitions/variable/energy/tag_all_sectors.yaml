@@ -93,11 +93,17 @@
     - Water:
         description: total water supply
     - Water|Desalination:
-        description:: water desalination
+        description: water desalination
+    - Water|Groundwater Extraction:
+        description: ground water extraction
+    - Water|Surface Water Extraction:
+        description: surface water extraction
+    - Water|Transfer:
+        description: water transfers
     - Water|Industry:
         description: processing and delivering water to Industry
     - Water|Irrigation:
-        description:: processing and delivering water for Irrigation
+        description: processing and delivering water for Irrigation
     - Water|Municipal:
         description: processing and delivering water to municipal water supply
     - Transportation:
