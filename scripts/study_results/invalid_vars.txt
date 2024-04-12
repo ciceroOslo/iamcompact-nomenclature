@@ -101,10 +101,6 @@ Final Energy|Industry|Steel|Liquids
 Final Energy|Industry|Steel|Solids
 Final Energy|Industry|Steel|Solids|Bioenergy
 Final Energy|Industry|Steel|Solids|Fossil
-Final Energy|Non-Energy Use|Biomass
-Final Energy|Non-Energy Use|Coal
-Final Energy|Non-Energy Use|Gas
-Final Energy|Non-Energy Use|Oil
 Final Energy|Residential and Commercial|Commercial|Solids|Coal
 Final Energy|Residential and Commercial|Solids|Coal
 Final Energy|Solids|Coal
@@ -112,7 +108,6 @@ Final Energy|Transportation|Aviation
 Final Energy|Transportation|Aviation|Passenger
 Final Energy|Transportation|Freight|Liquid
 Final Energy|Transportation|Freight|Solid
-Final Energy|Transportation|Hydrogen|Electricity
 Final Energy|Transportation|LDV|BEV
 Final Energy|Transportation|LDV|Electricity
 Final Energy|Transportation|LDV|Gases
@@ -209,7 +204,6 @@ Revenue|Government|Tax|Carbon|Demand|Buildings
 Revenue|Government|Tax|Carbon|Demand|Industry
 Revenue|Government|Tax|Carbon|Demand|Transport
 Revenue|Government|Tax|Carbon|Supply
-Secondary Energy
 Secondary Energy|Gases|Natural Gas
 Secondary Energy|Solids|Coal
 Temperature|Global Mean

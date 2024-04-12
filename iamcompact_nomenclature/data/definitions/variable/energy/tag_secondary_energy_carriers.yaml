@@ -28,5 +28,13 @@
         description: gaseous fuels from electricity (power-to-gas)
     - Hydrogen:
         description: hydrogen
+    - Hydrogen|Electricity:
+        description: hydrogen from electrolysis
+    - Hydrogen|Fossil:
+        description: hydrogen from fossil fuels (total)
+    - Hydrogen|Gas:
+        description: hydrogen from natural gas
+    - Hydrogen|Biomass:
+        description: hydrogen from biomass
     - Heat:
         description: heat

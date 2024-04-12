@@ -13,10 +13,33 @@
 - Final Energy|Non-Energy Use:
     description: Final energy consumption in non-combustion processes
     unit: EJ/yr
+    check-aggregate: true
+    components:
+        - By primary energy:
+            - Final Energy|Non-Energy Use|Coal
+            - Final Energy|Non-Energy Use|Oil
+            - Final Energy|Non-Energy Use|Gas
+            - Final Energy|Non-Energy Use|Biomass
+        - By primary energy total fossil:
+            - Final Energy|Non-Energy Use|Fossil
+            - Final Energy|Non-Energy Use|Biomass
+        - By secondary energy carrier:
+            - Final Energy|Non-Energy Use|Solids
+            - Final Energy|Non-Energy Use|Liquids
+            - Final Energy|Non-Energy Use|Gases
+            - Final Energy|Non-Energy Use|Hydrogen
 - Final Energy|Non-Energy Use|{Secondary Fuel}:
     description: Final energy consumption of {Secondary Fuel} in non-combustion processes
     unit: EJ/yr
     notes: See `Secondary Energy|{Secondary Fuel}|...` for the sources of the energy carrier
+- Final Energy|Non-Energy Use|{Primary Fossil Fuel}:
+    description: Final energy consumption of {Primary Fossil Fuel} and derived energy carriers
+        for non-combustion processes
+    unit: EJ/yr
+- Final Energy|Non-Energy Use|{Primary Biomass}:
+    description: Final energy consumption of {Primary Biomass} and derived energy carriers
+        for non-combustion processes
+    unit: EJ/yr
 - Final Energy|Non-Energy Use|Waste:
     description: Final energy consumption of non-renewable waste in non-combustion processes
     unit: EJ/yr

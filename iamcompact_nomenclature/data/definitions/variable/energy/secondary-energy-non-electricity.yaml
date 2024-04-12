@@ -1,5 +1,9 @@
+- Secondary Energy:
+    description: Total production of seconary energy carriers
+    unit: EJ/yr
+    check-aggregate: true
 - Secondary Energy|Liquids:
-    definition: Total production of refined liquid fuels from all energy sources,
+    description: Total production of refined liquid fuels from all energy sources,
       including oil products, synthetic fossil fuels from gas and coal, and biofuels
     unit: EJ/yr
 - Secondary Energy|Liquids|Biomass:
@@ -22,7 +26,7 @@
     unit: EJ/yr
 
 - Secondary Energy|Solids:
-    definition: Total production of solid energy carriers, including coal, briquettes,
+    description: Total production of solid energy carriers, including coal, briquettes,
       coke, and wood pellets
     unit: EJ/yr
 - Secondary Energy|Solids|Biomass:
@@ -36,7 +40,7 @@
     unit: EJ/yr
 
 - Secondary Energy|Gases:
-    definition: Total production of gaseous fuels, including natural gas and biogas,
+    description: Total production of gaseous fuels, including natural gas and biogas,
       not including hydrogen
     unit: EJ/yr
 - Secondary Energy|Gases|Biomass:
@@ -59,7 +63,7 @@
     unit: EJ/yr
 
 - Secondary Energy|Hydrogen:
-    definition: Total production of hydrogen
+    description: Total production of hydrogen
     unit: EJ/yr
 - Secondary Energy|Hydrogen|Biomass:
     description: Production of hydrogen from biomass
@@ -89,7 +93,7 @@
     unit: EJ/yr
 
 - Secondary Energy|Heat:
-    definition: Total production of centralized heat
+    description: Total production of centralized heat
     unit: EJ/yr
 - Secondary Energy|Heat|Biomass:
     description: Centralized heat generation from biomass, including biogas
