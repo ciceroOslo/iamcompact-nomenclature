@@ -1,0 +1,50 @@
+# Agricultural production and demand variables. Added in IAM COMPACT, adopted
+# from AR6 database
+
+- Agricultural Production:
+    description: Total production of agricultural products
+    unit: million t DM/yr
+
+- Agricultural Demand:
+    description: Total demand for food, non-food and feed products (crops and livestock) and bioenergy crops (1st & 2nd generation)
+    unit: million t DM/yr
+
+- Agricultural Demand|Crops:
+    description: Total demand for food, non-food and feed crops and bioenergy crops (1st & 2nd generation)
+    unit: million t DM/yr
+
+- Agricultural Demand|Crops|Energy:
+    description: Demand for modern primary energy crops (1st and 2nd generation)
+    unit: million t DM/yr
+
+- Agricultural Demand|Crops|Energy|1st generation:
+    description: Demand for modern primary 1st generation energy crops
+    unit: million t DM/yr
+
+- Agricultural Demand|Crops|Energy|2nd generation:
+    description: Demand for modern primary 2nd generation energy crops
+    unit: million t DM/yr
+
+- Agricultural Demand|Crops|Feed:
+    description: Total demand for feed crops
+    unit: million t DM/yr
+
+- Agricultural Demand|Crops|Food:
+    description: Total demand for food crops
+    unit: million t DM/yr
+
+- Agricultural Demand|Crops|Other:
+    description: Total demand for other crops
+    unit: million t DM/yr
+
+- Agricultural Demand|Livestock:
+    description: Total demand for livestock
+    unit: million t DM/yr
+
+- Agricultural Demand|Livestock|Food:
+    description: Total demand for food livestock
+    unit: million t DM/yr
+
+- Agricultural Demand|Livestock|Other:
+    description: Total demand for other livestock
+    unit: million t DM/yr

@@ -1,0 +1,11 @@
+# Valid scenario names for the IAM COMPACT project
+
+# Scenarios specific to study 1 of the first modelling cycle
+
+# Cost-optimal scenario (names used by TIAM, may conflict with one named used by
+# PROMETHEUS)
+- CP_EI_ST1_v1
+- NDC_EI_ST1
+- NDC_LTT_1p5_optimal
+- NDC_LTT_EU_optimal
+- NDC_LTT_ST1_v1

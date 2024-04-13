@@ -1,0 +1,157 @@
+- Sector:
+    - AFOFI:
+        description: agriculture, forestry and fishing (IPCC category 1A4c for
+            emissions)
+    - Industry:
+        description: industrial sector excluding non-energy use (e.g.feedstocks),
+            (IPCC category 1A2 for emissions)
+    # Industry subsectors. These need to be kept consistent with the entries in
+    # the "Non-Energy Sectors" and "Industrial-Process Sectors" tag lists.:
+    - Industry|Iron and Steel:
+        description: iron and steel sector excluding feedstocks
+    - Industry|Non-Ferrous Metals:
+        description: non-ferrous metals sector
+    - Industry|Non-Metallic Minerals:
+        description: non-metallic minerals sector excluding cement
+    - Industry|Chemicals:
+        description: chemicals sector excluding feedstocks
+    - Industry|Chemicals|Ammonia:
+        description: ammonia sector
+    - Industry|Chemicals|Methanol:
+        description: methanol sector
+    - Industry|Chemicals|High Value Chemicals:
+        description: high-value-chemicals sector
+    - Industry|Chemicals|Other Sector:
+        description: other use in the chemical sector
+    - Industry|Cement:
+        description: cement sector
+    - Industry|Plastics:
+        description: plastics sector
+    - Industry|Pulp and Paper:
+        description: pulp and paper
+    - Industry|Other Sector:
+        description: other industrial sectors
+    # Residential/commercial sectors. In IAM COMPACT, "Residential" and
+    # "Commercial" have been removed in order to avoid potential overlap with
+    # "Residential and Commercial"
+    # - Residential:
+    #     description: residential sector
+    # - Commercial:
+    #     description: commercial sector
+    - Residential and Commercial:
+        description: residential and commercial sector (IPCC category 1A4a and
+            1A4b for emissions)
+    - Residential and Commercial|Residential:
+        description: residential sector (IPCC category 1A4b for emissions)
+    - Residential and Commercial|Commercial:
+        description: commercial sector (IPCC category 1A4a for emissions)
+    - Residential and Commercial|Heating:
+        description: heating in buildings in the residential and commercial sector
+            (all heating, including space and water heating and cooking)
+    - Residential and Commercial|Heating|Cooking:
+        description: heat for cooking in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Space:
+        description: space heating in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Water:
+        description: water heating in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Electric Boilers:
+        description: electric boilers in buildings in the residential and commercial sector
+    - Residential and Commercial|Heating|Heat Pumps:
+        description: heat pumps in buildings in the residential and commercial sector
+    - Residential and Commercial|Cooling:
+        description: cooling in buildings in the residential and commercial sector
+    - Residential and Commercial|Commercial|Heating:
+        description: heating in buildings in the commercial sector
+            (all heating, including space and water heating and cooking)
+    - Residential and Commercial|Commercial|Heating|Cooking:
+        description: heat for cooking in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Space:
+        description: space heating in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Water:
+        description: water heating in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Electric Boilers:
+        description: electric boilers in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Heating|Heat Pumps:
+        description: heat pumps in buildings in the commercial sector
+    - Residential and Commercial|Commercial|Cooling:
+        description: cooling in buildings in the commercial sector
+    - Residential and Commercial|Residential|Heating:
+        description: heating in buildings in the residential sector
+            (all heating, including space and water heating and cooking)
+    - Residential and Commercial|Residential|Heating|Cooking:
+        description: heat for cooking in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Space:
+        description: space heating in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Water:
+        description: water heating in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Electric Boilers:
+        description: electric boilers in buildings in the residential sector
+    - Residential and Commercial|Residential|Heating|Heat Pumps:
+        description: heat pumps in buildings in the residential sector
+    - Residential and Commercial|Residential|Cooling:
+        description: cooling in buildings in the residential sector
+    - Water:
+        description: total water supply
+    - Water|Desalination:
+        description: water desalination
+    - Water|Groundwater Extraction:
+        description: ground water extraction
+    - Water|Surface Water Extraction:
+        description: surface water extraction
+    - Water|Transfer:
+        description: water transfers
+    - Water|Industry:
+        description: processing and delivering water to Industry
+    - Water|Irrigation:
+        description: processing and delivering water for Irrigation
+    - Water|Municipal:
+        description: processing and delivering water to municipal water supply
+    - Transportation:
+        description: transportation sector excluding international aviation and shipping
+          (see "Bunkers") (IPCC category 1A3 for emissions, excluding 1A3ai,
+          1A3di and 1A3ei)
+    - Transportation (w/ bunkers):
+        description: transportation sector including international aviation and shipping
+            (IPCC category 1A3 for emissions)
+    - Transportation|Bus:
+        description: transportation sector by bus
+    - Transportation|Light Duty Vehicle:
+        description: transportation sector with light-duty vehicles
+    - Transportation|Truck:
+        description: trucking sector
+    - Transportation|Rail:
+        description: rail transportation sector
+    - Transportation|Domestic Aviation:
+        description: domestic aviation sector (IPCC category 1A3aii for
+            emissions)
+    - Transportation|Domestic Shipping:
+        description: domestic shipping sector (IPCC category 1A3dii for
+            emissions)
+    - Transportation|Passenger:
+        description: passenger transportation sector excluding international aviation
+          and shipping
+    - Transportation|Freight:
+        description: freight transportation sector excluding international aviation and shipping
+    - Bunkers:
+        description: international aviation and shipping (IPCC categories 1A3ai
+            and 1A3di for emissions)
+    - Bunkers|International Aviation:
+        description: international aviation (IPCC category 1A3ai for emissions)
+    - Bunkers|International Shipping:
+        description: international shipping (IPCC category 1A3di for emissions)
+    - Bunkers|Freight:
+        description: freight transportation in international aviation and
+            shipping
+    - Bunkers|Passenger:
+        description: passenger transportation in international aviation and
+            shipping
+    - Bunkers|International Aviation|Freight:
+        description: freight transportation in international aviation
+    - Bunkers|International Aviation|Passenger:
+        description: passenger transportation in international aviation
+    - Bunkers|International Shipping|Freight:
+        description: freight transportation in international shipping
+    - Bunkers|International Shipping|Passenger:
+        description: passenger transportation in international shipping
+    - Other Sector:
+        description: other sectors (IPCC category 1A5 for emissions)

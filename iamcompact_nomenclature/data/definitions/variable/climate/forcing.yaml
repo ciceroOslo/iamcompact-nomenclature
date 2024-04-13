@@ -1,0 +1,8 @@
+# For radiative forcing variables. Added in IAM COMPACT
+- Forcing:
+    description: Radiative forcing
+    unit: W/m2
+
+- Forcing|{Level-1 Species}:
+    description: Radiative forcing from {Level-1 Species}
+    unit: W/m2

@@ -1,0 +1,47 @@
+# Added in IAM COMPACT
+#
+# Capacity cost for electricity generation technologies.
+# Should be kept synchronized with the contents of
+# energy/capacity-electricity.yaml and energy/secondary-energy-electricity.yaml
+
+- Capital Cost|Electricity|Biomass:
+    description: Capital cost for electricity generation from purpose-grown bioenergy crops, biogas,
+      crop and forestry residue, municipal solid waste bioenergy and traditional biomass
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|Biomass|{CCS}:
+    description: Capital cost for electricity generation from purpose-grown bioenergy crops, crop and
+      forestry residue, municipal solid waste bioenergy and traditional biomass {CCS}
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|Non-Biomass Renewables:
+    description: Capital cost for electricity generation from hydro, wind, solar, geothermal, ocean,
+      and other renewable sources excluding biomass
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|{Non-Biomass Renewables}:
+    description: Capital cost for electricity generation from {Non-Biomass Renewables}
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|Nuclear:
+    description: Capital cost for electricity generation from nuclear power
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|Hydrogen:
+    description: Capital cost for electricity generation from hydrogen
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|Ammonia:
+    description: Capital cost for electricity generation from ammonia
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|{Primary Fossil Fuel}:
+    description: Capital cost for electricity generation from {Primary Fossil Fuel}
+    unit: [USD_2017/kW, EUR_2017/kW]
+- Capital Cost|Electricity|{Primary Fossil Fuel}|{CCS}:
+    description: Capital cost for electricity generation from {Primary Fossil Fuel} {CCS}
+    unit: [USD_2017/kW, EUR_2017/kW]
+
+- Capital Cost|Electricity|Other:
+    description: Capital cost for electricity generation from sources that do not fit any other category
+    unit: [USD_2017/kW, EUR_2017/kW]
