@@ -1,6 +1,3 @@
-# This list of inputs will replace any occurrence of `{Residential/Commercial}`
-# in a variable-definition yaml file
-
 # This list is intended as short-hand for variables that should be reported
 # for residential and commercial combined as well as separate
 
@@ -11,16 +8,20 @@
 - Residential/Commercial:
   - Residential and Commercial:
       description: residential, commercial, institutional sectors (IPCC category
-          1A4a and 1A4b).
-  - Residential:
-      description: residential sector. Should only be used if the model
-          represents only residential and not commercial buildings. If both are
-          represented, instead use `Residential and Commercial|Residential`
-  - Commercial:
-      description: commercial sector. Should only be used if the model
-          represents only residential and not commercial buildings. If both are
-          represented, instead use `Residential and Commercial|Commercial`
+          1A4a and 1A4b)
+  # "Residential" and "Commercial" were modified in IAM COMPACT to specify that
+  # they should only be used when only one of them is represented. Commenting
+  # out for now, to make sure the issue gets flagged for models that make use of
+  # these variables.
+#   - Residential:
+#       description: residential sector. Should only be used if the model
+#           represents only residential and not commercial buildings. If both are
+#           represented, instead use `Residential and Commercial|Residential`
+#   - Commercial:
+#       description: commercial sector. Should only be used if the model
+#           represents only residential and not commercial buildings. If both are
+#           represented, instead use `Residential and Commercial|Commercial`
   - Residential and Commercial|Commercial:
-      description: commercial sector (IPCC category 1A4a).
+      description: commercial sector (IPCC category 1A4a)
   - Residential and Commercial|Residential:
-      description: residential sector (IPCC category 1A4a).
+      description: residential sector (IPCC category 1A4b)

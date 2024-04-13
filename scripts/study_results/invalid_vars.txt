@@ -1,4 +1,3 @@
-Agricultural Production
 Capacity Additions|Electricity
 Capacity Additions|Electricity|Biomass
 Capacity Additions|Electricity|Biomass|w/ CCS
@@ -26,8 +25,14 @@ Capacity Additions|Electricity|Wind|Onshore
 Capacity Additions|Electricty|Biomass|w/ CCS
 Capacity Additions|Electricty|Coal|CCS
 Capacity|Electricity|Gas|CCS
+Capacity|Electricity|Storage
+Capacity|Electricity|Storage Capacity
 Capacity|Electricty|Biomass|w/ CCS
 Capacity|Electricty|Coal|CCS
+Capacity|Hydrogen|Electricity
+Carbon Capture
+Carbon Capture|Biomass
+Carbon Capture|Fossil
 Carbon Sequestration|CCS
 Carbon Sequestration|CCS|Biomass
 Carbon Sequestration|CCS|Biomass|Energy|Demand|Industry
@@ -44,21 +49,19 @@ Carbon Sequestration|CCS|Fossil|Energy|Supply|Liquids
 Carbon Sequestration|CCS|Fossil|Supply|Liquids
 Carbon Sequestration|CCS|Industrial Processes
 Carbon Sequestration|Direct Air Capture
-Consumption|Steel
-Emissions|C2F6
-Emissions|CF4
+Emissions|CO2 (w/o bunkers)
 Emissions|CO2|Energy & Industrial Processes
-Emissions|CO2|Energy|Demand|Industry|Cement
-Emissions|CO2|Energy|Demand|Industry|Chemicals|Ammonia
+Emissions|CO2|Energy|Demand|Commercial
 Emissions|CO2|Energy|Demand|Industry|Non-ferrous metals
 Emissions|CO2|Energy|Demand|Industry|Other
 Emissions|CO2|Energy|Demand|Industry|Steel
-Emissions|CO2|Energy|Demand|Residential and Commercial|Commercial
-Emissions|CO2|Energy|Demand|Residential and Commercial|Residential
+Emissions|CO2|Energy|Demand|Residential
 Emissions|CO2|Energy|Demand|Residential&Commercial
 Emissions|CO2|Energy|Demand|Transport
-Emissions|CO2|Energy|Demand|Transportation|Freight
-Emissions|CO2|Energy|Demand|Transportation|Passenger
+Emissions|CO2|Energy|Demand|Transportation|Gases
+Emissions|CO2|Energy|Demand|Transportation|Liquids
+Emissions|CO2|Energy|Supply|Other Sector
+Emissions|CO2|Industry and Industrial Processes
 Emissions|CO2|Other|DACCS
 Emissions|Kyoto Gases|Buildings
 Emissions|Kyoto Gases|Cement
@@ -71,23 +74,20 @@ Emissions|Kyoto Gases|Other Industry
 Emissions|Kyoto Gases|Steel
 Emissions|Kyoto Gases|Supply
 Emissions|Kyoto Gases|Transportation
+Energy Service|Residential and Commercial|Floor Space
 Energy Service|Residential and Commercial|Residential|Floor Space
+Energy Service|Transportation|Freight
 Energy Service|Transportation|Freight|International Shipping
 Energy Service|Transportation|Freight|Navigation
 Energy Service|Transportation|Freight|Railways
+Energy Service|Transportation|Freight|Road
+Energy Service|Transportation|Passenger
 Energy Service|Transportation|Passenger|Aviation
+Energy Service|Transportation|Passenger|Bicycling and Walking
 Energy Service|Transportation|Passenger|Railways
+Energy Service|Transportation|Passenger|Road
 Energy Service|Transportation|Passenger|Road|LDV
 Exports|Steel
-Final Energy|Industry|Cement
-Final Energy|Industry|Cement|Electricity
-Final Energy|Industry|Cement|Gases
-Final Energy|Industry|Chemicals|Ammonia
-Final Energy|Industry|Chemicals|Ammonia|Gases
-Final Energy|Industry|Chemicals|Ammonia|Hydrogen
-Final Energy|Industry|Chemicals|Ammonia|Liquids
-Final Energy|Industry|Chemicals|Ammonia|Solids
-Final Energy|Industry|Chemicals|Ammonia|Solids|Fossil
 Final Energy|Industry|Chemicals|Solids|Bioenergy
 Final Energy|Industry|Non-ferrous metals
 Final Energy|Industry|Non-ferrous metals|Electricity
@@ -96,6 +96,7 @@ Final Energy|Industry|Non-ferrous metals|Liquids
 Final Energy|Industry|Non-ferrous metals|Solids
 Final Energy|Industry|Non-ferrous metals|Solids|Bioenergy
 Final Energy|Industry|Non-ferrous metals|Solids|Fossil
+Final Energy|Industry|Solids|Coal
 Final Energy|Industry|Steel
 Final Energy|Industry|Steel|Electricity
 Final Energy|Industry|Steel|Hydrogen
@@ -103,34 +104,37 @@ Final Energy|Industry|Steel|Liquids
 Final Energy|Industry|Steel|Solids
 Final Energy|Industry|Steel|Solids|Bioenergy
 Final Energy|Industry|Steel|Solids|Fossil
-Final Energy|Non-Energy Use|Gas
-Final Energy|Residential and Commercial|Commercial|Cooling
-Final Energy|Residential and Commercial|Commercial|Electricity
-Final Energy|Residential and Commercial|Commercial|Gases
-Final Energy|Residential and Commercial|Commercial|Heat
-Final Energy|Residential and Commercial|Commercial|Heating|Space
-Final Energy|Residential and Commercial|Commercial|Hydrogen
-Final Energy|Residential and Commercial|Commercial|Liquids
-Final Energy|Residential and Commercial|Commercial|Solids
-Final Energy|Residential and Commercial|Commercial|Solids|Biomass
 Final Energy|Residential and Commercial|Commercial|Solids|Coal
-Final Energy|Residential and Commercial|Cooling
-Final Energy|Residential and Commercial|Heating|Space
-Final Energy|Residential and Commercial|Residential|Cooling
-Final Energy|Residential and Commercial|Residential|Electricity
-Final Energy|Residential and Commercial|Residential|Gases
-Final Energy|Residential and Commercial|Residential|Heat
-Final Energy|Residential and Commercial|Residential|Heating|Space
-Final Energy|Residential and Commercial|Residential|Hydrogen
-Final Energy|Residential and Commercial|Residential|Liquids
+Final Energy|Residential and Commercial|Solids|Coal
+Final Energy|Solids|Coal
 Final Energy|Transportation|Aviation
 Final Energy|Transportation|Aviation|Passenger
 Final Energy|Transportation|Freight|Liquid
 Final Energy|Transportation|Freight|Solid
+Final Energy|Transportation|LDV|BEV
+Final Energy|Transportation|LDV|Electricity
+Final Energy|Transportation|LDV|Gases
+Final Energy|Transportation|LDV|Gases|Electricity
+Final Energy|Transportation|LDV|Gases|Fossil
+Final Energy|Transportation|LDV|Hybrid
+Final Energy|Transportation|LDV|Hybrid|Electricity
+Final Energy|Transportation|LDV|Hybrid|Gases
+Final Energy|Transportation|LDV|Hybrid|Liquids
+Final Energy|Transportation|LDV|Hydrogen
+Final Energy|Transportation|LDV|Hydrogen|Electricity
+Final Energy|Transportation|LDV|ICE
+Final Energy|Transportation|LDV|ICE|Gases
+Final Energy|Transportation|LDV|ICE|Liquids
+Final Energy|Transportation|LDV|Liquids
+Final Energy|Transportation|LDV|Liquids|Biomass
+Final Energy|Transportation|LDV|Liquids|Fossil
+Final Energy|Transportation|Liquids|Oil
 Final Energy|Transportation|Maritime
 Final Energy|Transportation|Maritime|Freight
 Final Energy|Transportation|Passenger|Liquid
 Final Energy|Transportation|Passenger|Solid
+Final Energy|Transportation|Rail|Freight
+Final Energy|Transportation|Rail|Passenger
 Final Energy|Transportation|Road|Freight
 Final Energy|Transportation|Road|Freight|Electric
 Final Energy|Transportation|Road|Freight|FC
@@ -138,25 +142,12 @@ Final Energy|Transportation|Road|Passenger
 Final Energy|Transportation|Road|Passenger|2W&3W
 Final Energy|Transportation|Road|Passenger|Bus
 Final Energy|Transportation|Road|Passenger|LDV
-Final Energy|Water
-Final Energy|Water|Desalination
-Final Energy|Water|Desalination|Electricity
-Final Energy|Water|Desalination|Gases
-Final Energy|Water|Desalination|Liquids
-Final Energy|Water|Industry
-Final Energy|Water|Industry|Electricity
-Final Energy|Water|Irrigation
-Final Energy|Water|Irrigation|Electricity
-Final Energy|Water|Municipal
-Final Energy|Water|Municipal|Electricity
-Forcing
 GDP
 Imports|Steel
 Imports|Steel|High-Carbon
 Imports|Steel|Low-Carbon
 Imports|Steel|Med-Carbon
 Investment|Energy Supply|Electricity|Electricity Storage
-Investment|Energy Supply|Hydrogen|Electricity
 Land Cover
 Land Cover|Built-up Area
 Land Cover|Cropland
@@ -187,10 +178,7 @@ Primary Energy|Non-Biomass Renewables|Geothermal
 Primary Energy|Non-Biomass Renewables|Hydro
 Primary Energy|Non-Biomass Renewables|Solar
 Primary Energy|Non-Biomass Renewables|Wind
-Primary Energy|Secondary Energy Trade
-Production|Cement
 Production|Non-ferrous metals
-Production|Steel
 Production|Steel|AEL_EAF
 Production|Steel|BF_BOF
 Production|Steel|BF_BOF_BECCSmax
@@ -213,9 +201,13 @@ Production|Steel|EAF_scrap_fossil_elec_finish
 Production|Steel|MOE
 Production|Steel|SR_BOF
 Production|Steel|SR_BOF_CCS
-Revenue|Government|Tax|Carbon
 Revenue|Government|Tax|Carbon|Demand|Buildings
 Revenue|Government|Tax|Carbon|Demand|Industry
 Revenue|Government|Tax|Carbon|Demand|Transport
 Revenue|Government|Tax|Carbon|Supply
 Secondary Energy|Gases|Natural Gas
+Secondary Energy|Solids|Coal
+Temperature|Global Mean
+Trade|Primary Energy|Coal|Volume
+Trade|Primary Energy|Gas|Volume
+Trade|Primary Energy|Oil|Volume

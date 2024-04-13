@@ -1,0 +1,16 @@
+# Added in IAM COMPACT
+#
+# Variables for revenue for government. Revenues for other institutions should
+# also be added here if relevant.
+
+- Revenue|Government:
+    description: Total government revenue
+    unit: [billion EUR_2017/yr, billion USD_2017/yr]
+
+- Revenue|Government|Tax:
+    description: Government revenue from taxes
+    unit: [billion EUR_2017/yr, billion USD_2017/yr]
+
+- Revenue|Government|Tax|Carbon:
+    description: Government revenue from carbon taxes
+    unit: [billion EUR_2017/yr, billion USD_2017/yr]

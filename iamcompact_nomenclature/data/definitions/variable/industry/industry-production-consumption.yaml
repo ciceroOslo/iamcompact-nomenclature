@@ -1,0 +1,26 @@
+# Added in IAM COMPACT. Contains variables for production and consumption of
+# industrial products. Currently only Steel, through the variable
+# `Consumption|Steel` used by GCAM. This variable is present in neither AR6, nor
+# in openENTRANCE or in the common-definitions repository. It is also unusual in
+# that other variables named `Consumption|*` in other contexts usually refer to
+# consumption in the economic sense, and are denoted in value terms (monetary
+# units). But it's not clear what else to call industrial consumption, unless it
+# could instead be categorized under `Demand|*`.
+
+- Consumption|Steel:
+    description: Consumption of steel. Note that unlike many other variables
+        under `Consumption|*`, this variable denotes consumption measured included
+        physical terms, not monetary value.
+    unit: Mt/yr
+
+- Production|Cement:
+    description: Production of cement
+    unit: Mt/yr
+
+- Production|Non-Ferrous Metals:
+    description: Production of non-ferrous metals
+    unit: Mt/yr
+
+- Production|Steel:
+    description: Production of steel (all types)
+    unit: Mt/yr
