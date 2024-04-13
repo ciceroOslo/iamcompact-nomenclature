@@ -156,18 +156,17 @@
       (e.g. coal power plant)
     notes: Prices should include the effect of carbon prices.
     unit: [EUR_2017/GJ, USD_2017/GJ]
-    weight: Secondary Energy|Solids|Coal
+    weight: Secondary Energy|Solids|Fossil
 
 - Price|Secondary Energy|Solids|Biomass:
-    description: Biomass price at the secondary level, i.e. for large-scale consumers
+    description: Biomass price at the secondary level, i.e. for large-scale consumers.
+        At the moment, this is defined not to include traditional biomass. Variables
+        will need to be reworked and coordinated with Secondary Energy categories
+        in other variable hierarchies if a price including or specific to
+        traditional biomass is needed.
     notes: Prices should include the effect of carbon prices.
     unit: [EUR_2017/GJ, USD_2017/GJ]
     weight: Secondary Energy|Solids|Biomass
-
-- Price|Secondary Energy|Solids|Biomass|Traditional:
-    description: Price for traditional biomass at the secondary level
-    unit: [EUR_2017/GJ, USD_2017/GJ]
-    weight: Secondary Energy|Solids|Biomass|Traditional
 
 - Price|Secondary Energy|Hydrogen:
     description: Hydrogen price at the secondary level, i.e. for large-scale consumers

@@ -34,6 +34,11 @@
       (e.g., commercial charcoal, wood chips, wood pellets),
       not including tradional bioenergy
     unit: EJ/yr
+- Secondary Energy|Solids|Biomass|Traditional:
+    description: Production of solid secondary energy carriers from traditional biomass
+      (e.g., commercial charcoal, wood chips, wood pellets),
+      not including tradional bioenergy
+    unit: EJ/yr
 - Secondary Energy|Solids|Fossil:
     description: Consumption of fossil solid secondary energy carriers
       including coal and lignite and derived products (e.g., coke, briquettes)

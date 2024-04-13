@@ -155,7 +155,6 @@ Land Cover|Pasture
 Price|Agriculture|Corn|Index
 Price|Agriculture|Soybean|Index
 Price|Agriculture|Wheat|Index
-Price|Carbon
 Price|Carbon|Demand|Industry
 Price|Carbon|Demand|Residential and Commercial
 Price|Carbon|Demand|Transportation
