@@ -76,13 +76,16 @@ Emissions|Kyoto Gases|Supply
 Emissions|Kyoto Gases|Transportation
 Energy Service|Residential and Commercial|Floor Space
 Energy Service|Residential and Commercial|Residential|Floor Space
+Energy Service|Transportation|Freight
 Energy Service|Transportation|Freight|International Shipping
 Energy Service|Transportation|Freight|Navigation
 Energy Service|Transportation|Freight|Railways
 Energy Service|Transportation|Freight|Road
+Energy Service|Transportation|Passenger
 Energy Service|Transportation|Passenger|Aviation
 Energy Service|Transportation|Passenger|Bicycling and Walking
 Energy Service|Transportation|Passenger|Railways
+Energy Service|Transportation|Passenger|Road
 Energy Service|Transportation|Passenger|Road|LDV
 Exports|Steel
 Final Energy|Industry|Chemicals|Solids|Bioenergy
@@ -145,7 +148,9 @@ Imports|Steel|High-Carbon
 Imports|Steel|Low-Carbon
 Imports|Steel|Med-Carbon
 Investment|Energy Supply|Electricity|Electricity Storage
+Land Cover
 Land Cover|Built-up Area
+Land Cover|Cropland
 Land Cover|Cropland|Energy Crops
 Land Cover|Forest
 Land Cover|Forest|Managed
