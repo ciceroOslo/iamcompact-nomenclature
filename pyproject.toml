@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "iamcompact-nomenclature"
-version = "0.3.1"
+version = "0.4.0"
 description = "Data structure definition for validation of model outputs in the HORIZON EUROPE project IAM COMPACT, using nomenclature-iamc"
 authors = ["Jan Ivar Korsbakken <janko@cicero.oslo.no>"]
 readme = "README.md"
@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.10,<3.12"
 nomenclature-iamc = ">=0.16.0"
-pyam-iamc = ">=2.0"
+pyam-iamc = ">=2.1"
 
 [tool.poetry.group.dev.dependencies]
 ipython = ">=8.20.0"
