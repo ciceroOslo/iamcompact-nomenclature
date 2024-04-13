@@ -13,4 +13,14 @@
         physical terms, not monetary value.
     unit: Mt/yr
 
+- Production|Cement:
+    description: Production of cement
+    unit: Mt/yr
 
+- Production|Non-Ferrous Metals:
+    description: Production of non-ferrous metals
+    unit: Mt/yr
+
+- Production|Steel:
+    description: Production of steel (all types)
+    unit: Mt/yr

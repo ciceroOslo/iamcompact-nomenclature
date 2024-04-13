@@ -178,9 +178,7 @@ Primary Energy|Non-Biomass Renewables|Geothermal
 Primary Energy|Non-Biomass Renewables|Hydro
 Primary Energy|Non-Biomass Renewables|Solar
 Primary Energy|Non-Biomass Renewables|Wind
-Production|Cement
 Production|Non-ferrous metals
-Production|Steel
 Production|Steel|AEL_EAF
 Production|Steel|BF_BOF
 Production|Steel|BF_BOF_BECCSmax
@@ -203,7 +201,6 @@ Production|Steel|EAF_scrap_fossil_elec_finish
 Production|Steel|MOE
 Production|Steel|SR_BOF
 Production|Steel|SR_BOF_CCS
-Revenue|Government|Tax|Carbon
 Revenue|Government|Tax|Carbon|Demand|Buildings
 Revenue|Government|Tax|Carbon|Demand|Industry
 Revenue|Government|Tax|Carbon|Demand|Transport
