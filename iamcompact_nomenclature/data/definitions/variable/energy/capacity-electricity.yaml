@@ -1,0 +1,52 @@
+# Added in IAM COMPACT
+#
+# Variables related to electricity generation capacity. Should in most cases
+# contain the same set as of variables as in secondary-energy-eletricity.yaml,
+# but with `Capacity` as the top-level classification rather than `Secondary
+# Energy`.
+
+- Capacity|Electricity:
+    description: Total net electricity generation capacity.
+    unit: GW
+
+- Capacity|Electricity|Biomass:
+    description: Capacity for electricity generation from purpose-grown bioenergy crops, biogas,
+      crop and forestry residue, municipal solid waste bioenergy and traditional biomass
+    unit: GW
+
+- Capacity|Electricity|Biomass|{CCS}:
+    description: Capacity for electricity generation from purpose-grown bioenergy crops, crop and
+      forestry residue, municipal solid waste bioenergy and traditional biomass {CCS}
+    unit: GW
+
+- Capacity|Electricity|Non-Biomass Renewables:
+    description: Capacity for electricity generation from hydro, wind, solar, geothermal, ocean,
+      and other renewable sources excluding biomass
+    unit: GW
+
+- Capacity|Electricity|{Non-Biomass Renewables}:
+    description: Capacity for electricity generation from {Non-Biomass Renewables}
+    unit: GW
+
+- Capacity|Electricity|Nuclear:
+    description: Capacity for electricity generation from nuclear power
+    unit: GW
+
+- Capacity|Electricity|Hydrogen:
+    description: Capacity for electricity generation from hydrogen
+    unit: GW
+
+- Capacity|Electricity|Ammonia:
+    description: Capacity for electricity generation from ammonia
+    unit: GW
+
+- Capacity|Electricity|{Primary Fossil Fuel}:
+    description: Capacity for electricity generation from {Primary Fossil Fuel}
+    unit: GW
+- Capacity|Electricity|{Primary Fossil Fuel}|{CCS}:
+    description: Capacity for electricity generation from {Primary Fossil Fuel} {CCS}
+    unit: GW
+
+- Capacity|Electricity|Other:
+    description: Capacity for electricity generation from sources that do not fit any other category
+    unit: GW

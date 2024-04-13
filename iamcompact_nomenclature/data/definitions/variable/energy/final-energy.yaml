@@ -1,0 +1,182 @@
+# Aggregate variables
+- Final Energy:
+    description: Final energy consumption by all end-use sectors and all fuels,
+      including non-energy use, excluding transmission/distribution losses
+    unit: EJ/yr
+- Final Energy (w/o bunkers):
+    description: Final energy consumption by all end-use sectors and all fuels
+      including non-energy use, excluding international aviation and shipping (see "Bunkers"),
+      excluding transmission/distribution losses
+    unit: EJ/yr
+
+# Non-energy use
+- Final Energy|Non-Energy Use:
+    description: Final energy consumption in non-combustion processes
+    unit: EJ/yr
+    check-aggregate: true
+    components:
+        - By primary energy:
+            - Final Energy|Non-Energy Use|Coal
+            - Final Energy|Non-Energy Use|Oil
+            - Final Energy|Non-Energy Use|Gas
+            - Final Energy|Non-Energy Use|Biomass
+        - By primary energy total fossil:
+            - Final Energy|Non-Energy Use|Fossil
+            - Final Energy|Non-Energy Use|Biomass
+        - By secondary energy carrier:
+            - Final Energy|Non-Energy Use|Solids
+            - Final Energy|Non-Energy Use|Liquids
+            - Final Energy|Non-Energy Use|Gases
+            - Final Energy|Non-Energy Use|Hydrogen
+- Final Energy|Non-Energy Use|{Secondary Fuel}:
+    description: Final energy consumption of {Secondary Fuel} in non-combustion processes
+    unit: EJ/yr
+    notes: See `Secondary Energy|{Secondary Fuel}|...` for the sources of the energy carrier
+- Final Energy|Non-Energy Use|{Primary Fossil Fuel}:
+    description: Final energy consumption of {Primary Fossil Fuel} and derived energy carriers
+        for non-combustion processes
+    unit: EJ/yr
+- Final Energy|Non-Energy Use|{Primary Biomass}:
+    description: Final energy consumption of {Primary Biomass} and derived energy carriers
+        for non-combustion processes
+    unit: EJ/yr
+- Final Energy|Non-Energy Use|Waste:
+    description: Final energy consumption of non-renewable waste in non-combustion processes
+    unit: EJ/yr
+- Final Energy|Non-Energy Use|{Non-Energy Sector}:
+    description: Final energy consumption by the {Non-Energy Sector} for non-combustion processes
+    unit: EJ/yr
+- Final Energy|Non-Energy Use|{Non-Energy Sector}|{Secondary Fuel}:
+    description: Final energy consumption of {Secondary Fuel} by the {Non-Energy Sector}
+      for non-combustion processes
+    unit: EJ/yr
+    notes: See `Secondary Energy|{Secondary Fuel}|...` for the sources of the energy carrier
+- Final Energy|Non-Energy Use|{Non-Energy Sector}|Waste:
+    description: Final energy consumption of non-renewable waste by the {Non-Energy Sector}
+      for non-combustion processes
+    unit: EJ/yr
+- Final Energy|Non-Energy Use|{Non-Energy Sector}|Other:
+    description: Final energy consumption of other feedstocks by the {Non-Energy Sector}
+      for non-combustion processes
+    unit: EJ/yr
+- Final Energy|Non-Energy Use|Other:
+    description: Final energy consumption of other feedstocks in non-combustion processes
+    unit: EJ/yr
+
+# Final energy by fuel
+- Final Energy|Electricity:
+    description: Final energy consumption of electricity (including on-site solar PV),
+      excluding transmission/distribution losses
+    unit: EJ/yr
+- Final Energy|{Secondary Fuel}:
+    description: Final energy fuel consumption of {Secondary Fuel}
+    unit: EJ/yr
+    notes: See `Secondary Energy|{Secondary Fuel}|...` for the sources of the energy carrier
+- Final Energy|Geothermal:
+    description: Final energy consumption of geothermal energy (e.g., from decentralized
+      or small-scale geothermal heating systems) excluding geothermal heat pumps
+    unit: EJ/yr
+- Final Energy|Waste:
+    description: Final energy consumption of non-renewable waste
+    unit: EJ/yr
+- Final Energy|Solar:
+    description: Final energy consumption of solar-thermal heat
+      (e.g., from roof-top solar hot water collector systems)
+    unit: EJ/yr
+- Final Energy|Other:
+    description: Final energy consumption of other energy sources
+    unit: EJ/yr
+
+# Final energy by sector and fuel
+- Final Energy|{Sector}:
+    description: Final energy consumption by the {Sector}
+    unit: EJ/yr
+- Final Energy|{Sector}|Electricity:
+    description: Final energy consumption by the {Sector} of electricity
+    unit: EJ/yr
+- Final Energy|{Sector}|{Secondary Fuel}:
+    description: Final energy consumption by the {Sector} of {Secondary Fuel}
+    unit: EJ/yr
+    notes: See `Secondary Energy|{Secondary Fuel}|...` for the sources of the energy carrier
+- Final Energy|{Sector}|Other:
+    description: Final energy consumption by the {Sector} of other energy sources
+    unit: EJ/yr
+
+# additional combinations of sector and energy-carriers not included in {Sector} x {Secondary Fuel}
+- Final Energy|Industry|Geothermal:
+    description: Final energy consumption by the industrial sector of geothermal heat
+    unit: EJ/yr
+- Final Energy|Industry|Solar:
+    definition: Final energy consumption by the industrial sector of solar thermal heat
+    unit: EJ/yr
+- Final Energy|Industry|Waste:
+    description: Final energy consumption of non-renewable waste by the industrial sector
+    unit: EJ/yr
+
+# energy use for carbon capture and/or removal technologies
+- Final Energy|Carbon Management:
+    description: Total energy use for carbon management, i.e., capture and/or removal of CO2
+    unit: EJ/yr
+    navigate: Final Energy|Carbon Removal
+- Final Energy|Carbon Management|Electricity:
+    description: Electricity use for carbon management
+    unit: EJ/yr
+    notes: See `Secondary Energy|Electricity|...` for the power generation mix
+    navigate: Final Energy|Carbon Removal|Electricity
+- Final Energy|Carbon Management|{Secondary Fuel}:
+    description: Use of {Secondary Fuel} for carbon management
+    unit: EJ/yr
+    notes: See `Secondary Energy|{Secondary Fuel}|...` for the sources of the energy carrier
+    navigate: Final Energy|Carbon Removal|{Secondary Fuel}
+- Final Energy|Carbon Management|Other:
+    description: Use of other energy sources for carbon management
+    unit: EJ/yr
+- Final Energy|Carbon Management|{Carbon Management Technology}:
+    description: Energy use for carbon management by {Carbon Management Technology}
+    unit: EJ/yr
+- Final Energy|Carbon Management|{Carbon Management Technology}|Electricity:
+    description: Electricity use for carbon management by {Carbon Management Technology}
+    unit: EJ/yr
+    notes: See `Secondary Energy|Electricity|...` for the power generation mix
+    navigate: Final Energy|Carbon Removal|Electricity|{Carbon Management Technology}
+    engage: Final Energy|Carbon Removal|Electricity|{Carbon Management Technology}
+- Final Energy|Carbon Management|{Carbon Management Technology}|{Secondary Fuel}:
+    description: Use of {Secondary Fuel} for carbon management by {Carbon Management Technology}
+    unit: EJ/yr
+    notes: See `Secondary Energy|{Secondary Fuel}|...` for the sources of the energy carrier
+    navigate: Final Energy|Carbon Removal|{Secondary Fuel}|{Carbon Management Technology}
+    engage: Final Energy|Carbon Removal|{Secondary Fuel}|{Carbon Management Technology}
+- Final Energy|Carbon Management|{Carbon Management Technology}|Other:
+    description: Use of other energy sources for carbon removal by {Carbon Management Technology}
+    unit: EJ/yr
+
+# additional variable for international aviation and shipping ("Bunkers")
+# Commented out in IAM COMPACT, included in Sectors tag list
+# (tag_all_sectors.yaml)
+# - Final Energy|Bunkers|{Bunker Sector}:
+#     description: Final energy consumption for {Bunker Sector}
+#     unit: EJ/yr
+# - Final Energy|Bunkers|{Transportation Sector}:
+#     description: Final energy consumption for {Transportation Sector}
+#       in international aviation and shipping
+#     unit: EJ/yr
+# - Final Energy|Bunkers|{Bunker Sector}|{Transportation Sector}:
+#     description: Final energy consumption for {Transportation Sector} in {Bunker Sector}
+#     unit: EJ/yr
+#     engage: Final Energy|Bunkers|{Transportation Sector}|{Bunker Sector}
+#     navigate: Final Energy|Bunkers|{Transportation Sector}|{Bunker Sector}
+
+# additional variables for the water sector
+# Commented out in IAM COMPACT (as of 2024-04-12), using categories under 
+# - Final Energy|Commercial|Water|Desalination:
+#     description: Energy consumption for water desalination
+#     unit: EJ/yr
+# - Final Energy|Commercial|Water|Groundwater Extraction:
+#     description: Energy consumption for groundwater extraction
+#     unit: EJ/yr
+# - Final Energy|Commercial|Water|Surface Water Extraction:
+#     description: Energy consumption for surface water extraction
+#     unit: EJ/yr
+# - Final Energy|Commercial|Water|Transfer:
+#     description: Energy consumption for water transfers
+#     unit: EJ/yr

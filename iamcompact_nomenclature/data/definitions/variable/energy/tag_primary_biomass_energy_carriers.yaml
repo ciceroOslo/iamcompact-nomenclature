@@ -1,0 +1,20 @@
+# Added in IAM COMPACT.
+# Not currently used, since only `Primary Energy|*` appears to differentiate
+# these types of biomass, but should be used if the same are implemented in
+# other variable hierarchies later.
+- Primary Biomass:
+    - Biomass:
+        description: purpose-grown bioenergy crops, crop and forestry residue,
+            municipal solid waste bioenergy and traditional biomass
+    - Biomass|Modern:
+        description: purpose-grown bioenergy crops, crop and forestry residue
+            and municipal solid waste bioenergy
+    - Biomass|Traditional:
+        description: traditional biomass
+    - Biomass|1st Generation:
+        description: 1st generation biofuel crops (e.g., sugar cane, rapeseed
+            oil, maize, sugar beet)
+    - Biomass|Energy Crops:
+        description: purpose-grown bioenergy crops
+    - Biomass|Residues:
+        description: residues

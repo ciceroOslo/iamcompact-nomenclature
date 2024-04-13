@@ -1,0 +1,40 @@
+- Secondary Fuel:
+    # Electricity is treated separately
+    # see also `secondary-energy-other.yaml`
+    - Liquids:
+        description: liquid fuels (conventional & unconventional oil, biofuels,
+          coal-to-liquids, gas-to-liquids)
+    - Liquids|Biomass:
+        description: liquid biofuels
+    - Liquids|Fossil:
+        description: liquid fossil fuels (conventional & unconventional oil,
+          coal-to-liquids, gas-to-liquids)
+    - Solids:
+        description: solid fuels
+    - Solids|Biomass:
+        description: solid biomass
+    - Solids|Biomass|Traditional:
+        description: solid traditional biomass
+    - Solids|Fossil:
+        description: fossil solid secondary energy carriers including coal and
+            lignite and derived products (e.g., coke, briquettes)
+    - Gases:
+        description: gaseous fuels not including hydrogen
+    - Gases|Biomass:
+        description: biogas
+    - Gases|Fossil:
+        description: gaseous fuels from fossil energy carriers
+    - Gases|Electricity:
+        description: gaseous fuels from electricity (power-to-gas)
+    - Hydrogen:
+        description: hydrogen
+    - Hydrogen|Electricity:
+        description: hydrogen from electrolysis
+    - Hydrogen|Fossil:
+        description: hydrogen from fossil fuels (total)
+    - Hydrogen|Gas:
+        description: hydrogen from natural gas
+    - Hydrogen|Biomass:
+        description: hydrogen from biomass
+    - Heat:
+        description: heat

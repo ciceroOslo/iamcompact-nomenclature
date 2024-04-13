@@ -1,0 +1,8 @@
+# Valid scenario names for the IAM COMPACT project
+
+# Scenarios specific to study 4 of the first modelling cycle
+- NDC_LTT_CBAM
+- NDC_LTT_INDEPENDENCE
+
+# Used only by TIAM?
+- NDC_SD_st4
