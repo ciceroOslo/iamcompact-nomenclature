@@ -100,7 +100,7 @@ class VariableCodeMarkdownFormatter(CodeFormatter):
         # details part.
         list_top: str = f'<details><summary>{getattr(code, self.id_attrname)}</summary>\n'
         attrs_list: str = '\n'.join(
-            f'- **{attrname}**: {attrval}' for attrname, attrval in attrs.items()
+            f'    - **{attrname}**: {attrval}' for attrname, attrval in attrs.items()
             if attrname != self.id_attrname
         )
         list_bottom: str = '\n</details>\n'
