@@ -98,12 +98,14 @@ class VariableCodeMarkdownFormatter(CodeFormatter):
         # Print a collapsable list item, with the name as the summary part
         # and all other attributes returned by `self.get_attributes` in the
         # details part.
-        list_top: str = f'<details><summary>{getattr(code, self.id_attrname)}</summary>\n'
+        list_top: str = f'<details><summary><b>{getattr(code, self.id_attrname)}</b></summary>\n<dl>\n'
         attrs_list: str = '\n'.join(
-            f'    - **{attrname}**: {attrval}' for attrname, attrval in attrs.items()
+            f'    <dt>{attrname}</dt>\n'
+            f'        <dd>{attrval}</dd>\n'
+            for attrname, attrval in attrs.items()
             if attrname != self.id_attrname
         )
-        list_bottom: str = '\n</details>\n'
+        list_bottom: str = '</dl>\n</details>\n'
         return list_top + attrs_list + list_bottom
     ###END def VariableCodeMarkdownFormatter.format
 
