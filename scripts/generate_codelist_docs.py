@@ -11,7 +11,7 @@ from nomenclature.codelist import VariableCodeList
 
 import iamcompact_nomenclature as icnom   
 from iamcompact_nomenclature.dsd_utils.codelist_formatter \
-    import VariableCodeListMarkdownFormatter
+    import VariableCodeListHTMLFormatter
 
 
 def main():
@@ -58,7 +58,7 @@ def main():
     
     title: str|None = args.title
 
-    formatter = VariableCodeListMarkdownFormatter()
+    formatter = VariableCodeListHTMLFormatter()
     output: str = formatter.format(codelist, header_title=title)
 
     if args.output.exists():

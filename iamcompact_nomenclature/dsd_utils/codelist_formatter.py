@@ -13,13 +13,13 @@ CodeFormatter
 
 Classes
 -------
-VariableCodeListMarkdownFormatter
-    Formats a `nomenclature.codelist.VariableCodeList` as a Markdown document,
+VariableCodeListHTMLFormatter
+    Formats a `nomenclature.codelist.VariableCodeList` as an HTML document,
     with optionally expandable items (using HTML details/summary elements) for
     each code.
-VariableCodeMarkdownFormatter
+VariableCodeHTMLFormatter
     Formats a `nomenclature.code.VariableCode` as an optionally expandable
-    Markdown list item, with the code's name and description show, and each of
+    HTML list item, with the code's name and description show, and each of
     its attributes in the details element.
 """
 import abc
@@ -62,9 +62,9 @@ class CodeListFormatter(abc.ABC):
 ###END class CodeListFormatter
 
 
-class VariableCodeMarkdownFormatter(CodeFormatter):
+class VariableCodeHTMLFormatter(CodeFormatter):
     """Formats a `nomenclature.code.VariableCode` as an optionally expandable
-    Markdown list item, with the code's name and description show, and each of
+    HTML <details> item, with the code's name and description show, and each of
     its attributes in the details element.
     """
 
@@ -94,14 +94,14 @@ class VariableCodeMarkdownFormatter(CodeFormatter):
             }
             return attrs_nonone
         return attrs
-    ###END def VariableCodeMarkdownFormatter.get_attributes
+    ###END def VariableCodeHTMLFormatter.get_attributes
 
     def format(
             self,
             code: VariableCode,
             attr_names: Optional[Sequence[str]] = None,
     ) -> str:
-        """Return a Markdown list item for the code.
+        """Return an HTML <details> item for the code.
 
         Uses the `id_attrname` attribute as the name of the attribute that
         should be displayed in the non-collapsed part of the output string, and
@@ -122,55 +122,42 @@ class VariableCodeMarkdownFormatter(CodeFormatter):
         )
         list_bottom: str = '</dl>\n</details>\n'
         return list_top + attrs_list + list_bottom
-    ###END def VariableCodeMarkdownFormatter.format
+    ###END def VariableCodeHTMLFormatter.format
+
+###END class VariableCodeHTMLFormatter
 
 
-    #     """Return a Markdown list item for the code."""
-    #     # Start with the name and description
-    #     code_str: str = f'- **{code.name}**\n  {code.description}\n'
-    #     # Add the attributes in a details element
-    #     code_str += '<details>\n<summary>Attributes</summary>\n\n'
-    #     for attr_name, attr_value in code.attributes.items():
-    #         code_str += f'- **{attr_name}**: {attr_value}\n'
-    #     code_str += '</details>\n'
-    #     return code_str
-    # ###END def VariableCodeMarkdownFormatter.format
-
-###END class VariableCodeMarkdownFormatter
-
-
-class VariableCodeListMarkdownFormatter(CodeListFormatter):
-    """Formats a `nomenclature.codelist.VariableCodeList` as a Markdown document,
+class VariableCodeListHTMLFormatter(CodeListFormatter):
+    """Formats a `nomenclature.codelist.VariableCodeList` as an HTML document,
     with optionally expandable items (using HTML details/summary elements) for
     each code.
     """
 
-    def __init__(self, code_formatter: Optional[VariableCodeMarkdownFormatter] = None):
+    def __init__(self, code_formatter: Optional[VariableCodeHTMLFormatter] = None):
         """Initialize the formatter with a `CodeFormatter` subclass."""
         if code_formatter is None:
-            self.code_formatter = VariableCodeMarkdownFormatter()
+            self.code_formatter = VariableCodeHTMLFormatter()
         else:
-            self.code_formatter: VariableCodeMarkdownFormatter = code_formatter
-    ###END def VariableCodeListMarkdownFormatter.__init__
+            self.code_formatter: VariableCodeHTMLFormatter = code_formatter
+    ###END def VariableCodeListHTMLFormatter.__init__
 
     def format(
             self,
             codelist: VariableCodeList,
-            header_title: Optional[str] = None,
+            header_title: str = '',
             attrs: Sequence[str] = ('unit', 'description')
     ) -> str:
-        """Return a Markdown document for the code list.
+        """Return an HTML document for the code list.
 
         Each code in the list is formatted using `self.code_formatter`, and the
         resulting strings are joined with newlines.
         """
-        header: str = header_title + '\n' + '=' * len(header_title) + '\n\n' \
-            if header_title is not None else ''
+        header: str = f'<html>\n<head><title>{header_title}</title></head>\n<body>\n<h1>{header_title}</h1>\n'
         body: str = '\n'.join(
             self.code_formatter.format(codelist[_codename], attr_names=attrs)
             for _codename in sorted(codelist.keys())
         )
-        return header + body
-    ###END def VariableCodeListMarkdownFormatter.format
+        return header + body + '\n</body>\n</html>'
+    ###END def VariableCodeListHTMLFormatter.format
 
-###END class VariableCodeListMarkdownFormatter
+###END class VariableCodeListHTMLFormatter
