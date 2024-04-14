@@ -23,7 +23,7 @@ VariableCodeMarkdownFormatter
     its attributes in the details element.
 """
 import abc
-from collections.abc import Mapping
+from collections.abc import Mapping, Sequence
 from typing import Optional
 
 import nomenclature
@@ -72,12 +72,21 @@ class VariableCodeMarkdownFormatter(CodeFormatter):
     """The name of the attribute that gives the variable name, and should be
     be displayed in the non-collapsed part of the output string."""
 
-    def get_attributes(self, code: VariableCode, include_none: bool = False) \
-            -> Mapping[str, str|None]:
+    def get_attributes(
+            self,
+            code: VariableCode,
+            attr_names: Optional[Sequence[str]] = None,
+            include_none: bool = False
+    ) -> Mapping[str, str|None]:
         """Return a dict with the code's attributes, optionally including None"""
-        attrs: dict[str, str|None] = {
-            _attrname: _attrval for _attrname, _attrval in code
-        }
+        if attr_names is not None:
+            attrs: dict[str, str|None] = {
+                _attrname: getattr(code, _attrname) for _attrname in attr_names
+            }
+        else:
+            attrs: dict[str, str|None] = {
+                _attrname: _attrval for _attrname, _attrval in code
+            }
         if not include_none:
             attrs_nonone: dict[str, str] = {
                 _attrname: _attrval for _attrname, _attrval in attrs.items()
@@ -87,21 +96,27 @@ class VariableCodeMarkdownFormatter(CodeFormatter):
         return attrs
     ###END def VariableCodeMarkdownFormatter.get_attributes
 
-    def format(self, code: VariableCode) -> str:
+    def format(
+            self,
+            code: VariableCode,
+            attr_names: Optional[Sequence[str]] = None,
+    ) -> str:
         """Return a Markdown list item for the code.
 
         Uses the `id_attrname` attribute as the name of the attribute that
         should be displayed in the non-collapsed part of the output string, and
         `self.get_attributes` to get the attributes to display in the details.
         """
-        attrs: Mapping[str, str] = self.get_attributes(code)
+        if attr_names is not None and self.id_attrname not in attr_names:
+            attr_names = [self.id_attrname] + list(attr_names)
+        attrs: Mapping[str, str|None] = self.get_attributes(code, attr_names=attr_names)
         # Print a collapsable list item, with the name as the summary part
         # and all other attributes returned by `self.get_attributes` in the
         # details part.
         list_top: str = f'<details><summary><b>{getattr(code, self.id_attrname)}</b></summary>\n<dl>\n'
         attrs_list: str = '\n'.join(
             f'    <dt>{attrname}</dt>\n'
-            f'        <dd>{attrval}</dd>\n'
+            f'        <dd>{attrval}</dd>'
             for attrname, attrval in attrs.items()
             if attrname != self.id_attrname
         )
@@ -135,10 +150,15 @@ class VariableCodeListMarkdownFormatter(CodeListFormatter):
         if code_formatter is None:
             self.code_formatter = VariableCodeMarkdownFormatter()
         else:
-            self.code_formatter: CodeFormatter = code_formatter
+            self.code_formatter: VariableCodeMarkdownFormatter = code_formatter
     ###END def VariableCodeListMarkdownFormatter.__init__
 
-    def format(self, codelist: VariableCodeList, header_title: Optional[str] = None) -> str:
+    def format(
+            self,
+            codelist: VariableCodeList,
+            header_title: Optional[str] = None,
+            attrs: Sequence[str] = ('unit', 'description')
+    ) -> str:
         """Return a Markdown document for the code list.
 
         Each code in the list is formatted using `self.code_formatter`, and the
@@ -147,7 +167,8 @@ class VariableCodeListMarkdownFormatter(CodeListFormatter):
         header: str = header_title + '\n' + '=' * len(header_title) + '\n\n' \
             if header_title is not None else ''
         body: str = '\n'.join(
-            self.code_formatter.format(code) for code in codelist.values()
+            self.code_formatter.format(codelist[_codename], attr_names=attrs)
+            for _codename in sorted(codelist.keys())
         )
         return header + body
     ###END def VariableCodeListMarkdownFormatter.format
