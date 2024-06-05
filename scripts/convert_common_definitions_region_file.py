@@ -20,6 +20,7 @@ from pprint import pprint
 from collections.abc import Mapping, Sequence
 import typing as tp
 import sys
+import copy
 
 import ruamel.yaml as yaml
 from nomenclature import countries
@@ -27,6 +28,18 @@ from nomenclature.codelist import RegionCodeList
 
 import iamcompact_nomenclature as icnom
 
+# %%
+# Assign user-defined ISO3 code for Kosovo (which is not defined in the
+# ISO 3166-1 alpha-3 standard; "XKX" is used by the European Union, and "XKK"
+# is used in the Unicode standard; "XK" is commonly used as an ISO 3166-1
+# alpha-2 code).
+kosovo_item = countries.lookup('Kosovo')
+kosovo_iso3: str = 'XKX'
+kosovo_iso2: str = 'XK'
+kosovo_item.note += \
+    f'. User-defined ISO 3- and 2-letter codes: {kosovo_iso3}, {kosovo_iso2}.'
+kosovo_item.alpha_3 = kosovo_iso3
+kosovo_item.alpha_2 = kosovo_iso2
 
 # %%
 # Get the source file
@@ -37,7 +50,6 @@ data_file: Path = data_dir / 'common.yaml'
 # Read the data into a yaml object
 rt_yaml = yaml.YAML(typ='rt')
 regions_yaml: Sequence = rt_yaml.load(data_file)
-rt_yaml.default_flow_style = True
 
 # %%
 # Go through each top-level hierarchy dict (which should have only one element
@@ -45,7 +57,9 @@ rt_yaml.default_flow_style = True
 # of them convert the `countries` element from a string to a list, and add an
 # `iso3_codes` element with the corresponding ISO 3-letter country codes.
 # _region_dict: Mapping[str, Sequence[str|Mapping[str, tp.Any]]]
-for _region_dict in regions_yaml:
+regions_yaml_new = copy.deepcopy(regions_yaml)
+rt_yaml.default_flow_style = True
+for _region_dict in regions_yaml_new:
     if len(_region_dict) != 1:
         raise ValueError('Each top-level hierarchy dict should have exactly one element')
     _region_key, region_list = list(_region_dict.items())[0]
@@ -56,9 +70,14 @@ for _region_dict in regions_yaml:
                     # _subregion_dict.fa.set_flow_style()
                     _subregion_dict['countries'] = _subregion_dict['countries'].split(', ')
                     _subregion_dict['iso3_codes'] = [
-                        getattr(countries.lookup(_country), 'alpha_3', 'XXXX') for _country in _subregion_dict['countries']
+                        getattr(countries.lookup(_country), 'alpha_3', f'YYYZZZ{_country}') for _country in _subregion_dict['countries']
                     ]
 
 # %%
 # Try to write to file
-rt_yaml.dump(regions_yaml, sys.stdout)
+rt_yaml.dump(regions_yaml_new, sys.stdout)
+
+output_dir: Path = Path(__file__).parent
+output_file = output_dir / 'common_tempcopy.yaml'
+
+rt_yaml.dump(regions_yaml_new, output_file)

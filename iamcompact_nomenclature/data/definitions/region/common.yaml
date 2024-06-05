@@ -9,57 +9,69 @@
       description: OECD (membership status 1990) and EU member states and candidates
       ar6: R5OECD90+EU
       ssp: R5.2OECD
-      countries: Albania, Australia, Austria, Belgium, Bosnia and Herzegovina, Bulgaria,
+      countries: [Albania, Australia, Austria, Belgium, Bosnia and Herzegovina, Bulgaria,
         Canada, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany,
-        Greece, Guam, Hungary, Iceland, Ireland, Italy, Japan, Kosovo, Latvia, 
-        Lithuania, Luxembourg, Malta, Montenegro, Netherlands, New Zealand, 
-        North Macedonia, Norway, Poland, Portugal, Puerto Rico, Romania, Serbia, 
-        Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, United Kingdom, 
-        United States
+        Greece, Guam, Hungary, Iceland, Ireland, Italy, Japan, Kosovo, Latvia, Lithuania,
+        Luxembourg, Malta, Montenegro, Netherlands, New Zealand, North Macedonia,
+        Norway, Poland, Portugal, Puerto Rico, Romania, Serbia, Slovakia, Slovenia,
+        Spain, Sweden, Switzerland, Turkey, United Kingdom, United States]
+      iso3_codes: [ALB, AUS, AUT, BEL, BIH, BGR, CAN, HRV, CYP, CZE, DNK, EST, FIN,
+        FRA, DEU, GRC, GUM, HUN, ISL, IRL, ITA, JPN, XKX, LVA, LTU, LUX, MLT, MNE,
+        NLD, NZL, MKD, NOR, POL, PRT, PRI, ROU, SRB, SVK, SVN, ESP, SWE, CHE, TUR,
+        GBR, USA]
   - Reforming Economies (R5):
       description: Countries from the Reforming Economies of the Former Soviet Union
       ar6: R5REF
       ssp: R5.2REF
-      countries: Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
-        Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan
+      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
+        Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
+      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
   - Asia (R5):
-      description: The region includes Asian countries with the exception of
-        the Middle East, Japan and Former Soviet Union states
+      description: The region includes Asian countries with the exception of the Middle
+        East, Japan and Former Soviet Union states
       ar6: R5ASIA
       ssp: R5.2ASIA
-      countries: Afghanistan, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, China, 
-        Cook Islands, Fiji, French Polynesia, Hong Kong, India, Indonesia, Kiribati, 
-        Laos, Macao, Malaysia, Maldives, Marshall Islands, Micronesia, Mongolia,
-        Myanmar, Nauru, Nepal, Niue, New Caledonia, North Korea, Pakistan, 
-        Papua New Guinea, Palau, Philippines, South Korea, Samoa, Singapore,
-        Solomon Islands, Sri Lanka, Taiwan, Thailand, Timor-Leste, Tonga, Tuvalu,
-        Vanuatu, Viet Nam
+      countries: [Afghanistan, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, China,
+        Cook Islands, Fiji, French Polynesia, Hong Kong, India, Indonesia, Kiribati,
+        Laos, Macao, Malaysia, Maldives, Marshall Islands, Micronesia, Mongolia, Myanmar,
+        Nauru, Nepal, Niue, New Caledonia, North Korea, Pakistan, Papua New Guinea,
+        Palau, Philippines, South Korea, Samoa, Singapore, Solomon Islands, Sri Lanka,
+        Taiwan, Thailand, Timor-Leste, Tonga, Tuvalu, Vanuatu, Viet Nam]
+      iso3_codes: [AFG, BGD, BTN, BRN, KHM, CHN, COK, FJI, PYF, HKG, IND, IDN, KIR,
+        LAO, MAC, MYS, MDV, MHL, FSM, MNG, MMR, NRU, NPL, NIU, NCL, PRK, PAK, PNG,
+        PLW, PHL, KOR, WSM, SGP, SLB, LKA, TWN, THA, TLS, TON, TUV, VUT, VNM]
   - Middle East & Africa (R5):
       description: Countries of the Middle East and Africa
       ar6: R5MAF
       ssp: R5.2MAF
-      countries: Algeria, Angola, Bahrain, Benin, Botswana, Burkina Faso, Burundi,
-        Cameroon, Cabo Verde, Central African Republic, Chad, Comoros, Congo,
-        Côte d'Ivoire, Democratic Republic of the Congo, Djibouti, Egypt,
-        Equatorial Guinea, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea,
-        Guinea-Bissau, Iran, Iraq, Israel, Jordan, Kenya, Kuwait, Lebanon, Lesotho,
-        Liberia, Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte,
-        Morocco, Mozambique, Namibia, Niger, Nigeria, Palestine, Oman, Qatar, Rwanda,
-        Réunion, Sao Tome and Principe, Saudi Arabia, Senegal, Seychelles, 
-        Sierra Leone, Somalia, South Africa, South Sudan, Sudan, Eswatini, 
-        Syria, Togo, Tunisia, Uganda, United Arab Emirates, Tanzania, 
-        Western Sahara, Yemen, Zambia, Zimbabwe
+      countries: [Algeria, Angola, Bahrain, Benin, Botswana, Burkina Faso, Burundi,
+        Cameroon, Cabo Verde, Central African Republic, Chad, Comoros, Congo, Côte
+          d'Ivoire, Democratic Republic of the Congo, Djibouti, Egypt, Equatorial
+          Guinea, Eritrea, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau,
+        Iran, Iraq, Israel, Jordan, Kenya, Kuwait, Lebanon, Lesotho, Liberia, Libya,
+        Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco, Mozambique,
+        Namibia, Niger, Nigeria, Palestine, Oman, Qatar, Rwanda, Réunion, Sao Tome
+          and Principe, Saudi Arabia, Senegal, Seychelles, Sierra Leone, Somalia,
+        South Africa, South Sudan, Sudan, Eswatini, Syria, Togo, Tunisia, Uganda,
+        United Arab Emirates, Tanzania, Western Sahara, Yemen, Zambia, Zimbabwe]
+      iso3_codes: [DZA, AGO, BHR, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG,
+        CIV, COD, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, IRN, IRQ, ISR,
+        JOR, KEN, KWT, LBN, LSO, LBR, LBY, MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ,
+        NAM, NER, NGA, PSE, OMN, QAT, RWA, REU, STP, SAU, SEN, SYC, SLE, SOM, ZAF,
+        SSD, SDN, SWZ, SYR, TGO, TUN, UGA, ARE, TZA, ESH, YEM, ZMB, ZWE]
   - Latin America (R5):
       description: Latin and South American countries
       ar6: R5LAM
       ssp: R5.2LAM
-      countries: Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize, 
-        Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, 
-        Ecuador, El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, 
-        Guyana, Haiti, Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, 
-        Paraguay, Peru, Saint Kitts and Nevis, Saint Lucia,
-        Saint Vincent and the Grenadines, Suriname, Trinidad and Tobago,
-        United States Virgin Islands, Uruguay, Venezuela
+      countries: [Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
+        Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador,
+        El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti,
+        Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, Paraguay, Peru,
+        Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Suriname,
+        Trinidad and Tobago, United States Virgin Islands, Uruguay, Venezuela]
+      iso3_codes: [ATG, ARG, ABW, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DOM,
+        ECU, SLV, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, NIC, PAN, PRY,
+        PER, KNA, LCA, VCT, SUR, TTO, VIR, URY, VEN]
   - Other (R5):
       description: Rest of the World, to be used only if a match with the R5 regions
         can otherwise not be achieved.
@@ -73,71 +85,89 @@
   - European Union (R9):
       description: European Union (membership status 2023)
       navigate: R9EU
-      countries: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia,
+      countries: [Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia,
         Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania,
         Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia,
-        Spain, Sweden
+        Spain, Sweden]
       notes: Depending on the spatial resolution, reporting by some models may differ
         from the current list of EU27 members (2023).
+      iso3_codes: [AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FIN, FRA, DEU, GRC, HUN,
+        IRL, ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE]
   - USA (R9):
       description: United States of America
       navigate: R9USA
-      countries: United States
-      notes: Depending on the spatial resolution, some models report Canada as part of
-        the USA region.
+      countries: [United States]
+      notes: Depending on the spatial resolution, some models report Canada as part
+        of the USA region.
+      iso3_codes: [USA]
   - Other OECD (R9):
       description: Other OECD (membership status 1990) and EU candidate countries
       navigate: R9OTHEROECD
-      countries: Albania, Australia, Bosnia and Herzegovina, Canada, Guam, Iceland,
-        Japan, Kosovo, Montenegro, New Zealand, North Macedonia, Norway, Puerto Rico, 
-        Serbia, United Kingdom, Switzerland, Turkey
+      countries: [Albania, Australia, Bosnia and Herzegovina, Canada, Guam, Iceland,
+        Japan, Kosovo, Montenegro, New Zealand, North Macedonia, Norway, Puerto Rico,
+        Serbia, United Kingdom, Switzerland, Turkey]
       notes: This region is defined as 'OECD & EU (R5)' excluding EU and USA
+      iso3_codes: [ALB, AUS, BIH, CAN, GUM, ISL, JPN, XKX, MNE, NZL, MKD, NOR, PRI,
+        SRB, GBR, CHE, TUR]
   - China (R9):
       description: China
       navigate: R9CHINA
-      countries: China, Hong Kong, Macao
+      countries: [China, Hong Kong, Macao]
+      iso3_codes: [CHN, HKG, MAC]
   - India (R9):
       description: India
       navigate: R9INDIA
-      countries: India
+      countries: [India]
+      iso3_codes: [IND]
   - Other Asia (R9):
       description: The region includes Asian countries with the exception of China,
         India, the Middle East, Japan and Former Soviet Union states
       navigate: R9OTHERASIA
-      countries: Afghanistan, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, 
-        Cook Islands, Fiji, French Polynesia, Indonesia, Kiribati, Laos, Malaysia, 
-        Maldives, Marshall Islands, Micronesia, Mongolia, Myanmar, Nauru, Niue,
-        Nepal, New Caledonia, North Korea, Pakistan, Palau, Papua New Guinea,
-        Philippines, South Korea, Samoa, Singapore, Solomon Islands, Sri Lanka, 
-        Taiwan, Tuvalu, Thailand, Timor-Leste, Tonga, Vanuatu, Viet Nam
+      countries: [Afghanistan, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, Cook
+          Islands, Fiji, French Polynesia, Indonesia, Kiribati, Laos, Malaysia, Maldives,
+        Marshall Islands, Micronesia, Mongolia, Myanmar, Nauru, Niue, Nepal, New Caledonia,
+        North Korea, Pakistan, Palau, Papua New Guinea, Philippines, South Korea,
+        Samoa, Singapore, Solomon Islands, Sri Lanka, Taiwan, Tuvalu, Thailand, Timor-Leste,
+        Tonga, Vanuatu, Viet Nam]
+      iso3_codes: [AFG, BGD, BTN, BRN, KHM, COK, FJI, PYF, IDN, KIR, LAO, MYS, MDV,
+        MHL, FSM, MNG, MMR, NRU, NIU, NPL, NCL, PRK, PAK, PLW, PNG, PHL, KOR, WSM,
+        SGP, SLB, LKA, TWN, TUV, THA, TLS, TON, VUT, VNM]
   - Reforming Economies (R9):
       description: Countries from the Reforming Economies of the Former Soviet Union
       navigate: R9REF
-      countries: Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
-        Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan
+      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
+        Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
+      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
   - Middle East & Africa (R9):
       description: Countries of the Middle East and Africa
       navigate: R9MAF
-      countries: Algeria, Angola, Bahrain, Benin, Botswana, Burkina Faso, Burundi,
-        Cameroon, Cabo Verde, Central African Republic, Chad, Comoros, Congo,
-        Côte d'Ivoire, Democratic Republic of the Congo, Djibouti, Egypt,
-        Equatorial Guinea, Eritrea, Eswatini, Ethiopia, Gabon, Gambia, Ghana, Guinea,
-        Guinea-Bissau, Iran, Iraq, Israel, Jordan, Kenya, Kuwait, Lebanon, Lesotho,
-        Liberia, Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte,
-        Morocco, Mozambique, Namibia, Niger, Nigeria, Palestine, Oman, Qatar, Rwanda,
-        Réunion, Sao Tome and Principe, Saudi Arabia, Senegal, Seychelles, 
-        Sierra Leone, Somalia, South Africa, South Sudan, Sudan, Syria, Togo, 
-        Tunisia, Uganda, United Arab Emirates, Tanzania, Western Sahara, Yemen, 
-        Zambia, Zimbabwe
+      countries: [Algeria, Angola, Bahrain, Benin, Botswana, Burkina Faso, Burundi,
+        Cameroon, Cabo Verde, Central African Republic, Chad, Comoros, Congo, Côte
+          d'Ivoire, Democratic Republic of the Congo, Djibouti, Egypt, Equatorial
+          Guinea, Eritrea, Eswatini, Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau,
+        Iran, Iraq, Israel, Jordan, Kenya, Kuwait, Lebanon, Lesotho, Liberia, Libya,
+        Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco, Mozambique,
+        Namibia, Niger, Nigeria, Palestine, Oman, Qatar, Rwanda, Réunion, Sao Tome
+          and Principe, Saudi Arabia, Senegal, Seychelles, Sierra Leone, Somalia,
+        South Africa, South Sudan, Sudan, Syria, Togo, Tunisia, Uganda, United Arab
+          Emirates, Tanzania, Western Sahara, Yemen, Zambia, Zimbabwe]
+      iso3_codes: [DZA, AGO, BHR, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG,
+        CIV, COD, DJI, EGY, GNQ, ERI, SWZ, ETH, GAB, GMB, GHA, GIN, GNB, IRN, IRQ,
+        ISR, JOR, KEN, KWT, LBN, LSO, LBR, LBY, MDG, MWI, MLI, MRT, MUS, MYT, MAR,
+        MOZ, NAM, NER, NGA, PSE, OMN, QAT, RWA, REU, STP, SAU, SEN, SYC, SLE, SOM,
+        ZAF, SSD, SDN, SYR, TGO, TUN, UGA, ARE, TZA, ESH, YEM, ZMB, ZWE]
   - Latin America (R9):
       description: Latin and South American countries
       navigate: R9LAM
-      countries: Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize, 
-        Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, 
-        Ecuador, El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, 
-        Haiti, Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, Paraguay, 
-        Peru, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,
-        Suriname, Trinidad and Tobago, United States Virgin Islands, Uruguay, Venezuela
+      countries: [Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
+        Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador,
+        El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti,
+        Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, Paraguay, Peru,
+        Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Suriname,
+        Trinidad and Tobago, United States Virgin Islands, Uruguay, Venezuela]
+      iso3_codes: [ATG, ARG, ABW, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DOM,
+        ECU, SLV, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, NIC, PAN, PRY,
+        PER, KNA, LCA, VCT, SUR, TTO, VIR, URY, VEN]
   - Other (R9):
       description: Rest of the World, used only if a match with the R9 regions can
         otherwise not be achieved
@@ -152,71 +182,89 @@
   - Africa (R10):
       description: Africa
       ar6: R10AFRICA
-      countries: Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon,
+      countries: [Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon,
         Cabo Verde, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire,
         Democratic Republic of the Congo, Djibouti, Egypt, Equatorial Guinea, Eritrea,
         Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia,
         Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco,
         Mozambique, Namibia, Niger, Nigeria, Rwanda, Réunion, Sao Tome and Principe,
-        Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan, 
-        Eswatini, Togo, Tunisia, Uganda, Tanzania, Western Sahara, Zambia, Zimbabwe
+        Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan,
+        Eswatini, Togo, Tunisia, Uganda, Tanzania, Western Sahara, Zambia, Zimbabwe]
       notes: Depending on the spatial resolution, some models report Northern Africa
         as part of the Middle East region.
+      iso3_codes: [DZA, AGO, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG, CIV,
+        COD, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, LBY,
+        MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ, NAM, NER, NGA, RWA, REU, STP, SEN,
+        SYC, SLE, SOM, ZAF, SSD, SDN, SWZ, TGO, TUN, UGA, TZA, ESH, ZMB, ZWE]
   - China+ (R10):
       description: Centrally-planned Asia, primarily China
       ar6: R10CHINA+
-      countries: China, Hong Kong, Macao, Mongolia, North Korea, South Korea
+      countries: [China, Hong Kong, Macao, Mongolia, North Korea, South Korea]
+      iso3_codes: [CHN, HKG, MAC, MNG, PRK, KOR]
   - Europe (R10):
       description: Europe (including Turkey)
       ar6: R10EUROPE
-      countries: Albania, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Croatia, 
+      countries: [Albania, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Croatia,
         Cyprus, Czechia, Denmark, Estonia, France, Finland, Germany, Greece, Hungary,
-        Iceland, Ireland, Italy, Kosovo, Latvia, Lithuania, Luxembourg, Malta, 
-        Montenegro, Netherlands, North Macedonia, Norway, Portugal, Switzerland, Poland,
-        Romania, Serbia, Slovakia, Slovenia, Spain, Sweden, Turkey, United Kingdom
+        Iceland, Ireland, Italy, Kosovo, Latvia, Lithuania, Luxembourg, Malta, Montenegro,
+        Netherlands, North Macedonia, Norway, Portugal, Switzerland, Poland, Romania,
+        Serbia, Slovakia, Slovenia, Spain, Sweden, Turkey, United Kingdom]
+      iso3_codes: [ALB, AUT, BEL, BIH, BGR, HRV, CYP, CZE, DNK, EST, FRA, FIN, DEU,
+        GRC, HUN, ISL, IRL, ITA, XKX, LVA, LTU, LUX, MLT, MNE, NLD, MKD, NOR, PRT,
+        CHE, POL, ROU, SRB, SVK, SVN, ESP, SWE, TUR, GBR]
   - India+ (R10):
       description: South Asia, primarily India
       ar6: R10INDIA+
-      countries: India, Afghanistan, Bangladesh, Bhutan, Maldives, Nepal, Pakistan,
-        Sri Lanka
+      countries: [India, Afghanistan, Bangladesh, Bhutan, Maldives, Nepal, Pakistan,
+        Sri Lanka]
+      iso3_codes: [IND, AFG, BGD, BTN, MDV, NPL, PAK, LKA]
   - Latin America (R10):
       description: Latin America and the Caribbean
       ar6: R10LATIN_AM
-      countries: Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
+      countries: [Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
         Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador,
-        El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, 
-        Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, Paraguay, Peru, 
-        Puerto Rico, Saint Kitts and Nevis, Saint Lucia,
-        Saint Vincent and the Grenadines, Suriname, Trinidad and Tobago,
-        United States Virgin Islands, Uruguay, Venezuela
+        El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti,
+        Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, Paraguay, Peru,
+        Puerto Rico, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,
+        Suriname, Trinidad and Tobago, United States Virgin Islands, Uruguay, Venezuela]
+      iso3_codes: [ATG, ARG, ABW, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DOM,
+        ECU, SLV, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, NIC, PAN, PRY,
+        PER, PRI, KNA, LCA, VCT, SUR, TTO, VIR, URY, VEN]
   - Middle East (R10):
       description: Middle East
       ar6: R10MIDDLE_EAST
-      countries: Bahrain, Iraq, Iran, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine,
-        Qatar, Saudi Arabia, Syria, United Arab Emirates, Yemen
+      countries: [Bahrain, Iraq, Iran, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine,
+        Qatar, Saudi Arabia, Syria, United Arab Emirates, Yemen]
       notes: Depending on the spatial resolution, some models report Northern Africa
         as part of the Middle East region.
+      iso3_codes: [BHR, IRQ, IRN, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR, ARE,
+        YEM]
   - North America (R10):
       description: United States and Canada
       ar6: R10NORTH_AM
-      countries: Canada, Guam, United States
+      countries: [Canada, Guam, United States]
+      iso3_codes: [CAN, GUM, USA]
   - Pacific OECD (R10):
       description: Pacific OECD (membership status 1990) including Pacific islands
       ar6: R10PAC_OECD
-      countries: Australia, Japan, New Zealand
+      countries: [Australia, Japan, New Zealand]
+      iso3_codes: [AUS, JPN, NZL]
   - Reforming Economies (R10):
       description: Former Soviet Union countries not included in Europe
       ar6: R10REF_ECON
-      countries: Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
-        Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan
+      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
+        Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
+      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
   - Rest of Asia (R10):
       description: Asia not included in China+, India+ or Reforming Economies
       ar6: R10REST_ASIA
-      countries: Brunei Darussalam, Cambodia, Cook Islands, Fiji, French Polynesia,
+      countries: [Brunei Darussalam, Cambodia, Cook Islands, Fiji, French Polynesia,
         Indonesia, Kiribati, Laos, Malaysia, Marshall Islands, Micronesia, Myanmar,
-        Nauru, Niue, Palau, New Caledonia, Papua New Guinea, Philippines, Samoa,
-        Singapore, Solomon Islands, Taiwan, Thailand, Timor-Leste, Tonga, Tuvalu,
-        Vanuatu, Viet Nam
+        Nauru, Niue, Palau, New Caledonia, Papua New Guinea, Philippines, Samoa, Singapore,
+        Solomon Islands, Taiwan, Thailand, Timor-Leste, Tonga, Tuvalu, Vanuatu, Viet
+          Nam]
+      iso3_codes: [BRN, KHM, COK, FJI, PYF, IDN, KIR, LAO, MYS, MHL, FSM, MMR, NRU,
+        NIU, PLW, NCL, PNG, PHL, WSM, SGP, SLB, TWN, THA, TLS, TON, TUV, VUT, VNM]
   - Other (R10):
       description: Rest of the World, to be used only if a match with the R10 regions
         can otherwise not be achieved
