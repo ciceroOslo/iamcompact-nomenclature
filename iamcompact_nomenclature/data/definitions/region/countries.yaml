@@ -1685,9 +1685,12 @@
       official_name: Republic of Zimbabwe
   - Kosovo:
       description: Kosovo
-      iso3_codes: XKX
       name: Kosovo
       alpha_3: XKX
       alpha_2: XK
-      note: 'Kosovo recognized under UNSC resolution 1244, alpha_3 code not assigned.
-        User-defined ISO 3- and 2-letter codes: XKX, XK.'
+      note: "Kosovo recognized under UNSC resolution 1244, alpha_3 code not assigned.
+        User-defined ISO 3- and 2-letter codes: XKX, XK. The 3-letter code XKX
+        is used only for the `alpha_3` attribute, not the `iso3_codes`
+        attribute, since `pycountry.countries` does not have an entry for
+        for Kosovo, and including it in the `iso3_codes` attribute would
+        cause a validation error when loading this file with `nomenclature`."

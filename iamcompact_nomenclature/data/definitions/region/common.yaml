@@ -16,9 +16,15 @@
         Norway, Poland, Portugal, Puerto Rico, Romania, Serbia, Slovakia, Slovenia,
         Spain, Sweden, Switzerland, Turkey, United Kingdom, United States]
       iso3_codes: [ALB, AUS, AUT, BEL, BIH, BGR, CAN, HRV, CYP, CZE, DNK, EST, FIN,
-        FRA, DEU, GRC, GUM, HUN, ISL, IRL, ITA, JPN, XKX, LVA, LTU, LUX, MLT, MNE,
+        FRA, DEU, GRC, GUM, HUN, ISL, IRL, ITA, JPN, LVA, LTU, LUX, MLT, MNE,
         NLD, NZL, MKD, NOR, POL, PRT, PRI, ROU, SRB, SVK, SVN, ESP, SWE, CHE, TUR,
         GBR, USA]
+      note: This region includes OECD countries as well ass associated SEE
+        (South-East Europe) economies. This includes Kosovo, which is listed in
+        the `countries` attribute, but not in the `iso3_codes` attribute, due to
+        not having an official ISO 3166-1 alpha-3 code. Including the commonly
+        used but unofficial codes XKX or XKK would cause a validation error when
+        loading with the `nomenclature` package. 
   - Reforming Economies (R5):
       description: Countries from the Reforming Economies of the Former Soviet Union
       ar6: R5REF
@@ -89,7 +95,7 @@
         Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania,
         Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia,
         Spain, Sweden]
-      notes: Depending on the spatial resolution, reporting by some models may differ
+      note: Depending on the spatial resolution, reporting by some models may differ
         from the current list of EU27 members (2023).
       iso3_codes: [AUT, BEL, BGR, HRV, CYP, CZE, DNK, EST, FIN, FRA, DEU, GRC, HUN,
         IRL, ITA, LVA, LTU, LUX, MLT, NLD, POL, PRT, ROU, SVK, SVN, ESP, SWE]
@@ -97,7 +103,7 @@
       description: United States of America
       navigate: R9USA
       countries: [United States]
-      notes: Depending on the spatial resolution, some models report Canada as part
+      note: Depending on the spatial resolution, some models report Canada as part
         of the USA region.
       iso3_codes: [USA]
   - Other OECD (R9):
@@ -106,8 +112,13 @@
       countries: [Albania, Australia, Bosnia and Herzegovina, Canada, Guam, Iceland,
         Japan, Kosovo, Montenegro, New Zealand, North Macedonia, Norway, Puerto Rico,
         Serbia, United Kingdom, Switzerland, Turkey]
-      notes: This region is defined as 'OECD & EU (R5)' excluding EU and USA
-      iso3_codes: [ALB, AUS, BIH, CAN, GUM, ISL, JPN, XKX, MNE, NZL, MKD, NOR, PRI,
+      note: This region is defined as 'OECD & EU (R5)' excluding EU and USA. It
+        includes Kosovo, which is listed in
+        the `countries` attribute, but not in the `iso3_codes` attribute, due to
+        not having an official ISO 3166-1 alpha-3 code. Including the commonly
+        used but unofficial codes XKX or XKK would cause a validation error when
+        loading with the `nomenclature` package. 
+      iso3_codes: [ALB, AUS, BIH, CAN, GUM, ISL, JPN, MNE, NZL, MKD, NOR, PRI,
         SRB, GBR, CHE, TUR]
   - China (R9):
       description: China
@@ -190,7 +201,7 @@
         Mozambique, Namibia, Niger, Nigeria, Rwanda, Réunion, Sao Tome and Principe,
         Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan,
         Eswatini, Togo, Tunisia, Uganda, Tanzania, Western Sahara, Zambia, Zimbabwe]
-      notes: Depending on the spatial resolution, some models report Northern Africa
+      note: Depending on the spatial resolution, some models report Northern Africa
         as part of the Middle East region.
       iso3_codes: [DZA, AGO, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG, CIV,
         COD, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, LBY,
@@ -210,8 +221,13 @@
         Netherlands, North Macedonia, Norway, Portugal, Switzerland, Poland, Romania,
         Serbia, Slovakia, Slovenia, Spain, Sweden, Turkey, United Kingdom]
       iso3_codes: [ALB, AUT, BEL, BIH, BGR, HRV, CYP, CZE, DNK, EST, FRA, FIN, DEU,
-        GRC, HUN, ISL, IRL, ITA, XKX, LVA, LTU, LUX, MLT, MNE, NLD, MKD, NOR, PRT,
+        GRC, HUN, ISL, IRL, ITA, LVA, LTU, LUX, MLT, MNE, NLD, MKD, NOR, PRT,
         CHE, POL, ROU, SRB, SVK, SVN, ESP, SWE, TUR, GBR]
+      note: This region includes Kosovo, which is listed in
+        the `countries` attribute, but not in the `iso3_codes` attribute, due to
+        not having an official ISO 3166-1 alpha-3 code. Including the commonly
+        used but unofficial codes XKX or XKK would cause a validation error when
+        loading with the `nomenclature` package. 
   - India+ (R10):
       description: South Asia, primarily India
       ar6: R10INDIA+
@@ -235,7 +251,7 @@
       ar6: R10MIDDLE_EAST
       countries: [Bahrain, Iraq, Iran, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine,
         Qatar, Saudi Arabia, Syria, United Arab Emirates, Yemen]
-      notes: Depending on the spatial resolution, some models report Northern Africa
+      note: Depending on the spatial resolution, some models report Northern Africa
         as part of the Middle East region.
       iso3_codes: [BHR, IRQ, IRN, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR, ARE,
         YEM]
