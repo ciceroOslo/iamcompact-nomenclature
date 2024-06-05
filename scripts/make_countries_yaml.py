@@ -49,8 +49,8 @@ country_list_yaml: list[dict[str, dict[str, str]]] = [
     {
         _country_item.name: {
             'description': _country_item.name,
+            'common_name': _country_item.common_name,
             'iso3_codes': _country_item.alpha_3,
-            'name': _country_item.name,
             'alpha_3': _country_item.alpha_3,
             'alpha_2': _country_item.alpha_2,
         } | {
