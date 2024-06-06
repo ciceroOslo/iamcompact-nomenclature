@@ -226,7 +226,7 @@
       alpha_2: BB
   - Brunei Darussalam:
       description: Brunei Darussalam
-      common_name: Brunei Darussalam
+      common_name: Brunei
       iso3_codes: BRN
       alpha_3: BRN
       alpha_2: BN
@@ -820,6 +820,7 @@
       iso3_codes: KOR
       alpha_3: KOR
       alpha_2: KR
+      official name: Republic of Korea
       note: Name changed from ISO 3166 in line with community standards
   - Kuwait:
       description: Kuwait
@@ -1273,7 +1274,7 @@
       alpha_2: RO
   - Russian Federation:
       description: Russian Federation
-      common_name: Russian Federation
+      common_name: Russia
       iso3_codes: RUS
       alpha_3: RUS
       alpha_2: RU
