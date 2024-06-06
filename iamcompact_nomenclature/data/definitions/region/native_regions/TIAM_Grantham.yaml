@@ -25,10 +25,9 @@
       countries: [Canada]
       iso3_codes: [CAN]
   - TIAM_Grantham|CHI:
-      # QUESTION, needs clariyfing: Does this include Hong Kong and Macao?
       description: China
-      countries: [China]
-      iso3_codes: [CHN]
+      countries: [China, Hong Kong, Macao]
+      iso3_codes: [CHN, HKG, MAC]
   - TIAM_Grantham|CSA:
       description: Central and South America
       countries: [Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
