@@ -289,7 +289,7 @@
       alpha_3: CHN
       alpha_2: CN
       official_name: People's Republic of China
-  - Côte d'Ivoire:
+  - Cote d'Ivoire:
       description: Côte d'Ivoire
       common_name: Côte d'Ivoire
       iso3_codes: CIV
@@ -1260,7 +1260,7 @@
       alpha_3: QAT
       alpha_2: QA
       official_name: State of Qatar
-  - Réunion:
+  - Reunion:
       description: Réunion
       common_name: Réunion
       iso3_codes: REU
