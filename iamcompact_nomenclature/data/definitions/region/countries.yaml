@@ -820,7 +820,7 @@
       iso3_codes: KOR
       alpha_3: KOR
       alpha_2: KR
-      official name: Republic of Korea
+      official_name: Republic of Korea
       note: Name changed from ISO 3166 in line with community standards
   - Kuwait:
       description: Kuwait
