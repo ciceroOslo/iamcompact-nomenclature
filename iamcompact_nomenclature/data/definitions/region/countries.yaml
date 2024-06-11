@@ -130,9 +130,9 @@
       alpha_3: BEN
       alpha_2: BJ
       official_name: Republic of Benin
-  - Bonaire, Sint Eustatius and Saba:
+  - Caribbean Netherlands:
       description: Bonaire, Sint Eustatius and Saba
-      common_name: Bonaire, Sint Eustatius and Saba
+      common_name: Caribbean Netherlands
       iso3_codes: BES
       alpha_3: BES
       alpha_2: BQ
@@ -358,7 +358,7 @@
       alpha_3: CUB
       alpha_2: CU
       official_name: Republic of Cuba
-  - Curaçao:
+  - Curacao:
       description: Curaçao
       common_name: Curaçao
       iso3_codes: CUW
@@ -912,9 +912,9 @@
       alpha_3: MAC
       alpha_2: MO
       official_name: Macao Special Administrative Region of China
-  - Saint Martin (French part):
+  - Saint Martin:
       description: Saint Martin (French part)
-      common_name: Saint Martin (French part)
+      common_name: Saint Martin
       iso3_codes: MAF
       alpha_3: MAF
       alpha_2: MF
@@ -1427,9 +1427,9 @@
       alpha_3: SWZ
       alpha_2: SZ
       official_name: Kingdom of Eswatini
-  - Sint Maarten (Dutch part):
+  - Sint Maarten:
       description: Sint Maarten (Dutch part)
-      common_name: Sint Maarten (Dutch part)
+      common_name: Sint Maarten
       iso3_codes: SXM
       alpha_3: SXM
       alpha_2: SX

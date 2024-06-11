@@ -41,13 +41,13 @@
   - GCAM 7.0|Central America and Caribbean:
       description: Central America and the Caribbean
       countries: [Antigua and Barbuda, Anguilla, Aruba, Bahamas, Barbados, Belize,
-        Bermuda, Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic, El Salvador,
+        Bermuda, Caribbean Netherlands, Costa Rica, Cuba, Cayman Islands, Curacao, Dominica, Dominican Republic, El Salvador,
         Grenada, Guadeloupe, Guatemala, Haiti, Honduras, Jamaica, Martinique, Montserrat,
-        Netherlands Antilles, Nicaragua, Panama, Saint Kitts and Nevis, Saint Lucia,
-        Saint Vincent and the Grenadines, Trinidad and Tobago]
+        Nicaragua, Panama, Saint Kitts and Nevis, Saint Lucia, Saint Martin,
+        Saint Vincent and the Grenadines, Sint Maarten, Trinidad and Tobago]
       iso3_codes:
-        [ATG, AIA, ABW, BHS, BRB, BLZ, BMU, CRI, CUB, CYM, DMA, DOM, SLV, GRD, GLP,
-          GTM, HTI, HND, JAM, MTQ, MSR, ANT, NIC, PAN, KNA, LCA, VCT, TTO]
+        [ATG, AIA, ABW, BHS, BRB, BLZ, BMU, BES, CRI, CUB, CYM, CUW, DMA, DOM, SLV, GRD, GLP,
+          GTM, HTI, HND, JAM, MTQ, MSR, NIC, PAN, KNA, LCA, MAF, VCT, SXM, TTO]
   - GCAM 7.0|Central Asia:
       description: Central Asia
       countries: [Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Mongolia,
