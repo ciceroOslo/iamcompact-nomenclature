@@ -1,5 +1,5 @@
 - OSeMOSYS-GR:
-  - Greece:
+  - OSeMOSYS-GR|Greece:
     description: Greece
     countries: [Greece]
     iso3_codes: [GRC]

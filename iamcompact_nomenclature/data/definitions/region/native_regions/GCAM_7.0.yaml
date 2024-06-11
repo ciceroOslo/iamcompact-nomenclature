@@ -1,20 +1,20 @@
 - GCAM 7.0:
-  - Africa_Eastern:
+  - GCAM 7.0|Africa_Eastern:
       description: Eastern Africa
       countries: [Burundi, Comoros, Djibouti, Eritrea, Ethiopia, Kenya, Madagascar,
         Mauritius, Reunion, Rwanda, Somalia, South Sudan, Sudan, Uganda]
       iso3_codes: [BDI, COM, DJI, ERI, ETH, KEN, MDG, MWI, MUS, MYT, MOZ, REU, RWA,
         SYC, SOM, SSD, UGA, TZA, ZMB, ZWE]
-  - Africa_Northers:
+  - GCAM 7.0|Africa_Northers:
       description: Northern Africa
       countries: [Algeria, Egypt, Libya, Morocco, Tunisia, Western Sahara]
       iso3_codes: [DZA, EGY, LBY, MAR, TUN, ESH]
-  - Africa_Southern:
+  - GCAM 7.0|Africa_Southern:
       description: Southern Africa
       countries: [Angola, Botswana, Lesotho, Malawi, Mozambique, Namibia, Eswatini,
         Zambia, Zimbabwe]
       iso3_codes: [AGO, BWA, LSO, MWI, MOZ, NAM, SWZ, ZMB, ZWE]
-  - Africa_Western:
+  - GCAM 7.0|Africa_Western:
       description: Western Africa
       countries: [Benin, Burkina Faso, Cabo Verde, Central African Republic, Chad, Cote d'Ivoire,
         Cameroon, Democratic Republic of the Congo, Equatorial Guinea, Gabon, Gambia,
@@ -22,23 +22,23 @@
         Sierra Leone, Sao Tome and Principe, Togo]
       iso3_codes: [BEN, BFA, CPV, CAF, TCD, CIV, CMR, COG, GNQ, GAB, GMB, GHA, GIN,
         GNB, LBR, MLI, MRT, NER, NGA, SEN, SLE, STP, TGO]
-  - Argentina:
+  - GCAM 7.0|Argentina:
       description: Argentina
       countries: [Argentina]
       iso3_codes: [ARG]
-  - Australia_NZ:
+  - GCAM 7.0|Australia_NZ:
       description: Australia and New Zealand
       countries: [Australia, New Zealand]
       iso3_codes: [AUS, NZL]
-  - Brazil:
+  - GCAM 7.0|Brazil:
       description: Brazil
       countries: [Brazil]
       iso3_codes: [BRA]
-  - Canada:
+  - GCAM 7.0|Canada:
       description: Canada
       countries: [Canada]
       iso3_codes: [CAN]
-  - Central America and Caribbean:
+  - GCAM 7.0|Central America and Caribbean:
       description: Central America and the Caribbean
       countries: [Antigua and Barbuda, Anguilla, Aruba, Bahamas, Barbados, Belize,
         Bermuda, Costa Rica, Cuba, Cayman Islands, Dominica, Dominican Republic, El Salvador,
@@ -48,25 +48,25 @@
       iso3_codes:
         [ATG, AIA, ABW, BHS, BRB, BLZ, BMU, CRI, CUB, CYM, DMA, DOM, SLV, GRD, GLP,
           GTM, HTI, HND, JAM, MTQ, MSR, ANT, NIC, PAN, KNA, LCA, VCT, TTO]
-  - Central Asia:
+  - GCAM 7.0|Central Asia:
       description: Central Asia
       countries: [Armenia, Azerbaijan, Georgia, Kazakhstan, Kyrgyzstan, Mongolia,
         Tajikistan, Turkmenistan, Uzbekistan]
       iso3_codes: [ARM, AZE, GEO, KAZ, KGZ, MNG, TJK, TKM, UZB]
-  - China:
+  - GCAM 7.0|China:
       description: China
       countries: [China]
       iso3_codes: [CHN]
-  - Colombia:
+  - GCAM 7.0|Colombia:
       description: Colombia
       countries: [Colombia]
       iso3_codes: [COL]
-  - EU-12:
+  - GCAM 7.0|EU-12:
       description: EU countries that joined after 2000 but before 2013 (excl. Croatia)
       countries: [Bulgaria, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania,
         Malta, Poland, Romania, Slovakia, Slovenia]
       iso3_codes: [BGR, CYP, CZE, EST, HUN, LVA, LTU, MLT, POL, ROU, SVK, SVN]
-  - EU-15:
+  - GCAM 7.0|EU-15:
       description: EU countries that joined before 2000, along with the associated
         countries Andorra and Monaco
       countries: [Andorra, Austria, Belgium, Denmark, Finland, France, Germany, Greece,
