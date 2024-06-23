@@ -1,0 +1,2 @@
+['remote "qbo-sshfs"']
+    url = ../dvc_sshfs_remote
