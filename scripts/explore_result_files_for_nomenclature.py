@@ -161,6 +161,19 @@ dsd: nomenclature.DataStructureDefinition = icnom.get_dsd()
 regproc: nomenclature.RegionProcessor = icnom.get_region_processor()
 
 # %%
+# Get a dict of regions per model
+model_regions: dict[str, set[str]] = dict()
+more_than_one_region: list[tuple[str, list[str]]] = list()
+for _key, _idf in flat_data_dict_iamdfs.items():
+    if len(_idf.model) != 1:
+        more_than_one_region.append((_key, _idf.model))
+    _model = _idf.model[0]
+    if _model not in model_regions.keys():
+        model_regions[_model] = set(_idf.region)
+    else:
+        model_regions[_model] = model_regions[_model].union(_idf.region)
+
+# %%
 # Get invalid variable names from all the files, using iamcompact_nomenclature.validation
 check_dim: str = 'variable'
 invalid_names: dict[str, list[str]] = {

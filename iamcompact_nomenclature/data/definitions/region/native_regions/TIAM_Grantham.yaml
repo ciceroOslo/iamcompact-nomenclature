@@ -1,0 +1,99 @@
+- TIAM_Grantham:
+  - TIAM_Grantham|AFR:
+      description: Africa
+      countries: [Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon,
+        Cabo Verde, Central African Republic, Chad, Comoros, Congo, Cote d'Ivoire,
+        Democratic Republic of the Congo, Djibouti, Egypt, Equatorial Guinea, Eritrea,
+        Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia,
+        Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco,
+        Mozambique, Namibia, Niger, Nigeria, Rwanda, Reunion, Sao Tome and Principe,
+        Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan,
+        Eswatini, Togo, Tunisia, Uganda, Tanzania, Western Sahara, Zambia, Zimbabwe]
+      iso3_codes: [DZA, AGO, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG, CIV,
+        COD, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, LBY,
+        MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ, NAM, NER, NGA, RWA, REU, STP, SEN,
+        SYC, SLE, SOM, ZAF, SSD, SDN, SWZ, TGO, TUN, UGA, TZA, ESH, ZMB, ZWE]
+  - TIAM_Grantham|AUS:
+      description: Oceania
+      countries: [Australia, Fiji, French Polynesia, Guam, Kiribati, Marshall Islands,
+        Micronesia, Nauru, New Caledonia, New Zealand, Niue, Northern Mariana Islands,
+        Palau, Papua New Guinea, Samoa, Solomon Islands, Tonga, Tuvalu, Vanuatu]
+      iso3_codes: [AUS, FJI, PYF, GUM, KIR, MHL, FSM, NRU, NCL, NZL, NIU, MNP, PLW,
+        PNG, WSM, SLB, TON, TUV, VUT]
+  - TIAM_Grantham|CAN:
+      description: Canada
+      countries: [Canada]
+      iso3_codes: [CAN]
+  - TIAM_Grantham|CHI:
+      description: China
+      countries: [China, Hong Kong, Macao]
+      iso3_codes: [CHN, HKG, MAC]
+  - TIAM_Grantham|CSA:
+      description: Central and South America
+      countries: [Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
+        Bermuda, Bolivia, Brazil, Cayman Islands, Chile, Colombia, Costa Rica, Cuba,
+        Dominica, Dominican Republic, Ecuador, El Salvador, French Guiana, Grenada,
+        Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Martinique,
+        Nicaragua, Panama, Paraguay, Peru, Puerto Rico, Saint Kitts and Nevis,
+        Saint Lucia, Saint Vincent and the Grenadines, Suriname, Trinidad and Tobago,
+        United States Virgin Islands, Uruguay, Venezuela]
+      iso3_codes: [ATG, ARG, ABW, BHS, BRB, BLZ, BMU, BOL, BRA, CYM, CHL, COL, CRI,
+        CUB, DMA, DOM, ECU, SLV, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ, NIC,
+        PAN, PRY, PER, PRI, KNA, LCA, VCT, SUR, TTO, VIR, URY, VEN]
+  - TIAM_Grantham|EEU:
+      description: Eastern Europe
+      countries: [Albania, Bosnia and Herzegovina, Bulgaria, Croatia, Czech Republic,
+        Hungary, Kosovo, North Macedonia, Montenegro, Poland, Romania, Serbia,
+        Slovakia, Slovenia]
+      iso3_codes: [ALB, BIH, BGR, HRV, CZE, HUN, MKD, MNE, POL, ROU, SRB, SVK, SVN]
+      note: Kosovo is included in this region, and listed in the `countries` attribute,
+        but not in the `iso3_codes` attribute, due to not having an official ISO 3611-1
+        alpha-3 code. `XKX` or `XKK` are often used for Kosovo, but at the moment
+        would cause a validation error when loading into the `nomenclature` package,
+        which validates ISO 3-letter codes against the plain `pycountry.countries`
+        package, which does not include Kosovo.`
+  - TIAM_Grantham|FSU:
+      description: Russia and Central Asia
+      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan,
+        Moldova, Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
+      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
+  - TIAM_Grantham|IND:
+      description: India
+      countries: [India]
+      iso3_codes: [IND]
+  - TIAM_Grantham|JPN:
+      description: Japan
+      countries: [Japan]
+      iso3_codes: [JPN]
+  - TIAM_Grantham|MEA:
+      description: Middle East
+      countries: [Bahrain, Cyprus, Iran, Iraq, Israel, Jordan, Kuwait, Lebanon,
+        Oman, Qatar, Saudi Arabia, Syria, Turkey, United Arab Emirates, Yemen]
+      iso3_codes: [BHR, CYP, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, QAT, SAU, SYR, TUR,
+        ARE, YEM]
+  - TIAM_Grantham|MEX:
+      description: Mexico
+      countries: [Mexico]
+      iso3_codes: [MEX]
+  - TIAM_Grantham|ODA:
+      description: (Other) South and Southeast Asia
+      countries: [Afghanistan, Bangladesh, Bhutan, Brunei Darussalam, Cambodia, Indonesia, Laos,
+        Malaysia, Maldives, Mongolia, Myanmar, Nepal, Pakistan, Philippines, Singapore,
+        Sri Lanka, Taiwan, Thailand, Timor-Leste, Viet Nam]
+      iso3_codes: [AFG, BGD, BTN, BRN, KHM, IDN, LAO, MYS, MDV, MNG, MMR, NPL, PAK,
+        PHL, SGP, LKA, TWN, THA, TLS, VNM]
+  - TIAM_Grantham|SKO:
+      description: South Korea
+      countries: [South Korea]
+      iso3_codes: [KOR]
+  - TIAM_Grantham|USA:
+      description: United States
+      countries: [United States]
+      iso3_codes: [USA]
+  - TIAM_Grantham|WEU:
+      description: Western Europe
+      countries: [Austria, Belgium, Denmark, Finland, France, Germany, Greece, Iceland,
+        Ireland, Italy, Luxembourg, Malta, Netherlands, Norway, Portugal, Spain, Sweden,
+        Switzerland, United Kingdom]
+      iso3_codes: [AUT, BEL, DNK, FIN, FRA, DEU, GRC, ISL, IRL, ITA, LUX, MLT, NLD,
+        NOR, PRT, ESP, SWE, CHE, GBR]
