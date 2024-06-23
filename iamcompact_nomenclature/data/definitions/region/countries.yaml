@@ -5,6 +5,7 @@
       iso3_codes: ABW
       alpha_3: ABW
       alpha_2: AW
+      note: Part of the Netherlands Antilles (ANT) until 1986
   - Afghanistan:
       description: Afghanistan
       common_name: Afghanistan
@@ -137,6 +138,7 @@
       alpha_3: BES
       alpha_2: BQ
       official_name: Bonaire, Sint Eustatius and Saba
+      note: Part of the Netherlands Antilles (ANT) until 2010
   - Burkina Faso:
       description: Burkina Faso
       common_name: Burkina Faso
@@ -365,6 +367,7 @@
       alpha_3: CUW
       alpha_2: CW
       official_name: Curaçao
+      note: Part of the Netherlands Antilles (ANT) until 2010
   - Christmas Island:
       description: Christmas Island
       common_name: Christmas Island
@@ -1434,6 +1437,7 @@
       alpha_3: SXM
       alpha_2: SX
       official_name: Sint Maarten (Dutch part)
+      note: Part of the Netherlands Antilles (ANT) until 2010
   - Seychelles:
       description: Seychelles
       common_name: Seychelles
