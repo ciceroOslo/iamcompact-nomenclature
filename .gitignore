@@ -3,3 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Ignore sshfs-mounted DVC remote directory
+/dvc_sshfs_remote/
+

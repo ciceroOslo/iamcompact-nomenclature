@@ -1,21 +1,32 @@
-[tool.poetry]
+[project]
 name = "iamcompact-nomenclature"
-version = "0.5.0"
+version = "0.6.0"
 description = "Data structure definition for validation of model outputs in the HORIZON EUROPE project IAM COMPACT, using nomenclature-iamc"
-authors = ["Jan Ivar Korsbakken <janko@cicero.oslo.no>"]
+authors = [
+    { name = "Jan Ivar Korsbakken", email = "janko@cicero.oslo.no" }
+]
+dependencies = [
+    "nomenclature-iamc>=0.17.0",
+    "pyam-iamc>=2.1"
+]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = ">=3.10,<3.12"
-nomenclature-iamc = ">=0.16.0"
-pyam-iamc = ">=2.1"
-
-[tool.poetry.group.dev.dependencies]
-ipython = ">=8.20.0"
-pytest = ">=8.0.0"
-ipykernel = ">=6.29.0"
-dvc = {extras = ["ssh"], version = "^3.48.4"}
+requires-python = ">= 3.10"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ipython>=8.20.0",
+    "pytest>=8.0.0",
+    "ipykernel>=6.29.0",
+    "dvc[ssh]>=3.48.4"
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["iamcompact_nomenclature"]

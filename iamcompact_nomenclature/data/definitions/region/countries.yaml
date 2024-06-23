@@ -1,0 +1,1700 @@
+- countries:
+  - Aruba:
+      description: Aruba
+      common_name: Aruba
+      iso3_codes: ABW
+      alpha_3: ABW
+      alpha_2: AW
+      note: Part of the Netherlands Antilles (ANT) until 1986
+  - Afghanistan:
+      description: Afghanistan
+      common_name: Afghanistan
+      iso3_codes: AFG
+      alpha_3: AFG
+      alpha_2: AF
+      official_name: Islamic Republic of Afghanistan
+  - Angola:
+      description: Angola
+      common_name: Angola
+      iso3_codes: AGO
+      alpha_3: AGO
+      alpha_2: AO
+      official_name: Republic of Angola
+  - Anguilla:
+      description: Anguilla
+      common_name: Anguilla
+      iso3_codes: AIA
+      alpha_3: AIA
+      alpha_2: AI
+  - Åland Islands:
+      description: Åland Islands
+      common_name: Åland Islands
+      iso3_codes: ALA
+      alpha_3: ALA
+      alpha_2: AX
+  - Albania:
+      description: Albania
+      common_name: Albania
+      iso3_codes: ALB
+      alpha_3: ALB
+      alpha_2: AL
+      official_name: Republic of Albania
+  - Andorra:
+      description: Andorra
+      common_name: Andorra
+      iso3_codes: AND
+      alpha_3: AND
+      alpha_2: AD
+      official_name: Principality of Andorra
+  - United Arab Emirates:
+      description: United Arab Emirates
+      common_name: United Arab Emirates
+      iso3_codes: ARE
+      alpha_3: ARE
+      alpha_2: AE
+  - Argentina:
+      description: Argentina
+      common_name: Argentina
+      iso3_codes: ARG
+      alpha_3: ARG
+      alpha_2: AR
+      official_name: Argentine Republic
+  - Armenia:
+      description: Armenia
+      common_name: Armenia
+      iso3_codes: ARM
+      alpha_3: ARM
+      alpha_2: AM
+      official_name: Republic of Armenia
+  - American Samoa:
+      description: American Samoa
+      common_name: American Samoa
+      iso3_codes: ASM
+      alpha_3: ASM
+      alpha_2: AS
+  - Antarctica:
+      description: Antarctica
+      common_name: Antarctica
+      iso3_codes: ATA
+      alpha_3: ATA
+      alpha_2: AQ
+  - French Southern Territories:
+      description: French Southern Territories
+      common_name: French Southern Territories
+      iso3_codes: ATF
+      alpha_3: ATF
+      alpha_2: TF
+  - Antigua and Barbuda:
+      description: Antigua and Barbuda
+      common_name: Antigua and Barbuda
+      iso3_codes: ATG
+      alpha_3: ATG
+      alpha_2: AG
+  - Australia:
+      description: Australia
+      common_name: Australia
+      iso3_codes: AUS
+      alpha_3: AUS
+      alpha_2: AU
+  - Austria:
+      description: Austria
+      common_name: Austria
+      iso3_codes: AUT
+      alpha_3: AUT
+      alpha_2: AT
+      official_name: Republic of Austria
+  - Azerbaijan:
+      description: Azerbaijan
+      common_name: Azerbaijan
+      iso3_codes: AZE
+      alpha_3: AZE
+      alpha_2: AZ
+      official_name: Republic of Azerbaijan
+  - Burundi:
+      description: Burundi
+      common_name: Burundi
+      iso3_codes: BDI
+      alpha_3: BDI
+      alpha_2: BI
+      official_name: Republic of Burundi
+  - Belgium:
+      description: Belgium
+      common_name: Belgium
+      iso3_codes: BEL
+      alpha_3: BEL
+      alpha_2: BE
+      official_name: Kingdom of Belgium
+  - Benin:
+      description: Benin
+      common_name: Benin
+      iso3_codes: BEN
+      alpha_3: BEN
+      alpha_2: BJ
+      official_name: Republic of Benin
+  - Caribbean Netherlands:
+      description: Bonaire, Sint Eustatius and Saba
+      common_name: Caribbean Netherlands
+      iso3_codes: BES
+      alpha_3: BES
+      alpha_2: BQ
+      official_name: Bonaire, Sint Eustatius and Saba
+      note: Part of the Netherlands Antilles (ANT) until 2010
+  - Burkina Faso:
+      description: Burkina Faso
+      common_name: Burkina Faso
+      iso3_codes: BFA
+      alpha_3: BFA
+      alpha_2: BF
+  - Bangladesh:
+      description: Bangladesh
+      common_name: Bangladesh
+      iso3_codes: BGD
+      alpha_3: BGD
+      alpha_2: BD
+      official_name: People's Republic of Bangladesh
+  - Bulgaria:
+      description: Bulgaria
+      common_name: Bulgaria
+      iso3_codes: BGR
+      alpha_3: BGR
+      alpha_2: BG
+      official_name: Republic of Bulgaria
+  - Bahrain:
+      description: Bahrain
+      common_name: Bahrain
+      iso3_codes: BHR
+      alpha_3: BHR
+      alpha_2: BH
+      official_name: Kingdom of Bahrain
+  - Bahamas:
+      description: Bahamas
+      common_name: Bahamas
+      iso3_codes: BHS
+      alpha_3: BHS
+      alpha_2: BS
+      official_name: Commonwealth of the Bahamas
+  - Bosnia and Herzegovina:
+      description: Bosnia and Herzegovina
+      common_name: Bosnia and Herzegovina
+      iso3_codes: BIH
+      alpha_3: BIH
+      alpha_2: BA
+      official_name: Republic of Bosnia and Herzegovina
+  - Saint Barthélemy:
+      description: Saint Barthélemy
+      common_name: Saint Barthélemy
+      iso3_codes: BLM
+      alpha_3: BLM
+      alpha_2: BL
+  - Belarus:
+      description: Belarus
+      common_name: Belarus
+      iso3_codes: BLR
+      alpha_3: BLR
+      alpha_2: BY
+      official_name: Republic of Belarus
+  - Belize:
+      description: Belize
+      common_name: Belize
+      iso3_codes: BLZ
+      alpha_3: BLZ
+      alpha_2: BZ
+  - Bermuda:
+      description: Bermuda
+      common_name: Bermuda
+      iso3_codes: BMU
+      alpha_3: BMU
+      alpha_2: BM
+  - Bolivia:
+      description: Bolivia
+      common_name: Bolivia
+      iso3_codes: BOL
+      alpha_3: BOL
+      alpha_2: BO
+      official_name: Plurinational State of Bolivia
+      note: Name changed from ISO 3166 in line with community standards
+  - Brazil:
+      description: Brazil
+      common_name: Brazil
+      iso3_codes: BRA
+      alpha_3: BRA
+      alpha_2: BR
+      official_name: Federative Republic of Brazil
+  - Barbados:
+      description: Barbados
+      common_name: Barbados
+      iso3_codes: BRB
+      alpha_3: BRB
+      alpha_2: BB
+  - Brunei Darussalam:
+      description: Brunei Darussalam
+      common_name: Brunei
+      iso3_codes: BRN
+      alpha_3: BRN
+      alpha_2: BN
+  - Bhutan:
+      description: Bhutan
+      common_name: Bhutan
+      iso3_codes: BTN
+      alpha_3: BTN
+      alpha_2: BT
+      official_name: Kingdom of Bhutan
+  - Bouvet Island:
+      description: Bouvet Island
+      common_name: Bouvet Island
+      iso3_codes: BVT
+      alpha_3: BVT
+      alpha_2: BV
+  - Botswana:
+      description: Botswana
+      common_name: Botswana
+      iso3_codes: BWA
+      alpha_3: BWA
+      alpha_2: BW
+      official_name: Republic of Botswana
+  - Central African Republic:
+      description: Central African Republic
+      common_name: Central African Republic
+      iso3_codes: CAF
+      alpha_3: CAF
+      alpha_2: CF
+  - Canada:
+      description: Canada
+      common_name: Canada
+      iso3_codes: CAN
+      alpha_3: CAN
+      alpha_2: CA
+  - Cocos (Keeling) Islands:
+      description: Cocos (Keeling) Islands
+      common_name: Cocos (Keeling) Islands
+      iso3_codes: CCK
+      alpha_3: CCK
+      alpha_2: CC
+  - Switzerland:
+      description: Switzerland
+      common_name: Switzerland
+      iso3_codes: CHE
+      alpha_3: CHE
+      alpha_2: CH
+      official_name: Swiss Confederation
+  - Chile:
+      description: Chile
+      common_name: Chile
+      iso3_codes: CHL
+      alpha_3: CHL
+      alpha_2: CL
+      official_name: Republic of Chile
+  - China:
+      description: China
+      common_name: China
+      iso3_codes: CHN
+      alpha_3: CHN
+      alpha_2: CN
+      official_name: People's Republic of China
+  - Cote d'Ivoire:
+      description: Côte d'Ivoire
+      common_name: Côte d'Ivoire
+      iso3_codes: CIV
+      alpha_3: CIV
+      alpha_2: CI
+      official_name: Republic of Côte d'Ivoire
+  - Cameroon:
+      description: Cameroon
+      common_name: Cameroon
+      iso3_codes: CMR
+      alpha_3: CMR
+      alpha_2: CM
+      official_name: Republic of Cameroon
+  - Democratic Republic of the Congo:
+      description: Democratic Republic of the Congo
+      common_name: Democratic Republic of the Congo
+      iso3_codes: COD
+      alpha_3: COD
+      alpha_2: CD
+      note: Name changed from ISO 3166 in line with community standards
+  - Congo:
+      description: Congo
+      common_name: Congo
+      iso3_codes: COG
+      alpha_3: COG
+      alpha_2: CG
+      official_name: Republic of the Congo
+  - Cook Islands:
+      description: Cook Islands
+      common_name: Cook Islands
+      iso3_codes: COK
+      alpha_3: COK
+      alpha_2: CK
+  - Colombia:
+      description: Colombia
+      common_name: Colombia
+      iso3_codes: COL
+      alpha_3: COL
+      alpha_2: CO
+      official_name: Republic of Colombia
+  - Comoros:
+      description: Comoros
+      common_name: Comoros
+      iso3_codes: COM
+      alpha_3: COM
+      alpha_2: KM
+      official_name: Union of the Comoros
+  - Cabo Verde:
+      description: Cabo Verde
+      common_name: Cabo Verde
+      iso3_codes: CPV
+      alpha_3: CPV
+      alpha_2: CV
+      official_name: Republic of Cabo Verde
+  - Costa Rica:
+      description: Costa Rica
+      common_name: Costa Rica
+      iso3_codes: CRI
+      alpha_3: CRI
+      alpha_2: CR
+      official_name: Republic of Costa Rica
+  - Cuba:
+      description: Cuba
+      common_name: Cuba
+      iso3_codes: CUB
+      alpha_3: CUB
+      alpha_2: CU
+      official_name: Republic of Cuba
+  - Curacao:
+      description: Curaçao
+      common_name: Curaçao
+      iso3_codes: CUW
+      alpha_3: CUW
+      alpha_2: CW
+      official_name: Curaçao
+      note: Part of the Netherlands Antilles (ANT) until 2010
+  - Christmas Island:
+      description: Christmas Island
+      common_name: Christmas Island
+      iso3_codes: CXR
+      alpha_3: CXR
+      alpha_2: CX
+  - Cayman Islands:
+      description: Cayman Islands
+      common_name: Cayman Islands
+      iso3_codes: CYM
+      alpha_3: CYM
+      alpha_2: KY
+  - Cyprus:
+      description: Cyprus
+      common_name: Cyprus
+      iso3_codes: CYP
+      alpha_3: CYP
+      alpha_2: CY
+      official_name: Republic of Cyprus
+  - Czechia:
+      description: Czechia
+      common_name: Czechia
+      iso3_codes: CZE
+      alpha_3: CZE
+      alpha_2: CZ
+      official_name: Czech Republic
+  - Germany:
+      description: Germany
+      common_name: Germany
+      iso3_codes: DEU
+      alpha_3: DEU
+      alpha_2: DE
+      official_name: Federal Republic of Germany
+  - Djibouti:
+      description: Djibouti
+      common_name: Djibouti
+      iso3_codes: DJI
+      alpha_3: DJI
+      alpha_2: DJ
+      official_name: Republic of Djibouti
+  - Dominica:
+      description: Dominica
+      common_name: Dominica
+      iso3_codes: DMA
+      alpha_3: DMA
+      alpha_2: DM
+      official_name: Commonwealth of Dominica
+  - Denmark:
+      description: Denmark
+      common_name: Denmark
+      iso3_codes: DNK
+      alpha_3: DNK
+      alpha_2: DK
+      official_name: Kingdom of Denmark
+  - Dominican Republic:
+      description: Dominican Republic
+      common_name: Dominican Republic
+      iso3_codes: DOM
+      alpha_3: DOM
+      alpha_2: DO
+  - Algeria:
+      description: Algeria
+      common_name: Algeria
+      iso3_codes: DZA
+      alpha_3: DZA
+      alpha_2: DZ
+      official_name: People's Democratic Republic of Algeria
+  - Ecuador:
+      description: Ecuador
+      common_name: Ecuador
+      iso3_codes: ECU
+      alpha_3: ECU
+      alpha_2: EC
+      official_name: Republic of Ecuador
+  - Egypt:
+      description: Egypt
+      common_name: Egypt
+      iso3_codes: EGY
+      alpha_3: EGY
+      alpha_2: EG
+      official_name: Arab Republic of Egypt
+  - Eritrea:
+      description: Eritrea
+      common_name: Eritrea
+      iso3_codes: ERI
+      alpha_3: ERI
+      alpha_2: ER
+      official_name: the State of Eritrea
+  - Western Sahara:
+      description: Western Sahara
+      common_name: Western Sahara
+      iso3_codes: ESH
+      alpha_3: ESH
+      alpha_2: EH
+  - Spain:
+      description: Spain
+      common_name: Spain
+      iso3_codes: ESP
+      alpha_3: ESP
+      alpha_2: ES
+      official_name: Kingdom of Spain
+  - Estonia:
+      description: Estonia
+      common_name: Estonia
+      iso3_codes: EST
+      alpha_3: EST
+      alpha_2: EE
+      official_name: Republic of Estonia
+  - Ethiopia:
+      description: Ethiopia
+      common_name: Ethiopia
+      iso3_codes: ETH
+      alpha_3: ETH
+      alpha_2: ET
+      official_name: Federal Democratic Republic of Ethiopia
+  - Finland:
+      description: Finland
+      common_name: Finland
+      iso3_codes: FIN
+      alpha_3: FIN
+      alpha_2: FI
+      official_name: Republic of Finland
+  - Fiji:
+      description: Fiji
+      common_name: Fiji
+      iso3_codes: FJI
+      alpha_3: FJI
+      alpha_2: FJ
+      official_name: Republic of Fiji
+  - Falkland Islands (Malvinas):
+      description: Falkland Islands (Malvinas)
+      common_name: Falkland Islands (Malvinas)
+      iso3_codes: FLK
+      alpha_3: FLK
+      alpha_2: FK
+  - France:
+      description: France
+      common_name: France
+      iso3_codes: FRA
+      alpha_3: FRA
+      alpha_2: FR
+      official_name: French Republic
+  - Faroe Islands:
+      description: Faroe Islands
+      common_name: Faroe Islands
+      iso3_codes: FRO
+      alpha_3: FRO
+      alpha_2: FO
+  - Micronesia:
+      description: Micronesia
+      common_name: Micronesia
+      iso3_codes: FSM
+      alpha_3: FSM
+      alpha_2: FM
+      official_name: Federated States of Micronesia
+      note: Name changed from ISO 3166 in line with community standards
+  - Gabon:
+      description: Gabon
+      common_name: Gabon
+      iso3_codes: GAB
+      alpha_3: GAB
+      alpha_2: GA
+      official_name: Gabonese Republic
+  - United Kingdom:
+      description: United Kingdom
+      common_name: United Kingdom
+      iso3_codes: GBR
+      alpha_3: GBR
+      alpha_2: GB
+      official_name: United Kingdom of Great Britain and Northern Ireland
+  - Georgia:
+      description: Georgia
+      common_name: Georgia
+      iso3_codes: GEO
+      alpha_3: GEO
+      alpha_2: GE
+  - Guernsey:
+      description: Guernsey
+      common_name: Guernsey
+      iso3_codes: GGY
+      alpha_3: GGY
+      alpha_2: GG
+  - Ghana:
+      description: Ghana
+      common_name: Ghana
+      iso3_codes: GHA
+      alpha_3: GHA
+      alpha_2: GH
+      official_name: Republic of Ghana
+  - Gibraltar:
+      description: Gibraltar
+      common_name: Gibraltar
+      iso3_codes: GIB
+      alpha_3: GIB
+      alpha_2: GI
+  - Guinea:
+      description: Guinea
+      common_name: Guinea
+      iso3_codes: GIN
+      alpha_3: GIN
+      alpha_2: GN
+      official_name: Republic of Guinea
+  - Guadeloupe:
+      description: Guadeloupe
+      common_name: Guadeloupe
+      iso3_codes: GLP
+      alpha_3: GLP
+      alpha_2: GP
+  - Gambia:
+      description: Gambia
+      common_name: Gambia
+      iso3_codes: GMB
+      alpha_3: GMB
+      alpha_2: GM
+      official_name: Republic of the Gambia
+  - Guinea-Bissau:
+      description: Guinea-Bissau
+      common_name: Guinea-Bissau
+      iso3_codes: GNB
+      alpha_3: GNB
+      alpha_2: GW
+      official_name: Republic of Guinea-Bissau
+  - Equatorial Guinea:
+      description: Equatorial Guinea
+      common_name: Equatorial Guinea
+      iso3_codes: GNQ
+      alpha_3: GNQ
+      alpha_2: GQ
+      official_name: Republic of Equatorial Guinea
+  - Greece:
+      description: Greece
+      common_name: Greece
+      iso3_codes: GRC
+      alpha_3: GRC
+      alpha_2: GR
+      official_name: Hellenic Republic
+  - Grenada:
+      description: Grenada
+      common_name: Grenada
+      iso3_codes: GRD
+      alpha_3: GRD
+      alpha_2: GD
+  - Greenland:
+      description: Greenland
+      common_name: Greenland
+      iso3_codes: GRL
+      alpha_3: GRL
+      alpha_2: GL
+  - Guatemala:
+      description: Guatemala
+      common_name: Guatemala
+      iso3_codes: GTM
+      alpha_3: GTM
+      alpha_2: GT
+      official_name: Republic of Guatemala
+  - French Guiana:
+      description: French Guiana
+      common_name: French Guiana
+      iso3_codes: GUF
+      alpha_3: GUF
+      alpha_2: GF
+  - Guam:
+      description: Guam
+      common_name: Guam
+      iso3_codes: GUM
+      alpha_3: GUM
+      alpha_2: GU
+  - Guyana:
+      description: Guyana
+      common_name: Guyana
+      iso3_codes: GUY
+      alpha_3: GUY
+      alpha_2: GY
+      official_name: Republic of Guyana
+  - Hong Kong:
+      description: Hong Kong
+      common_name: Hong Kong
+      iso3_codes: HKG
+      alpha_3: HKG
+      alpha_2: HK
+      official_name: Hong Kong Special Administrative Region of China
+  - Heard Island and McDonald Islands:
+      description: Heard Island and McDonald Islands
+      common_name: Heard Island and McDonald Islands
+      iso3_codes: HMD
+      alpha_3: HMD
+      alpha_2: HM
+  - Honduras:
+      description: Honduras
+      common_name: Honduras
+      iso3_codes: HND
+      alpha_3: HND
+      alpha_2: HN
+      official_name: Republic of Honduras
+  - Croatia:
+      description: Croatia
+      common_name: Croatia
+      iso3_codes: HRV
+      alpha_3: HRV
+      alpha_2: HR
+      official_name: Republic of Croatia
+  - Haiti:
+      description: Haiti
+      common_name: Haiti
+      iso3_codes: HTI
+      alpha_3: HTI
+      alpha_2: HT
+      official_name: Republic of Haiti
+  - Hungary:
+      description: Hungary
+      common_name: Hungary
+      iso3_codes: HUN
+      alpha_3: HUN
+      alpha_2: HU
+      official_name: Hungary
+  - Indonesia:
+      description: Indonesia
+      common_name: Indonesia
+      iso3_codes: IDN
+      alpha_3: IDN
+      alpha_2: ID
+      official_name: Republic of Indonesia
+  - Isle of Man:
+      description: Isle of Man
+      common_name: Isle of Man
+      iso3_codes: IMN
+      alpha_3: IMN
+      alpha_2: IM
+  - India:
+      description: India
+      common_name: India
+      iso3_codes: IND
+      alpha_3: IND
+      alpha_2: IN
+      official_name: Republic of India
+  - British Indian Ocean Territory:
+      description: British Indian Ocean Territory
+      common_name: British Indian Ocean Territory
+      iso3_codes: IOT
+      alpha_3: IOT
+      alpha_2: IO
+  - Ireland:
+      description: Ireland
+      common_name: Ireland
+      iso3_codes: IRL
+      alpha_3: IRL
+      alpha_2: IE
+  - Iran:
+      description: Iran
+      common_name: Iran
+      iso3_codes: IRN
+      alpha_3: IRN
+      alpha_2: IR
+      official_name: Islamic Republic of Iran
+      note: Name changed from ISO 3166 in line with community standards
+  - Iraq:
+      description: Iraq
+      common_name: Iraq
+      iso3_codes: IRQ
+      alpha_3: IRQ
+      alpha_2: IQ
+      official_name: Republic of Iraq
+  - Iceland:
+      description: Iceland
+      common_name: Iceland
+      iso3_codes: ISL
+      alpha_3: ISL
+      alpha_2: IS
+      official_name: Republic of Iceland
+  - Israel:
+      description: Israel
+      common_name: Israel
+      iso3_codes: ISR
+      alpha_3: ISR
+      alpha_2: IL
+      official_name: State of Israel
+  - Italy:
+      description: Italy
+      common_name: Italy
+      iso3_codes: ITA
+      alpha_3: ITA
+      alpha_2: IT
+      official_name: Italian Republic
+  - Jamaica:
+      description: Jamaica
+      common_name: Jamaica
+      iso3_codes: JAM
+      alpha_3: JAM
+      alpha_2: JM
+  - Jersey:
+      description: Jersey
+      common_name: Jersey
+      iso3_codes: JEY
+      alpha_3: JEY
+      alpha_2: JE
+  - Jordan:
+      description: Jordan
+      common_name: Jordan
+      iso3_codes: JOR
+      alpha_3: JOR
+      alpha_2: JO
+      official_name: Hashemite Kingdom of Jordan
+  - Japan:
+      description: Japan
+      common_name: Japan
+      iso3_codes: JPN
+      alpha_3: JPN
+      alpha_2: JP
+  - Kazakhstan:
+      description: Kazakhstan
+      common_name: Kazakhstan
+      iso3_codes: KAZ
+      alpha_3: KAZ
+      alpha_2: KZ
+      official_name: Republic of Kazakhstan
+  - Kenya:
+      description: Kenya
+      common_name: Kenya
+      iso3_codes: KEN
+      alpha_3: KEN
+      alpha_2: KE
+      official_name: Republic of Kenya
+  - Kyrgyzstan:
+      description: Kyrgyzstan
+      common_name: Kyrgyzstan
+      iso3_codes: KGZ
+      alpha_3: KGZ
+      alpha_2: KG
+      official_name: Kyrgyz Republic
+  - Cambodia:
+      description: Cambodia
+      common_name: Cambodia
+      iso3_codes: KHM
+      alpha_3: KHM
+      alpha_2: KH
+      official_name: Kingdom of Cambodia
+  - Kiribati:
+      description: Kiribati
+      common_name: Kiribati
+      iso3_codes: KIR
+      alpha_3: KIR
+      alpha_2: KI
+      official_name: Republic of Kiribati
+  - Saint Kitts and Nevis:
+      description: Saint Kitts and Nevis
+      common_name: Saint Kitts and Nevis
+      iso3_codes: KNA
+      alpha_3: KNA
+      alpha_2: KN
+  - South Korea:
+      description: South Korea
+      common_name: South Korea
+      iso3_codes: KOR
+      alpha_3: KOR
+      alpha_2: KR
+      official_name: Republic of Korea
+      note: Name changed from ISO 3166 in line with community standards
+  - Kuwait:
+      description: Kuwait
+      common_name: Kuwait
+      iso3_codes: KWT
+      alpha_3: KWT
+      alpha_2: KW
+      official_name: State of Kuwait
+  - Laos:
+      description: Laos
+      common_name: Laos
+      iso3_codes: LAO
+      alpha_3: LAO
+      alpha_2: LA
+      note: Name changed from ISO 3166 in line with community standards
+  - Lebanon:
+      description: Lebanon
+      common_name: Lebanon
+      iso3_codes: LBN
+      alpha_3: LBN
+      alpha_2: LB
+      official_name: Lebanese Republic
+  - Liberia:
+      description: Liberia
+      common_name: Liberia
+      iso3_codes: LBR
+      alpha_3: LBR
+      alpha_2: LR
+      official_name: Republic of Liberia
+  - Libya:
+      description: Libya
+      common_name: Libya
+      iso3_codes: LBY
+      alpha_3: LBY
+      alpha_2: LY
+      official_name: Libya
+  - Saint Lucia:
+      description: Saint Lucia
+      common_name: Saint Lucia
+      iso3_codes: LCA
+      alpha_3: LCA
+      alpha_2: LC
+  - Liechtenstein:
+      description: Liechtenstein
+      common_name: Liechtenstein
+      iso3_codes: LIE
+      alpha_3: LIE
+      alpha_2: LI
+      official_name: Principality of Liechtenstein
+  - Sri Lanka:
+      description: Sri Lanka
+      common_name: Sri Lanka
+      iso3_codes: LKA
+      alpha_3: LKA
+      alpha_2: LK
+      official_name: Democratic Socialist Republic of Sri Lanka
+  - Lesotho:
+      description: Lesotho
+      common_name: Lesotho
+      iso3_codes: LSO
+      alpha_3: LSO
+      alpha_2: LS
+      official_name: Kingdom of Lesotho
+  - Lithuania:
+      description: Lithuania
+      common_name: Lithuania
+      iso3_codes: LTU
+      alpha_3: LTU
+      alpha_2: LT
+      official_name: Republic of Lithuania
+  - Luxembourg:
+      description: Luxembourg
+      common_name: Luxembourg
+      iso3_codes: LUX
+      alpha_3: LUX
+      alpha_2: LU
+      official_name: Grand Duchy of Luxembourg
+  - Latvia:
+      description: Latvia
+      common_name: Latvia
+      iso3_codes: LVA
+      alpha_3: LVA
+      alpha_2: LV
+      official_name: Republic of Latvia
+  - Macao:
+      description: Macao
+      common_name: Macao
+      iso3_codes: MAC
+      alpha_3: MAC
+      alpha_2: MO
+      official_name: Macao Special Administrative Region of China
+  - Saint Martin:
+      description: Saint Martin (French part)
+      common_name: Saint Martin
+      iso3_codes: MAF
+      alpha_3: MAF
+      alpha_2: MF
+  - Morocco:
+      description: Morocco
+      common_name: Morocco
+      iso3_codes: MAR
+      alpha_3: MAR
+      alpha_2: MA
+      official_name: Kingdom of Morocco
+  - Monaco:
+      description: Monaco
+      common_name: Monaco
+      iso3_codes: MCO
+      alpha_3: MCO
+      alpha_2: MC
+      official_name: Principality of Monaco
+  - Moldova:
+      description: Moldova
+      common_name: Moldova
+      iso3_codes: MDA
+      alpha_3: MDA
+      alpha_2: MD
+      official_name: Republic of Moldova
+      note: Name changed from ISO 3166 in line with community standards
+  - Madagascar:
+      description: Madagascar
+      common_name: Madagascar
+      iso3_codes: MDG
+      alpha_3: MDG
+      alpha_2: MG
+      official_name: Republic of Madagascar
+  - Maldives:
+      description: Maldives
+      common_name: Maldives
+      iso3_codes: MDV
+      alpha_3: MDV
+      alpha_2: MV
+      official_name: Republic of Maldives
+  - Mexico:
+      description: Mexico
+      common_name: Mexico
+      iso3_codes: MEX
+      alpha_3: MEX
+      alpha_2: MX
+      official_name: United Mexican States
+  - Marshall Islands:
+      description: Marshall Islands
+      common_name: Marshall Islands
+      iso3_codes: MHL
+      alpha_3: MHL
+      alpha_2: MH
+      official_name: Republic of the Marshall Islands
+  - North Macedonia:
+      description: North Macedonia
+      common_name: North Macedonia
+      iso3_codes: MKD
+      alpha_3: MKD
+      alpha_2: MK
+      official_name: Republic of North Macedonia
+  - Mali:
+      description: Mali
+      common_name: Mali
+      iso3_codes: MLI
+      alpha_3: MLI
+      alpha_2: ML
+      official_name: Republic of Mali
+  - Malta:
+      description: Malta
+      common_name: Malta
+      iso3_codes: MLT
+      alpha_3: MLT
+      alpha_2: MT
+      official_name: Republic of Malta
+  - Myanmar:
+      description: Myanmar
+      common_name: Myanmar
+      iso3_codes: MMR
+      alpha_3: MMR
+      alpha_2: MM
+      official_name: Republic of Myanmar
+  - Montenegro:
+      description: Montenegro
+      common_name: Montenegro
+      iso3_codes: MNE
+      alpha_3: MNE
+      alpha_2: ME
+      official_name: Montenegro
+  - Mongolia:
+      description: Mongolia
+      common_name: Mongolia
+      iso3_codes: MNG
+      alpha_3: MNG
+      alpha_2: MN
+  - Northern Mariana Islands:
+      description: Northern Mariana Islands
+      common_name: Northern Mariana Islands
+      iso3_codes: MNP
+      alpha_3: MNP
+      alpha_2: MP
+      official_name: Commonwealth of the Northern Mariana Islands
+  - Mozambique:
+      description: Mozambique
+      common_name: Mozambique
+      iso3_codes: MOZ
+      alpha_3: MOZ
+      alpha_2: MZ
+      official_name: Republic of Mozambique
+  - Mauritania:
+      description: Mauritania
+      common_name: Mauritania
+      iso3_codes: MRT
+      alpha_3: MRT
+      alpha_2: MR
+      official_name: Islamic Republic of Mauritania
+  - Montserrat:
+      description: Montserrat
+      common_name: Montserrat
+      iso3_codes: MSR
+      alpha_3: MSR
+      alpha_2: MS
+  - Martinique:
+      description: Martinique
+      common_name: Martinique
+      iso3_codes: MTQ
+      alpha_3: MTQ
+      alpha_2: MQ
+  - Mauritius:
+      description: Mauritius
+      common_name: Mauritius
+      iso3_codes: MUS
+      alpha_3: MUS
+      alpha_2: MU
+      official_name: Republic of Mauritius
+  - Malawi:
+      description: Malawi
+      common_name: Malawi
+      iso3_codes: MWI
+      alpha_3: MWI
+      alpha_2: MW
+      official_name: Republic of Malawi
+  - Malaysia:
+      description: Malaysia
+      common_name: Malaysia
+      iso3_codes: MYS
+      alpha_3: MYS
+      alpha_2: MY
+  - Mayotte:
+      description: Mayotte
+      common_name: Mayotte
+      iso3_codes: MYT
+      alpha_3: MYT
+      alpha_2: YT
+  - Namibia:
+      description: Namibia
+      common_name: Namibia
+      iso3_codes: NAM
+      alpha_3: NAM
+      alpha_2: NA
+      official_name: Republic of Namibia
+  - New Caledonia:
+      description: New Caledonia
+      common_name: New Caledonia
+      iso3_codes: NCL
+      alpha_3: NCL
+      alpha_2: NC
+  - Niger:
+      description: Niger
+      common_name: Niger
+      iso3_codes: NER
+      alpha_3: NER
+      alpha_2: NE
+      official_name: Republic of the Niger
+  - Norfolk Island:
+      description: Norfolk Island
+      common_name: Norfolk Island
+      iso3_codes: NFK
+      alpha_3: NFK
+      alpha_2: NF
+  - Nigeria:
+      description: Nigeria
+      common_name: Nigeria
+      iso3_codes: NGA
+      alpha_3: NGA
+      alpha_2: NG
+      official_name: Federal Republic of Nigeria
+  - Nicaragua:
+      description: Nicaragua
+      common_name: Nicaragua
+      iso3_codes: NIC
+      alpha_3: NIC
+      alpha_2: NI
+      official_name: Republic of Nicaragua
+  - Niue:
+      description: Niue
+      common_name: Niue
+      iso3_codes: NIU
+      alpha_3: NIU
+      alpha_2: NU
+      official_name: Niue
+  - Netherlands:
+      description: Netherlands
+      common_name: Netherlands
+      iso3_codes: NLD
+      alpha_3: NLD
+      alpha_2: NL
+      official_name: Kingdom of the Netherlands
+  - Norway:
+      description: Norway
+      common_name: Norway
+      iso3_codes: NOR
+      alpha_3: NOR
+      alpha_2: NO
+      official_name: Kingdom of Norway
+  - Nepal:
+      description: Nepal
+      common_name: Nepal
+      iso3_codes: NPL
+      alpha_3: NPL
+      alpha_2: NP
+      official_name: Federal Democratic Republic of Nepal
+  - Nauru:
+      description: Nauru
+      common_name: Nauru
+      iso3_codes: NRU
+      alpha_3: NRU
+      alpha_2: NR
+      official_name: Republic of Nauru
+  - New Zealand:
+      description: New Zealand
+      common_name: New Zealand
+      iso3_codes: NZL
+      alpha_3: NZL
+      alpha_2: NZ
+  - Oman:
+      description: Oman
+      common_name: Oman
+      iso3_codes: OMN
+      alpha_3: OMN
+      alpha_2: OM
+      official_name: Sultanate of Oman
+  - Pakistan:
+      description: Pakistan
+      common_name: Pakistan
+      iso3_codes: PAK
+      alpha_3: PAK
+      alpha_2: PK
+      official_name: Islamic Republic of Pakistan
+  - Panama:
+      description: Panama
+      common_name: Panama
+      iso3_codes: PAN
+      alpha_3: PAN
+      alpha_2: PA
+      official_name: Republic of Panama
+  - Pitcairn:
+      description: Pitcairn
+      common_name: Pitcairn
+      iso3_codes: PCN
+      alpha_3: PCN
+      alpha_2: PN
+  - Peru:
+      description: Peru
+      common_name: Peru
+      iso3_codes: PER
+      alpha_3: PER
+      alpha_2: PE
+      official_name: Republic of Peru
+  - Philippines:
+      description: Philippines
+      common_name: Philippines
+      iso3_codes: PHL
+      alpha_3: PHL
+      alpha_2: PH
+      official_name: Republic of the Philippines
+  - Palau:
+      description: Palau
+      common_name: Palau
+      iso3_codes: PLW
+      alpha_3: PLW
+      alpha_2: PW
+      official_name: Republic of Palau
+  - Papua New Guinea:
+      description: Papua New Guinea
+      common_name: Papua New Guinea
+      iso3_codes: PNG
+      alpha_3: PNG
+      alpha_2: PG
+      official_name: Independent State of Papua New Guinea
+  - Poland:
+      description: Poland
+      common_name: Poland
+      iso3_codes: POL
+      alpha_3: POL
+      alpha_2: PL
+      official_name: Republic of Poland
+  - Puerto Rico:
+      description: Puerto Rico
+      common_name: Puerto Rico
+      iso3_codes: PRI
+      alpha_3: PRI
+      alpha_2: PR
+  - North Korea:
+      description: North Korea
+      common_name: North Korea
+      iso3_codes: PRK
+      alpha_3: PRK
+      alpha_2: KP
+      official_name: Democratic People's Republic of Korea
+      note: Name changed from ISO 3166 in line with community standards
+  - Portugal:
+      description: Portugal
+      common_name: Portugal
+      iso3_codes: PRT
+      alpha_3: PRT
+      alpha_2: PT
+      official_name: Portuguese Republic
+  - Paraguay:
+      description: Paraguay
+      common_name: Paraguay
+      iso3_codes: PRY
+      alpha_3: PRY
+      alpha_2: PY
+      official_name: Republic of Paraguay
+  - Palestine:
+      description: Palestine
+      common_name: Palestine
+      iso3_codes: PSE
+      alpha_3: PSE
+      alpha_2: PS
+      official_name: the State of Palestine
+      note: Name changed from ISO 3166 in line with community standards
+  - French Polynesia:
+      description: French Polynesia
+      common_name: French Polynesia
+      iso3_codes: PYF
+      alpha_3: PYF
+      alpha_2: PF
+  - Qatar:
+      description: Qatar
+      common_name: Qatar
+      iso3_codes: QAT
+      alpha_3: QAT
+      alpha_2: QA
+      official_name: State of Qatar
+  - Reunion:
+      description: Réunion
+      common_name: Réunion
+      iso3_codes: REU
+      alpha_3: REU
+      alpha_2: RE
+  - Romania:
+      description: Romania
+      common_name: Romania
+      iso3_codes: ROU
+      alpha_3: ROU
+      alpha_2: RO
+  - Russian Federation:
+      description: Russian Federation
+      common_name: Russia
+      iso3_codes: RUS
+      alpha_3: RUS
+      alpha_2: RU
+  - Rwanda:
+      description: Rwanda
+      common_name: Rwanda
+      iso3_codes: RWA
+      alpha_3: RWA
+      alpha_2: RW
+      official_name: Rwandese Republic
+  - Saudi Arabia:
+      description: Saudi Arabia
+      common_name: Saudi Arabia
+      iso3_codes: SAU
+      alpha_3: SAU
+      alpha_2: SA
+      official_name: Kingdom of Saudi Arabia
+  - Sudan:
+      description: Sudan
+      common_name: Sudan
+      iso3_codes: SDN
+      alpha_3: SDN
+      alpha_2: SD
+      official_name: Republic of the Sudan
+  - Senegal:
+      description: Senegal
+      common_name: Senegal
+      iso3_codes: SEN
+      alpha_3: SEN
+      alpha_2: SN
+      official_name: Republic of Senegal
+  - Singapore:
+      description: Singapore
+      common_name: Singapore
+      iso3_codes: SGP
+      alpha_3: SGP
+      alpha_2: SG
+      official_name: Republic of Singapore
+  - South Georgia and the South Sandwich Islands:
+      description: South Georgia and the South Sandwich Islands
+      common_name: South Georgia and the South Sandwich Islands
+      iso3_codes: SGS
+      alpha_3: SGS
+      alpha_2: GS
+  - Saint Helena, Ascension and Tristan da Cunha:
+      description: Saint Helena, Ascension and Tristan da Cunha
+      common_name: Saint Helena, Ascension and Tristan da Cunha
+      iso3_codes: SHN
+      alpha_3: SHN
+      alpha_2: SH
+  - Svalbard and Jan Mayen:
+      description: Svalbard and Jan Mayen
+      common_name: Svalbard and Jan Mayen
+      iso3_codes: SJM
+      alpha_3: SJM
+      alpha_2: SJ
+  - Solomon Islands:
+      description: Solomon Islands
+      common_name: Solomon Islands
+      iso3_codes: SLB
+      alpha_3: SLB
+      alpha_2: SB
+  - Sierra Leone:
+      description: Sierra Leone
+      common_name: Sierra Leone
+      iso3_codes: SLE
+      alpha_3: SLE
+      alpha_2: SL
+      official_name: Republic of Sierra Leone
+  - El Salvador:
+      description: El Salvador
+      common_name: El Salvador
+      iso3_codes: SLV
+      alpha_3: SLV
+      alpha_2: SV
+      official_name: Republic of El Salvador
+  - San Marino:
+      description: San Marino
+      common_name: San Marino
+      iso3_codes: SMR
+      alpha_3: SMR
+      alpha_2: SM
+      official_name: Republic of San Marino
+  - Somalia:
+      description: Somalia
+      common_name: Somalia
+      iso3_codes: SOM
+      alpha_3: SOM
+      alpha_2: SO
+      official_name: Federal Republic of Somalia
+  - Saint Pierre and Miquelon:
+      description: Saint Pierre and Miquelon
+      common_name: Saint Pierre and Miquelon
+      iso3_codes: SPM
+      alpha_3: SPM
+      alpha_2: PM
+  - Serbia:
+      description: Serbia
+      common_name: Serbia
+      iso3_codes: SRB
+      alpha_3: SRB
+      alpha_2: RS
+      official_name: Republic of Serbia
+  - South Sudan:
+      description: South Sudan
+      common_name: South Sudan
+      iso3_codes: SSD
+      alpha_3: SSD
+      alpha_2: SS
+      official_name: Republic of South Sudan
+  - Sao Tome and Principe:
+      description: Sao Tome and Principe
+      common_name: Sao Tome and Principe
+      iso3_codes: STP
+      alpha_3: STP
+      alpha_2: ST
+      official_name: Democratic Republic of Sao Tome and Principe
+  - Suriname:
+      description: Suriname
+      common_name: Suriname
+      iso3_codes: SUR
+      alpha_3: SUR
+      alpha_2: SR
+      official_name: Republic of Suriname
+  - Slovakia:
+      description: Slovakia
+      common_name: Slovakia
+      iso3_codes: SVK
+      alpha_3: SVK
+      alpha_2: SK
+      official_name: Slovak Republic
+  - Slovenia:
+      description: Slovenia
+      common_name: Slovenia
+      iso3_codes: SVN
+      alpha_3: SVN
+      alpha_2: SI
+      official_name: Republic of Slovenia
+  - Sweden:
+      description: Sweden
+      common_name: Sweden
+      iso3_codes: SWE
+      alpha_3: SWE
+      alpha_2: SE
+      official_name: Kingdom of Sweden
+  - Eswatini:
+      description: Eswatini
+      common_name: Eswatini
+      iso3_codes: SWZ
+      alpha_3: SWZ
+      alpha_2: SZ
+      official_name: Kingdom of Eswatini
+  - Sint Maarten:
+      description: Sint Maarten (Dutch part)
+      common_name: Sint Maarten
+      iso3_codes: SXM
+      alpha_3: SXM
+      alpha_2: SX
+      official_name: Sint Maarten (Dutch part)
+      note: Part of the Netherlands Antilles (ANT) until 2010
+  - Seychelles:
+      description: Seychelles
+      common_name: Seychelles
+      iso3_codes: SYC
+      alpha_3: SYC
+      alpha_2: SC
+      official_name: Republic of Seychelles
+  - Syria:
+      description: Syria
+      common_name: Syria
+      iso3_codes: SYR
+      alpha_3: SYR
+      alpha_2: SY
+      note: Name changed from ISO 3166 in line with community standards
+  - Turks and Caicos Islands:
+      description: Turks and Caicos Islands
+      common_name: Turks and Caicos Islands
+      iso3_codes: TCA
+      alpha_3: TCA
+      alpha_2: TC
+  - Chad:
+      description: Chad
+      common_name: Chad
+      iso3_codes: TCD
+      alpha_3: TCD
+      alpha_2: TD
+      official_name: Republic of Chad
+  - Togo:
+      description: Togo
+      common_name: Togo
+      iso3_codes: TGO
+      alpha_3: TGO
+      alpha_2: TG
+      official_name: Togolese Republic
+  - Thailand:
+      description: Thailand
+      common_name: Thailand
+      iso3_codes: THA
+      alpha_3: THA
+      alpha_2: TH
+      official_name: Kingdom of Thailand
+  - Tajikistan:
+      description: Tajikistan
+      common_name: Tajikistan
+      iso3_codes: TJK
+      alpha_3: TJK
+      alpha_2: TJ
+      official_name: Republic of Tajikistan
+  - Tokelau:
+      description: Tokelau
+      common_name: Tokelau
+      iso3_codes: TKL
+      alpha_3: TKL
+      alpha_2: TK
+  - Turkmenistan:
+      description: Turkmenistan
+      common_name: Turkmenistan
+      iso3_codes: TKM
+      alpha_3: TKM
+      alpha_2: TM
+  - Timor-Leste:
+      description: Timor-Leste
+      common_name: Timor-Leste
+      iso3_codes: TLS
+      alpha_3: TLS
+      alpha_2: TL
+      official_name: Democratic Republic of Timor-Leste
+  - Tonga:
+      description: Tonga
+      common_name: Tonga
+      iso3_codes: TON
+      alpha_3: TON
+      alpha_2: TO
+      official_name: Kingdom of Tonga
+  - Trinidad and Tobago:
+      description: Trinidad and Tobago
+      common_name: Trinidad and Tobago
+      iso3_codes: TTO
+      alpha_3: TTO
+      alpha_2: TT
+      official_name: Republic of Trinidad and Tobago
+  - Tunisia:
+      description: Tunisia
+      common_name: Tunisia
+      iso3_codes: TUN
+      alpha_3: TUN
+      alpha_2: TN
+      official_name: Republic of Tunisia
+  - Turkey:
+      description: Turkey
+      common_name: Turkey
+      iso3_codes: TUR
+      alpha_3: TUR
+      alpha_2: TR
+      official_name: Republic of Türkiye
+      note: Name changed from ISO 3166 in line with community standards
+  - Tuvalu:
+      description: Tuvalu
+      common_name: Tuvalu
+      iso3_codes: TUV
+      alpha_3: TUV
+      alpha_2: TV
+  - Taiwan:
+      description: Taiwan
+      common_name: Taiwan
+      iso3_codes: TWN
+      alpha_3: TWN
+      alpha_2: TW
+      official_name: Taiwan, Province of China
+      note: Name changed from ISO 3166 in line with community standards
+  - Tanzania:
+      description: Tanzania
+      common_name: Tanzania
+      iso3_codes: TZA
+      alpha_3: TZA
+      alpha_2: TZ
+      official_name: United Republic of Tanzania
+      note: Name changed from ISO 3166 in line with community standards
+  - Uganda:
+      description: Uganda
+      common_name: Uganda
+      iso3_codes: UGA
+      alpha_3: UGA
+      alpha_2: UG
+      official_name: Republic of Uganda
+  - Ukraine:
+      description: Ukraine
+      common_name: Ukraine
+      iso3_codes: UKR
+      alpha_3: UKR
+      alpha_2: UA
+  - United States Minor Outlying Islands:
+      description: United States Minor Outlying Islands
+      common_name: United States Minor Outlying Islands
+      iso3_codes: UMI
+      alpha_3: UMI
+      alpha_2: UM
+  - Uruguay:
+      description: Uruguay
+      common_name: Uruguay
+      iso3_codes: URY
+      alpha_3: URY
+      alpha_2: UY
+      official_name: Eastern Republic of Uruguay
+  - United States:
+      description: United States
+      common_name: United States
+      iso3_codes: USA
+      alpha_3: USA
+      alpha_2: US
+      official_name: United States of America
+  - Uzbekistan:
+      description: Uzbekistan
+      common_name: Uzbekistan
+      iso3_codes: UZB
+      alpha_3: UZB
+      alpha_2: UZ
+      official_name: Republic of Uzbekistan
+  - Vatican:
+      description: Vatican
+      common_name: Vatican
+      iso3_codes: VAT
+      alpha_3: VAT
+      alpha_2: VA
+      note: Name changed from ISO 3166 in line with community standards
+  - Saint Vincent and the Grenadines:
+      description: Saint Vincent and the Grenadines
+      common_name: Saint Vincent and the Grenadines
+      iso3_codes: VCT
+      alpha_3: VCT
+      alpha_2: VC
+  - Venezuela:
+      description: Venezuela
+      common_name: Venezuela
+      iso3_codes: VEN
+      alpha_3: VEN
+      alpha_2: VE
+      official_name: Bolivarian Republic of Venezuela
+      note: Name changed from ISO 3166 in line with community standards
+  - British Virgin Islands:
+      description: British Virgin Islands
+      common_name: British Virgin Islands
+      iso3_codes: VGB
+      alpha_3: VGB
+      alpha_2: VG
+      official_name: British Virgin Islands
+      note: Name changed from ISO 3166 in line with community standards
+  - United States Virgin Islands:
+      description: United States Virgin Islands
+      common_name: United States Virgin Islands
+      iso3_codes: VIR
+      alpha_3: VIR
+      alpha_2: VI
+      official_name: Virgin Islands of the United States
+      note: Name changed from ISO 3166 in line with community standards
+  - Viet Nam:
+      description: Viet Nam
+      common_name: Vietnam
+      iso3_codes: VNM
+      alpha_3: VNM
+      alpha_2: VN
+      official_name: Socialist Republic of Viet Nam
+  - Vanuatu:
+      description: Vanuatu
+      common_name: Vanuatu
+      iso3_codes: VUT
+      alpha_3: VUT
+      alpha_2: VU
+      official_name: Republic of Vanuatu
+  - Wallis and Futuna:
+      description: Wallis and Futuna
+      common_name: Wallis and Futuna
+      iso3_codes: WLF
+      alpha_3: WLF
+      alpha_2: WF
+  - Samoa:
+      description: Samoa
+      common_name: Samoa
+      iso3_codes: WSM
+      alpha_3: WSM
+      alpha_2: WS
+      official_name: Independent State of Samoa
+  - Yemen:
+      description: Yemen
+      common_name: Yemen
+      iso3_codes: YEM
+      alpha_3: YEM
+      alpha_2: YE
+      official_name: Republic of Yemen
+  - South Africa:
+      description: South Africa
+      common_name: South Africa
+      iso3_codes: ZAF
+      alpha_3: ZAF
+      alpha_2: ZA
+      official_name: Republic of South Africa
+  - Zambia:
+      description: Zambia
+      common_name: Zambia
+      iso3_codes: ZMB
+      alpha_3: ZMB
+      alpha_2: ZM
+      official_name: Republic of Zambia
+  - Zimbabwe:
+      description: Zimbabwe
+      common_name: Zimbabwe
+      iso3_codes: ZWE
+      alpha_3: ZWE
+      alpha_2: ZW
+      official_name: Republic of Zimbabwe
+  - Kosovo:
+      description: Kosovo
+      common_name: Kosovo
+      alpha_3: XKX
+      alpha_2: XK
+      note: 'Kosovo recognized under UNSC resolution 1244, alpha_3 code not assigned.
+        User-defined ISO 3- and 2-letter codes: XKX, XK. The ISO 3-letter code is
+        not included in the `iso3_codes` attribute, since `nomenclature` validates
+        it directly against `pycountry.countries`.'
+
