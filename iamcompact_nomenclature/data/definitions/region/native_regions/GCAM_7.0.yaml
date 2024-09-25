@@ -2,7 +2,7 @@
   - GCAM 7.0|Africa_Eastern:
       description: Eastern Africa
       countries: [Burundi, Comoros, Djibouti, Eritrea, Ethiopia, Kenya, Madagascar,
-        Mauritius, Reunion, Rwanda, Somalia, South Sudan, Sudan, Uganda]
+        Mauritius, Réunion, Rwanda, Somalia, South Sudan, Sudan, Uganda]
       iso3_codes: [BDI, COM, DJI, ERI, ETH, KEN, MDG, MWI, MUS, MYT, MOZ, REU, RWA,
         SYC, SOM, SSD, UGA, TZA, ZMB, ZWE]
   - GCAM 7.0|Africa_Northers:
@@ -16,7 +16,7 @@
       iso3_codes: [AGO, BWA, LSO, MWI, MOZ, NAM, SWZ, ZMB, ZWE]
   - GCAM 7.0|Africa_Western:
       description: Western Africa
-      countries: [Benin, Burkina Faso, Cabo Verde, Central African Republic, Chad, Cote d'Ivoire,
+      countries: [Benin, Burkina Faso, Cabo Verde, Central African Republic, Chad, Côte d'Ivoire,
         Cameroon, Democratic Republic of the Congo, Equatorial Guinea, Gabon, Gambia,
         Ghana, Guinea, Guinea-Bissau, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal,
         Sierra Leone, Sao Tome and Principe, Togo]
@@ -41,10 +41,10 @@
   - GCAM 7.0|Central America and Caribbean:
       description: Central America and the Caribbean
       countries: [Antigua and Barbuda, Anguilla, Aruba, Bahamas, Barbados, Belize,
-        Bermuda, Caribbean Netherlands, Costa Rica, Cuba, Cayman Islands, Curacao, Dominica, Dominican Republic, El Salvador,
+        Bermuda, "Bonaire, Sint Eustatius and Saba", Costa Rica, Cuba, Cayman Islands, Curaçao, Dominica, Dominican Republic, El Salvador,
         Grenada, Guadeloupe, Guatemala, Haiti, Honduras, Jamaica, Martinique, Montserrat,
-        Nicaragua, Panama, Saint Kitts and Nevis, Saint Lucia, Saint Martin,
-        Saint Vincent and the Grenadines, Sint Maarten, Trinidad and Tobago]
+        Nicaragua, Panama, Saint Kitts and Nevis, Saint Lucia, Saint Martin (French part),
+        Saint Vincent and the Grenadines, Sint Maarten (Dutch part), Trinidad and Tobago]
       iso3_codes:
         [ATG, AIA, ABW, BHS, BRB, BLZ, BMU, BES, CRI, CUB, CYM, CUW, DMA, DOM, SLV, GRD, GLP,
           GTM, HTI, HND, JAM, MTQ, MSR, NIC, PAN, KNA, LCA, MAF, VCT, SXM, TTO]
@@ -63,7 +63,7 @@
       iso3_codes: [COL]
   - GCAM 7.0|EU-12:
       description: EU countries that joined after 2000 but before 2013 (excl. Croatia)
-      countries: [Bulgaria, Cyprus, Czech Republic, Estonia, Hungary, Latvia, Lithuania,
+      countries: [Bulgaria, Cyprus, Czechia, Estonia, Hungary, Latvia, Lithuania,
         Malta, Poland, Romania, Slovakia, Slovenia]
       iso3_codes: [BGR, CYP, CZE, EST, HUN, LVA, LTU, MLT, POL, ROU, SVK, SVN]
   - GCAM 7.0|EU-15:

@@ -11,11 +11,11 @@
   - PROMETHEUS 1.2|EMRG:
       description: Emerging Economies
       countries: [Albania, Argentina, Bahamas, Bosnia and Herzegovina, Belize, Bermuda,
-        Bolivia, Brazil, Botswana, Chile, Colombia, Cape Verde, Costa Rica, Dominica,
+        Bolivia, Brazil, Botswana, Chile, Colombia, Cabo Verde, Costa Rica, Dominica,
         Dominican Republic, Ecuador, Fiji, Gabon, Equatorial Guinea, Guyana, Saint Lucia,
         Mexico, North Macedonia, Montenegro, Mauritania, Mauritius, Malaysia, Namibia,
         Panama, Peru, Philippines, Paraguay, Singapore, San Marino, Saint Pierre and Miquelon,
-        Serbia, Suriname, Swaziland, Seychelles, Thailand, Tonga, Trinidad and Tobago,
+        Serbia, Suriname, Eswatini, Seychelles, Thailand, Tonga, Trinidad and Tobago,
         Turkey, Taiwan, Uruguay, Venezuela, South Africa]
       iso3_codes: [ALB, ARG, BHS, BIH, BLZ, BMU, BOL, BRA, BWA, CHL, COL, CPV, CRI,
         DMA, DOM, ECU, FJI, GAB, GNQ, GUY, LCA, MEX, MKD, MNE, MRT, MUS, MYS, NAM,
@@ -30,7 +30,7 @@
         QAT, SAU, SYR, TUN, YEM]
   - PROMETHEUS 1.2|EU28:
       description: European Union
-      countries: [Austria, Belgium, Bulgaria, Switzerland, Cyprus, Czech Republic,
+      countries: [Austria, Belgium, Bulgaria, Switzerland, Cyprus, Czechia,
         Germany, Denmark, Spain, Estonia, Finland, France, United Kingdom, Greece,
         Croatia, Hungary, Ireland, Italy, Lithuania, Luxembourg, Latvia, Malta, Netherlands,
         Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Sweden]
@@ -47,18 +47,18 @@
       iso3_codes: [CAN, USA]
   - PROMETHEUS 1.2|RESTW:
       description: Rest of the World
-      countries: [Aruba, Afghanistan, Angola, Anguilla, Åland Islands, Andorra, Curacao,
-        Sint Maarten, Caribbean Netherlands, American Samoa, Antarctica, French Southern Territories,
+      countries: [Aruba, Afghanistan, Angola, Anguilla, Åland Islands, Andorra, Curaçao,
+        Sint Maarten (Dutch part), "Bonaire, Sint Eustatius and Saba", American Samoa, Antarctica, French Southern Territories,
         Antigua and Barbuda, Burundi, Benin, Burkina Faso, Bangladesh, Saint Barthélemy,
         Barbados, Brunei Darussalam, Bhutan, Bouvet Island, Central African Republic,
-        Cocos (Keeling) Islands, Cote d'Ivoire, Cameroon, Democratic Republic of the Congo,
+        Cocos (Keeling) Islands, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo,
         Congo, Cook Islands, Comoros, Cuba, Christmas Island, Cayman Islands, Djibouti,
         Eritrea, Western Sahara, Ethiopia, Falkland Islands (Malvinas), Faroe Islands,
         Micronesia, Guernsey, Ghana, Gibraltar, Guinea, Guadeloupe, Gambia, Guinea-Bissau,
         Grenada, Greenland, Guatemala, French Guiana, Guam, Heard Island and McDonald Islands,
         Honduras, Haiti, Indonesia, Isle of Man, British Indian Ocean Territory,
         Iceland, Jamaica, Jersey, Kenya, Cambodia, Kiribati, Saint Kitts and Nevis,
-        Laos, Liberia, Liechtenstein, Sri Lanka, Lesotho, Saint Martin, Monaco, Madagascar,
+        Laos, Liberia, Liechtenstein, Sri Lanka, Lesotho, Saint Martin (French part), Monaco, Madagascar,
         Maldives, Marshall Islands, Mali, Myanmar, Mongolia, Northern Mariana Islands,
         Mozambique, Montserrat, Martinique, Malawi, Mayotte, New Caledonia, Niger,
         Norfolk Island, Nigeria, Nicaragua, Niue, Nepal, Nauru, Pakistan, Pitcairn,
@@ -81,5 +81,5 @@
         TUV, TZA, UGA, UMI, VAT, VCT, VGB, VIR, VNM, VUT, WLF, WSM, ZMB, ZWE]
   - PROMETHEUS 1.2|WPAC:
       description: Western Pacific
-      countries: Australia, Japan, South Korea, New Zealand
+      countries: [Australia, Japan, South Korea, New Zealand]
       iso3_codes: [AUS, JPN, KOR, NZL]
