@@ -7,6 +7,7 @@
 #   all-features: false
 #   with-sources: false
 #   generate-hashes: false
+#   universal: false
 
 -e file:.
 aiohappyeyeballs==2.3.4
@@ -238,7 +239,7 @@ nest-asyncio==1.6.0
     # via ipykernel
 networkx==3.3
     # via dvc
-nomenclature-iamc==0.18.1
+nomenclature-iamc==0.19.0
     # via iamcompact-nomenclature
 numpy==1.26.4
     # via contourpy
@@ -257,6 +258,7 @@ openpyxl==3.1.5
     # via ixmp4
     # via nomenclature-iamc
     # via pyam-iamc
+    # via pysquirrel
 orjson==3.10.6
     # via sqltrie
 packaging==24.1
@@ -265,6 +267,7 @@ packaging==24.1
     # via ipykernel
     # via matplotlib
     # via pandera
+    # via pooch
     # via pytest
 pandas==2.2.2
     # via ixmp4
@@ -289,8 +292,11 @@ pint==0.24.3
 platformdirs==3.11.0
     # via dvc
     # via jupyter-core
+    # via pooch
 pluggy==1.5.0
     # via pytest
+pooch==1.8.2
+    # via pysquirrel
 prompt-toolkit==3.0.47
     # via click-repl
     # via ipython
@@ -320,6 +326,7 @@ pydantic==2.8.2
     # via nomenclature-iamc
     # via pandera
     # via pydantic-settings
+    # via pysquirrel
 pydantic-core==2.20.1
     # via pydantic
 pydantic-settings==2.4.0
@@ -343,6 +350,8 @@ pyparsing==3.1.2
     # via grandalf
     # via matplotlib
     # via pydot
+pysquirrel==1.0
+    # via nomenclature-iamc
 pytest==8.3.2
 python-dateutil==2.9.0.post0
     # via celery
@@ -365,6 +374,7 @@ requests==2.32.3
     # via dvc
     # via dvc-studio-client
     # via iterative-telemetry
+    # via pooch
     # via pyam-iamc
 rich==13.7.1
     # via dvc

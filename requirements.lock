@@ -7,6 +7,7 @@
 #   all-features: false
 #   with-sources: false
 #   generate-hashes: false
+#   universal: false
 
 -e file:.
 alembic==1.13.2
@@ -87,7 +88,7 @@ mypy==1.11.1
 mypy-extensions==1.0.0
     # via mypy
     # via typing-inspect
-nomenclature-iamc==0.18.1
+nomenclature-iamc==0.19.0
     # via iamcompact-nomenclature
 numpy==1.26.4
     # via contourpy
@@ -103,9 +104,11 @@ openpyxl==3.1.5
     # via ixmp4
     # via nomenclature-iamc
     # via pyam-iamc
+    # via pysquirrel
 packaging==24.1
     # via matplotlib
     # via pandera
+    # via pooch
 pandas==2.2.2
     # via ixmp4
     # via nomenclature-iamc
@@ -119,6 +122,10 @@ pillow==10.4.0
 pint==0.24.3
     # via iam-units
     # via pyam-iamc
+platformdirs==4.3.6
+    # via pooch
+pooch==1.8.2
+    # via pysquirrel
 psycopg==3.2.1
     # via ixmp4
 psycopg-binary==3.2.1
@@ -134,6 +141,7 @@ pydantic==2.8.2
     # via nomenclature-iamc
     # via pandera
     # via pydantic-settings
+    # via pysquirrel
 pydantic-core==2.20.1
     # via pydantic
 pydantic-settings==2.4.0
@@ -144,6 +152,8 @@ pyjwt==2.9.0
     # via ixmp4
 pyparsing==3.1.2
     # via matplotlib
+pysquirrel==1.0
+    # via nomenclature-iamc
 python-dateutil==2.9.0.post0
     # via matplotlib
     # via pandas
@@ -156,6 +166,7 @@ pyyaml==6.0.2
     # via nomenclature-iamc
     # via pyam-iamc
 requests==2.32.3
+    # via pooch
     # via pyam-iamc
 rich==13.7.1
     # via ixmp4
