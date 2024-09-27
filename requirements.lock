@@ -7,17 +7,19 @@
 #   all-features: false
 #   with-sources: false
 #   generate-hashes: false
+#   universal: false
 
 -e file:.
-alembic==1.13.1
+alembic==1.13.2
     # via ixmp4
 annotated-types==0.7.0
     # via pydantic
 anyio==4.4.0
     # via httpx
     # via starlette
-    # via watchfiles
-certifi==2024.6.2
+appdirs==1.4.4
+    # via pint
+certifi==2024.7.4
     # via httpcore
     # via httpx
     # via requests
@@ -26,22 +28,19 @@ charset-normalizer==3.3.2
 click==8.1.7
     # via nomenclature-iamc
     # via typer
-    # via uvicorn
 contourpy==1.2.1
     # via matplotlib
 cycler==0.12.1
     # via matplotlib
-dnspython==2.6.1
-    # via email-validator
-email-validator==2.1.1
-    # via fastapi
 et-xmlfile==1.1.0
     # via openpyxl
-fastapi==0.111.0
+fastapi==0.112.0
     # via ixmp4
-fastapi-cli==0.0.4
-    # via fastapi
-fonttools==4.53.0
+flexcache==0.3
+    # via pint
+flexparser==0.3.1
+    # via pint
+fonttools==4.53.1
     # via matplotlib
 gitdb==4.0.11
     # via gitpython
@@ -51,17 +50,13 @@ greenlet==3.0.3
     # via sqlalchemy
 h11==0.14.0
     # via httpcore
-    # via uvicorn
 h2==4.1.0
     # via httpx
 hpack==4.0.0
     # via h2
 httpcore==1.0.5
     # via httpx
-httptools==0.6.1
-    # via uvicorn
 httpx==0.27.0
-    # via fastapi
     # via ixmp4
 hyperframe==6.0.1
     # via h2
@@ -69,13 +64,10 @@ iam-units==2023.9.12
     # via pyam-iamc
 idna==3.7
     # via anyio
-    # via email-validator
     # via httpx
     # via requests
-ixmp4==0.9.0
+ixmp4==0.9.2
     # via pyam-iamc
-jinja2==3.1.4
-    # via fastapi
 kiwisolver==1.4.5
     # via matplotlib
 mako==1.3.5
@@ -83,21 +75,20 @@ mako==1.3.5
 markdown-it-py==3.0.0
     # via rich
 markupsafe==2.1.5
-    # via jinja2
     # via mako
-matplotlib==3.9.0
+matplotlib==3.9.1.post1
     # via pyam-iamc
     # via seaborn
 mdurl==0.1.2
     # via markdown-it-py
 multimethod==1.10
     # via pandera
-mypy==1.10.0
+mypy==1.11.1
     # via sqlalchemy
 mypy-extensions==1.0.0
     # via mypy
     # via typing-inspect
-nomenclature-iamc==0.17.0
+nomenclature-iamc==0.19.0
     # via iamcompact-nomenclature
 numpy==1.26.4
     # via contourpy
@@ -109,74 +100,78 @@ numpy==1.26.4
     # via scipy
     # via seaborn
     # via wquantiles
-openpyxl==3.1.3
+openpyxl==3.1.5
     # via ixmp4
     # via nomenclature-iamc
     # via pyam-iamc
-orjson==3.10.3
-    # via fastapi
-packaging==24.0
+    # via pysquirrel
+packaging==24.1
     # via matplotlib
     # via pandera
+    # via pooch
 pandas==2.2.2
     # via ixmp4
     # via nomenclature-iamc
     # via pandera
     # via pyam-iamc
     # via seaborn
-pandera==0.19.3
+pandera==0.20.3
     # via ixmp4
-pillow==10.3.0
+pillow==10.4.0
     # via matplotlib
-pint==0.23
+pint==0.24.3
     # via iam-units
     # via pyam-iamc
-psycopg==3.1.19
+platformdirs==4.3.6
+    # via pooch
+pooch==1.8.2
+    # via pysquirrel
+psycopg==3.2.1
     # via ixmp4
-psycopg-binary==3.1.19
+psycopg-binary==3.2.1
     # via psycopg
-pyam-iamc==2.2.2
+pyam-iamc==2.2.3
     # via iamcompact-nomenclature
     # via nomenclature-iamc
 pycountry==23.12.11
     # via nomenclature-iamc
-pydantic==2.7.3
+pydantic==2.8.2
     # via fastapi
     # via ixmp4
     # via nomenclature-iamc
     # via pandera
     # via pydantic-settings
-pydantic-core==2.18.4
+    # via pysquirrel
+pydantic-core==2.20.1
     # via pydantic
-pydantic-settings==2.3.0
+pydantic-settings==2.4.0
     # via ixmp4
 pygments==2.18.0
     # via rich
-pyjwt==2.8.0
+pyjwt==2.9.0
     # via ixmp4
 pyparsing==3.1.2
     # via matplotlib
+pysquirrel==1.0
+    # via nomenclature-iamc
 python-dateutil==2.9.0.post0
     # via matplotlib
     # via pandas
 python-dotenv==1.0.1
     # via ixmp4
     # via pydantic-settings
-    # via uvicorn
-python-multipart==0.0.9
-    # via fastapi
 pytz==2024.1
     # via pandas
-pyyaml==6.0.1
+pyyaml==6.0.2
     # via nomenclature-iamc
     # via pyam-iamc
-    # via uvicorn
 requests==2.32.3
+    # via pooch
     # via pyam-iamc
 rich==13.7.1
     # via ixmp4
     # via typer
-scipy==1.13.1
+scipy==1.14.0
     # via pyam-iamc
 seaborn==0.13.2
     # via pyam-iamc
@@ -189,7 +184,7 @@ smmap==5.0.1
 sniffio==1.3.1
     # via anyio
     # via httpx
-sqlalchemy==2.0.30
+sqlalchemy==2.0.32
     # via alembic
     # via ixmp4
     # via sqlalchemy-utils
@@ -202,11 +197,12 @@ toml==0.10.2
 typeguard==4.3.0
     # via pandera
 typer==0.12.3
-    # via fastapi-cli
     # via ixmp4
-typing-extensions==4.12.1
+typing-extensions==4.12.2
     # via alembic
     # via fastapi
+    # via flexcache
+    # via flexparser
     # via mypy
     # via pint
     # via psycopg
@@ -220,18 +216,8 @@ typing-inspect==0.9.0
     # via pandera
 tzdata==2024.1
     # via pandas
-ujson==5.10.0
-    # via fastapi
-urllib3==2.2.1
+urllib3==2.2.2
     # via requests
-uvicorn==0.30.1
-    # via fastapi
-uvloop==0.19.0
-    # via uvicorn
-watchfiles==0.22.0
-    # via uvicorn
-websockets==12.0
-    # via uvicorn
 wquantiles==0.6
     # via pyam-iamc
 wrapt==1.16.0
