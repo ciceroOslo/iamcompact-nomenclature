@@ -6,39 +6,39 @@ native_regions:
   - Africa_Western: GCAM 7.0|Africa_Western
   - Argentina: GCAM 7.0|Argentina
   - Australia_NZ: GCAM 7.0|Australia_NZ
-  - Brazil: GCAM 7.0|Brazil
-  - Canada: GCAM 7.0|Canada
+  - Brazil: Brazil
+  - Canada: Canada
   - Central America and Caribbean: GCAM 7.0|Central America and Caribbean
   - Central Asia: GCAM 7.0|Central Asia
   - China: GCAM 7.0|China
-  - Colombia: GCAM 7.0|Colombia
+  - Colombia: Colombia
   - EU-12: GCAM 7.0|EU-12
   - EU-15: GCAM 7.0|EU-15
-  - EU-27: GCAM 7.0|EU-27
-  - EU: GCAM 7.0|EU
+  # - EU-27: GCAM 7.0|EU-27
+  # - EU: GCAM 7.0|EU
   - Europe_Eastern: GCAM 7.0|Europe_Eastern
   - Europe_Non_EU: GCAM 7.0|Europe_Non_EU
   - European Free Trade Association: GCAM 7.0|European Free Trade Association
-  - India: GCAM 7.0|India
-  - Indonesia: GCAM 7.0|Indonesia
-  - Japan: GCAM 7.0|Japan
-  - Mexico: GCAM 7.0|Mexico
+  - India: India
+  - Indonesia: Indonesia
+  - Japan: Japan
+  - Mexico: Mexico
   - Middle East: GCAM 7.0|Middle East
-  - Pakistan: GCAM 7.0|Pakistan
-  - Russia: GCAM 7.0|Russia
-  - South Africa: GCAM 7.0|South Africa
+  - Pakistan: Pakistan
+  - Russia: Russian Federation
+  - South Africa: South Africa
   - South America_Northern: GCAM 7.0|South America_Northern
   - South America_Southern: GCAM 7.0|South America_Southern
   - South Asia: GCAM 7.0|South Asia
-  - South Korea: GCAM 7.0|South Korea
+  - South Korea: South Korea
   - Southeast Asia: GCAM 7.0|Southeast Asia
-  - Taiwan: GCAM 7.0|Taiwan
+  - Taiwan: Taiwan
   - United States: GCAM 7.0|United States
-  # - World
+  - World: World
  
 common_regions:
-  - World:
-    - World
+  # - World:
+  #   - World
 
   - Asia (R5):
     - China
