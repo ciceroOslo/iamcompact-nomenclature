@@ -118,7 +118,7 @@
       iso3_codes: [PAK]
   - GCAM 7.0|Russia:
       description: Russia
-      countries: [Russia]
+      countries: [Russian Federation]
       iso3_codes: [RUS]
   - GCAM 7.0|South Africa:
       description: South Africa
