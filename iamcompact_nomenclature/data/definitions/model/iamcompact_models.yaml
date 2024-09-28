@@ -1,0 +1,9 @@
+# IAMs used in the IAM COMPACT modelling studies
+- GCAM 7.0:
+    description: "The Global Change Analysis Model (GCAM), version 7.0"
+- PROMETHEUS 1.2:
+    description: "The PROMETHEUS model, version 1.2"
+- TIAM_Grantham:
+    description: "The TIMES Integrated Assessment Model, Grantham version"
+- OSeMOSYS-GR:
+    description: "The Open Source Energy Modelling System, Greece version"
