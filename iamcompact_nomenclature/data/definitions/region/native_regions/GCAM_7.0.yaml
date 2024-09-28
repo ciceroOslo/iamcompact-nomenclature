@@ -54,9 +54,9 @@
         Tajikistan, Turkmenistan, Uzbekistan]
       iso3_codes: [ARM, AZE, GEO, KAZ, KGZ, MNG, TJK, TKM, UZB]
   - GCAM 7.0|China:
-      description: China
-      countries: [China]
-      iso3_codes: [CHN]
+      description: China, including Hong Kong and Macao
+      countries: [China, Hong Kong, Macao]
+      iso3_codes: [CHN, HKG, MAC]
   - GCAM 7.0|Colombia:
       description: Colombia
       countries: [Colombia]
