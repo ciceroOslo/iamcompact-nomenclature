@@ -5,7 +5,7 @@
         Mauritius, Réunion, Rwanda, Somalia, South Sudan, Sudan, Uganda]
       iso3_codes: [BDI, COM, DJI, ERI, ETH, KEN, MDG, MWI, MUS, MYT, MOZ, REU, RWA,
         SYC, SOM, SSD, UGA, TZA, ZMB, ZWE]
-  - GCAM 7.0|Africa_Northers:
+  - GCAM 7.0|Africa_Northern:
       description: Northern Africa
       countries: [Algeria, Egypt, Libya, Morocco, Tunisia, Western Sahara]
       iso3_codes: [DZA, EGY, LBY, MAR, TUN, ESH]
@@ -76,3 +76,86 @@
         NLD, PRT, ESP, SWE, GBR]
       note: Includes Greenland (as being under Danish sovereignty), even though Greenland
         is not included in the EU.
+  - GCAM 7.0|Europe_Eastern:
+      description: Eastern Europe
+      countries: [Belarus, Moldova, Ukraine]
+      iso3_codes: [BLR, MDA, UKR]
+      note: Russia is a separate region.
+  - GCAM 7.0|Europe_Non_EU:
+      description: Other non-EU European countries in Europe
+      countries:
+      countries: [Albania, Bosnia and Herzegovina, Croatia, North Macedonia,
+          Montenegro, Serbia, Turkey]
+      iso3_codes: [ALB, BIH, HRV, MKD, MNE, SRB, TUR]
+  - GCAM 7.0|European Free Trade Association:
+      description: EFTA countries
+      countries: [Switzerland, Iceland, Liechtenstein, Norway, Svalbard and Jan Mayen]
+      iso3_codes: [CHE, ISL, LIE, NOR, SJM]
+  - GCAM 7.0|India:
+      description: India
+      countries: [India]
+      iso3_codes: [IND]
+  - GCAM 7.0|Indonesia:
+      description: Indonesia
+      countries: [Indonesia]
+      iso3_codes: [IDN]
+  - GCAM 7.0|Japan:
+      description: Japan
+      countries: [Japan]
+      iso3_codes: [JPN]
+  - GCAM 7.0|Mexico:
+      description: Mexico
+      countries: [Mexico]
+      iso3_codes: [MEX]
+  - GCAM 7.0|Middle East:
+      description: Middle East
+      countries: [United Arab Emirates, Bahrain, Iran, Iraq, Israel,Jordan,
+          Kuwait, Lebanon, Oman, Palestine, Qatar, Saudi Arabia, Syria, Yemen]
+      iso3_codes: [ARE, BHR, IRN, IRQ, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR, YEM]
+  - GCAM 7.0|Pakistan:
+      description: Pakistan
+      countries: [Pakistan]
+      iso3_codes: [PAK]
+  - GCAM 7.0|Russia:
+      description: Russia
+      countries: [Russia]
+      iso3_codes: [RUS]
+  - GCAM 7.0|South Africa:
+      description: South Africa
+      countries: [South Africa]
+      iso3_codes: [ZAF]
+  - GCAM 7.0|South America_Northern:
+      description: Northern South America
+      countries: [French Guiana, Guyana, Suriname, Venezuela]
+      iso3_codes: [GUF, GUY, SUR, VEN]
+  - GCAM 7.0|South America_Southern:
+      description: Southern South America
+      countries: [Bolivia, Chile, Ecuador, Peru, Paraguay, Uruguay]
+      iso3_codes: [BOL, CHL, ECU, PER, PRY, URY]
+  - GCAM 7.0|South Asia:
+      description: South Asia other than India
+      countries: [Afghanistan, American Samoa, Bangladesh, Bhutan, Laos, Sri Lanka,
+          Maldives, Nepal]
+      iso3_codes: [AFG, ASM, BGD, BTN, LAO, LKA, MDV, NPL]
+  - GCAM 7.0|South Korea:
+      description: South Korea
+      countries: [South Korea]
+      iso3_codes: [KOR]
+  - GCAM 7.0|Southeast Asia:
+      description: Southeast Asia
+      countries: [Brunei Darussalam, Cocos (Keeling) Islands, Cook Islands, Christmas Island,
+          Fiji, Micronesia, Guam, Cambodia, Kiribati, Marshall Islands,
+          Myanmar, Northern Mariana Islands, Malaysia, Mayotte, New Caledonia,
+          Norfolk Island, Niue, Nauru, Pitcairn, Philippines, Palau, Papua New Guinea,
+          North Korea, French Polynesia, Singapore, Solomon Islands, Seychelles,
+          Thailand, Tokelau, Timor-Leste, Tonga, Tuvalu, Viet Nam, Vanuatu,
+          Samoa]
+      iso3_codes: [BRN, CCK, COK, CXR, FJI, FSM, GUM, KHM, KIR, MHL, MMR, MNP, MYS, MYT, NCL, NFK, NIU, NRU, PCN, PHL, PLW, PNG, PRK, PYF, SGP, SLB, SYC, THA, TKL, TLS, TON, TUV, VNM, VUT, WSM]
+  - GCAM 7.0|Taiwan:
+      description: Taiwan (Republic of China)
+      countries: [Taiwan]
+      iso3_codes: [TWN]
+  - GCAM 7.0|United States:
+      description: United States of America
+      countries: [Puerto Rico, United States, United States Virgin Islands]
+      iso3_codes: [PRI, USA, VIR]
