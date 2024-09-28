@@ -14,6 +14,8 @@ native_regions:
   - Colombia: GCAM 7.0|Colombia
   - EU-12: GCAM 7.0|EU-12
   - EU-15: GCAM 7.0|EU-15
+  - EU-27: GCAM 7.0|EU-27
+  - EU: GCAM 7.0|EU
   - Europe_Eastern: GCAM 7.0|Europe_Eastern
   - Europe_Non_EU: GCAM 7.0|Europe_Non_EU
   - European Free Trade Association: GCAM 7.0|European Free Trade Association
@@ -32,7 +34,7 @@ native_regions:
   - Southeast Asia: GCAM 7.0|Southeast Asia
   - Taiwan: GCAM 7.0|Taiwan
   - United States: GCAM 7.0|United States
-  - World
+  # - World
  
 common_regions:
   - World:
