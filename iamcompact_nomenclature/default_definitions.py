@@ -11,8 +11,7 @@ _data_root: Path = Path(__file__).parent / 'data'
 definitions_path: Path = _data_root / 'definitions'
 mappings_path: Path = _data_root / 'mappings'
 dimensions: Final[tuple[str, ...]] = (
-    # Drop model dimension for now, is empty in the starting point from openENTRANCE
-    # 'model',
+    'model',
     'scenario',
     'region',
     'variable',
