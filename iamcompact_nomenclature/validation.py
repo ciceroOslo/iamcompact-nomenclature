@@ -20,22 +20,8 @@ from . import (
     get_dsd,
     get_region_processor,
 )
+from .var_utils import not_none
 
-
-
-TV = TypeVar('TV')
-
-class IsNoneError(ValueError):
-    """Raised when a value is None."""
-    ...
-
-def _not_none(
-        x: TV|None,
-) -> TV:
-    """Returns a value if None, otherwise raises an IsNoneError"""
-    if x is None:
-        raise IsNoneError()
-    return x
 
 
 def get_invalid_names(
@@ -146,7 +132,7 @@ def get_invalid_model_regions(
         region_processor = get_region_processor()
     invalid_regions_common: list[str] = get_invalid_names(iamdf, dsd)['region']
     check_native_iamdf: pyam.IamDataFrame = \
-        _not_none(iamdf.filter(region=invalid_regions_common))
+        not_none(iamdf.filter(region=invalid_regions_common))
     invalid_combos: dict[str, list[str]] = dict()
     valid_combos: dict[str, list[str]] = dict()
 
@@ -156,7 +142,7 @@ def get_invalid_model_regions(
     }
 
     for _region in check_native_iamdf.region:
-        _models = _not_none(check_native_iamdf.filter(region=_region)).model
+        _models = not_none(check_native_iamdf.filter(region=_region)).model
         if len(_models) == 0:
             raise RuntimeError(
                 f'Invalid region {_region} found, but not used by any model. '

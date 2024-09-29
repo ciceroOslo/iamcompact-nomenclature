@@ -1,5 +1,6 @@
 """Utility functions for working with IAMC-style hierarchical variable names."""
 import itertools
+from typing import TypeVar
 
 import pyam
 
@@ -127,3 +128,18 @@ def get_component_vars(
     #     )
     # return component_vars + list(subcomponent_vars)
     return component_vars
+
+
+TV = TypeVar('TV')
+
+class IsNoneError(ValueError):
+    """Raised when a value is None."""
+    ...
+
+def not_none(
+        x: TV|None,
+) -> TV:
+    """Returns a value if None, otherwise raises an IsNoneError"""
+    if x is None:
+        raise IsNoneError()
+    return x
