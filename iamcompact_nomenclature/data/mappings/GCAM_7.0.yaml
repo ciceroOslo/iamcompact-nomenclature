@@ -33,7 +33,7 @@ native_regions:
   - South Korea: South Korea
   - Southeast Asia: GCAM 7.0|Southeast Asia
   - Taiwan: Taiwan
-  - United States: GCAM 7.0|United States
+  - USA: GCAM 7.0|USA
   - World: World
  
 common_regions:

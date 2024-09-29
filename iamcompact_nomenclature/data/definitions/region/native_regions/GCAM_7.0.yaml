@@ -155,7 +155,7 @@
       description: Taiwan (Republic of China)
       countries: [Taiwan]
       iso3_codes: [TWN]
-  - GCAM 7.0|United States:
-      description: United States of America
+  - GCAM 7.0|USA:
+      description: United States of America with Puerto Rico and U.S. Virgin Islands
       countries: [Puerto Rico, United States, United States Virgin Islands]
       iso3_codes: [PRI, USA, VIR]
