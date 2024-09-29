@@ -4,6 +4,7 @@ The main functionality in this module is for performing mapping of model-native
 regions.
 """
 from typing import (
+    Literal,
     Optional,
     overload,
 )
@@ -23,6 +24,24 @@ from .var_utils import not_none
 
 
 
+@overload
+def map_regions(
+        iamdf: pyam.IamDataFrame,
+        *,
+        return_excluded: Literal[True],
+        dsd: Optional[DataStructureDefinition] = None,
+        region_processor: Optional[RegionProcessor] = None,
+) -> tuple[pyam.IamDataFrame, pyam.IamDataFrame]:
+    ...
+@overload
+def map_regions(
+        iamdf: pyam.IamDataFrame,
+        *,
+        dsd: Optional[DataStructureDefinition] = None,
+        region_processor: Optional[RegionProcessor] = None,
+        return_excluded: Optional[bool] = None,
+) -> pyam.IamDataFrame:
+    ...
 def map_regions(
         iamdf: pyam.IamDataFrame,
         *,
