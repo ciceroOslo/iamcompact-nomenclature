@@ -169,8 +169,10 @@ def get_invalid_model_regions(
         _invalid_models: list[str] = [
             _model for _model in _models if _model not in _valid_models
         ]
-        invalid_combos[_region] = _invalid_models
-        valid_combos[_region] = _valid_models
+        if len(_invalid_models) > 0:
+            invalid_combos[_region] = _invalid_models
+        if len(_valid_models) > 0:
+            valid_combos[_region] = _valid_models
 
     if return_valid_native_combos:
         return invalid_combos, valid_combos
