@@ -1,0 +1,917 @@
+model: IAM COMPACT D4.3
+native_regions:
+  - Aruba
+  - Afghanistan
+  - Angola
+  - Anguilla
+  - Åland Islands
+  - Albania
+  - Andorra
+  - United Arab Emirates
+  - Argentina
+  - Armenia
+  - American Samoa
+  - Antarctica
+  - French Southern Territories
+  - Antigua and Barbuda
+  - Australia
+  - Austria
+  - Azerbaijan
+  - Burundi
+  - Belgium
+  - Benin
+  - Bonaire, Sint Eustatius and Saba
+  - Burkina Faso
+  - Bangladesh
+  - Bulgaria
+  - Bahrain
+  - Bahamas
+  - Bosnia and Herzegovina
+  - Saint Barthélemy
+  - Belarus
+  - Belize
+  - Bermuda
+  - Bolivia
+  - Brazil
+  - Barbados
+  - Brunei Darussalam
+  - Bhutan
+  - Bouvet Island
+  - Botswana
+  - Central African Republic
+  - Canada
+  - Cocos (Keeling) Islands
+  - Switzerland
+  - Chile
+  - China
+  - Côte d'Ivoire
+  - Cameroon
+  - Democratic Republic of the Congo
+  - Congo
+  - Cook Islands
+  - Colombia
+  - Comoros
+  - Cabo Verde
+  - Costa Rica
+  - Cuba
+  - Curaçao
+  - Christmas Island
+  - Cayman Islands
+  - Cyprus
+  - Czechia
+  - Germany
+  - Djibouti
+  - Dominica
+  - Denmark
+  - Dominican Republic
+  - Algeria
+  - Ecuador
+  - Egypt
+  - Eritrea
+  - Western Sahara
+  - Spain
+  - Estonia
+  - Ethiopia
+  - Finland
+  - Fiji
+  - Falkland Islands (Malvinas)
+  - France
+  - Faroe Islands
+  - Micronesia
+  - Gabon
+  - United Kingdom
+  - Georgia
+  - Guernsey
+  - Ghana
+  - Gibraltar
+  - Guinea
+  - Guadeloupe
+  - Gambia
+  - Guinea-Bissau
+  - Equatorial Guinea
+  - Greece
+  - Grenada
+  - Greenland
+  - Guatemala
+  - French Guiana
+  - Guam
+  - Guyana
+  - Hong Kong
+  - Heard Island and McDonald Islands
+  - Honduras
+  - Croatia
+  - Haiti
+  - Hungary
+  - Indonesia
+  - Isle of Man
+  - India
+  - British Indian Ocean Territory
+  - Ireland
+  - Iran
+  - Iraq
+  - Iceland
+  - Israel
+  - Italy
+  - Jamaica
+  - Jersey
+  - Jordan
+  - Japan
+  - Kazakhstan
+  - Kenya
+  - Kyrgyzstan
+  - Cambodia
+  - Kiribati
+  - Saint Kitts and Nevis
+  - South Korea
+  - Kuwait
+  - Laos
+  - Lebanon
+  - Liberia
+  - Libya
+  - Saint Lucia
+  - Liechtenstein
+  - Sri Lanka
+  - Lesotho
+  - Lithuania
+  - Luxembourg
+  - Latvia
+  - Macao
+  - Saint Martin (French part)
+  - Morocco
+  - Monaco
+  - Moldova
+  - Madagascar
+  - Maldives
+  - Mexico
+  - Marshall Islands
+  - North Macedonia
+  - Mali
+  - Malta
+  - Myanmar
+  - Montenegro
+  - Mongolia
+  - Northern Mariana Islands
+  - Mozambique
+  - Mauritania
+  - Montserrat
+  - Martinique
+  - Mauritius
+  - Malawi
+  - Malaysia
+  - Mayotte
+  - Namibia
+  - New Caledonia
+  - Niger
+  - Norfolk Island
+  - Nigeria
+  - Nicaragua
+  - Niue
+  - Netherlands
+  - Norway
+  - Nepal
+  - Nauru
+  - New Zealand
+  - Oman
+  - Pakistan
+  - Panama
+  - Pitcairn
+  - Peru
+  - Philippines
+  - Palau
+  - Papua New Guinea
+  - Poland
+  - Puerto Rico
+  - North Korea
+  - Portugal
+  - Paraguay
+  - Palestine
+  - French Polynesia
+  - Qatar
+  - Réunion
+  - Romania
+  - Russian Federation
+  - Rwanda
+  - Saudi Arabia
+  - Sudan
+  - Senegal
+  - Singapore
+  - South Georgia and the South Sandwich Islands
+  - Saint Helena, Ascension and Tristan da Cunha
+  - Svalbard and Jan Mayen
+  - Solomon Islands
+  - Sierra Leone
+  - El Salvador
+  - San Marino
+  - Somalia
+  - Saint Pierre and Miquelon
+  - Serbia
+  - South Sudan
+  - Sao Tome and Principe
+  - Suriname
+  - Slovakia
+  - Slovenia
+  - Sweden
+  - Eswatini
+  - Sint Maarten (Dutch part)
+  - Seychelles
+  - Syria
+  - Turks and Caicos Islands
+  - Chad
+  - Togo
+  - Thailand
+  - Tajikistan
+  - Tokelau
+  - Turkmenistan
+  - Timor-Leste
+  - Tonga
+  - Trinidad and Tobago
+  - Tunisia
+  - Turkey
+  - Tuvalu
+  - Taiwan
+  - Tanzania
+  - Uganda
+  - Ukraine
+  - United States Minor Outlying Islands
+  - Uruguay
+  - United States
+  - Uzbekistan
+  - Vatican
+  - Saint Vincent and the Grenadines
+  - Venezuela
+  - British Virgin Islands
+  - United States Virgin Islands
+  - Viet Nam
+  - Vanuatu
+  - Wallis and Futuna
+  - Samoa
+  - Yemen
+  - South Africa
+  - Zambia
+  - Zimbabwe
+  - Kosovo
+
+
+common_regions:
+
+  - OECD & EU (R5):
+    - Albania
+    - Australia
+    - Austria
+    - Belgium
+    - Bosnia and Herzegovina
+    - Bulgaria
+    - Canada
+    - Croatia
+    - Cyprus
+    - Czechia
+    - Denmark
+    - Estonia
+    - Finland
+    - France
+    - Germany
+    - Greece
+    - Guam
+    - Hungary
+    - Iceland
+    - Ireland
+    - Italy
+    - Japan
+    - Kosovo
+    - Latvia
+    - Lithuania
+    - Luxembourg
+    - Malta
+    - Montenegro
+    - Netherlands
+    - New Zealand
+    - North Macedonia
+    - Norway
+    - Poland
+    - Portugal
+    - Puerto Rico
+    - Romania
+    - Serbia
+    - Slovakia
+    - Slovenia
+    - Spain
+    - Sweden
+    - Switzerland
+    - Turkey
+    - United Kingdom
+    - United States
+  - Reforming Economies (R5):
+    - Armenia
+    - Azerbaijan
+    - Belarus
+    - Georgia
+    - Kazakhstan
+    - Kyrgyzstan
+    - Moldova
+    - Russian Federation
+    - Tajikistan
+    - Turkmenistan
+    - Ukraine
+    - Uzbekistan
+  - Asia (R5):
+    - Afghanistan
+    - Bangladesh
+    - Bhutan
+    - Brunei Darussalam
+    - Cambodia
+    - China
+    - Cook Islands
+    - Fiji
+    - French Polynesia
+    - Hong Kong
+    - India
+    - Indonesia
+    - Kiribati
+    - Laos
+    - Macao
+    - Malaysia
+    - Maldives
+    - Marshall Islands
+    - Micronesia
+    - Mongolia
+    - Myanmar
+    - Nauru
+    - Nepal
+    - Niue
+    - New Caledonia
+    - North Korea
+    - Pakistan
+    - Papua New Guinea
+    - Palau
+    - Philippines
+    - South Korea
+    - Samoa
+    - Singapore
+    - Solomon Islands
+    - Sri Lanka
+    - Taiwan
+    - Thailand
+    - Timor-Leste
+    - Tonga
+    - Tuvalu
+    - Vanuatu
+    - Viet Nam
+  - Middle East & Africa (R5):
+    - Algeria
+    - Angola
+    - Bahrain
+    - Benin
+    - Botswana
+    - Burkina Faso
+    - Burundi
+    - Cameroon
+    - Cabo Verde
+    - Central African Republic
+    - Chad
+    - Comoros
+    - Congo
+    - Côte d'Ivoire
+    - Democratic Republic of the Congo
+    - Djibouti
+    - Egypt
+    - Equatorial Guinea
+    - Eritrea
+    - Ethiopia
+    - Gabon
+    - Gambia
+    - Ghana
+    - Guinea
+    - Guinea-Bissau
+    - Iran
+    - Iraq
+    - Israel
+    - Jordan
+    - Kenya
+    - Kuwait
+    - Lebanon
+    - Lesotho
+    - Liberia
+    - Libya
+    - Madagascar
+    - Malawi
+    - Mali
+    - Mauritania
+    - Mauritius
+    - Mayotte
+    - Morocco
+    - Mozambique
+    - Namibia
+    - Niger
+    - Nigeria
+    - Palestine
+    - Oman
+    - Qatar
+    - Rwanda
+    - Réunion
+    - Sao Tome and Principe
+    - Saudi Arabia
+    - Senegal
+    - Seychelles
+    - Sierra Leone
+    - Somalia
+    - South Africa
+    - South Sudan
+    - Sudan
+    - Eswatini
+    - Syria
+    - Togo
+    - Tunisia
+    - Uganda
+    - United Arab Emirates
+    - Tanzania
+    - Western Sahara
+    - Yemen
+    - Zambia
+    - Zimbabwe
+  - Latin America (R5):
+    - Antigua and Barbuda
+    - Argentina
+    - Aruba
+    - Bahamas
+    - Barbados
+    - Belize
+    - Bolivia
+    - Brazil
+    - Chile
+    - Colombia
+    - Costa Rica
+    - Cuba
+    - Dominican Republic
+    - Ecuador
+    - El Salvador
+    - French Guiana
+    - Grenada
+    - Guadeloupe
+    - Guatemala
+    - Guyana
+    - Haiti
+    - Honduras
+    - Jamaica
+    - Martinique
+    - Mexico
+    - Nicaragua
+    - Panama
+    - Paraguay
+    - Peru
+    - Saint Kitts and Nevis
+    - Saint Lucia
+    - Saint Vincent and the Grenadines
+    - Suriname
+    - Trinidad and Tobago
+    - United States Virgin Islands
+    - Uruguay
+    - Venezuela
+  # From the region definitions. Should try to find which countries need to be
+  # added to "Other" for the harmonization data.
+  # - Other (R5):
+  #     description: Rest of the World, to be used only if a match with the R5 regions
+
+  - European Union (R9):
+    - Austria
+    - Belgium
+    - Bulgaria
+    - Croatia
+    - Cyprus
+    - Czechia
+    - Denmark
+    - Estonia
+    - Finland
+    - France
+    - Germany
+    - Greece
+    - Hungary
+    - Ireland
+    - Italy
+    - Latvia
+    - Lithuania
+    - Luxembourg
+    - Malta
+    - Netherlands
+    - Poland
+    - Portugal
+    - Romania
+    - Slovakia
+    - Slovenia
+    - Spain
+    - Sweden
+  - USA (R9):
+    - United States
+  - Other OECD (R9):
+    - Albania
+    - Australia
+    - Bosnia and Herzegovina
+    - Canada
+    - Guam
+    - Iceland
+    - Japan
+    - Kosovo
+    - Montenegro
+    - New Zealand
+    - North Macedonia
+    - Norway
+    - Puerto Rico
+    - Serbia
+    - United Kingdom
+    - Switzerland
+    - Turkey
+  - China (R9):
+    - China
+    - Hong Kong
+    - Macao
+  - India (R9):
+    - India
+  - Other Asia (R9):
+    - Afghanistan
+    - Bangladesh
+    - Bhutan
+    - Brunei Darussalam
+    - Cambodia
+    - Cook Islands
+    - Fiji
+    - French Polynesia
+    - Indonesia
+    - Kiribati
+    - Laos
+    - Malaysia
+    - Maldives
+    - Marshall Islands
+    - Micronesia
+    - Mongolia
+    - Myanmar
+    - Nauru
+    - Niue
+    - Nepal
+    - New Caledonia
+    - North Korea
+    - Pakistan
+    - Palau
+    - Papua New Guinea
+    - Philippines
+    - South Korea
+    - Samoa
+    - Singapore
+    - Solomon Islands
+    - Sri Lanka
+    - Taiwan
+    - Tuvalu
+    - Thailand
+    - Timor-Leste
+    - Tonga
+    - Vanuatu
+    - Viet Nam
+  - Reforming Economies (R9):
+    - Armenia
+    - Azerbaijan
+    - Belarus
+    - Georgia
+    - Kazakhstan
+    - Kyrgyzstan
+    - Moldova
+    - Russian Federation
+    - Tajikistan
+    - Turkmenistan
+    - Ukraine
+    - Uzbekistan
+  - Middle East & Africa (R9):
+    - Algeria
+    - Angola
+    - Bahrain
+    - Benin
+    - Botswana
+    - Burkina Faso
+    - Burundi
+    - Cameroon
+    - Cabo Verde
+    - Central African Republic
+    - Chad
+    - Comoros
+    - Congo
+    - Côte d'Ivoire
+    - Democratic Republic of the Congo
+    - Djibouti
+    - Egypt
+    - Equatorial Guinea
+    - Eritrea
+    - Eswatini
+    - Ethiopia
+    - Gabon
+    - Gambia
+    - Ghana
+    - Guinea
+    - Guinea-Bissau
+    - Iran
+    - Iraq
+    - Israel
+    - Jordan
+    - Kenya
+    - Kuwait
+    - Lebanon
+    - Lesotho
+    - Liberia
+    - Libya
+    - Madagascar
+    - Malawi
+    - Mali
+    - Mauritania
+    - Mauritius
+    - Mayotte
+    - Morocco
+    - Mozambique
+    - Namibia
+    - Niger
+    - Nigeria
+    - Palestine
+    - Oman
+    - Qatar
+    - Rwanda
+    - Réunion
+    - Sao Tome and Principe
+    - Saudi Arabia
+    - Senegal
+    - Seychelles
+    - Sierra Leone
+    - Somalia
+    - South Africa
+    - South Sudan
+    - Sudan
+    - Syria
+    - Togo
+    - Tunisia
+    - Uganda
+    - United Arab Emirates
+    - Tanzania
+    - Western Sahara
+    - Yemen
+    - Zambia
+    - Zimbabwe
+  - Latin America (R9):
+    - Antigua and Barbuda
+    - Argentina
+    - Aruba
+    - Bahamas
+    - Barbados
+    - Belize
+    - Bolivia
+    - Brazil
+    - Chile
+    - Colombia
+    - Costa Rica
+    - Cuba
+    - Dominican Republic
+    - Ecuador
+    - El Salvador
+    - French Guiana
+    - Grenada
+    - Guadeloupe
+    - Guatemala
+    - Guyana
+    - Haiti
+    - Honduras
+    - Jamaica
+    - Martinique
+    - Mexico
+    - Nicaragua
+    - Panama
+    - Paraguay
+    - Peru
+    - Saint Kitts and Nevis
+    - Saint Lucia
+    - Saint Vincent and the Grenadines
+    - Suriname
+    - Trinidad and Tobago
+    - United States Virgin Islands
+    - Uruguay
+    - Venezuela
+  # Try to find which countries need to go in here
+  # - Other (R9):
+  #     description: Rest of the World, used only if a match with the R9 regions can
+  #       otherwise not be achieved
+
+  - Africa (R10):
+    - Algeria
+    - Angola
+    - Benin
+    - Botswana
+    - Burkina Faso
+    - Burundi
+    - Cameroon
+    - Cabo Verde
+    - Central African Republic
+    - Chad
+    - Comoros
+    - Congo
+    - Côte d'Ivoire
+    - Democratic Republic of the Congo
+    - Djibouti
+    - Egypt
+    - Equatorial Guinea
+    - Eritrea
+    - Ethiopia
+    - Gabon
+    - Gambia
+    - Ghana
+    - Guinea
+    - Guinea-Bissau
+    - Kenya
+    - Lesotho
+    - Liberia
+    - Libya
+    - Madagascar
+    - Malawi
+    - Mali
+    - Mauritania
+    - Mauritius
+    - Mayotte
+    - Morocco
+    - Mozambique
+    - Namibia
+    - Niger
+    - Nigeria
+    - Rwanda
+    - Réunion
+    - Sao Tome and Principe
+    - Senegal
+    - Seychelles
+    - Sierra Leone
+    - Somalia
+    - South Africa
+    - South Sudan
+    - Sudan
+    - Eswatini
+    - Togo
+    - Tunisia
+    - Uganda
+    - Tanzania
+    - Western Sahara
+    - Zambia
+    - Zimbabwe
+  - China+ (R10):
+    - China
+    - Hong Kong
+    - Macao
+    - Mongolia
+    - North Korea
+    - South Korea
+  - Europe (R10):
+    - Albania
+    - Austria
+    - Belgium
+    - Bosnia and Herzegovina
+    - Bulgaria
+    - Croatia
+    - Cyprus
+    - Czechia
+    - Denmark
+    - Estonia
+    - France
+    - Finland
+    - Germany
+    - Greece
+    - Hungary
+    - Iceland
+    - Ireland
+    - Italy
+    - Kosovo
+    - Latvia
+    - Lithuania
+    - Luxembourg
+    - Malta
+    - Montenegro
+    - Netherlands
+    - North Macedonia
+    - Norway
+    - Portugal
+    - Switzerland
+    - Poland
+    - Romania
+    - Serbia
+    - Slovakia
+    - Slovenia
+    - Spain
+    - Sweden
+    - Turkey
+    - United Kingdom
+  - India+ (R10):
+    - India
+    - Afghanistan
+    - Bangladesh
+    - Bhutan
+    - Maldives
+    - Nepal
+    - Pakistan
+    - Sri Lanka
+  - Latin America (R10):
+    - Antigua and Barbuda
+    - Argentina
+    - Aruba
+    - Bahamas
+    - Barbados
+    - Belize
+    - Bolivia
+    - Brazil
+    - Chile
+    - Colombia
+    - Costa Rica
+    - Cuba
+    - Dominican Republic
+    - Ecuador
+    - El Salvador
+    - French Guiana
+    - Grenada
+    - Guadeloupe
+    - Guatemala
+    - Guyana
+    - Haiti
+    - Honduras
+    - Jamaica
+    - Martinique
+    - Mexico
+    - Nicaragua
+    - Panama
+    - Paraguay
+    - Peru
+    - Puerto Rico
+    - Saint Kitts and Nevis
+    - Saint Lucia
+    - Saint Vincent and the Grenadines
+    - Suriname
+    - Trinidad and Tobago
+    - United States Virgin Islands
+    - Uruguay
+    - Venezuela
+  - Middle East (R10):
+    - Bahrain
+    - Iraq
+    - Iran
+    - Israel
+    - Jordan
+    - Kuwait
+    - Lebanon
+    - Oman
+    - Palestine
+    - Qatar
+    - Saudi Arabia
+    - Syria
+    - United Arab Emirates
+    - Yemen
+  - North America (R10):
+    - Canada
+    - Guam
+    - United States
+  - Pacific OECD (R10):
+    - Australia
+    - Japan
+    - New Zealand
+  - Reforming Economies (R10):
+    - Armenia
+    - Azerbaijan
+    - Belarus
+    - Georgia
+    - Kazakhstan
+    - Kyrgyzstan
+    - Moldova
+    - Russian Federation
+    - Tajikistan
+    - Turkmenistan
+    - Ukraine
+    - Uzbekistan
+  - Rest of Asia (R10):
+    - Brunei Darussalam
+    - Cambodia
+    - Cook Islands
+    - Fiji
+    - French Polynesia
+    - Indonesia
+    - Kiribati
+    - Laos
+    - Malaysia
+    - Marshall Islands
+    - Micronesia
+    - Myanmar
+    - Nauru
+    - Niue
+    - Palau
+    - New Caledonia
+    - Papua New Guinea
+    - Philippines
+    - Samoa
+    - Singapore
+    - Solomon Islands
+    - Taiwan
+    - Thailand
+    - Timor-Leste
+    - Tonga
+    - Tuvalu
+    - Vanuatu
+    - Viet Nam
+
+    # Again, try to figure out which countries need to be included in Other for
+    # the harmonization data.
+  # - Other (R10):
+  #     description: Rest of the World, to be used only if a match with the R10 regions
+  #       can otherwise not be achieved
