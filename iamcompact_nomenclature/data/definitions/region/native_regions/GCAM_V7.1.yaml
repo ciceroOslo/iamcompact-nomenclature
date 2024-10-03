@@ -1,19 +1,23 @@
 - GCAM 7.1:
     - GCAM 7.1|Africa_Eastern:
+      ``description: Eastern Africa
         countries: [
           Burundi, Comoros, Djibouti, Eritrea, Ethiopia, Kenya, Madagascar, Mauritius,
           Réunion, Rwanda, Somalia, Sudan, South Sudan, Uganda
         ]
     - GCAM 7.1|Africa_Northern:
+        description: Northern Africa
         countries: [
           Algeria, Egypt, Libya, Morocco, Tunisia, Western Sahara
         ]
     - GCAM 7.1|Africa_Southern:
+        description: Southern Africa
         countries: [
           Angola, Mozambique, Malawi, Lesotho, Botswana, Tanzania, Namibia, Eswatini,
           Zambia, Zimbabwe
         ]
     - GCAM 7.1|Africa_Western:
+        description: Western Africa
         countries: [
           Benin, Congo, Democratic Republic of the Congo, Cameroon, Chad,
           Central African Republic, Cabo Verde, Equatorial Guinea, Gambia, Gabon, Ghana,
@@ -21,14 +25,19 @@
           Senegal, Sierra Leone, Togo, Sao Tome and Principe, Burkina Faso
         ]
     - GCAM 7.1|Argentina:
+        description: Argentina
         countries: [ Argentina ]
     - GCAM 7.1|Australia_NZ:
+        description: Australia and New Zealand
         countries: [ Australia, New Zealand ]
     - GCAM 7.1|Brazil:
+        description: Brazil
         countries: [ Brazil ]
     - GCAM 7.1|Canada:
+        description: Canada
         countries: [ Canada ]
     - GCAM 7.1|Central America and Caribbean:
+        description: Central America and the Caribbean
         countries: [
           Antigua and Barbuda, Barbados, Bermuda, Bahamas, Belize, Cayman Islands,
           Costa Rica, Cuba, Dominica, Dominican Republic, El Salvador, Grenada, Guatemala,
@@ -37,20 +46,26 @@
           Saint Vincent and the Grenadines, Guadeloupe
         ]
     - GCAM 7.1|Central Asia:
+        description: Central Asia
         countries: [
           Azerbaijan, Armenia, Georgia, Kyrgyzstan, Kazakhstan, Mongolia, Tajikistan,
           Turkmenistan, Uzbekistan
         ]
     - GCAM 7.1|China:
+        description: China, including Hong Kong and Macao
         countries: [ China, Hong Kong, Macao ]
     - GCAM 7.1|Colombia:
+        description: Colombia
         countries: [ Colombia ]
     - GCAM 7.1|EU-12:
+        description: EU countries that joined after 2000 but before 2013 (excl. Croatia)
         countries: [
           Bulgaria, Cyprus, Estonia, Czechia, Hungary, Latvia, Lithuania, Slovakia,
           Malta, Poland, Romania, Slovenia
         ]
     - GCAM 7.1|EU-15:
+        description: EU countries that joined before 2000, along with the associated
+            countries Andorra and Monaco
         countries: [
           Denmark, Ireland, Austria, Finland, Falkland Islands (Malvinas), France,
           Greenland, Germany, Greece, Italy, Belgium, Faroe Islands, Andorra, Gibraltar,
@@ -59,42 +74,59 @@
           Turks and Caicos Islands
         ]
     - GCAM 7.1|Europe_Eastern:
+        description: Eastern Europe
         countries: [ Belarus, Moldova, Ukraine ]
+        note: Russia is a separate region.
     - GCAM 7.1|Europe_Non_EU:
+        description: Other non-EU European countries in Europe
         countries: [
           Albania, Bosnia and Herzegovina, Croatia, North Macedonia, Montenegro, Turkey,
           Serbia
         ]
     - GCAM 7.1|European Free Trade Association:
+        description: EFTA countries
         countries: [ Iceland, Liechtenstein, Norway, Switzerland ]
     - GCAM 7.1|India:
+        description: India
         countries: [ India ]
     - GCAM 7.1|Indonesia:
+        description: Indonesia
         countries: [ Indonesia ]
     - GCAM 7.1|Japan:
+        description: Japan
         countries: [ Japan ]
     - GCAM 7.1|Mexico:
+        description: Mexico
         countries: [ Mexico ]
     - GCAM 7.1|Middle East:
+        description: Middle East
         countries: [
           Bahrain, Iran, Israel, Iraq, Jordan, Kuwait, Lebanon, Oman, Palestine, Qatar,
           Saudi Arabia, Syria, Yemen, United Arab Emirates
         ]
     - GCAM 7.1|Pakistan:
+        description: Pakistan
         countries: [ Pakistan ]
     - GCAM 7.1|Russia:
+        description: Russia
         countries: [ Russian Federation ]
     - GCAM 7.1|South Africa:
+        description: South Africa
         countries: [ South Africa ]
     - GCAM 7.1|South America_Northern:
+        description: Northern South America
         countries: [ French Guiana, Guyana, Suriname, Venezuela ]
     - GCAM 7.1|South America_Southern:
+        description: Southern South America
         countries: [ Bolivia, Chile, Ecuador, Paraguay, Peru, Uruguay ]
     - GCAM 7.1|South Asia:
+        description: South Asian countries except India
         countries: [ Bangladesh, Sri Lanka, Afghanistan, Bhutan, Maldives, Nepal ]
     - GCAM 7.1|South Korea:
+        description: South Korea
         countries: [ South Korea ]
     - GCAM 7.1|Southeast Asia:
+        description: Southeast Asian and other Asian countries, and Pacific islands
         countries: [
           American Samoa, Myanmar, Solomon Islands, Brunei Darussalam, Cambodia,
           Cook Islands, Fiji, Micronesia, French Polynesia, Guam, North Korea, Kiribati,
@@ -104,6 +136,8 @@
           Tonga, Tuvalu, Viet Nam, Samoa, Timor-Leste, Palau, Marshall Islands
         ]
     - GCAM 7.1|Taiwan:
+        description: Taiwan
         countries: [ Taiwan ]
     - GCAM 7.1|USA:
+        description: United States of America with Puerto Rico and U.S. Virgin Islands
         countries: [ Puerto Rico, United States, United States Virgin Islands ]
