@@ -1,6 +1,6 @@
 - GCAM 7.1:
     - GCAM 7.1|Africa_Eastern:
-      ``description: Eastern Africa
+        description: Eastern Africa
         countries: [
           Burundi, Comoros, Djibouti, Eritrea, Ethiopia, Kenya, Madagascar, Mauritius,
           Réunion, Rwanda, Somalia, Sudan, South Sudan, Uganda
