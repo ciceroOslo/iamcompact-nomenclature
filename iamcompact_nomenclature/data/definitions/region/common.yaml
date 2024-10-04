@@ -189,99 +189,107 @@
 # (grant agreement no. 282846)
 # updated to be consistent with IPCC AR6 WGIII Annex II R10 regions
 # https://www.ipcc.ch/report/ar6/wg3/downloads/report/IPCC_AR6_WGIII_Annex-II.pdf
-- R10:
-  - Africa (R10):
-      description: Africa
-      ar6: R10AFRICA
-      countries: [Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon,
-        Cabo Verde, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire,
-        Democratic Republic of the Congo, Djibouti, Egypt, Equatorial Guinea, Eritrea,
-        Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia,
-        Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco,
-        Mozambique, Namibia, Niger, Nigeria, Rwanda, Réunion, Sao Tome and Principe,
-        Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan,
-        Eswatini, Togo, Tunisia, Uganda, Tanzania, Western Sahara, Zambia, Zimbabwe]
-      note: Depending on the spatial resolution, some models report Northern Africa
-        as part of the Middle East region.
-      iso3_codes: [DZA, AGO, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG, CIV,
-        COD, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, LBY,
-        MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ, NAM, NER, NGA, RWA, REU, STP, SEN,
-        SYC, SLE, SOM, ZAF, SSD, SDN, SWZ, TGO, TUN, UGA, TZA, ESH, ZMB, ZWE]
-  - China+ (R10):
-      description: Centrally-planned Asia, primarily China
-      ar6: R10CHINA+
-      countries: [China, Hong Kong, Macao, Mongolia, North Korea, South Korea]
-      iso3_codes: [CHN, HKG, MAC, MNG, PRK, KOR]
-  - Europe (R10):
-      description: Europe (including Turkey)
-      ar6: R10EUROPE
-      countries: [Albania, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Croatia,
-        Cyprus, Czechia, Denmark, Estonia, France, Finland, Germany, Greece, Hungary,
-        Iceland, Ireland, Italy, Kosovo, Latvia, Lithuania, Luxembourg, Malta, Montenegro,
-        Netherlands, North Macedonia, Norway, Portugal, Switzerland, Poland, Romania,
-        Serbia, Slovakia, Slovenia, Spain, Sweden, Turkey, United Kingdom]
-      iso3_codes: [ALB, AUT, BEL, BIH, BGR, HRV, CYP, CZE, DNK, EST, FRA, FIN, DEU,
-        GRC, HUN, ISL, IRL, ITA, LVA, LTU, LUX, MLT, MNE, NLD, MKD, NOR, PRT,
-        CHE, POL, ROU, SRB, SVK, SVN, ESP, SWE, TUR, GBR]
-      note: This region includes Kosovo, which is listed in
-        the `countries` attribute, but not in the `iso3_codes` attribute, due to
-        not having an official ISO 3166-1 alpha-3 code. Including the commonly
-        used but unofficial codes XKX or XKK would cause a validation error when
-        loading with the `nomenclature` package. 
-  - India+ (R10):
-      description: South Asia, primarily India
-      ar6: R10INDIA+
-      countries: [India, Afghanistan, Bangladesh, Bhutan, Maldives, Nepal, Pakistan,
-        Sri Lanka]
-      iso3_codes: [IND, AFG, BGD, BTN, MDV, NPL, PAK, LKA]
-  - Latin America (R10):
-      description: Latin America and the Caribbean
-      ar6: R10LATIN_AM
-      countries: [Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
-        Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador,
-        El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti,
-        Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, Paraguay, Peru,
-        Puerto Rico, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,
-        Suriname, Trinidad and Tobago, United States Virgin Islands, Uruguay, Venezuela]
-      iso3_codes: [ATG, ARG, ABW, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DOM,
-        ECU, SLV, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, NIC, PAN, PRY,
-        PER, PRI, KNA, LCA, VCT, SUR, TTO, VIR, URY, VEN]
-  - Middle East (R10):
-      description: Middle East
-      ar6: R10MIDDLE_EAST
-      countries: [Bahrain, Iraq, Iran, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine,
-        Qatar, Saudi Arabia, Syria, United Arab Emirates, Yemen]
-      note: Depending on the spatial resolution, some models report Northern Africa
-        as part of the Middle East region.
-      iso3_codes: [BHR, IRQ, IRN, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR, ARE,
-        YEM]
-  - North America (R10):
-      description: United States and Canada
-      ar6: R10NORTH_AM
-      countries: [Canada, Guam, United States]
-      iso3_codes: [CAN, GUM, USA]
-  - Pacific OECD (R10):
-      description: Pacific OECD (membership status 1990) including Pacific islands
-      ar6: R10PAC_OECD
-      countries: [Australia, Japan, New Zealand]
-      iso3_codes: [AUS, JPN, NZL]
-  - Reforming Economies (R10):
-      description: Former Soviet Union countries not included in Europe
-      ar6: R10REF_ECON
-      countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
-        Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
-      iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
-  - Rest of Asia (R10):
-      description: Asia not included in China+, India+ or Reforming Economies
-      ar6: R10REST_ASIA
-      countries: [Brunei Darussalam, Cambodia, Cook Islands, Fiji, French Polynesia,
-        Indonesia, Kiribati, Laos, Malaysia, Marshall Islands, Micronesia, Myanmar,
-        Nauru, Niue, Palau, New Caledonia, Papua New Guinea, Philippines, Samoa, Singapore,
-        Solomon Islands, Taiwan, Thailand, Timor-Leste, Tonga, Tuvalu, Vanuatu, Viet
-          Nam]
-      iso3_codes: [BRN, KHM, COK, FJI, PYF, IDN, KIR, LAO, MYS, MHL, FSM, MMR, NRU,
-        NIU, PLW, NCL, PNG, PHL, WSM, SGP, SLB, TWN, THA, TLS, TON, TUV, VUT, VNM]
-  - Other (R10):
-      description: Rest of the World, to be used only if a match with the R10 regions
-        can otherwise not be achieved
-      ar6: R10ROWO
+#
+# NB! Commented out in IAM COMPACT. The R10 regions are not unambiguously
+# defined in the AR6 WG3 model registration template, and the definition in
+# the original LIMITS source does not appear to quite agree with the definitions
+# used here (despite being ambiguous in the first place). There appears to be
+# considerable variation in how different models define the mapping of their
+# regions to R10, so we need to the R10 regions out to avoid issues when
+# vetting the harmonized variables that the models use.
+# - R10:
+#   - Africa (R10):
+#       description: Africa
+#       ar6: R10AFRICA
+#       countries: [Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi, Cameroon,
+#         Cabo Verde, Central African Republic, Chad, Comoros, Congo, Côte d'Ivoire,
+#         Democratic Republic of the Congo, Djibouti, Egypt, Equatorial Guinea, Eritrea,
+#         Ethiopia, Gabon, Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia,
+#         Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Mayotte, Morocco,
+#         Mozambique, Namibia, Niger, Nigeria, Rwanda, Réunion, Sao Tome and Principe,
+#         Senegal, Seychelles, Sierra Leone, Somalia, South Africa, South Sudan, Sudan,
+#         Eswatini, Togo, Tunisia, Uganda, Tanzania, Western Sahara, Zambia, Zimbabwe]
+#       note: Depending on the spatial resolution, some models report Northern Africa
+#         as part of the Middle East region.
+#       iso3_codes: [DZA, AGO, BEN, BWA, BFA, BDI, CMR, CPV, CAF, TCD, COM, COG, CIV,
+#         COD, DJI, EGY, GNQ, ERI, ETH, GAB, GMB, GHA, GIN, GNB, KEN, LSO, LBR, LBY,
+#         MDG, MWI, MLI, MRT, MUS, MYT, MAR, MOZ, NAM, NER, NGA, RWA, REU, STP, SEN,
+#         SYC, SLE, SOM, ZAF, SSD, SDN, SWZ, TGO, TUN, UGA, TZA, ESH, ZMB, ZWE]
+#   - China+ (R10):
+#       description: Centrally-planned Asia, primarily China
+#       ar6: R10CHINA+
+#       countries: [China, Hong Kong, Macao, Mongolia, North Korea, South Korea]
+#       iso3_codes: [CHN, HKG, MAC, MNG, PRK, KOR]
+#   - Europe (R10):
+#       description: Europe (including Turkey)
+#       ar6: R10EUROPE
+#       countries: [Albania, Austria, Belgium, Bosnia and Herzegovina, Bulgaria, Croatia,
+#         Cyprus, Czechia, Denmark, Estonia, France, Finland, Germany, Greece, Hungary,
+#         Iceland, Ireland, Italy, Kosovo, Latvia, Lithuania, Luxembourg, Malta, Montenegro,
+#         Netherlands, North Macedonia, Norway, Portugal, Switzerland, Poland, Romania,
+#         Serbia, Slovakia, Slovenia, Spain, Sweden, Turkey, United Kingdom]
+#       iso3_codes: [ALB, AUT, BEL, BIH, BGR, HRV, CYP, CZE, DNK, EST, FRA, FIN, DEU,
+#         GRC, HUN, ISL, IRL, ITA, LVA, LTU, LUX, MLT, MNE, NLD, MKD, NOR, PRT,
+#         CHE, POL, ROU, SRB, SVK, SVN, ESP, SWE, TUR, GBR]
+#       note: This region includes Kosovo, which is listed in
+#         the `countries` attribute, but not in the `iso3_codes` attribute, due to
+#         not having an official ISO 3166-1 alpha-3 code. Including the commonly
+#         used but unofficial codes XKX or XKK would cause a validation error when
+#         loading with the `nomenclature` package. 
+#   - India+ (R10):
+#       description: South Asia, primarily India
+#       ar6: R10INDIA+
+#       countries: [India, Afghanistan, Bangladesh, Bhutan, Maldives, Nepal, Pakistan,
+#         Sri Lanka]
+#       iso3_codes: [IND, AFG, BGD, BTN, MDV, NPL, PAK, LKA]
+#   - Latin America (R10):
+#       description: Latin America and the Caribbean
+#       ar6: R10LATIN_AM
+#       countries: [Antigua and Barbuda, Argentina, Aruba, Bahamas, Barbados, Belize,
+#         Bolivia, Brazil, Chile, Colombia, Costa Rica, Cuba, Dominican Republic, Ecuador,
+#         El Salvador, French Guiana, Grenada, Guadeloupe, Guatemala, Guyana, Haiti,
+#         Honduras, Jamaica, Martinique, Mexico, Nicaragua, Panama, Paraguay, Peru,
+#         Puerto Rico, Saint Kitts and Nevis, Saint Lucia, Saint Vincent and the Grenadines,
+#         Suriname, Trinidad and Tobago, United States Virgin Islands, Uruguay, Venezuela]
+#       iso3_codes: [ATG, ARG, ABW, BHS, BRB, BLZ, BOL, BRA, CHL, COL, CRI, CUB, DOM,
+#         ECU, SLV, GUF, GRD, GLP, GTM, GUY, HTI, HND, JAM, MTQ, MEX, NIC, PAN, PRY,
+#         PER, PRI, KNA, LCA, VCT, SUR, TTO, VIR, URY, VEN]
+#   - Middle East (R10):
+#       description: Middle East
+#       ar6: R10MIDDLE_EAST
+#       countries: [Bahrain, Iraq, Iran, Israel, Jordan, Kuwait, Lebanon, Oman, Palestine,
+#         Qatar, Saudi Arabia, Syria, United Arab Emirates, Yemen]
+#       note: Depending on the spatial resolution, some models report Northern Africa
+#         as part of the Middle East region.
+#       iso3_codes: [BHR, IRQ, IRN, ISR, JOR, KWT, LBN, OMN, PSE, QAT, SAU, SYR, ARE,
+#         YEM]
+#   - North America (R10):
+#       description: United States and Canada
+#       ar6: R10NORTH_AM
+#       countries: [Canada, Guam, United States]
+#       iso3_codes: [CAN, GUM, USA]
+#   - Pacific OECD (R10):
+#       description: Pacific OECD (membership status 1990) including Pacific islands
+#       ar6: R10PAC_OECD
+#       countries: [Australia, Japan, New Zealand]
+#       iso3_codes: [AUS, JPN, NZL]
+#   - Reforming Economies (R10):
+#       description: Former Soviet Union countries not included in Europe
+#       ar6: R10REF_ECON
+#       countries: [Armenia, Azerbaijan, Belarus, Georgia, Kazakhstan, Kyrgyzstan, Moldova,
+#         Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan]
+#       iso3_codes: [ARM, AZE, BLR, GEO, KAZ, KGZ, MDA, RUS, TJK, TKM, UKR, UZB]
+#   - Rest of Asia (R10):
+#       description: Asia not included in China+, India+ or Reforming Economies
+#       ar6: R10REST_ASIA
+#       countries: [Brunei Darussalam, Cambodia, Cook Islands, Fiji, French Polynesia,
+#         Indonesia, Kiribati, Laos, Malaysia, Marshall Islands, Micronesia, Myanmar,
+#         Nauru, Niue, Palau, New Caledonia, Papua New Guinea, Philippines, Samoa, Singapore,
+#         Solomon Islands, Taiwan, Thailand, Timor-Leste, Tonga, Tuvalu, Vanuatu, Viet
+#           Nam]
+#       iso3_codes: [BRN, KHM, COK, FJI, PYF, IDN, KIR, LAO, MYS, MHL, FSM, MMR, NRU,
+#         NIU, PLW, NCL, PNG, PHL, WSM, SGP, SLB, TWN, THA, TLS, TON, TUV, VUT, VNM]
+#   - Other (R10):
+#       description: Rest of the World, to be used only if a match with the R10 regions
+#         can otherwise not be achieved
+#       ar6: R10ROWO
