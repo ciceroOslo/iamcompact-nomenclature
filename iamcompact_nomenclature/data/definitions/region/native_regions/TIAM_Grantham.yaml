@@ -3,12 +3,12 @@
         description: Africa
         countries: [
             Angola, Burundi, Benin, Burkina Faso, Brunei Darussalam, Botswana,
-            Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of Congo,
+            Central African Republic, Côte d'Ivoire, Cameroon, Democratic Republic of the Congo,
             Congo, Cabo Verde, Djibouti, Algeria, Egypt, Eritrea, Ethiopia, Gabon,
             Ghana, Guinea, Gambia, Guinea-Bissau, Equatorial Guinea, Kenya, Liberia,
             Libya, Lesotho, Morocco, Madagascar, Mali, Mozambique, Mauritania, Mauritius,
             Malawi, Niger, Nigeria, Réunion, Rwanda, Sudan, Senegal, Sierra Leone,
-            Somalia, Sao Tome and Principe, Swaziland, Seychelles, Chad, Togo, Tunisia,
+            Somalia, Sao Tome and Principe, Eswatini, Seychelles, Chad, Togo, Tunisia,
             Tanzania, Uganda, South Africa, Zambia, Zimbabwe
         ]
         iso3_codes: [
@@ -49,8 +49,8 @@
     - TIAM_Grantham|EEU:
         description: Eastern Europe
         countries: [
-            Albania, Bulgaria, Bosnia and Herzegovina, Czech Republic, Croatia, Hungary,
-            Kosovo, Macedonia, Montenegro, Poland, Romania, Serbia, Slovakia, Slovenia
+            Albania, Bulgaria, Bosnia and Herzegovina, Czechia, Croatia, Hungary,
+            Kosovo, North Macedonia, Montenegro, Poland, Romania, Serbia, Slovakia, Slovenia
         ]
         iso3_codes: [
             ALB, BGR, BIH, CZE, HRV, HUN, MKD, MNE, POL, ROU, SRB, SVK, SVN

@@ -212,11 +212,11 @@ common_regions:
 #       - Japan
 #   - United States:
 #       - USA
-#   - African Union:
-#       - Africa_Eastern
-#       - Africa_Northern
-#       - Africa_Southern
-#       - Africa_Western
-#   - European Union and United Kingdom:
-#       - EU-12
-#       - EU-15
+  - African Union:
+      - Africa_Eastern
+      - Africa_Northern
+      - Africa_Southern
+      - Africa_Western
+  - European Union and United Kingdom:
+      - EU-12
+      - EU-15

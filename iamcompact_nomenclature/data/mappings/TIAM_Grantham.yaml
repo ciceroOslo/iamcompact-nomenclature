@@ -1,7 +1,7 @@
 model:
     - TIAM_Grantham
 
-  native_regions:
+native_regions:
     - AFR: TIAM_Grantham|AFR
     - AUS: TIAM_Grantham|AUS
     - CAN: TIAM_Grantham|CAN
@@ -18,7 +18,7 @@ model:
     - USA: TIAM_Grantham|USA
     - WEU: TIAM_Grantham|WEU
 
-  common_regions:
+common_regions:
     - World:
         - AFR
         - AUS
