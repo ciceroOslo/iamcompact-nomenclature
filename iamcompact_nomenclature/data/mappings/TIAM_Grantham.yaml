@@ -1,0 +1,89 @@
+model:
+    - TIAM_Grantham
+
+native_regions:
+    - AFR: TIAM_Grantham|AFR
+    - AUS: TIAM_Grantham|AUS
+    - CAN: TIAM_Grantham|CAN
+    - CHI: TIAM_Grantham|CHI
+    - CSA: TIAM_Grantham|CSA
+    - EEU: TIAM_Grantham|EEU
+    - FSU: TIAM_Grantham|FSU
+    - IND: TIAM_Grantham|IND
+    - JPN: TIAM_Grantham|JPN
+    - MEA: TIAM_Grantham|MEA
+    - MEX: TIAM_Grantham|MEX
+    - ODA: TIAM_Grantham|ODA
+    - SKO: TIAM_Grantham|SKO
+    - USA: TIAM_Grantham|USA
+    - WEU: TIAM_Grantham|WEU
+
+common_regions:
+    - World:
+        - AFR
+        - AUS
+        - CAN
+        - CHI
+        - CSA
+        - EEU
+        - FSU
+        - IND
+        - JPN
+        - MEA
+        - MEX
+        - ODA
+        - SKO
+        - USA
+        - WEU
+
+      # R5 regions
+    - Asia (R5):
+        - ODA
+        - IND
+        - CHI
+        - SKO
+    - Latin America (R5):
+        - MEX
+        - CSA
+    - Middle East & Africa (R5):
+        - MEA
+        - AFR
+    - OECD & EU (R5):
+        - WEU
+        - EEU
+        - USA
+        - CAN
+        - JPN 
+        - AUS
+    - Reforming Economies (R5):
+        - FSU
+
+    # TIAM_Grantham apparently does not have a mapping to R9 regions
+
+    # R10 regions. *NB!* Removing for now, due to ambiguities in R10 definition!
+    # - Africa (R10):
+    #     - AFR
+    # - China+ (R10):
+    #     - CHI
+    # - Europe (R10):
+    #     - WEU
+    #     - EEU
+    # - India+ (R10):
+    #     - IND
+    #     - ODA
+    # - Latin America (R10):
+    #     - MEX
+    #     - CSA
+    # - Middle East (R10):
+    #     - MEA
+    # - North America (R10):
+    #     - USA
+    #     - CAN
+    # - Pacific OECD (R10):
+    #     - JPN
+    #     - AUS
+    # - Reforming Economies (R10):
+    #     - FSU
+    # - Rest of Asia (R10):
+    #     - ODA
+    #     - SKO
