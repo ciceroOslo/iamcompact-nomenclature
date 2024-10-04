@@ -1,0 +1,19 @@
+model:
+    - PROMETHEUS 1.2
+
+native_regions:
+    - CHN: PROMETHEUS 1.2|CHN
+    - CIS: PROMETHEUS 1.2|CIS
+    - EMRG: PROMETHEUS 1.2|EMRG
+    - EPROD: PROMETHEUS 1.2|EPROD
+    - EU28: PROMETHEUS 1.2|EU28
+    - IND: PROMETHEUS 1.2|IND
+    - NOAM: PROMETHEUS 1.2|NOAM
+    - RESTW: PROMETHEUS 1.2|RESTW
+    - WPAC: PROMETHEUS 1.2|WPAC
+
+common_regions:
+    - World:
+        - World
+
+# The PROMETHEUS native regions do not appear to be mappable to either R5 or R9
