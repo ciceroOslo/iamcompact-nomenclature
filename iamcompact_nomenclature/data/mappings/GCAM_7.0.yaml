@@ -196,19 +196,7 @@ common_regions:
       - Southeast Asia
       - Taiwan
       
-  # mapping for G20 members
-  - Brazil:
-      - Brazil
-  - Canada:
-      - Canada
-  - China:
-      - China
-  - India:
-      - India
-  - Japan:
-      - Japan
-  - United States:
-      - USA
+  # mapping for organizations
   - African Union:
       - Africa_Eastern
       - Africa_Northern
