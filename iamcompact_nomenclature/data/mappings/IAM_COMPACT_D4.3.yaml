@@ -1394,3 +1394,263 @@ common_regions:
         - San Marino
         - Sweden
         - Vatican
+
+    # PROMETHEUS renamed model-native regions
+    - PROMETHEUS 1.2|CHN:
+        - China
+        - Hong Kong
+        - Macao
+    - PROMETHEUS 1.2|CIS:
+        - Armenia
+        - Azerbaijan
+        - Belarus
+        - Georgia
+        - Kazakhstan
+        - Kyrgyzstan
+        - Moldova
+        - Russian Federation
+        - Tajikistan
+        - Turkmenistan
+        - Ukraine
+        - Uzbekistan
+    - PROMETHEUS 1.2|EMRG:
+        - Albania
+        - Argentina
+        - Bahamas
+        - Bosnia and Herzegovina
+        - Belize
+        - Bermuda
+        - Bolivia
+        - Brazil
+        - Botswana
+        - Chile
+        - Colombia
+        - Cabo Verde
+        - Costa Rica
+        - Dominica
+        - Dominican Republic
+        - Ecuador
+        - Fiji
+        - Gabon
+        - Equatorial Guinea
+        - Guyana
+        - Saint Lucia
+        - Mexico
+        - North Macedonia
+        - Montenegro
+        - Mauritania
+        - Mauritius
+        - Malaysia
+        - Namibia
+        - Panama
+        - Peru
+        - Philippines
+        - Paraguay
+        - Singapore
+        - San Marino
+        - Saint Pierre and Miquelon
+        - Serbia
+        - Suriname
+        - Eswatini
+        - Seychelles
+        - Thailand
+        - Tonga
+        - Trinidad and Tobago
+        - Turkey
+        - Taiwan
+        - Uruguay
+        - Venezuela
+        - South Africa
+    - PROMETHEUS 1.2|EPROD:
+        - United Arab Emirates
+        - Bahrain
+        - Algeria
+        - Egypt
+        - Iran
+        - Iraq
+        - Israel
+        - Jordan
+        - Kuwait
+        - Lebanon
+        - Libya
+        - Morocco
+        - Oman
+        - Qatar
+        - Saudi Arabia
+        - Syria
+        - Tunisia
+        - Yemen
+    - PROMETHEUS 1.2|EU28:
+        - Austria
+        - Belgium
+        - Bulgaria
+        - Switzerland
+        - Cyprus
+        - Czechia
+        - Germany
+        - Denmark
+        - Spain
+        - Estonia
+        - Finland
+        - France
+        - United Kingdom
+        - Greece
+        - Croatia
+        - Hungary
+        - Ireland
+        - Italy
+        - Lithuania
+        - Luxembourg
+        - Latvia
+        - Malta
+        - Netherlands
+        - Norway
+        - Poland
+        - Portugal
+        - Romania
+        - Slovakia
+        - Slovenia
+        - Sweden
+    - PROMETHEUS 1.2|IND:
+        - India
+    - PROMETHEUS 1.2|NOAM:
+        - Canada
+        - United States
+    - PROMETHEUS 1.2|RESTW:
+        - Aruba
+        - Afghanistan
+        - Angola
+        - Anguilla
+        - Åland Islands
+        - Andorra
+        - Curaçao
+        - Sint Maarten (Dutch part)
+        - "Bonaire, Sint Eustatius and Saba"
+        - American Samoa
+        - Antarctica
+        - French Southern Territories
+        - Antigua and Barbuda
+        - Burundi
+        - Benin
+        - Burkina Faso
+        - Bangladesh
+        - Saint Barthélemy
+        - Barbados
+        - Brunei Darussalam
+        - Bhutan
+        - Bouvet Island
+        - Central African Republic
+        - Cocos (Keeling) Islands
+        - Côte d'Ivoire
+        - Cameroon
+        - Democratic Republic of the Congo
+        - Congo
+        - Cook Islands
+        - Comoros
+        - Cuba
+        - Christmas Island
+        - Cayman Islands
+        - Djibouti
+        - Eritrea
+        - Western Sahara
+        - Ethiopia
+        - Falkland Islands (Malvinas)
+        - Faroe Islands
+        - Micronesia
+        - Guernsey
+        - Ghana
+        - Gibraltar
+        - Guinea
+        - Guadeloupe
+        - Gambia
+        - Guinea-Bissau
+        - Grenada
+        - Greenland
+        - Guatemala
+        - French Guiana
+        - Guam
+        - Heard Island and McDonald Islands
+        - Honduras
+        - Haiti
+        - Indonesia
+        - Isle of Man
+        - British Indian Ocean Territory
+        - Iceland
+        - Jamaica
+        - Jersey
+        - Kenya
+        - Cambodia
+        - Kiribati
+        - Saint Kitts and Nevis
+        - Laos
+        - Liberia
+        - Liechtenstein
+        - Sri Lanka
+        - Lesotho
+        - Saint Martin (French part)
+        - Monaco
+        - Madagascar
+        - Maldives
+        - Marshall Islands
+        - Mali
+        - Myanmar
+        - Mongolia
+        - Northern Mariana Islands
+        - Mozambique
+        - Montserrat
+        - Martinique
+        - Malawi
+        - Mayotte
+        - New Caledonia
+        - Niger
+        - Norfolk Island
+        - Nigeria
+        - Nicaragua
+        - Niue
+        - Nepal
+        - Nauru
+        - Pakistan
+        - Pitcairn
+        - Palau
+        - Papua New Guinea
+        - Puerto Rico
+        - North Korea
+        - Palestine
+        - French Polynesia
+        - Réunion
+        - Rwanda
+        - Sudan
+        - Senegal
+        - South Georgia and the South Sandwich Islands
+        - "Saint Helena, Ascension and Tristan da Cunha"
+        - Svalbard and Jan Mayen
+        - Solomon Islands
+        - Sierra Leone
+        - El Salvador
+        - Somalia
+        - South Sudan
+        - Sao Tome and Principe
+        - Turks and Caicos Islands
+        - Chad
+        - Togo
+        - Tokelau
+        - Timor-Leste
+        - Tuvalu
+        - Tanzania
+        - Uganda
+        - United States Minor Outlying Islands
+        - Vatican
+        - Saint Vincent and the Grenadines
+        - British Virgin Islands
+        - United States Virgin Islands
+        - Viet Nam
+        - Vanuatu
+        - Wallis and Futuna
+        - Samoa
+        - Zambia
+        - Zimbabwe
+    - PROMETHEUS 1.2|WPAC:
+        - Australia
+        - Japan
+        - South Korea
+        - New Zealand
