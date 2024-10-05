@@ -1179,3 +1179,218 @@ common_regions:
         - Puerto Rico
         - United States
         - United States Virgin Islands
+
+    # TIAM_Grantham renamed model-native regions
+    - TIAM_Grantham|AFR:
+        - Angola
+        - Burundi
+        - Benin
+        - Burkina Faso
+        - Brunei Darussalam
+        - Botswana
+        - Central African Republic
+        - Côte d'Ivoire
+        - Cameroon
+        - Democratic Republic of the Congo
+        - Congo
+        - Cabo Verde
+        - Djibouti
+        - Algeria
+        - Egypt
+        - Eritrea
+        - Ethiopia
+        - Gabon
+        - Ghana
+        - Guinea
+        - Gambia
+        - Guinea-Bissau
+        - Equatorial Guinea
+        - Kenya
+        - Liberia
+        - Libya
+        - Lesotho
+        - Morocco
+        - Madagascar
+        - Mali
+        - Mozambique
+        - Mauritania
+        - Mauritius
+        - Malawi
+        - Niger
+        - Nigeria
+        - Réunion
+        - Rwanda
+        - Sudan
+        - Senegal
+        - Sierra Leone
+        - Somalia
+        - Sao Tome and Principe
+        - Eswatini
+        - Seychelles
+        - Chad
+        - Togo
+        - Tunisia
+        - Tanzania
+        - Uganda
+        - South Africa
+        - Zambia
+        - Zimbabwe
+    - TIAM_Grantham|AUS:
+        - Australia
+        - New Zealand
+    - TIAM_Grantham|CAN:
+        - Canada
+    - TIAM_Grantham|CHI:
+        - China
+        - Hong Kong
+        - Taiwan
+    - TIAM_Grantham|CSA:
+        - "Bonaire, Sint Eustatius and Saba"
+        - Curaçao
+        - Sint Maarten (Dutch part)
+        - Argentina
+        - Antigua and Barbuda
+        - Bahamas
+        - Belize
+        - Bermuda
+        - Bolivia
+        - Brazil
+        - Barbados
+        - Chile
+        - Colombia
+        - Costa Rica
+        - Cuba
+        - Cayman Islands
+        - Dominica
+        - Dominican Republic
+        - Ecuador
+        - Guadeloupe
+        - Grenada
+        - Guatemala
+        - French Guiana
+        - Guyana
+        - Honduras
+        - Haiti
+        - Jamaica
+        - Saint Kitts and Nevis
+        - Saint Lucia
+        - Martinique
+        - Nicaragua
+        - Panama
+        - Peru
+        - Puerto Rico
+        - Paraguay
+        - El Salvador
+        - Suriname
+        - Trinidad and Tobago
+        - Uruguay
+        - Saint Vincent and the Grenadines
+        - Venezuela
+    - TIAM_Grantham|EEU:
+        - Albania
+        - Bulgaria
+        - Bosnia and Herzegovina
+        - Czechia
+        - Croatia
+        - Hungary
+        - Kosovo
+        - North Macedonia
+        - Montenegro
+        - Poland
+        - Romania
+        - Serbia
+        - Slovakia
+        - Slovenia
+    - TIAM_Grantham|FSU:
+        - Armenia
+        - Azerbaijan
+        - Belarus
+        - Estonia
+        - Georgia
+        - Kazakhstan
+        - Kyrgyzstan
+        - Lithuania
+        - Latvia
+        - Moldova
+        - Russian Federation
+        - Tajikistan
+        - Turkmenistan
+        - Ukraine
+        - Uzbekistan
+    - TIAM_Grantham|IND:
+        - India
+    - TIAM_Grantham|JPN:
+        - Japan
+    - TIAM_Grantham|MEA:
+        - United Arab Emirates
+        - Bahrain
+        - Cyprus
+        - Iran
+        - Iraq
+        - Israel
+        - Jordan
+        - Kuwait
+        - Lebanon
+        - Oman
+        - Qatar
+        - Saudi Arabia
+        - Syria
+        - Turkey
+        - Yemen
+    - TIAM_Grantham|MEX:
+        - Mexico
+    - TIAM_Grantham|ODA:
+        - Afghanistan
+        - Bangladesh
+        - Bhutan
+        - Fiji
+        - Indonesia
+        - Kiribati
+        - Laos
+        - Sri Lanka
+        - Maldives
+        - Myanmar
+        - Malaysia
+        - Nepal
+        - Pakistan
+        - Philippines
+        - Papua New Guinea
+        - North Korea
+        - French Polynesia
+        - Singapore
+        - Solomon Islands
+        - Thailand
+        - Viet Nam
+        - Vanuatu
+        - Samoa
+    - TIAM_Grantham|SKO:
+        - South Korea
+    - TIAM_Grantham|USA:
+        - United States
+    - TIAM_Grantham|WEU:
+        - Andorra
+        - Austria
+        - Belgium
+        - Switzerland
+        - Germany
+        - Denmark
+        - Spain
+        - Finland
+        - France
+        - United Kingdom
+        - Gibraltar
+        - Greece
+        - Greenland
+        - Ireland
+        - Iceland
+        - Italy
+        - Liechtenstein
+        - Luxembourg
+        - Monaco
+        - Malta
+        - Netherlands
+        - Norway
+        - Portugal
+        - San Marino
+        - Sweden
+        - Vatican
