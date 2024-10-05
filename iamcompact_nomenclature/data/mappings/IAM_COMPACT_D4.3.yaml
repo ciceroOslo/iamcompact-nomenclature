@@ -693,226 +693,226 @@ common_regions:
   #     description: Rest of the World, used only if a match with the R9 regions can
   #       otherwise not be achieved
 
-  - Africa (R10):
-    - Algeria
-    - Angola
-    - Benin
-    - Botswana
-    - Burkina Faso
-    - Burundi
-    - Cameroon
-    - Cabo Verde
-    - Central African Republic
-    - Chad
-    - Comoros
-    - Congo
-    - Côte d'Ivoire
-    - Democratic Republic of the Congo
-    - Djibouti
-    - Egypt
-    - Equatorial Guinea
-    - Eritrea
-    - Ethiopia
-    - Gabon
-    - Gambia
-    - Ghana
-    - Guinea
-    - Guinea-Bissau
-    - Kenya
-    - Lesotho
-    - Liberia
-    - Libya
-    - Madagascar
-    - Malawi
-    - Mali
-    - Mauritania
-    - Mauritius
-    - Mayotte
-    - Morocco
-    - Mozambique
-    - Namibia
-    - Niger
-    - Nigeria
-    - Rwanda
-    - Réunion
-    - Sao Tome and Principe
-    - Senegal
-    - Seychelles
-    - Sierra Leone
-    - Somalia
-    - South Africa
-    - South Sudan
-    - Sudan
-    - Eswatini
-    - Togo
-    - Tunisia
-    - Uganda
-    - Tanzania
-    - Western Sahara
-    - Zambia
-    - Zimbabwe
-  - China+ (R10):
-    - China
-    - Hong Kong
-    - Macao
-    - Mongolia
-    - North Korea
-    - South Korea
-  - Europe (R10):
-    - Albania
-    - Austria
-    - Belgium
-    - Bosnia and Herzegovina
-    - Bulgaria
-    - Croatia
-    - Cyprus
-    - Czechia
-    - Denmark
-    - Estonia
-    - France
-    - Finland
-    - Germany
-    - Greece
-    - Hungary
-    - Iceland
-    - Ireland
-    - Italy
-    - Kosovo
-    - Latvia
-    - Lithuania
-    - Luxembourg
-    - Malta
-    - Montenegro
-    - Netherlands
-    - North Macedonia
-    - Norway
-    - Portugal
-    - Switzerland
-    - Poland
-    - Romania
-    - Serbia
-    - Slovakia
-    - Slovenia
-    - Spain
-    - Sweden
-    - Turkey
-    - United Kingdom
-  - India+ (R10):
-    - India
-    - Afghanistan
-    - Bangladesh
-    - Bhutan
-    - Maldives
-    - Nepal
-    - Pakistan
-    - Sri Lanka
-  - Latin America (R10):
-    - Antigua and Barbuda
-    - Argentina
-    - Aruba
-    - Bahamas
-    - Barbados
-    - Belize
-    - Bolivia
-    - Brazil
-    - Chile
-    - Colombia
-    - Costa Rica
-    - Cuba
-    - Dominican Republic
-    - Ecuador
-    - El Salvador
-    - French Guiana
-    - Grenada
-    - Guadeloupe
-    - Guatemala
-    - Guyana
-    - Haiti
-    - Honduras
-    - Jamaica
-    - Martinique
-    - Mexico
-    - Nicaragua
-    - Panama
-    - Paraguay
-    - Peru
-    - Puerto Rico
-    - Saint Kitts and Nevis
-    - Saint Lucia
-    - Saint Vincent and the Grenadines
-    - Suriname
-    - Trinidad and Tobago
-    - United States Virgin Islands
-    - Uruguay
-    - Venezuela
-  - Middle East (R10):
-    - Bahrain
-    - Iraq
-    - Iran
-    - Israel
-    - Jordan
-    - Kuwait
-    - Lebanon
-    - Oman
-    - Palestine
-    - Qatar
-    - Saudi Arabia
-    - Syria
-    - United Arab Emirates
-    - Yemen
-  - North America (R10):
-    - Canada
-    - Guam
-    - United States
-  - Pacific OECD (R10):
-    - Australia
-    - Japan
-    - New Zealand
-  - Reforming Economies (R10):
-    - Armenia
-    - Azerbaijan
-    - Belarus
-    - Georgia
-    - Kazakhstan
-    - Kyrgyzstan
-    - Moldova
-    - Russian Federation
-    - Tajikistan
-    - Turkmenistan
-    - Ukraine
-    - Uzbekistan
-  - Rest of Asia (R10):
-    - Brunei Darussalam
-    - Cambodia
-    - Cook Islands
-    - Fiji
-    - French Polynesia
-    - Indonesia
-    - Kiribati
-    - Laos
-    - Malaysia
-    - Marshall Islands
-    - Micronesia
-    - Myanmar
-    - Nauru
-    - Niue
-    - Palau
-    - New Caledonia
-    - Papua New Guinea
-    - Philippines
-    - Samoa
-    - Singapore
-    - Solomon Islands
-    - Taiwan
-    - Thailand
-    - Timor-Leste
-    - Tonga
-    - Tuvalu
-    - Vanuatu
-    - Viet Nam
+  # - Africa (R10):
+  #   - Algeria
+  #   - Angola
+  #   - Benin
+  #   - Botswana
+  #   - Burkina Faso
+  #   - Burundi
+  #   - Cameroon
+  #   - Cabo Verde
+  #   - Central African Republic
+  #   - Chad
+  #   - Comoros
+  #   - Congo
+  #   - Côte d'Ivoire
+  #   - Democratic Republic of the Congo
+  #   - Djibouti
+  #   - Egypt
+  #   - Equatorial Guinea
+  #   - Eritrea
+  #   - Ethiopia
+  #   - Gabon
+  #   - Gambia
+  #   - Ghana
+  #   - Guinea
+  #   - Guinea-Bissau
+  #   - Kenya
+  #   - Lesotho
+  #   - Liberia
+  #   - Libya
+  #   - Madagascar
+  #   - Malawi
+  #   - Mali
+  #   - Mauritania
+  #   - Mauritius
+  #   - Mayotte
+  #   - Morocco
+  #   - Mozambique
+  #   - Namibia
+  #   - Niger
+  #   - Nigeria
+  #   - Rwanda
+  #   - Réunion
+  #   - Sao Tome and Principe
+  #   - Senegal
+  #   - Seychelles
+  #   - Sierra Leone
+  #   - Somalia
+  #   - South Africa
+  #   - South Sudan
+  #   - Sudan
+  #   - Eswatini
+  #   - Togo
+  #   - Tunisia
+  #   - Uganda
+  #   - Tanzania
+  #   - Western Sahara
+  #   - Zambia
+  #   - Zimbabwe
+  # - China+ (R10):
+  #   - China
+  #   - Hong Kong
+  #   - Macao
+  #   - Mongolia
+  #   - North Korea
+  #   - South Korea
+  # - Europe (R10):
+  #   - Albania
+  #   - Austria
+  #   - Belgium
+  #   - Bosnia and Herzegovina
+  #   - Bulgaria
+  #   - Croatia
+  #   - Cyprus
+  #   - Czechia
+  #   - Denmark
+  #   - Estonia
+  #   - France
+  #   - Finland
+  #   - Germany
+  #   - Greece
+  #   - Hungary
+  #   - Iceland
+  #   - Ireland
+  #   - Italy
+  #   - Kosovo
+  #   - Latvia
+  #   - Lithuania
+  #   - Luxembourg
+  #   - Malta
+  #   - Montenegro
+  #   - Netherlands
+  #   - North Macedonia
+  #   - Norway
+  #   - Portugal
+  #   - Switzerland
+  #   - Poland
+  #   - Romania
+  #   - Serbia
+  #   - Slovakia
+  #   - Slovenia
+  #   - Spain
+  #   - Sweden
+  #   - Turkey
+  #   - United Kingdom
+  # - India+ (R10):
+  #   - India
+  #   - Afghanistan
+  #   - Bangladesh
+  #   - Bhutan
+  #   - Maldives
+  #   - Nepal
+  #   - Pakistan
+  #   - Sri Lanka
+  # - Latin America (R10):
+  #   - Antigua and Barbuda
+  #   - Argentina
+  #   - Aruba
+  #   - Bahamas
+  #   - Barbados
+  #   - Belize
+  #   - Bolivia
+  #   - Brazil
+  #   - Chile
+  #   - Colombia
+  #   - Costa Rica
+  #   - Cuba
+  #   - Dominican Republic
+  #   - Ecuador
+  #   - El Salvador
+  #   - French Guiana
+  #   - Grenada
+  #   - Guadeloupe
+  #   - Guatemala
+  #   - Guyana
+  #   - Haiti
+  #   - Honduras
+  #   - Jamaica
+  #   - Martinique
+  #   - Mexico
+  #   - Nicaragua
+  #   - Panama
+  #   - Paraguay
+  #   - Peru
+  #   - Puerto Rico
+  #   - Saint Kitts and Nevis
+  #   - Saint Lucia
+  #   - Saint Vincent and the Grenadines
+  #   - Suriname
+  #   - Trinidad and Tobago
+  #   - United States Virgin Islands
+  #   - Uruguay
+  #   - Venezuela
+  # - Middle East (R10):
+  #   - Bahrain
+  #   - Iraq
+  #   - Iran
+  #   - Israel
+  #   - Jordan
+  #   - Kuwait
+  #   - Lebanon
+  #   - Oman
+  #   - Palestine
+  #   - Qatar
+  #   - Saudi Arabia
+  #   - Syria
+  #   - United Arab Emirates
+  #   - Yemen
+  # - North America (R10):
+  #   - Canada
+  #   - Guam
+  #   - United States
+  # - Pacific OECD (R10):
+  #   - Australia
+  #   - Japan
+  #   - New Zealand
+  # - Reforming Economies (R10):
+  #   - Armenia
+  #   - Azerbaijan
+  #   - Belarus
+  #   - Georgia
+  #   - Kazakhstan
+  #   - Kyrgyzstan
+  #   - Moldova
+  #   - Russian Federation
+  #   - Tajikistan
+  #   - Turkmenistan
+  #   - Ukraine
+  #   - Uzbekistan
+  # - Rest of Asia (R10):
+  #   - Brunei Darussalam
+  #   - Cambodia
+  #   - Cook Islands
+  #   - Fiji
+  #   - French Polynesia
+  #   - Indonesia
+  #   - Kiribati
+  #   - Laos
+  #   - Malaysia
+  #   - Marshall Islands
+  #   - Micronesia
+  #   - Myanmar
+  #   - Nauru
+  #   - Niue
+  #   - Palau
+  #   - New Caledonia
+  #   - Papua New Guinea
+  #   - Philippines
+  #   - Samoa
+  #   - Singapore
+  #   - Solomon Islands
+  #   - Taiwan
+  #   - Thailand
+  #   - Timor-Leste
+  #   - Tonga
+  #   - Tuvalu
+  #   - Vanuatu
+  #   - Viet Nam
 
-    # Again, try to figure out which countries need to be included in Other for
-    # the harmonization data.
-  # - Other (R10):
-  #     description: Rest of the World, to be used only if a match with the R10 regions
-  #       can otherwise not be achieved
+  #   # Again, try to figure out which countries need to be included in Other for
+  #   # the harmonization data.
+  # # - Other (R10):
+  # #     description: Rest of the World, to be used only if a match with the R10 regions
+  # #       can otherwise not be achieved
