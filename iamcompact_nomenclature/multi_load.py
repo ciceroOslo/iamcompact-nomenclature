@@ -164,7 +164,7 @@ def read_multi_definitions(
 
     The function loads `nomenclature.DataStructureDefinition` objects from a
     sequence of directories in order (given by the `paths` parameter). Each
-    element of `paths` should follow the same conventions as for 
+    element of `paths` should follow the same conventions as for
     `nomenclature.DataStructureDefinition`.
 
     After loading, the `DataStructureDefinition` objects are merged by taking
@@ -243,7 +243,7 @@ def read_multi_region_processors(
 
     The function loads `nomenclature.RegionProcessor` objects from a sequence
     of directories in order (given by the `paths` parameter). Each element of
-    `paths` should follow the same conventions as for 
+    `paths` should follow the same conventions as for
     `nomenclature.RegionProcessor`.
 
     After loading, the `RegionProcessor` objects are merged by taking the
@@ -352,7 +352,7 @@ def merge_region_processors(
         merged_dsd: tp.Optional[MergedDataStructureDefinition] = None,
 ) -> RegionProcessor:
     """Merge a sequence of `RegionProcessor` objects.
-    
+
     Parameters
     ----------
     region_processors : Sequence[RegionProcessor]
