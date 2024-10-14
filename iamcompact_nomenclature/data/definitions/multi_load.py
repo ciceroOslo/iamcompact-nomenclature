@@ -36,6 +36,108 @@ from nomenclature.config import NomenclatureConfig
 
 
 
+class MergedDataStructureDefinition(DataStructureDefinition):
+    """Merged data structure definition from multiple definitions.
+
+    Since an instance of this class is a merger of multiple
+    `DataStructureDefinition` objects, it does not have a single config file or
+    project directory. It therefore does not define the `config`, `project`,
+    `project_folder` or `repo` attributes of the parent class. These are
+    instead replaced by plural versions, `configs`, `projects`,
+    `project_folders` and `repos`, which are lists of the coresponding
+    attributes from the source `DataStructureDefinition` objects, in the order
+    of priority in which they were merged (i.e., earlier ones take precedence
+    over definitions made in later ones).
+
+    Init Parameters
+    ---------------
+    definitions : sequence of DataStructureDefinition
+        The definitions to merge, in order of priority.
+    dimensions : sequence of sequence of str, optional
+        The dimensions that should be loaded for each `DataStructureDefinition`.
+        If not provided, all dimensions for each definition are loaded.
+    """
+
+    def __init__(
+            self,
+            definitions: Sequence[DataStructureDefinition],
+            dimensions: tp.Optional[Sequence[Sequence[str]]] = None,
+    ) -> None:
+        if dimensions is None:
+            dimensions = [_dsd.dimensions for _dsd in definitions]
+        all_dimensions: list[str] = \
+            list(set(itertools.chain.from_iterable(dimensions)))
+        self.dimensions: list[str] = all_dimensions
+        dim_codelists_mapping: dict[str, list[CodeList]] = {
+            _dim: [
+                getattr(_dsd, _dim) for _dsd, _dsd_dims in zip(definitions, dimensions)
+                if _dim in _dsd_dims
+            ] for _dim in all_dimensions
+        }
+        codelists: dict[str, CodeList] = {
+            _dim: self.merge_codelists(_codelists)
+            for _dim, _codelists in dim_codelists_mapping.items()
+        }
+        for _dim, _codelist in codelists.items():
+            setattr(self, _dim, _codelist)
+        self.configs: list[NomenclatureConfig|None] \
+            = [dsd.config for dsd in definitions]
+        self.projects: list[str] = [dsd.project for dsd in definitions]
+        self.project_folders: list[Path] \
+            = [dsd.project_folder for dsd in definitions]
+        self.repos: list[git.Repo|None] = [dsd.repo for dsd in definitions]
+    ###END def MergedDataStructureDefinition.__init__
+
+    def to_excel(self, *args, **kwargs):
+        raise NotImplementedError(
+            'MergedDataStructureDefinition has not added support for '
+             '`to_excel` yet.'
+        )
+    ###END def MergedDataStructureDefinition.to_excel
+
+
+    CodeListTypeVar = tp.TypeVar('CodeListTypeVar', bound=CodeList)
+
+    @classmethod
+    def merge_codelists(
+            cls,
+            codelists: Sequence[CodeListTypeVar],
+            name: tp.Optional[str] = None,
+    ) -> CodeListTypeVar:
+        """Merge a sequence of codelists into a single codelist.
+
+        The method will take codes from each codelist in the sequence and
+        return a joint codelist that contains the codes from all of them.
+        If codelists overlap, the codelist that comes earliest in the sequence
+        takes precedence.
+
+        Parameters
+        ----------
+        codelists : sequence of nomenclature.CodeList
+            The codelists to merge, in order of priority.
+        name : str, optional
+            The name of the merged codelist. If not provided, the name of the
+            first codelist is used.
+
+        Returns
+        -------
+        nomenclature.CodeList or subclass
+            The merged codelist. The type is the same as the type of the first
+            codelist in the sequence (it is assumed and required that they are
+            all of the same type).
+        """
+        if name is None:
+            name = codelists[0].name
+        codelist_class = type(codelists[0])
+        mapping: dict[str, Code] = {}
+        for _codelist in codelists[-1::-1]:
+            mapping.update(_codelist.mapping)
+        return codelist_class(name=name, mapping=mapping)
+    ###END def MergedDataStructureDefinition.merge_codelists
+
+###END class MergedDataStructureDefinition
+
+
 def read_multi_definitions(
         paths: Sequence[Path],
         dimensions: tp.Optional[Sequence[str] | Sequence[Sequence[str]]] = None,
@@ -205,105 +307,3 @@ def _load_single_path_regionmaps(
     )
     return region_processor
 ###END def _load_single_path_regionmaps
-
-
-class MergedDataStructureDefinition(DataStructureDefinition):
-    """Merged data structure definition from multiple definitions.
-
-    Since an instance of this class is a merger of multiple
-    `DataStructureDefinition` objects, it does not have a single config file or
-    project directory. It therefore does not define the `config`, `project`,
-    `project_folder` or `repo` attributes of the parent class. These are
-    instead replaced by plural versions, `configs`, `projects`,
-    `project_folders` and `repos`, which are lists of the coresponding
-    attributes from the source `DataStructureDefinition` objects, in the order
-    of priority in which they were merged (i.e., earlier ones take precedence
-    over definitions made in later ones).
-
-    Init Parameters
-    ---------------
-    definitions : sequence of DataStructureDefinition
-        The definitions to merge, in order of priority.
-    dimensions : sequence of sequence of str, optional
-        The dimensions that should be loaded for each `DataStructureDefinition`.
-        If not provided, all dimensions for each definition are loaded.
-    """
-
-    def __init__(
-            self,
-            definitions: Sequence[DataStructureDefinition],
-            dimensions: tp.Optional[Sequence[Sequence[str]]] = None,
-    ) -> None:
-        if dimensions is None:
-            dimensions = [_dsd.dimensions for _dsd in definitions]
-        all_dimensions: list[str] = \
-            list(set(itertools.chain.from_iterable(dimensions)))
-        self.dimensions: list[str] = all_dimensions
-        dim_codelists_mapping: dict[str, list[CodeList]] = {
-            _dim: [
-                getattr(_dsd, _dim) for _dsd, _dsd_dims in zip(definitions, dimensions)
-                if _dim in _dsd_dims
-            ] for _dim in all_dimensions
-        }
-        codelists: dict[str, CodeList] = {
-            _dim: self.merge_codelists(_codelists)
-            for _dim, _codelists in dim_codelists_mapping.items()
-        }
-        for _dim, _codelist in codelists.items():
-            setattr(self, _dim, _codelist)
-        self.configs: list[NomenclatureConfig|None] \
-            = [dsd.config for dsd in definitions]
-        self.projects: list[str] = [dsd.project for dsd in definitions]
-        self.project_folders: list[Path] \
-            = [dsd.project_folder for dsd in definitions]
-        self.repos: list[git.Repo|None] = [dsd.repo for dsd in definitions]
-    ###END def MergedDataStructureDefinition.__init__
-
-    def to_excel(self, *args, **kwargs):
-        raise NotImplementedError(
-            'MergedDataStructureDefinition has not added support for '
-             '`to_excel` yet.'
-        )
-    ###END def MergedDataStructureDefinition.to_excel
-
-
-    CodeListTypeVar = tp.TypeVar('CodeListTypeVar', bound=CodeList)
-
-    @classmethod
-    def merge_codelists(
-            cls,
-            codelists: Sequence[CodeListTypeVar],
-            name: tp.Optional[str] = None,
-    ) -> CodeListTypeVar:
-        """Merge a sequence of codelists into a single codelist.
-        
-        The method will take codes from each codelist in the sequence and
-        return a joint codelist that contains the codes from all of them.
-        If codelists overlap, the codelist that comes earliest in the sequence
-        takes precedence.
-
-        Parameters
-        ----------
-        codelists : sequence of nomenclature.CodeList
-            The codelists to merge, in order of priority.
-        name : str, optional
-            The name of the merged codelist. If not provided, the name of the
-            first codelist is used.
-
-        Returns
-        -------
-        nomenclature.CodeList or subclass
-            The merged codelist. The type is the same as the type of the first
-            codelist in the sequence (it is assumed and required that they are
-            all of the same type).
-        """
-        if name is None:
-            name = codelists[0].name
-        codelist_class = type(codelists[0])
-        mapping: dict[str, Code] = {}
-        for _codelist in codelists[-1::-1]:
-            mapping.update(_codelist.mapping)
-        return codelist_class(name=name, mapping=mapping)
-    ###END def MergedDataStructureDefinition.merge_codelists
-
-###END class MergedDataStructureDefinition
