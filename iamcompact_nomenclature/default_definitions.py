@@ -60,6 +60,7 @@ def get_dsd(
         The dimensions to be read. Defaults to `dimensions` from this module.
     """
     global _dsd
+    global _region_processor
     if _dsd is None or force_reload:
         if dimensions is None:
             _dsd = _load_definitions()
