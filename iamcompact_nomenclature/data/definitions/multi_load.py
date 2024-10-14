@@ -219,6 +219,7 @@ def read_multi_definitions(
 def read_multi_regionmaps(
         paths: Sequence[Path],
         dsds: DataStructureDefinition | Sequence[DataStructureDefinition],
+        merged_dsd: MergedDataStructureDefinition | None = None,
 ) -> RegionProcessor:
     """Read and merge RegionProcessors from multiple directories.
 
@@ -253,6 +254,11 @@ def read_multi_regionmaps(
         a single `DataStructureDefinition` object to be used for all region
         maps, or a sequence of `DataStructureDefinition` objects with the same
         length and order as `paths`.
+    merged_dsd : MergedDataStructureDefinition, optional
+        The merged data structure definitions to use for the merged region map.
+        This must be equal to the result of merging dsds. It is provided only
+        for increaased performance. If not provided, dsds will be merged using
+        the `MergedDataStructureDefinition` constructor, and the result is used.
 
     Returns
     -------
@@ -278,7 +284,7 @@ def read_multi_regionmaps(
         for _path, _dsd in zip(paths, dsds)
     ]
     # Merge the region maps
-    region_processor: RegionProcessor = merge_regionmaps(regionmaps)
+    region_processor: RegionProcessor = merge_regionmaps(regionmaps, dsds=dsds)
     return region_processor
 ###END def read_multi_regionmaps
 
