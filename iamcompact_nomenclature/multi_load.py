@@ -42,6 +42,8 @@ from nomenclature.config import NomenclatureConfig
 
 
 
+CodeListTypeVar = tp.TypeVar('CodeListTypeVar', bound=CodeList)
+
 class MergedDataStructureDefinition(DataStructureDefinition):
     """Merged data structure definition from multiple definitions.
 
@@ -107,11 +109,8 @@ class MergedDataStructureDefinition(DataStructureDefinition):
     ###END def MergedDataStructureDefinition.to_excel
 
 
-    CodeListTypeVar = tp.TypeVar('CodeListTypeVar', bound=CodeList)
-
-    @classmethod
+    @staticmethod
     def merge_codelists(
-            cls,
             codelists: Sequence[CodeListTypeVar],
             name: tp.Optional[str] = None,
     ) -> CodeListTypeVar:
@@ -143,7 +142,15 @@ class MergedDataStructureDefinition(DataStructureDefinition):
         mapping: dict[str, Code] = {}
         for _codelist in codelists[-1::-1]:
             mapping.update(_codelist.mapping)
-        return codelist_class(name=name, mapping=mapping)
+        merged_codelist: CodeListTypeVar = codelist_class(
+            name=name,
+            mapping={},
+        )  # We need to create an empty CodeList first, since the validation
+           # when creating using the constructor will fail (it expects a dict
+           # coming from a yaml file, not directly from an already initialized
+           # CodeList).
+        merged_codelist.mapping = mapping
+        return merged_codelist
     ###END def MergedDataStructureDefinition.merge_codelists
 
 ###END class MergedDataStructureDefinition
