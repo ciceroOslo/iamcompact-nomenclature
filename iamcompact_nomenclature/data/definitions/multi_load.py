@@ -8,16 +8,17 @@ read_multi_definitions(
 ) -> DataStructureDefinition
     Read datstructure definitions from multiple directories, and merge them in
     prioritized order
-read_multi_regionmaps(
+read_multi_region_processors(
         paths: Sequence[Path],
         dsds: DataStructureDefinition | Sequence[DataStructureDefinition],
 ) -> RegionProcessor
-    Read region maps from multiple directories, and merge them in prioritized
-    order
+    Read region mappings from multiple directories, and merge them in
+    prioritized order into a joint RegionProcessor
 merge_dsds(dsds: Sequence[DataStructureDefinition]) \
         -> MergedDataStructureDefinition
     Merge multiple DataStructureDefinitions, in prioritized order
-merge_regionmaps(regionmaps: Sequence[RegionProcessor]) -> RegionProcessor
+merge_region_processors(regionmaps: Sequence[RegionProcessor]) \
+        -> RegionProcessor
     Merge multiple RegionProcessors, in prioritized order
 """
 from collections.abc import Sequence
@@ -30,8 +31,13 @@ from nomenclature import (
     CodeList,
     DataStructureDefinition,
     RegionProcessor,
+    RegionAggregationMapping,
 )
 from nomenclature.code import Code
+from nomenclature.codelist import (
+    RegionCodeList,
+    VariableCodeList,
+)
 from nomenclature.config import NomenclatureConfig
 
 
@@ -48,21 +54,26 @@ class MergedDataStructureDefinition(DataStructureDefinition):
     attributes from the source `DataStructureDefinition` objects, in the order
     of priority in which they were merged (i.e., earlier ones take precedence
     over definitions made in later ones).
-
-    Init Parameters
-    ---------------
-    definitions : sequence of DataStructureDefinition
-        The definitions to merge, in order of priority.
-    dimensions : sequence of sequence of str, optional
-        The dimensions that should be loaded for each `DataStructureDefinition`.
-        If not provided, all dimensions for each definition are loaded.
     """
+
+    region: RegionCodeList
+    variable: VariableCodeList
 
     def __init__(
             self,
             definitions: Sequence[DataStructureDefinition],
             dimensions: tp.Optional[Sequence[Sequence[str]]] = None,
     ) -> None:
+        """
+        Parameters
+        ----------
+        definitions : sequence of DataStructureDefinition
+            The definitions to merge, in order of priority.
+        dimensions : sequence of sequence of str, optional
+            The dimensions that should be loaded for each
+            `DataStructureDefinition`. If not provided, all dimensions for each
+            definition are loaded.
+        """
         if dimensions is None:
             dimensions = [_dsd.dimensions for _dsd in definitions]
         all_dimensions: list[str] = \
@@ -216,7 +227,7 @@ def read_multi_definitions(
 ###END def read_multi_definitions
 
 
-def read_multi_regionmaps(
+def read_multi_region_processors(
         paths: Sequence[Path],
         dsds: DataStructureDefinition | Sequence[DataStructureDefinition],
         merged_dsd: MergedDataStructureDefinition | None = None,
@@ -263,7 +274,7 @@ def read_multi_regionmaps(
     Returns
     -------
     RegionProcessor
-        The merged region maps.
+        The joint RegionProcessor from the merged region maps.
     """
     # Convert `dsds` to a list if it's a single object
     if isinstance(dsds, DataStructureDefinition):
@@ -279,13 +290,25 @@ def read_multi_regionmaps(
             f'{len(paths)}'
         )
     # Load the region maps
-    regionmaps: list[RegionProcessor] = [
+    region_processors: list[RegionProcessor] = [
         _load_single_path_regionmaps(path=_path, dsd=_dsd)
         for _path, _dsd in zip(paths, dsds)
     ]
     # Merge the region maps
-    region_processor: RegionProcessor = merge_regionmaps(regionmaps, dsds=dsds)
-    return region_processor
+    joined_region_processor: RegionProcessor
+    if merged_dsd is not None:
+        joined_region_processor = merge_region_processors(
+            region_processors=region_processors,
+            merged_dsd=merged_dsd
+        )
+    else:
+        joined_region_processor = merge_region_processors(
+            region_processors=region_processors,
+            dsds=dsds
+        )
+    # Return the merged region map
+    merge_region_processors(region_processors, dsds=dsds)
+    return joined_region_processor
 ###END def read_multi_regionmaps
 
 
@@ -313,3 +336,48 @@ def _load_single_path_regionmaps(
     )
     return region_processor
 ###END def _load_single_path_regionmaps
+
+
+def merge_region_processors(
+        region_processors: Sequence[RegionProcessor],
+        *,
+        dsds: tp.Optional[Sequence[DataStructureDefinition]] = None,
+        merged_dsd: tp.Optional[MergedDataStructureDefinition] = None,
+) -> RegionProcessor:
+    """Merge a sequence of `RegionProcessor` objects.
+    
+    Parameters
+    ----------
+    region_processors : Sequence[RegionProcessor]
+        The region processors to merge.
+    dsds : Sequence[DataStructureDefinition], optional
+        The data structure definitions used to define each of the region
+        processors. If provided, the definitions will be merged into a single
+        `MergedDataStructureDefinition` object. If not provided, the
+        `merged_dsd` parameter must be provided. `dsds` is ignored if
+        `merged_dsd` is provided.
+    merged_dsd : MergedDataStructureDefinition, optional
+        The merged data structure definitions to use for the merged region
+        processor. This must be equal to the result of merging the
+        `DataStructureDefinition` objects used to define the RegionProcessors in
+        `region_processors`, but can be limited to the `region` and `variable`
+        dimensions, since only those are used. Optional. If not provided, the
+        `dsds` parameter must be provided. If provided, `dsds` will be ignored.
+    """
+    if merged_dsd is None:
+        if dsds is None:
+            raise ValueError(
+                'If `merged_dsd` is not provided, `dsds` must be provided'
+            )
+        merged_dsd = MergedDataStructureDefinition(
+            definitions=dsds,
+            dimensions=[['region', 'variable']]*len(dsds)
+        )
+    mappings: dict[str, RegionAggregationMapping] = {}
+    for _region_processor in region_processors:
+        mappings.update(_region_processor.mappings)
+    return RegionProcessor(
+        mappings=mappings,
+        region_codelist=merged_dsd.region,
+        variable_codelist=merged_dsd.variable,
+    )
