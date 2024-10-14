@@ -31,6 +31,7 @@ from nomenclature import (
     DataStructureDefinition,
     RegionProcessor,
 )
+from nomenclature.code import Code
 from nomenclature.config import NomenclatureConfig
 
 
@@ -108,7 +109,7 @@ def read_multi_definitions(
         for _path, _dims in zip(paths, use_dimensions)
     ]
     # Merge the definitions
-    dsd: MergedDataStructureDefinition = merge_dsds(definitions)
+    dsd: MergedDataStructureDefinition = MergedDataStructureDefinition(definitions)
     return dsd
 ###END def read_multi_definitions
 
@@ -237,13 +238,16 @@ class MergedDataStructureDefinition(DataStructureDefinition):
             dimensions = [_dsd.dimensions for _dsd in definitions]
         all_dimensions: list[str] = \
             list(set(itertools.chain.from_iterable(dimensions)))
+        self.dimensions: list[str] = all_dimensions
+        dim_codelists_mapping: dict[str, list[CodeList]] = {
+            _dim: [
+                getattr(_dsd, _dim) for _dsd, _dsd_dims in zip(definitions, dimensions)
+                if _dim in _dsd_dims
+            ] for _dim in all_dimensions
+        }
         codelists: dict[str, CodeList] = {
-            _dim: self.merge_codelists(
-                [
-                    getattr(_dsd, _dim) for _dsd in definitions
-                    if hasattr(_dsd, _dim)
-                ]
-            ) for _dim in all_dimensions
+            _dim: self.merge_codelists(_codelists)
+            for _dim, _codelists in dim_codelists_mapping.items()
         }
         for _dim, _codelist in codelists.items():
             setattr(self, _dim, _codelist)
@@ -295,6 +299,11 @@ class MergedDataStructureDefinition(DataStructureDefinition):
         """
         if name is None:
             name = codelists[0].name
+        codelist_class = type(codelists[0])
+        mapping: dict[str, Code] = {}
+        for _codelist in codelists[-1::-1]:
+            mapping.update(_codelist.mapping)
+        return codelist_class(name=name, mapping=mapping)
     ###END def MergedDataStructureDefinition.merge_codelists
 
 ###END class MergedDataStructureDefinition
