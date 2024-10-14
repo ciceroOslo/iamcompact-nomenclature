@@ -209,11 +209,11 @@ def read_multi_definitions(
     use_dimensions: list[list[str]] | list[None]
     if dimensions is None:
         use_dimensions = [None] * len(paths)
-    if not isinstance(dimensions, Sequence):
+    elif not isinstance(dimensions, Sequence):
         raise TypeError(
             f'`dimensions` must be None or a sequence, not {type(dimensions)}'
         )
-    if isinstance(dimensions[0], str):
+    elif isinstance(dimensions[0], str):
         dimensions = tp.cast(Sequence[str], dimensions)
         use_dimensions = [list(dimensions)] * len(paths)
     else:
@@ -321,7 +321,7 @@ def read_multi_region_processors(
 
 def _load_single_path_definitions(
         path: Path,
-        dimensions: Sequence[str],
+        dimensions: Sequence[str]|None,
 ) -> DataStructureDefinition:
     """Load a single `DataStructureDefinition` from a single directory."""
     dsd = DataStructureDefinition(
