@@ -1,0 +1,15 @@
+repositories:
+  iamcompact-nomenclature-definitions:
+    url: https://github.com/ciceroOslo/iamcompact-nomenclature-definitions.git
+    release: validation-ui
+definitions:
+  variable:
+    repository: iamcompact-nomenclature-definitions
+  region:
+    repository: iamcompact-nomenclature-definitions
+  model:
+    repository: iamcompact-nomenclature-definitions
+  scenario:
+    repository: iamcompact-nomenclature-definitions
+mappings:
+  repository: iamcompact-nomenclature-definitions
