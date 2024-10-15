@@ -239,7 +239,7 @@ nest-asyncio==1.6.0
     # via ipykernel
 networkx==3.4.1
     # via dvc
-nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@385ae1173f13f3126596db29af56f0111e964b9c
+nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@3dff50e3dbb49dc0dc2d07bf3cd43453eb21a9e4
     # via iamcompact-nomenclature
 numpy==1.26.4
     # via contourpy
@@ -268,7 +268,6 @@ packaging==24.1
     # via ipykernel
     # via matplotlib
     # via pandera
-    # via pooch
     # via pytest
 pandas==2.2.3
     # via ixmp4
@@ -293,11 +292,8 @@ pint==0.24.3
 platformdirs==3.11.0
     # via dvc
     # via jupyter-core
-    # via pooch
 pluggy==1.5.0
     # via pytest
-pooch==1.8.2
-    # via pysquirrel
 prompt-toolkit==3.0.48
     # via click-repl
     # via ipython
@@ -353,7 +349,7 @@ pyparsing==3.2.0
     # via grandalf
     # via matplotlib
     # via pydot
-pysquirrel==1.0
+pysquirrel==1.1
     # via nomenclature-iamc
 pytest==8.3.3
 python-dateutil==2.9.0.post0
@@ -370,6 +366,7 @@ pyyaml==6.0.2
     # via nomenclature-iamc
     # via omegaconf
     # via pyam-iamc
+    # via pysquirrel
 pyzmq==26.2.0
     # via ipykernel
     # via jupyter-client
@@ -377,7 +374,6 @@ requests==2.32.3
     # via dvc
     # via dvc-studio-client
     # via iterative-telemetry
-    # via pooch
     # via pyam-iamc
 rich==13.9.2
     # via dvc

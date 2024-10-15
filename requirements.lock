@@ -88,7 +88,7 @@ mypy==1.11.2
 mypy-extensions==1.0.0
     # via mypy
     # via typing-inspect
-nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@385ae1173f13f3126596db29af56f0111e964b9c
+nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@3dff50e3dbb49dc0dc2d07bf3cd43453eb21a9e4
     # via iamcompact-nomenclature
 numpy==1.26.4
     # via contourpy
@@ -108,7 +108,6 @@ openpyxl==3.1.5
 packaging==24.1
     # via matplotlib
     # via pandera
-    # via pooch
 pandas==2.2.3
     # via ixmp4
     # via nomenclature-iamc
@@ -122,10 +121,6 @@ pillow==10.4.0
 pint==0.24.3
     # via iam-units
     # via pyam-iamc
-platformdirs==4.3.6
-    # via pooch
-pooch==1.8.2
-    # via pysquirrel
 psycopg==3.2.3
     # via ixmp4
 psycopg-binary==3.2.3
@@ -152,7 +147,7 @@ pyjwt==2.9.0
     # via ixmp4
 pyparsing==3.2.0
     # via matplotlib
-pysquirrel==1.0
+pysquirrel==1.1
     # via nomenclature-iamc
 python-dateutil==2.9.0.post0
     # via matplotlib
@@ -165,8 +160,8 @@ pytz==2024.2
 pyyaml==6.0.2
     # via nomenclature-iamc
     # via pyam-iamc
+    # via pysquirrel
 requests==2.32.3
-    # via pooch
     # via pyam-iamc
 rich==13.9.2
     # via ixmp4
