@@ -37,31 +37,45 @@ code, and may be useful for internal use again in the future.
 """
 
 
+_dsd: MergedDataStructureDefinition | None = None
+_individual_dsds: list[nomenclature.DataStructureDefinition] | None = None
+_region_processor: nomenclature.RegionProcessor | None = None
+
+
 def _load_definitions(
-        dimensions: Sequence[str] = dimensions
-) -> MergedDataStructureDefinition:
+        dimensions: Optional[Sequence[str]] = None,
+) -> tuple[MergedDataStructureDefinition,
+           list[nomenclature.DataStructureDefinition]]:
     """Load and return DataStructureDefinition from definitions_path."""
     return read_multi_definitions(
         definitions_paths,
+        dimensions=dimensions,
+        return_individual_dsds=True,
     )
 ###END def _load_definitions
 
 def _load_region_processor() -> nomenclature.RegionProcessor:
     """Load and return RegionProcessor from mappings_path."""
-    return nomenclature.RegionProcessor.from_directory(
-        path=mappings_path,
-        dsd=get_dsd()
+    global _individual_dsds
+    dsd: MergedDataStructureDefinition = get_dsd()
+    individual_dsds: list[nomenclature.DataStructureDefinition]|None \
+        = _individual_dsds
+    if _individual_dsds is None:
+        raise RuntimeError(
+            '_individual_dsds has not been set, which should not be possible '
+            'at this point in the code.'
+        )
+    return read_multi_region_processors(
+        paths=mappings_paths,
+        dsds=_individual_dsds,
+        merged_dsd=dsd,
     )
-
-
-_dsd: nomenclature.DataStructureDefinition | None = None
-_region_processor: nomenclature.RegionProcessor | None = None
 
 
 def get_dsd(
         force_reload: bool = False,
         dimensions: Optional[Sequence[str]] = None
-) -> nomenclature.DataStructureDefinition:
+) -> MergedDataStructureDefinition:
     """Return the definitions as a `nomenclature.DataStructureDefinition`.
 
     After the first call, the `DataStructureDefinition` object is cached and
@@ -78,12 +92,13 @@ def get_dsd(
         The dimensions to be read. Defaults to `dimensions` from this module.
     """
     global _dsd
+    global _individual_dsds
     global _region_processor
     if _dsd is None or force_reload:
         if dimensions is None:
-            _dsd = _load_definitions()
+            _dsd, _individual_dsds = _load_definitions()
         else:
-            _dsd = _load_definitions(dimensions=dimensions)
+            _dsd, _individual_dsds = _load_definitions(dimensions=dimensions)
     if force_reload:
         _region_processor = None
     return _dsd
