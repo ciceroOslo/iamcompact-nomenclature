@@ -18,9 +18,8 @@ definitions_paths: Final[list[Path]] = [
     _data_root / 'iamcompact-nomenclature-definitions' / 'definitions',
     _data_root / 'common-definitions-fork' / 'definitions',
 ]
-mappings_paths: Final[list[Path]] = [
-    _data_root / 'iamcompact-nomenclature-definitions' / 'mappings',
-]
+mappings_path: Path = \
+    _data_root / 'iamcompact-nomenclature-definitions' / 'mappings'
 dimensions: Final[tuple[str, ...]] = (
     'model',
     'scenario',
@@ -56,19 +55,9 @@ def _load_definitions(
 
 def _load_region_processor() -> nomenclature.RegionProcessor:
     """Load and return RegionProcessor from mappings_path."""
-    global _individual_dsds
-    dsd: MergedDataStructureDefinition = get_dsd()
-    individual_dsds: list[nomenclature.DataStructureDefinition]|None \
-        = _individual_dsds
-    if _individual_dsds is None:
-        raise RuntimeError(
-            '_individual_dsds has not been set, which should not be possible '
-            'at this point in the code.'
-        )
-    return read_multi_region_processors(
-        paths=mappings_paths,
-        dsds=_individual_dsds,
-        merged_dsd=dsd,
+    return nomenclature.RegionProcessor.from_directory(
+        path=mappings_path,
+        dsd=get_dsd()
     )
 
 
