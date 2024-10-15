@@ -99,6 +99,7 @@ class MergedDataStructureDefinition(DataStructureDefinition):
         self.project_folders: list[Path] \
             = [dsd.project_folder for dsd in definitions]
         self.repos: list[git.Repo|None] = [dsd.repo for dsd in definitions]
+        self.config = self.merge_configs([_dsd.config for _dsd in definitions])
     ###END def MergedDataStructureDefinition.__init__
 
     def to_excel(self, *args, **kwargs):
@@ -152,6 +153,37 @@ class MergedDataStructureDefinition(DataStructureDefinition):
         merged_codelist.mapping = mapping
         return merged_codelist
     ###END def MergedDataStructureDefinition.merge_codelists
+
+    @classmethod
+    def merge_configs(
+            cls,
+            configs: Sequence[NomenclatureConfig],
+    ) -> NomenclatureConfig:
+        """Merge a config objects for multiple DataStructureDefinitions
+
+        Parameters
+        ----------
+        configs : sequence of nomenclature.NomenclatureConfig
+            The configs to merge, in the same order that the corresponding
+            `DataStructureDefinitions` objects were merged.
+
+        Returns
+        -------
+        nomenclature.NomenclatureConfig
+            The merged config.
+        """
+        new_conf: NomenclatureConfig = configs[0].model_copy(deep=True)
+        new_conf.dimensions = list(set.union(*[set(_c.dimensions or list())
+                                               for _c in configs]))
+        new_conf.repositories = {}
+        for _c in configs[-1::-1]:
+            new_conf.repositories.update(_c.repositories)
+        ### TODO: Still need to merge `definitions` and `mappings` attributes
+        # new_conf.definitions = cls.merge_data_structure_configs(
+        #     [_c.definitions for _c in configs]
+        # )
+        return new_conf
+    ###END def MergedDataStructureDefinition.merge_configs
 
 ###END class MergedDataStructureDefinition
 
