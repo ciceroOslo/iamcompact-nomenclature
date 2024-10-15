@@ -10,8 +10,6 @@ import functools
 # from . import _region_adjustments
 
 from .default_definitions import (
-    definitions_path,
-    mappings_path,
     dimensions,
     get_dsd,
     get_region_processor,
