@@ -1,6 +1,6 @@
 [project]
 name = "iamcompact-nomenclature"
-version = "0.8.8"
+version = "0.9.0"
 description = "Data structure definition for validation of model outputs in the HORIZON EUROPE project IAM COMPACT, using nomenclature-iamc"
 authors = [
     { name = "Jan Ivar Korsbakken", email = "janko@cicero.oslo.no" }
@@ -8,7 +8,7 @@ authors = [
 dependencies = [
     # We need a custom branch of nomenclature-iamc until it is merged and published as a new version,
     # to avoid validation errors on region mappings with non-ASCII characters on Windows.
-    "nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@406_specify_consistent_encoding",
+    "nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@fixes-for-iamcompact",
     "pyam-iamc>=2.2"
 ]
 readme = "README.md"
