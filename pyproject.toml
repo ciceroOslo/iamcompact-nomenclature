@@ -8,7 +8,7 @@ authors = [
 dependencies = [
     # We need a custom branch of nomenclature-iamc until it is merged and published as a new version,
     # to avoid validation errors on region mappings with non-ASCII characters on Windows.
-    "nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@406_specify_consistent_encoding",
+    "nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@fixes-for-iamcompact",
     "pyam-iamc>=2.2"
 ]
 readme = "README.md"

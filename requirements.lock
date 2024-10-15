@@ -88,7 +88,7 @@ mypy==1.11.2
 mypy-extensions==1.0.0
     # via mypy
     # via typing-inspect
-nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@3dff50e3dbb49dc0dc2d07bf3cd43453eb21a9e4
+nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@400545a77ee5d69de2587cc0816b1adb87f01738
     # via iamcompact-nomenclature
 numpy==1.26.4
     # via contourpy
