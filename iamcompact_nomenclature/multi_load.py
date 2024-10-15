@@ -99,6 +99,7 @@ class MergedDataStructureDefinition(DataStructureDefinition):
         self.project_folders: list[Path] \
             = [dsd.project_folder for dsd in definitions]
         self.repos: list[git.Repo|None] = [dsd.repo for dsd in definitions]
+        self.config = self.merge_configs([_dsd.config for _dsd in definitions])
     ###END def MergedDataStructureDefinition.__init__
 
     def to_excel(self, *args, **kwargs):
@@ -153,13 +154,63 @@ class MergedDataStructureDefinition(DataStructureDefinition):
         return merged_codelist
     ###END def MergedDataStructureDefinition.merge_codelists
 
+    @classmethod
+    def merge_configs(
+            cls,
+            configs: Sequence[NomenclatureConfig],
+    ) -> NomenclatureConfig:
+        """Merge a config objects for multiple DataStructureDefinitions
+
+        Parameters
+        ----------
+        configs : sequence of nomenclature.NomenclatureConfig
+            The configs to merge, in the same order that the corresponding
+            `DataStructureDefinitions` objects were merged.
+
+        Returns
+        -------
+        nomenclature.NomenclatureConfig
+            The merged config.
+        """
+        new_conf: NomenclatureConfig = configs[0].model_copy(deep=True)
+        new_conf.dimensions = list(set.union(*[set(_c.dimensions or list())
+                                               for _c in configs]))
+        new_conf.repositories = {}
+        for _c in configs[-1::-1]:
+            new_conf.repositories.update(_c.repositories)
+        ### TODO: Still need to merge `definitions` and `mappings` attributes
+        # new_conf.definitions = cls.merge_data_structure_configs(
+        #     [_c.definitions for _c in configs]
+        # )
+        return new_conf
+    ###END def MergedDataStructureDefinition.merge_configs
+
 ###END class MergedDataStructureDefinition
 
 
+@tp.overload
 def read_multi_definitions(
         paths: Sequence[Path],
         dimensions: tp.Optional[Sequence[str] | Sequence[Sequence[str]]] = None,
+        *,
+        return_individual_dsds: tp.Literal[True],
+) -> tuple[MergedDataStructureDefinition, list[DataStructureDefinition]]:
+    ...
+@tp.overload
+def read_multi_definitions(
+        paths: Sequence[Path],
+        dimensions: tp.Optional[Sequence[str] | Sequence[Sequence[str]]] = None,
+        *,
+        return_individual_dsds: bool = False,
 ) -> MergedDataStructureDefinition:
+    ...
+def read_multi_definitions(
+        paths: Sequence[Path],
+        dimensions: tp.Optional[Sequence[str] | Sequence[Sequence[str]]] = None,
+        *,
+        return_individual_dsds: bool = False,
+) -> MergedDataStructureDefinition \
+        | tuple[MergedDataStructureDefinition, list[DataStructureDefinition]]:
     """Read and merge DataStructureDefinitions from multiple directories.
 
     The function loads `nomenclature.DataStructureDefinition` objects from a
@@ -194,15 +245,23 @@ def read_multi_definitions(
         in each directory if present, or using `["variable", "region"]`). Note
         that an error will be raised if any of the specified dimensions is not
         present for the corresponding path.
+    return_individual_dsds : bool, optional
+        Whether to return the individual definitions as well as the merged
+        definition. Defaults to `False`.
 
     Returns
     -------
-    MergedDataStructureDefinition
+    MergedDataStructureDefinition or tuple of MergedDataStructureDefinition and
+    list of DataStructureDefinition
         The merged definitions. The return value is a
         `MergedDataStructureDefinition`, which is a subclass of
         `DataStructureDefinition`, but with some changes to its attributes that
         are necessary given that it does not have a single config file or come
         from a single project directory.
+        If `return_individual_dsds` is `True`, the return value is a tuple
+        where the first element is the merged definition and the second
+        element is a list of the individual definitions, in the same order as
+        `paths`.
     """
     # Turn `dimensions`` into a list of lists, with the same length as paths for
     # the outer list.
@@ -230,6 +289,8 @@ def read_multi_definitions(
     ]
     # Merge the definitions
     dsd: MergedDataStructureDefinition = MergedDataStructureDefinition(definitions)
+    if return_individual_dsds:
+        return dsd, definitions
     return dsd
 ###END def read_multi_definitions
 

@@ -1,30 +1,55 @@
 """Defaults for definitions to use."""
-from pathlib import Path
 from collections.abc import Sequence
+from pathlib import Path
 from typing import Final, Optional
 
 import nomenclature
 
+from .multi_load import (
+    MergedDataStructureDefinition,
+    read_multi_definitions,
+    read_multi_region_processors,
+)
 
-_data_root: Path = Path(__file__).parent / 'data'
 
-definitions_path: Path = _data_root / 'definitions'
-mappings_path: Path = _data_root / 'mappings'
+_data_root: Final[Path] = Path(__file__).parent / 'data'
+
+definitions_paths: Final[list[Path]] = [
+    _data_root / 'iamcompact-nomenclature-definitions' / 'definitions',
+    _data_root / 'common-definitions-fork' / 'definitions',
+]
+mappings_path: Path = \
+    _data_root / 'iamcompact-nomenclature-definitions' / 'mappings'
 dimensions: Final[tuple[str, ...]] = (
     'model',
     'scenario',
     'region',
     'variable',
 )
+"""Defines which dimensions are provided by the data structure definition object
+that is returned by `get_dsd`.
+
+At the moment, this attribute is not used by the `iamcompact-nomenclature`
+package itself (the dimensions are now specified in the nomenclature.yaml files
+in the directories under `data`), but is kept since it may be used by external
+code, and may be useful for internal use again in the future.
+"""
+
+
+_dsd: MergedDataStructureDefinition | None = None
+_individual_dsds: list[nomenclature.DataStructureDefinition] | None = None
+_region_processor: nomenclature.RegionProcessor | None = None
 
 
 def _load_definitions(
-        dimensions: Sequence[str] = dimensions
-) -> nomenclature.DataStructureDefinition:
+        dimensions: Optional[Sequence[str]] = None,
+) -> tuple[MergedDataStructureDefinition,
+           list[nomenclature.DataStructureDefinition]]:
     """Load and return DataStructureDefinition from definitions_path."""
-    return nomenclature.DataStructureDefinition(
-        definitions_path,
-        dimensions=dimensions
+    return read_multi_definitions(
+        definitions_paths,
+        dimensions=dimensions,
+        return_individual_dsds=True,
     )
 ###END def _load_definitions
 
@@ -36,14 +61,10 @@ def _load_region_processor() -> nomenclature.RegionProcessor:
     )
 
 
-_dsd: nomenclature.DataStructureDefinition | None = None
-_region_processor: nomenclature.RegionProcessor | None = None
-
-
 def get_dsd(
         force_reload: bool = False,
         dimensions: Optional[Sequence[str]] = None
-) -> nomenclature.DataStructureDefinition:
+) -> MergedDataStructureDefinition:
     """Return the definitions as a `nomenclature.DataStructureDefinition`.
 
     After the first call, the `DataStructureDefinition` object is cached and
@@ -60,12 +81,13 @@ def get_dsd(
         The dimensions to be read. Defaults to `dimensions` from this module.
     """
     global _dsd
+    global _individual_dsds
     global _region_processor
     if _dsd is None or force_reload:
         if dimensions is None:
-            _dsd = _load_definitions()
+            _dsd, _individual_dsds = _load_definitions()
         else:
-            _dsd = _load_definitions(dimensions=dimensions)
+            _dsd, _individual_dsds = _load_definitions(dimensions=dimensions)
     if force_reload:
         _region_processor = None
     return _dsd
