@@ -74,3 +74,46 @@ codes_by_file_icnom_in_common: dict[str|Path|None, list[Code]] \
 
 codes_by_file_icnom_not_in_common: dict[str|Path|None, list[Code]] \
     = get_codes_by_file(codes=list(vars_icnom_not_in_common.values()))
+
+# %%
+# Get a list of the variables that have identical definitions (Code objects) in
+# both iamcompact-nomenclature-definitions and common-definitions, and a dict
+# with them by file.
+attrs_to_compare: tuple[str, ...] = (
+    'description', 'extra_attributes', 'unit', 'weight', 'region_aggregation',
+    'skip_region_aggregation', 'method', 'check_aggregate', 'components',
+    'drop_negative_weights',
+)
+vars_icnom_common_identical: list[Code] = [
+    vars_icnom[_codename] for _codename in vars_icnom_overlap
+    if all(
+        getattr(vars_icnom[_codename], _attr) == getattr(vars_common[_codename], _attr)
+        for _attr in attrs_to_compare
+    )
+]
+
+vars_icnom_common_identical_by_file: dict[str|Path|None, list[Code]] \
+    = get_codes_by_file(codes=vars_icnom_common_identical)
+
+# %%
+# Get a list of variables that have the same name but are not identical in
+# iamcompact-nomenclature-definitions and common-definitions
+vars_icnom_common_not_identical: list[Code] = [
+    vars_icnom[_codename] for _codename in vars_icnom_overlap
+    if not all(
+        getattr(vars_icnom[_codename], _attr) == getattr(vars_common[_codename], _attr)
+        for _attr in attrs_to_compare
+    )
+]
+
+vars_icnom_common_not_identical_by_file: dict[str|Path|None, list[Code]] \
+    = get_codes_by_file(codes=vars_icnom_common_not_identical)
+
+vars_icnom_common_differences: dict[str, tuple[dict[str, tp.Any], dict[str, tp.Any]]] \
+    = NotImplementedError()
+
+# %%
+# Find the attributes that are different for all codes that have the same name
+# but are not identical in iamcompact-nomenclature-definitions and
+# common-definitions
+
