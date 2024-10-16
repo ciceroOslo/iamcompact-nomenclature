@@ -109,11 +109,22 @@ vars_icnom_common_not_identical: list[Code] = [
 vars_icnom_common_not_identical_by_file: dict[str|Path|None, list[Code]] \
     = get_codes_by_file(codes=vars_icnom_common_not_identical)
 
-vars_icnom_common_differences: dict[str, tuple[dict[str, tp.Any], dict[str, tp.Any]]] \
-    = NotImplementedError()
-
 # %%
 # Find the attributes that are different for all codes that have the same name
 # but are not identical in iamcompact-nomenclature-definitions and
 # common-definitions
+vars_icnom_common_differences: dict[str, dict[str, tuple[tp.Any, tp.Any]]] \
+    = dict()
 
+for _varname in [_code.name for _code in vars_icnom_common_not_identical]:
+    _icnom_var = vars_icnom[_varname]
+    _common_var = vars_common[_varname]
+    _icnom_common_diffs: dict[str, tuple[tp.Any, tp.Any]] = {
+        _attr: (getattr(_icnom_var, _attr), getattr(_common_var, _attr))
+        for _attr in attrs_to_compare
+        if getattr(_icnom_var, _attr) != getattr(_common_var, _attr)
+    }
+    vars_icnom_common_differences[_varname] = _icnom_common_diffs
+
+
+# %%
