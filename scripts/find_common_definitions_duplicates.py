@@ -128,3 +128,22 @@ for _varname in [_code.name for _code in vars_icnom_common_not_identical]:
 
 
 # %%
+# Check whether any variables in the joing DSD are using USD with any other
+# base year than 2017
+dsd_joint: DataStructureDefinition = icnom.get_dsd()
+dsd_joint_vars_with_non_2017_usd: dict[str, Code] = {
+    _varname: _varcode
+    for _varname, _varcode in dsd_joint.variable.items()
+    if 'USD' in _varcode.unit and '2017' not in _varcode.unit
+}
+non_2017_usd_vars_units: dict[str, str] = {
+    _varname: _varcode.unit
+    for _varname, _varcode in dsd_joint_vars_with_non_2017_usd.items()
+}
+
+# %%
+# Check which weights each of them uses
+non_2017_usd_vars_weights = {
+    _varname: _varcode.weight
+    for _varname, _varcode in dsd_joint_vars_with_non_2017_usd.items()
+}
