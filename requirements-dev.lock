@@ -239,7 +239,7 @@ nest-asyncio==1.6.0
     # via ipykernel
 networkx==3.4.1
     # via dvc
-nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@b0ae4f7dd383c433391b0ceaee2072db0db070e0
+nomenclature-iamc @ git+https://github.com/ciceroOslo/nomenclature@9bb216ae915a3459f39b1a4622896d4183d36c88
     # via iamcompact-nomenclature
 numpy==1.26.4
     # via contourpy
