@@ -24,12 +24,53 @@ VariableCodeHTMLFormatter
 """
 import abc
 from collections.abc import Mapping, Sequence
-from typing import Optional
+from typing import Optional, overload, Literal
 
 import nomenclature
 from nomenclature.codelist import CodeList, VariableCodeList
 from nomenclature.code import Code, VariableCode
 
+
+
+@overload
+def get_code_attributes(
+        code: Code,
+        *,
+        include_none: Literal[True],
+        attr_names: Optional[Sequence[str]] = None,
+) -> dict[str, str|None]:
+    ...
+@overload
+def get_code_attributes(
+        code: Code,
+        *,
+        attr_names: Optional[Sequence[str]] = None,
+        include_none: bool = False
+) -> dict[str, str]:
+    ...
+def get_code_attributes(
+        code: Code,
+        *,
+        attr_names: Optional[Sequence[str]] = None,
+        include_none: bool = False
+) -> dict[str, str|None] | dict[str, str]:
+    """Return a dict with a Code's attributes, optionally including None"""
+    if attr_names is not None:
+        attrs: dict[str, str|None] = {
+            _attrname: getattr(code, _attrname) for _attrname in attr_names
+        }
+    else:
+        attrs: dict[str, str|None] = {
+            _attrname: _attrval for _attrname, _attrval in code
+        }
+    if not include_none:
+        attrs_nonone: dict[str, str] = {
+            _attrname: _attrval for _attrname, _attrval in attrs.items()
+            if _attrval is not None
+        }
+        return attrs_nonone
+    return attrs
+###END def get_code_attributes
 
 
 class CodeFormatter(abc.ABC):
@@ -79,21 +120,11 @@ class VariableCodeHTMLFormatter(CodeFormatter):
             include_none: bool = False
     ) -> Mapping[str, str|None]:
         """Return a dict with the code's attributes, optionally including None"""
-        if attr_names is not None:
-            attrs: dict[str, str|None] = {
-                _attrname: getattr(code, _attrname) for _attrname in attr_names
-            }
-        else:
-            attrs: dict[str, str|None] = {
-                _attrname: _attrval for _attrname, _attrval in code
-            }
-        if not include_none:
-            attrs_nonone: dict[str, str] = {
-                _attrname: _attrval for _attrname, _attrval in attrs.items()
-                if _attrval is not None
-            }
-            return attrs_nonone
-        return attrs
+        return get_code_attributes(
+            code,
+            attr_names=attr_names,
+            include_none=include_none
+        )
     ###END def VariableCodeHTMLFormatter.get_attributes
 
     def format(
@@ -161,3 +192,60 @@ class VariableCodeListHTMLFormatter(CodeListFormatter):
     ###END def VariableCodeListHTMLFormatter.format
 
 ###END class VariableCodeListHTMLFormatter
+
+
+class PandasHTMLFormatter(CodeListFormatter):
+    """Formats a `CodeList` as an HTML table with Pandas."""
+
+    def format(
+            self,
+            codelist: CodeList,
+            header_title: str = '',
+            intro_text: Optional[str] = None,
+            attrs: Sequence[str] = ('description',),
+            sorted: bool = True,
+    ) -> str:
+        """Return an HTML table for the code list.
+
+        Parameters
+        ----------
+        codelist : CodeList
+            The CodeList object to format.
+        header_title : str, optional
+            The title of the HTML page, by default ''
+        attrs : Sequence[str], optional
+            The attribute names to include in the table, by default only
+            ['description']. Note that `"name"` is used in the index, and should
+            not be included in `attrs`. *NB!* Attribute names are
+            case-sensitive.
+        sorted : bool, optional
+            Whether to sort the table alphabetically by code name, by default
+            True.
+
+        Returns
+        -------
+        str
+            The HTML table for the code list.
+        """
+        import pandas as pd
+        attr_dicts: dict[str, dict[str, str|None]] = {
+            _code_key: get_code_attributes(_code_val, attr_names=attrs,
+                                           include_none=True)
+            for _code_key, _code_val in codelist.items()
+        }
+        df: pd.DataFrame = pd.DataFrame.from_dict(attr_dicts, orient='index')
+        df.index.name = 'name'
+        if sorted:
+            df = df.sort_index()
+        table_html: str = df.reset_index().to_html(index=False, justify='left')
+        header_html: str = f'<html>\n<head><title>{header_title} ' \
+            f'</title></head>\n<body>\n<h1>{header_title}</h1>\n'
+        if intro_text is not None:
+            intro_html: str = f'<p>{intro_text}</p>\n'
+        else:
+            intro_html = ''
+        end_html: str = '\n</body>\n</html>'
+        return header_html + intro_html + table_html + end_html
+    ###END def PandasHTMLFormatter.format
+
+###END class PandasHTMLFormatter
