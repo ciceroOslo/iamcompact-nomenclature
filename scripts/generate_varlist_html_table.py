@@ -21,7 +21,8 @@ from iamcompact_nomenclature.default_definitions import get_dsd
 # Define the output filename
 
 # %%
-output_filename: Path = Path(__file__).parent / 'variable_codelist.html'
+output_filename: Path = Path(__file__).parent.parent / 'docs' \
+    / 'variable_codelist.html'
 
 # %% [markdown]
 # Load the default `iamcompact-nomenclature` definitions
