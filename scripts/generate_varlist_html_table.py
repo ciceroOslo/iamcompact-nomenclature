@@ -21,8 +21,15 @@ from iamcompact_nomenclature.default_definitions import get_dsd
 # Define the output filename
 
 # %%
-output_filename: Path = Path(__file__).parent.parent / 'docs' \
-    / 'variable_codelist.html'
+output_filenames: dict[str, Path] = {
+    _dim: Path(__file__).parent.parent / 'docs' / f'{_dim}_codelist.html'
+    for _dim in ('variable', 'model', 'scenario')
+}
+attrs_dict: dict[str, tuple[str, ...]] = {
+    'variable': ('unit', 'description'),
+    'model': ('description',),
+    'scenario': ('description',),
+}
 
 # %% [markdown]
 # Load the default `iamcompact-nomenclature` definitions
@@ -34,17 +41,20 @@ dsd: DataStructureDefinition = get_dsd()
 # Generate the HTML table for the variable CodeList (`dsd.variable`)
 
 # %%
-html: str = PandasHTMLFormatter().format(
-    codelist=dsd.variable,
-    attrs=('unit', 'description'),
-    header_title=f'IAM COMPACT variables (generated on {datetime.date.today().isoformat()})',
-    intro_text=f'<!-- Generated using `generate_varlist_html_table.py` on ' \
-        f'{datetime.datetime.now().isoformat(timespec="seconds")} -->',
-)
+html_files: dict[str, str] = {
+    _dim: PandasHTMLFormatter().format(
+        codelist=getattr(dsd, _dim),
+        attrs=attrs_dict[_dim],
+    header_title=f'IAM COMPACT {_dim}s (generated on {datetime.date.today().isoformat()})',
+        intro_text=f'<!-- Generated using `generate_varlist_html_table.py` on ' \
+            f'{datetime.datetime.now().isoformat(timespec="seconds")} -->',
+    ) for _dim in attrs_dict
+}
 
 # %% [markdown]
 # Write the HTML table to the output file
 
 # %%
-with open(output_filename, 'w', encoding='utf-8') as f:
-    f.write(html)
+for _dim, _filename in output_filenames.items():
+    with open(_filename, 'w', encoding='utf-8') as f:
+        f.write(html_files[_dim])
