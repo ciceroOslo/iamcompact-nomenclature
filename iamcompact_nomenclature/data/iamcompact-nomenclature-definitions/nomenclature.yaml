@@ -3,7 +3,7 @@ repositories:
     url: https://github.com/ciceroOslo/iamcompact-nomenclature-definitions.git
     release: iamcompact-validation-ui-test-common-definitions-only
 dimensions:
-  # - variable
+  # - variable 
   - region
   - model
   - scenario
