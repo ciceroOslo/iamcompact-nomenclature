@@ -1,10 +1,10 @@
 repositories:
   common-definitions-fork:
     url: https://github.com/ciceroOslo/common-definitions.git/
-    release: iamcompact-validation-ui-test-common-definitions-only
+    release: iamcompact-validation-ui
   iamcompact-nomenclature-definitions:
     url: https://github.com/ciceroOslo/iamcompact-nomenclature-definitions.git
-    release: iamcompact-validation-ui-test-common-definitions-only
+    release: validation-ui
 dimensions:
   - variable 
   - region
