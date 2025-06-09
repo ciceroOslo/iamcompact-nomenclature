@@ -15,11 +15,10 @@ from .multi_load import (
 _data_root: Final[Path] = Path(__file__).parent / 'data'
 
 definitions_paths: Final[list[Path]] = [
-    _data_root / 'iamcompact-nomenclature-definitions' / 'definitions',
-    _data_root / 'common-definitions-fork' / 'definitions',
+    _data_root / 'definition_repos' / 'definitions',
 ]
 mappings_path: Path = \
-    _data_root / 'iamcompact-nomenclature-definitions' / 'mappings'
+    _data_root / 'definition_repos' / 'mappings'
 dimensions: Final[tuple[str, ...]] = (
     'model',
     'scenario',
@@ -36,21 +35,39 @@ code, and may be useful for internal use again in the future.
 """
 
 
-_dsd: MergedDataStructureDefinition | None = None
+_dsd: nomenclature.DataStructureDefinition | None = None
 _individual_dsds: list[nomenclature.DataStructureDefinition] | None = None
 _region_processor: nomenclature.RegionProcessor | None = None
 
 
 def _load_definitions(
         dimensions: Optional[Sequence[str]] = None,
-) -> tuple[MergedDataStructureDefinition,
+) -> tuple[nomenclature.DataStructureDefinition,
            list[nomenclature.DataStructureDefinition]]:
-    """Load and return DataStructureDefinition from definitions_path."""
-    return read_multi_definitions(
-        definitions_paths,
-        dimensions=dimensions,
-        return_individual_dsds=True,
-    )
+    """Load and return DataStructureDefinition from definitions_path.
+
+    If the module attribute `definitions_paths` contains more than one element,
+    they are each read as separate `DataStructureDefinition` instances and then
+    merged into a single `MergedDataStructureDefinition` object, which is then
+    returned in a tuple along with a list of each individual
+    DataStructureDefinition. If `definitions_path` contains just a single
+    element, that element is returned as a `DataStructureDefinitions` instance,
+    in a tuple with a list that now just contains that same
+    `DataStructureDefinition` instance.
+    """
+    if len(definitions_paths) > 1:
+        return read_multi_definitions(
+            definitions_paths,
+            dimensions=dimensions,
+            return_individual_dsds=True,
+        )
+    else:
+        dsd: nomenclature.DataStructureDefinition = \
+            nomenclature.DataStructureDefinition(
+                path=definitions_paths[0],
+                dimensions=dimensions,
+            )
+        return dsd, [dsd]
 ###END def _load_definitions
 
 def _load_region_processor() -> nomenclature.RegionProcessor:
@@ -64,7 +81,7 @@ def _load_region_processor() -> nomenclature.RegionProcessor:
 def get_dsd(
         force_reload: bool = False,
         dimensions: Optional[Sequence[str]] = None
-) -> MergedDataStructureDefinition:
+) -> nomenclature.DataStructureDefinition:
     """Return the definitions as a `nomenclature.DataStructureDefinition`.
 
     After the first call, the `DataStructureDefinition` object is cached and
