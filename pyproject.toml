@@ -1,6 +1,6 @@
 [project]
 name = "iamcompact-nomenclature"
-version = "0.9.3"
+rersion = "0.10.0"
 description = "Data structure definition for validation of model outputs in the HORIZON EUROPE project IAM COMPACT, using nomenclature-iamc"
 authors = [
     { name = "Jan Ivar Korsbakken", email = "janko@cicero.oslo.no" }
