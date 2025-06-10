@@ -136,12 +136,13 @@ joined_df = joined_df.fillna('')
 
 # %% [markdown]
 # Add comment that unit has been added in common-definitions where 
+# %%
 joined_df[MergedDfExtraCols.STATUS] = ''
 joined_df[MergedDfExtraCols.STATUS] = \
     joined_df[MergedDfExtraCols.STATUS].case_when(
         [
             (
-                joined_df[MergedDfExtraCols.UNITS_MATCH],
+                joined_df[MergedDfExtraCols.UNITS_MATCH] == True,
                 'Added through common-definitions in latest version'
             ),
             (
@@ -151,4 +152,13 @@ joined_df[MergedDfExtraCols.STATUS] = \
                 f'the column {CodeListRenamedCol.UNIT}.'
             ),
         ]
+    )
+
+# %% [markdown]
+# Write result, if requested
+write_result: bool = False
+if write_result:
+    joined_df.to_excel(
+        'Requested_variables_status.xlsx',
+        index=False,
     )
