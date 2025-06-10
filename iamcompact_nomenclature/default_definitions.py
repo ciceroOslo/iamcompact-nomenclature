@@ -1,8 +1,10 @@
 """Defaults for definitions to use."""
 from collections.abc import Sequence
+import logging
 from pathlib import Path
 from typing import Final, Optional
 
+import git
 import nomenclature
 
 from .multi_load import (
@@ -12,14 +14,16 @@ from .multi_load import (
 )
 
 
+
+logger: logging.Logger = logging.getLogger(__name__)
+
 _data_root: Final[Path] = Path(__file__).parent / 'data'
 
 definitions_paths: Final[list[Path]] = [
-    _data_root / 'iamcompact-nomenclature-definitions' / 'definitions',
-    _data_root / 'common-definitions-fork' / 'definitions',
+    _data_root / 'definition_repos' / 'definitions',
 ]
 mappings_path: Path = \
-    _data_root / 'iamcompact-nomenclature-definitions' / 'mappings'
+    _data_root / 'definition_repos' / 'mappings'
 dimensions: Final[tuple[str, ...]] = (
     'model',
     'scenario',
@@ -36,25 +40,77 @@ code, and may be useful for internal use again in the future.
 """
 
 
-_dsd: MergedDataStructureDefinition | None = None
+_dsd: nomenclature.DataStructureDefinition | None = None
 _individual_dsds: list[nomenclature.DataStructureDefinition] | None = None
 _region_processor: nomenclature.RegionProcessor | None = None
 
 
 def _load_definitions(
         dimensions: Optional[Sequence[str]] = None,
-) -> tuple[MergedDataStructureDefinition,
+) -> tuple[nomenclature.DataStructureDefinition,
            list[nomenclature.DataStructureDefinition]]:
-    """Load and return DataStructureDefinition from definitions_path."""
-    return read_multi_definitions(
-        definitions_paths,
-        dimensions=dimensions,
-        return_individual_dsds=True,
-    )
+    """Load and return DataStructureDefinition from definitions_path.
+
+    If the module attribute `definitions_paths` contains more than one element,
+    they are each read as separate `DataStructureDefinition` instances and then
+    merged into a single `MergedDataStructureDefinition` object, which is then
+    returned in a tuple along with a list of each individual
+    DataStructureDefinition. If `definitions_path` contains just a single
+    element, that element is returned as a `DataStructureDefinitions` instance,
+    in a tuple with a list that now just contains that same
+    `DataStructureDefinition` instance.
+    """
+    # First check for repos and pull them, to make sure we get the latest
+    # of any custom branches. This is necessary because nomenclature only does a
+    # pull for repos where the `main` branch is specified as the release to use,
+    # possibly under the assumption that a specific tag is being used otherwise,
+    # and it will never change which commit it points to.
+    for _parent in (_p.parent for _p in definitions_paths):
+        if not _parent.is_dir():
+            continue
+        for _child in _parent.iterdir():
+            if not _child.is_dir():
+                continue
+            if (_child / '.git').is_dir():
+                _repo = git.Repo(_child)
+                logging.log(
+                    level=logging.DEBUG,
+                    msg='Pulling updates (if any) for nomenclature repo in ' \
+                        f'{_child}...'
+                )
+                _repo.remotes.origin.pull()
+    if len(definitions_paths) > 1:
+        logger.log(
+            level=logging.INFO,
+            msg='Loading and merging DataStructureDefinitions from the ' \
+                f'following paths: {definitions_paths}...'
+        )
+        return read_multi_definitions(
+            definitions_paths,
+            dimensions=dimensions,
+            return_individual_dsds=True,
+        )
+    else:
+        logger.log(
+            level=logging.INFO,
+            msg='Loading DataStructureDefinitions from the following path: ' \
+                f'{definitions_paths[0]}...'
+        )
+        dsd: nomenclature.DataStructureDefinition = \
+            nomenclature.DataStructureDefinition(
+                path=definitions_paths[0],
+                dimensions=dimensions,
+            )
+        return dsd, [dsd]
 ###END def _load_definitions
 
 def _load_region_processor() -> nomenclature.RegionProcessor:
     """Load and return RegionProcessor from mappings_path."""
+    logger.log(
+        level=logging.INFO,
+        msg='Loading RegionProcessor from the following path: ' \
+            f'{mappings_path}...'
+    )
     return nomenclature.RegionProcessor.from_directory(
         path=mappings_path,
         dsd=get_dsd()
@@ -64,7 +120,7 @@ def _load_region_processor() -> nomenclature.RegionProcessor:
 def get_dsd(
         force_reload: bool = False,
         dimensions: Optional[Sequence[str]] = None
-) -> MergedDataStructureDefinition:
+) -> nomenclature.DataStructureDefinition:
     """Return the definitions as a `nomenclature.DataStructureDefinition`.
 
     After the first call, the `DataStructureDefinition` object is cached and

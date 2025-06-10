@@ -24,6 +24,7 @@ dependencies = [
     { name = "propcache" },
     { name = "yarl" },
 ]
+sdist = { url = "https://files.pythonhosted.org/packages/fc/76/cc6f37a12372dd72891dad5ffc3fc71375c2f92bb4a59f7ac11119332559/aiohttp-3.12.10.tar.gz", hash = "sha256:a9871b1b1381f8d8241f3ff3de5fcb6e2fdcfe8af43c35bb0496b8be550c5fb9", size = 7810445, upload-time = "2025-06-07T12:27:42.107Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/39/92/74b8f79a643a87069e4e0ad9621e9e803d51798eba30accd785c71005ffa/aiohttp-3.12.10-cp313-cp313-macosx_10_13_universal2.whl", hash = "sha256:e093a24605e8cf71d8bccd54672581a72404b84fa3adafa2c416b67edff1ced1", size = 693434, upload-time = "2025-06-07T12:26:19.735Z" },
     { url = "https://files.pythonhosted.org/packages/a6/e4/e4f5e0235e46be576843f3892ab4a846a3cdc72f44e4bc62d38c903a9f25/aiohttp-3.12.10-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:19a8d362b222a40fe97cd1641ce5c6a1fb2b2fbe2cf247d514f84f9c1d0f5549", size = 471098, upload-time = "2025-06-07T12:26:21.648Z" },
@@ -1067,9 +1068,10 @@ wheels = [
 
 [[package]]
 name = "iamcompact-nomenclature"
-version = "0.9.1"
+version = "0.9.2"
 source = { editable = "." }
 dependencies = [
+    { name = "gitpython" },
     { name = "nomenclature-iamc" },
     { name = "pyam-iamc" },
 ]
@@ -1084,6 +1086,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "gitpython", specifier = ">=3.1.44" },
     { name = "nomenclature-iamc" },
     { name = "pyam-iamc", specifier = ">=3.0" },
 ]
