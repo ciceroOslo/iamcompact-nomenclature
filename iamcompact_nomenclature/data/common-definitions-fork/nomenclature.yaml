@@ -1,9 +1,0 @@
-repositories:
-  common-definitions-fork:
-    url: https://github.com/ciceroOslo/common-definitions.git/
-    release: iamcompact-validation-ui
-dimensions:
-  - variable
-definitions:
-  variable:
-    repository: common-definitions-fork
