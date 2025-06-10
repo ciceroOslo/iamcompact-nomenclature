@@ -1,0 +1,5 @@
+outs:
+- md5: 241e2feabba1943d5d323c416ba5510f
+  size: 20708
+  hash: md5
+  path: Requested_variables_status.xlsx
